@@ -3,8 +3,6 @@ title: "AI and the Age of Aquarius"
 date: 2026-04-27
 ---
 
-# AI and the Age of Aquarius
-
 There's an idea in astrology; the procession of the equinoxes. On March 21st, the sun rises in front of a constellation. Due to... the tilt of the Earth? This tends to change every roughly 2-2.5 thousand years. 
 
 We are currently in a period between astrological ages; between the end of the Piscean age and entering the age of Aquarius. This implies quite the vibe shift. 
