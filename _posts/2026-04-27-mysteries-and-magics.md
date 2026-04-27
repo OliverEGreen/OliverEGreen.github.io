@@ -13,7 +13,7 @@ Below you will find a loose, open-minded collection of thoughts that are hopeful
 
 This isn't an exercise in being intellectually mean or trying to appear clever. It is possible (in fact it's too easy) to rationalise away any phenomenon. Rationalising is where curiosity goes to die a quick and miserable death. Instead, I suggest you be generous. People will like you more if you learn to humour even that which (at first) sounds like nonsense. Who knows - maybe you'll secretly start agreeing along the way. 
 
-## We were never given any instructions
+## There were no instructions
 
 To begin with, it's worth remembering that we all just sort of landed here, didn't we? We're improvising as best we can. There's no tutorial or scoreboard. Some are taking this more seriously than others. It's all... *pretty open*. Because of this, it's worth keeping our certainty in check. Being open minded (but not so much that our brains fall out).
 
@@ -23,7 +23,7 @@ In some ways, this is what happened to us, too.
 
 ## The Approach
 
-My approach is primarily phenomenological, i.e. it's things that I notice. This isn't the sharpest weapon in our intellectual arsenal. As a species, let it be said we are unreliable narrators. However, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
+My approach is phenomenological - things that you notice. This isn't the sharpest weapon in our intellectual arsenal. As a species, let it be said we are unreliable narrators. However, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
 My sense is, there's more to this reality than we understand. There are enough everyday phenomena that feel like they don't *fully* add up. It's as if something more is going on that we haven't yet found a watertight explanation for. 
 
@@ -81,7 +81,7 @@ What is the deal with trees? They're such an alien form of life. The timeframes 
 
 
 
-## Magic of Presence
+## Presence
 
 ### The energies of others
 
