@@ -3,19 +3,21 @@ title: "Mysteries & Magics"
 date: 2026-04-27
 ---
 
-## What is this?
+## What this is
 
-This post is my ongoing, naïve attempt to understand the nature of *this* - the reality we find ourselves in. It isn't an ultra-serious, rigorous study. It's not meant to be.
+This post is my ongoing, naïve attempt to understand the nature of *this* - the reality we find ourselves in. It isn't an ultra-serious, rigorous study. It's not meant to be. I promise I won't bring up the multiverse or whether this is all a simulation. Except just now.
 
-Below you will find a loose, open-minded collection of thoughts that are hopefully fun to pick up and toy around with. The goal is to bring us slightly closer to some kind of unified theory of what's going on here.
+Below you will find a loose, open-minded collection of thoughts that are hopefully fun to pick up and toy around with. The goal is to bring us slightly closer to some kind of theory as to what's going on here.
 
-I promise I won't bring up the multiverse or whether this is all a simulation. Except here.
+## What this isn't
+
+This isn't an exercise in being intellectually mean or trying to appear clever. It is possible (in fact it's too easy) to rationalise away any phenomenon. Rationalising is where curiosity goes to die a quick and miserable death. Instead, I suggest you be generous. People will like you more if you learn to humour even that which (at first) sounds like nonsense. Who knows - maybe you'll secretly start agreeing along the way. 
 
 ## We were never given any instructions
 
-To begin with, it's worth remembering that we all just sort of landed here, didn't we? We're improvising as best we can. Some are taking this more seriously than others. There's no tutorial or scoreboard. It's all... *pretty open*.
+To begin with, it's worth remembering that we all just sort of landed here, didn't we? We're improvising as best we can. There's no tutorial or scoreboard. Some are taking this more seriously than others. It's all... *pretty open*. Because of this, it's worth keeping our certainty in check. Being open minded (but not so much that our brains fall out).
 
-I remember in the original Super Mario game for the NES, the moment you pressed 'New Game', you just sort of fall out of the sky and an evil mushroom starts walking towards you. There's no cutscene or backstory provided. You're just expected to get on with it.
+I remember in the original Super Mario game for the NES, the moment you pressed 'New Game', you just sort of... *fall out of the sky*. Then an evil mushroom starts walking towards you. There's no cutscene or backstory provided. You're just expected to get on with it and figure things out as you go along.
 
 In some ways, this is what happened to us, too. 
 
@@ -23,19 +25,19 @@ In some ways, this is what happened to us, too.
 
 My approach is primarily phenomenological, i.e. it's things that I notice. This isn't the sharpest weapon in our intellectual arsenal. As a species, let it be said we are unreliable narrators. However, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
-My sense is, there's more to this reality than we understand. There are enough everyday phenomena that feel like they don't *fully* add up. It's as if something more is going on that we haven't (yet) found a satisfactory explanation for. 
+My sense is, there's more to this reality than we understand. There are enough everyday phenomena that feel like they don't *fully* add up. It's as if something more is going on that we haven't yet found a watertight explanation for. 
 
-Perhaps, like a donkey staring at an iPad, we are not intelligent enough to comprehend the full nature of reality directly. It may simply be too complex for our fancy monkey brains.
+Perhaps, like a donkey staring at an iPad, we are just not intelligent enough to directly comprehend the full nature of reality. It may simply be too complex for our fancy monkey brains.
 
-Alternatively, there may be whole dimensions of scientific exploration that we've yet to open up. Areas which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on.
+Alternatively, there may be whole dimensions of scientific exploration that we've yet to open up. Areas which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would be exciting, and I'd love to see it.
 
-Lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a sense of what's really going on. If we just gather them all together in a pile and stare really hard... maybe. 
+But. Since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
 
-But inference can work. Copernicus and Galileo were able to uncover the nature of our solar system through inference. They weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism.
+Yet Copernicus and Galileo were able to uncover the nature of our solar system through inference. They weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter - they pieced the picture together from a handful of clues.
 
-So that's why I keep this semi-organised pile. Each section opens up a question, giving a thread to pull on. Perhaps one of two of them will resonate with you.
+And that's why I keep this semi-organised pile. Each section opens up a question, giving a thread to pull on. Perhaps one of two of them will resonate with you and send you off daydreaming down some rabbithole.
 
-In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them. It's a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people.
+In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them. And have fun. This is only a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people since time immemorial.
 
 ## Mysteries
 
