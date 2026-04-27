@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<p class="intro">{{ site.description }}</p>
+
+<h2 class="section-label">Writing</h2>
+
+{% if site.posts.size > 0 %}
+<ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url | relative_url }}">
+            <span class="post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%-d %B %Y" }}
+                </time>
+            </span>
+            <span class="post-title">{{ post.title }}</span>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="post-meta">No posts yet.</p>
+{% endif %}

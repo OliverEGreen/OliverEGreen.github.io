@@ -1,0 +1,35 @@
+title: Ollie Green
+description: A quiet corner of the web for notes, sketches, and things worth keeping.
+author: Ollie Green
+url: "https://olliegreen.info"
+baseurl: ""
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+timezone: Europe/London
+
+# Plugins (all on the GitHub Pages allowlist)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# Files Jekyll should not copy into _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - README.md
+  - .DS_Store
+  - .gitignore
