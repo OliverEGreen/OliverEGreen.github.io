@@ -33,3 +33,4 @@ exclude:
   - README.md
   - .DS_Store
   - .gitignore
+  - scripts
