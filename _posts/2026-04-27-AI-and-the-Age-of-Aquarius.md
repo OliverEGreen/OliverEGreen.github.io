@@ -5,7 +5,9 @@ date: 2026-04-27
 
 There's an unprecedented vibe shift going on right now – you don't need me to tell you that. 
 
-Who we are, how we relate to one another and what we spend our precious time doing all seems to be shifting beneath our feet. All we can do is keep our heads above water and wonder what happens next. But what if we didn't need to guess? 
+Who we are, how we relate to one another all seems to be changing at a speed many of us struggle to wrap our heads around. All we can do is keep treading water while wondering to ourselves what happens next.
+
+But what if we didn't need to resort to guesswork?  
 
 **The moving equinox point**
 
