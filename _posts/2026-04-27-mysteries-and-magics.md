@@ -3,19 +3,27 @@ title: "Mysteries & Magics"
 date: 2026-04-27
 ---
 
-## What this is
+*A long list of loose threads to pull upon...*
 
-This post is my ongoing, naïve attempt to understand the nature of *this* - the reality we find ourselves in. It isn't an ultra-serious, rigorous study. It's not meant to be. I promise I won't bring up the multiverse or whether this is all a simulation. Except just now.
+## What's this about?
 
-Below you will find a loose, open-minded collection of thoughts that are hopefully fun to pick up and toy around with. The goal is to bring us slightly closer to some kind of theory as to what's going on here.
+This post is my ongoing, naïve attempt to understand the nature of *this*. You know (waving my hands around). Everything, I guess.
+
+This isn't an ultra-serious, rigorous study. It's not meant to be. And I promise I won't bring up the multiverse or whether this is all a simulation. Except just then.
+
+Below you will find a loose, open-minded collection of thoughts that are hopefully fun to pick up and toy around with. My goal is to bring us *slightly closer* to understanding all of this. Either way, I hope you enjoy.
 
 ## What this isn't
 
-This isn't an exercise in being intellectually mean or trying to appear clever. It is possible (in fact it's too easy) to rationalise away any phenomenon. Rationalising is where curiosity goes to die a quick and miserable death. Instead, I suggest you be generous. People will like you more if you learn to humour even that which (at first) sounds like nonsense. Who knows - maybe you'll secretly start agreeing along the way. 
+This is not an exercise in being intellectually mean or trying to appear clever. It's far too easy to explain away anything with a dull answer; hundreds of years ago you may have got 'because God wills it'. We have slightly better answers now, but they're often still surface-level deep. Like, why are rainbows formed? 'Because it's sunny while it's raining'. Sure... 
+
+The real answer, it turns out, is beautiful and [remarkably complex](https://www.youtube.com/watch?v=24GfgNtnjXc).
+
+Incurious rationalisation is where inspiration goes to die. It closes down doors. Instead, please be generous.  Perhaps play with these ideas – even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
 
 ## There were no instructions
 
-To begin with, it's worth remembering that we all just sort of landed here, didn't we? We're improvising as best we can. There's no tutorial or scoreboard. Some are taking this more seriously than others. It's all... *pretty open*. Because of this, it's worth keeping our certainty in check. Being open minded (but not so much that our brains fall out).
+To begin with, it's worth remembering that we all just sort of landed here. We're improvising as best we can. There's no introduction, tutorial or scoreboard. Because of this, it's worth keeping our certainty in check. Being open minded (but not so much that our brains fall out).
 
 I remember in the original Super Mario game for the NES, the moment you pressed 'New Game', you just sort of... *fall out of the sky*. Then an evil mushroom starts walking towards you. There's no cutscene or backstory provided. You're just expected to get on with it and figure things out as you go along.
 
@@ -23,19 +31,17 @@ In some ways, this is what happened to us, too.
 
 ## The Approach
 
-My approach is phenomenological - things that you notice. This isn't the sharpest weapon in our intellectual arsenal. As a species, let it be said we are unreliable narrators. However, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
+My approach is phenomenological – whenever I notice that things on the surface just don't quite add up. It's as if something more is going on that we haven't yet found a watertight explanation for. While it isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
-My sense is, there's more to this reality than we understand. There are enough everyday phenomena that feel like they don't *fully* add up. It's as if something more is going on that we haven't yet found a watertight explanation for. 
+Perhaps, like a donkey staring at an iPad, we just aren't intelligent enough to directly comprehend the nature of reality. We can get only so far, but the big picture may simply be too complex for our fancy monkey brains.
 
-Perhaps, like a donkey staring at an iPad, we are just not intelligent enough to directly comprehend the full nature of reality. It may simply be too complex for our fancy monkey brains.
+Alternatively, there may be whole dimensions of scientific exploration that we're able to grasp but haven't yet opened up. Areas which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would of course be exciting and we'd love to see it.
 
-Alternatively, there may be whole dimensions of scientific exploration that we've yet to open up. Areas which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would be exciting, and I'd love to see it.
+But since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
 
-But. Since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
+In 1500s Italy, Copernicus and Galileo weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter – they pieced the picture together from a handful of clues via inference.
 
-Yet Copernicus and Galileo were able to uncover the nature of our solar system through inference. They weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter - they pieced the picture together from a handful of clues.
-
-And that's why I keep this semi-organised pile. Each section opens up a question, giving a thread to pull on. Perhaps one of two of them will resonate with you and send you off daydreaming down some rabbithole.
+That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one of two of them will resonate with you and send you off daydreaming down some rabbithole.
 
 In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them. And have fun. This is only a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people since time immemorial.
 
@@ -43,12 +49,22 @@ In continuing to notice things and list them here, I think there's room for us t
 
 ### Sleep
 
-We don't seem to fully understand the role of sleep. The unconscious seems to play a role in dreams — but we quickly go mad without sleep and even die after 10–12 days. So it's necessary for life. But what is it? You might last longer without food than sleep.
+We spend a third of our lives sleeping. Not just us – all known animals sleep in various ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
+
+I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully formed, like a gift. Those moments when we are half asleep, half awake seem to provide a very special kind of thought. More loose, more freely associative. 
+
+Anaesthetic, our magic formula for sleep is also poorly understood. We know exactly how much to use, all of its mitigating factors and effects. And yet the core mechanism by which it actually puts us to sleep is, again, unknown. 
+
+Given the prominence of sleep and its vital importance for life, you'd think we'd have whole universities dedicated to furthering our knowledge of the phenomenon. But we just don't seem all that interested in it. 
 
 ### Dreams
 
 Why do we dream? Where do we go?
+
+The unconscious seems to play a role in dreams. Other dreams may be prophetic, or us replaying versions of waking life over in our heads.
+
 Why does it feel like after a deep sleep, we've gone far away and we rush suddenly across absurd amounts of space to crash land back into our bodies with a noticeable thud?
+
 How differently we experience time when we leave our bodies during dreams — or even short naps! How discombobulated in time one feels after a 10 minute nap.
 
 ### Time
