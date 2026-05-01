@@ -11,9 +11,9 @@ What if we didn't need to resort to guesswork?
 
 **The moving equinox point**
 
-There's an idea in astronomy called the [precession of the equinoxes](https://en.wikipedia.org/wiki/Axial_precession), which is to do with the way the Earth slowly wobbles over time, causing the apparent position of the constellations in our sky to change. 
+There's an idea in astronomy called the [precession of the equinoxes](https://en.wikipedia.org/wiki/Axial_precession), which is to do with the way the Earth slowly wobbles over time (like a spinning top), causing the apparent position of the constellations in our sky to change. 
 
-On March 21st, the sun's path crosses the celestial equator at the equinox point, marking the start of Spring. As the Earth wobbles, this point slowly moves in the sky, passing against each of the 12 zodiac constellations in turn, spending around 2,100 years in front of each. A full cycle takes around 26 thousand years. The location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
+Every year on March 21st the sun's path crosses the celestial equator at the [equinox point](https://en.wikipedia.org/wiki/Equinox_(celestial_coordinates)), marking the start of Spring. As the Earth wobbles, this point slowly moves in the sky, passing against each of the 12 zodiac constellations in turn, spending around 2,100 years in front of each. The full cycle takes something like 25,772 years to complete. The location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
 
 **The age of Aquarius**
 
