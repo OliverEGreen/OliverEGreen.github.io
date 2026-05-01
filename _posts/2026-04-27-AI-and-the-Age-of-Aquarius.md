@@ -3,11 +3,11 @@ title: "AI and the Age of Aquarius"
 date: 2026-04-27
 ---
 
-There's an unprecedented vibe shift going on right now – you don't need me to tell you that. 
+There's an unprecedented vibe shift going on right now. You don't need me to tell you that. 
 
-Who we are, how we relate to one another all seems to be changing at a speed many of us struggle to wrap our heads around. All we can do is keep treading water while wondering to ourselves what happens next.
+Who we are and how we relate to one another all seems to be changing at a speed many of us struggle to wrap our heads around. It seems all we can do is keep treading water while wondering to ourselves what's about to happen next.
 
-But what if we didn't need to resort to guesswork?  
+What if we didn't need to resort to guesswork?  
 
 **The moving equinox point**
 
