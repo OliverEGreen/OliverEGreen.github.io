@@ -5,15 +5,17 @@ date: 2026-04-27
 
 There's an unprecedented vibe shift going on right now. You don't need me to tell you that. 
 
-Who we are and how we relate to one another all seems to be changing at a speed many of us struggle to wrap our heads around. It seems all we can do is keep treading water while wondering to ourselves what's about to happen next.
+Our world, who we are and how we relate to one another all seem to be changing at a speed many of us are struggling to keep up with. Sometimes, it feels like all we can do is tread water while wondering what's about to happen next.
 
 What if we didn't need to resort to guesswork?  
 
-**The moving equinox point**
+**Up in the heavens**
 
 There's an idea in astronomy called the [precession of the equinoxes](https://en.wikipedia.org/wiki/Axial_precession), which is to do with the way the Earth slowly wobbles over time (like a spinning top), causing the apparent position of the constellations in our sky to change. 
 
-Every year on March 21st the sun's path crosses the celestial equator at the [equinox point](https://en.wikipedia.org/wiki/Equinox_(celestial_coordinates)), marking the start of Spring. As the Earth wobbles, this point slowly moves in the sky, passing against each of the 12 zodiac constellations in turn, spending around 2,100 years in front of each. The full cycle takes something like 25,772 years to complete. The location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
+Every year on March 21st the sun's path crosses the celestial equator at the [equinox point](https://en.wikipedia.org/wiki/Equinox_(celestial_coordinates)), marking the start of Spring. As the Earth wobbles, this point appears to slowly move across the sky, passing against each of the 12 zodiac constellations in turn, spending around 2,100 years in front of each.
+
+The full cycle takes something like 25,772 years to complete. The location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
 
 **The age of Aquarius**
 
