@@ -53,25 +53,35 @@ We spend a third of our lives sleeping. Not just us – all known animals sleep 
 
 I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully formed, like a gift. Those moments when we are half asleep, half awake seem to provide a very special kind of thought. More loose, more freely associative. 
 
+And sleep can play havoc with our sense of time; a short nap can feel like hours, or a deep sleep like a few seconds. Even a 10-minute nap can leave us feeling completely discombobulated for the rest of the day. 
+
 Anaesthetic, our magic formula for sleep is also poorly understood. We know exactly how much to use, all of its mitigating factors and effects. And yet the core mechanism by which it actually puts us to sleep is, again, unknown. 
 
-Given the prominence of sleep and its vital importance for life, you'd think we'd have whole universities dedicated to furthering our knowledge of the phenomenon. But we just don't seem all that interested in it. 
+Given the prominence of sleep and its vital importance for life, you'd think we'd have whole universities dedicated to furthering our knowledge of the phenomenon. By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist. Yet, we seem to have a plethora of dental universities, publications and conferences and practically nothing for sleep. We just don't seem all that interested.
 
 ### Dreams
 
-Why do we dream? Where do we go?
+Dreams are the most mysterious part of sleep. Apparently we dream regularly but forget most of them. Our memory of dreams may stick around during the day, or vanish just seconds after waking up.
 
-The unconscious seems to play a role in dreams. Other dreams may be prophetic, or us replaying versions of waking life over in our heads.
+Our unconscious seems to play a role in what we see; perhaps it's something we noticed, or heard someone say during the day. There seems to be an amount of mental processing happening. Some dreams may be considered prophetic, or like we are replaying versions of waking life over in our heads.
 
-Why does it feel like after a deep sleep, we've gone far away and we rush suddenly across absurd amounts of space to crash land back into our bodies with a noticeable thud?
+After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud. Given that I've travelled precisely nowhere, I find this very odd.
 
-How differently we experience time when we leave our bodies during dreams — or even short naps! How discombobulated in time one feels after a 10 minute nap.
+## Time & Space
 
-### Time
+### How we experience time
 
-I doubt time is linear. Our experience of it can be so subjective and linked to our mental state. But also I've seen people draw knowledge from the "future". It might all exist at once, or be a probability state/field?
+Our experience of time can be so subjective. It feels like an something we've poorly understood.
 
-How we're easily able to wake up regularly only a minute or so before our regular alarm clocks. There's some wild mysterious things happening in our relation to time. It feels like an idea we've poorly understood.
+It is clearly linked somewhat to our mental state – we all know that time flies when we're having fun, yet drags to a near-standstill during harder times. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location.
+
+Other forms of life seem to experience time at different speeds to us. Their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours. Generally speaking, smaller life seems to live faster: birds, rodents and insects.
+
+We also seem to have an internal clock with surprisngly high precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know.
+
+My gut feeling is that time might all exist at once, already predetermined. Like a record we've put on and are experiencing in real-time and forward motion. We're discovering it in real-time. It may be predetermined, yet we still don't know what's coming next.
+
+Like with anaesthesia, we might not fully grasp the nature of time, but we're able to make jolly good use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellies, despite relativistic effects. It's incredibly  impressive.
 
 ### How we feel space
 

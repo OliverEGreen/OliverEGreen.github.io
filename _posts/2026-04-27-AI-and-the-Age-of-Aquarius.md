@@ -21,9 +21,9 @@ The full cycle takes something like 25,772 years to complete. The location of th
 
 We are currently in a period between astrological ages; between the end of the Piscean age and entering the age of Aquarius. You may have heard [the song](https://www.youtube.com/watch?v=kjxSCAalsBE).
 
-The age of Pisces (symbolised by a fish) spans the years between 0 B.C. and 2100 B.C. Conventionally, this is associated with the reign of Christ. Each age embodies certain qualities, both positive and negative associated with its zodiac sign.
+The age of Pisces (symbolised by a fish) spans the years between 1 B.C. and 2100 A.D. Conventionally, this is associated with the reign of Christ. Each age embodies certain qualities, both positive and negative associated with its zodiac sign.
 
-The positive qualities of the Piscean age are: compassion, empathy, spiritual faith, self-sacrifice, redemption, intuition, dreams, imagination and exploration of the sea. However, it can also be marred by: religious dogma, guilt, fear, persecution, addition, manipulation and tribalism. Some call it 'the Age of Faith'.
+The positive qualities of the Piscean age are: compassion, empathy, spiritual faith, self-sacrifice, redemption, intuition, dreams, imagination and exploration of the sea. However, it can also be marred by: religious dogma, guilt, fear, persecution, addiction, manipulation and tribalism. Some call it 'the Age of Faith'.
 
 The Aquarian age we are currently moving into is very different. It is characterised by humanitarianism, equality, innovation, progress, individual freedom, intellectualism, community and visionary idealism. These are all things we've seen take hold and grow throughout the 20th century, loosely under the banner of 'progressivism'.
 
@@ -31,7 +31,7 @@ Similarly, this age also has its downsides which might be: an emotional coldness
 
 **How AI fits into the picture**
 
-What I wanted to write about, is that these Aquarian qualities seem to overlap very much with the utopian AI visions that our most powerful tech leaders seem keen to usher into our world. I suspect that we are heading quite rapidly towards automated, hi-tech governance of ourselves as a specie – with all that it brings. 
+What I wanted to write about, is that these Aquarian qualities seem to overlap very much with the utopian AI visions that our most powerful tech leaders seem keen to usher into our world. I suspect that we are heading quite rapidly towards automated, high-tech governance of ourselves as a species – with all that it brings. 
 
 The current year is 2026 and human governments have let us down more times, and in worse ways, than we could have ever imagined. Yes, power has always corrupted, but in recent years this has become more blatantly obvious.
 
