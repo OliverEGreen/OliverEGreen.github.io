@@ -85,27 +85,31 @@ Like with anaesthesia, we might not fully grasp the nature of time, but we're ab
 
 ### How we feel space
 
-Why does a 2.4m ceiling feel low to us? We do seem to have a need for spaces that are illogically larger than us.
+There's a similar strangeness to how we feel space.
 
-It would be insanely uncomfortable to only grant us the space our bodies need. So it appears as if something extends above us, we can feel it. It's most comfortable at around 2.7–3m ceiling height. We all just instinctively know this.
+As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite low. Why is that? It's plenty of space for even very tall people to exist happily. Why should we prefer 2.6m or even 3m high ceilings? We seem to have a need for spaces that are illogically larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel incredibly strange.
 
-Especially when many people gather and are running at a highly emotional state: a cathedral, an airport or station. The more human energy, the higher the space needs to be somehow.
+It appears as if something extends above us and we can feel it. It wants the right ceiling height and we all just seem to instinctively know this.
 
-Any architect will know that the size of a building under construction changes constantly. It's way smaller than you thought, then suddenly the spaces become normal sizes or even huge. It's very hard to explain.
+In other kinds of spaces, different rules apply. It's very obvious when many people gather together and are running at a highly emotional state: a cathedral, an airport or stadium. The more human energy, the higher the space needs to be somehow. Again, we all just seem to know this. Designing a smaller space wouldn't happen – even to a layman it would simply be too preposterous.
 
-
+Finally, any architect will know that, subjectively, the size of a building under construction seems to change constantly. Perhaps it's way smaller than you thought it would feel, then suddenly the spaces become normal-sized or even feel enorous. It's very hard to explain.
 
 ## Nature 
 
 ### Bodies of Water
 
-They have a huge energetic impact upon me. They can bring me into greater connection with my feelings and provide a great source of solace. Lakes, rivers, the sea. Even the Regents Canal.
+There is something special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. They're intrinsically beautiful, often enhancing whatever light the sky is providing that day.
 
-### Trees
+They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress. Why does it feel that way? Who knows. Some animistic cultures believe that nature – every stone, river and tress – carries its own spirit. In some limited way, nature itself can be a form of company.
 
-What is the deal with trees? They're such an alien form of life. The timeframes on which they exist are so absurd to us. And yet we're both forms of life. We love them and we need them around us. Do they really spend most of their time in another dimension?
+### Trees and plant life
 
+I've often wondered about aliens – what could a totally unfamiliar lifeform potentially be like? It wouldn't necessarily need to have anything in common with our own lives here on Earth
 
+Then it hit me; plants and trees are already such an alien form of life. We're physically built up so differently and experience time on such different scales. Our respiratory and sensory systems have almost nothing in common. And yet we all know that we're both forms of life.
+
+And we love our trees – we need greenery around us and feel terrible when our cities lack green thriving spaces. We even give the best ones legal protection, with fines in the hundreds of thousands for chopping them down.
 
 ## Presence
 
@@ -113,19 +117,19 @@ What is the deal with trees? They're such an alien form of life. The timeframes 
 
 The physical presence of others. Zoom doesn't quite cut it. It's missing something. We get very lonely and isolated without others around.
 
-### Felt touch of others, even animals
+### Psychosis, death and felt presence
 
-Even animals want to cuddle. Even the weight of a tiny bird or a butterfly on your finger is somehow magical.
+How a living body can feel empty. How a dead body feels like nothing and no one to behold. How people with dementia fade in and out like a broken modem. They're suddenly there, you feel their presence, then they're gone again.
+
+Life and death – obviously gigantic and yet we don't understand the first thing about what they are. At least officially.
+
+### Touch
+
+Physical contact is very important to us. It seems to work on an energetic level. Even animals want to cuddle. Even the weight of a tiny bird or a butterfly on your finger is somehow magical.
 
 ### Live vs recorded
 
 For some reason this makes a difference to me. Perhaps a placebo could trick me though. But I get a totally different sense of something when I know it's recorded vs watching it live. The feeling is entirely different.
-
-### Psychosis / death and felt presence
-
-How a living body can feel empty. How a dead body feels like nothing and no one to behold. How people with dementia fade in and out like a broken modem. They're suddenly there, you feel their presence, then they're gone again.
-
-
 
 ## Magic of Ritual
 
@@ -137,17 +141,17 @@ Can we imbue inanimate objects with our meanings and energies using our own inte
 
 Were all the ancient people around the world just plain wrong? It seems fishy. They weren't idiots.
 
-### Pyramids
-
-Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt — South and Central America, all across Asia. We have no explanations.
-
 ### Black magic
 
 Black magic appears to be real. It's been practised forever. Deals with the devil. Sacrifice, energies from lower dimensions 'feeding' on loosh. Often leading to knowledge seemingly from nowhere: impossible pyramids, rocketry, iconic music. Long history of human sacrifice. Faustian pacts. Epstein and co were deeply serious people; they wouldn't waste their time on total nonsense. 
 
-### Sex Magic
+### Sex and sex magic
 
 It's clearly much more significant than the purely physical dimension. There's a lot of nuanced energetic stuff going on, I'd wager. I think sex can cross into the astral energies sometimes. It seems to often go paired with a certain underhanded quality. Jack Parsons of the JPL was a huge believer, as were his contemporaries. Sex often plays a role in cults as well. It's a huge driver of human behaviour and power dynamics. The small death. It's hugely energetic.
+
+### Pyramids
+
+Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt — South and Central America, all across Asia. We have no explanations.
 
 ## Astrological / Cosmological
 
@@ -163,13 +167,11 @@ The chances are just absurdly low.
 
 It seems odd. Space is impossibly empty. Everything is unimaginably huge and far away. Seems a bit pointlessly so. Are we really understanding it properly? It feels like we've not yet grasped what we're looking at. Is it really so empty or can we not see it (yet)?
 
+## Other
+
 ### Lower Astral places and people
 
 It's definitely there. It's not even that far away. It's almost parallel to our existence, and some seem much more dialled into it than others. It's a lower energy, darker, more seedy and desperate. People can become enmeshed with these: dark beings might inhabit casinos, strip clubs, gangs, fighting events, cults.
-
-### Life and death
-
-Obviously gigantic and yet we don't understand the first thing about what they are. At least officially.
 
 ### Music
 
