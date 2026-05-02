@@ -11,17 +11,17 @@ What if we didn't need to resort to guesswork?
 
 **Up in the heavens**
 
-There's an idea in astronomy called the [precession of the equinoxes](https://en.wikipedia.org/wiki/Axial_precession), which is to do with the way the Earth slowly wobbles over time (like a spinning top), causing the apparent position of the constellations in our sky to change. 
+There's an idea in astronomy called the [precession of the equinoxes](https://en.wikipedia.org/wiki/Axial_precession), which is to do with the way the Earth slowly wobbles over time, like a spinning top.  
 
-Every year on March 21st the sun's path crosses the celestial equator at the [equinox point](https://en.wikipedia.org/wiki/Equinox_(celestial_coordinates)), marking the start of Spring. As the Earth wobbles, this point appears to slowly move across the sky, passing against each of the 12 zodiac constellations in turn, spending around 2,100 years in front of each.
+Every year on March 21st the sun's path crosses the celestial equator at the [equinox point](https://en.wikipedia.org/wiki/Equinox_(celestial_coordinates)), marking the start of Spring. As the Earth wobbles, this point appears to slowly move across the sky, passing against each of the 12 zodiac constellations in turn  (spending around 2,100 years in front of each).
 
-The full cycle takes something like 25,772 years to complete. The location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
+The full cycle takes something like 25,772 years to complete. The apparant location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
 
 **The age of Aquarius**
 
-We are currently in a period between astrological ages; between the end of the Piscean age and entering the age of Aquarius. You may have heard [the song](https://www.youtube.com/watch?v=kjxSCAalsBE).
+As it so happens, we are currently in a transition period between astrological ages. It's the end of the Piscean age and the beginning of the age of Aquarius. You may have heard [the song](https://www.youtube.com/watch?v=kjxSCAalsBE).
 
-The age of Pisces (symbolised by a fish) spans the years between 1 B.C. and 2100 A.D. Conventionally, this is associated with the reign of Christ. Each age embodies certain qualities, both positive and negative associated with its zodiac sign.
+The age of Pisces (symbolised by a fish) spans the years between 1 B.C. and 2100 A.D. Conventionally, this is associated with the reign of Christ. Each age embodies certain qualities, both positive and negative, associated with its zodiac sign.
 
 The positive qualities of the Piscean age are: compassion, empathy, spiritual faith, self-sacrifice, redemption, intuition, dreams, imagination and exploration of the sea. However, it can also be marred by: religious dogma, guilt, fear, persecution, addiction, manipulation and tribalism. Some call it 'the Age of Faith'.
 
