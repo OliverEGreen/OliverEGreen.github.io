@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\(\\\\.py|\\\\.npy|\\\\.txt|\\\\.md\\)$\")",
+      "Bash(python -c \"from query import FindMostSimilarWords; print\\(FindMostSimilarWords\\('king', method='CosineSimilarity'\\)\\)\")",
+      "Bash(python -m py_compile \"Cleaning Raw Data.py\")",
+      "Bash(python -m py_compile visualize.py)",
+      "Bash(python -m py_compile embedding_helpers.py)",
+      "Bash(python -c \"import sklearn; import matplotlib; print\\(f'sklearn {sklearn.__version__}, matplotlib {matplotlib.__version__}'\\)\")",
+      "Bash(python -c \"import matplotlib; print\\(f'matplotlib {matplotlib.__version__}'\\)\")",
+      "Bash(ls -la *.py *.npy *.txt)",
+      "Bash(python visualize.py)"
+    ]
+  }
+}
