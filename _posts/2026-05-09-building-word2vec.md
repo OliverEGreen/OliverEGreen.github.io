@@ -17,7 +17,7 @@ But there is good news! I have a lot of time right now and a thirst for learning
 
 After much research, I landed on the 2013 Google Word2Vec paper. This marked a seminal moment when the language modelling community shifted to NNs, and it covered the embedding subject that is still core to RAGs today. I was familiar with previous Markov-like / HMM approaches to language ML, but this seemed like a reasonable place to pick up my learning. 
 
-The paper is ultimately about embedding words in latent space. It's not fancy - there's no real understanding of context, so the model has no ability to accurately embed word that carry multiple meanings. Each word gets embedded only once, instead of being understood within its context. As starting points go, I like this simplicity.
+The paper is ultimately about embedding words in latent space. It's not fancy - there's no real understanding of context, so the model has no ability to accurately embed words that carry multiple meanings. Each word gets embedded only once, instead of being understood within its context. As starting points go, I like this simplicity.
 
 ## The Build
 
@@ -92,7 +92,7 @@ I was able to try out a few quick, obvious tests that anyone familiar with Shake
 * 'William' returned 'Shakespeare' as the top hit.
 * 'Romeo' and 'Juliet' returned as each other's most strongly-associated words.
 * 'King' returns 'Henry' as might be expected, as well as the names of other kings across Shakespeare's full works.
-* 'Queen' returns the full cast of Cleopatra's court from Antony and Cleopatra: 'Irias', 'Chairman', 'Empress' and 'Cleopatra'. The same happens for 'King': 'Paphlagonia', 'Cappadocia', 'Arabia', and 'Libya', which is the list of vassal kings from the same play.
+* 'Queen' returns the full cast of Cleopatra's court from Antony and Cleopatra: 'Iras', 'Charmian', 'Empress' and 'Cleopatra'. The same happens for 'King': 'Paphlagonia', 'Cappadocia', 'Arabia', and 'Libya', which is the list of vassal kings from the same play.
 
 I plotted the results to an image using the t-SNE vector reduction approach, and instantly spotted that the character names from related plays were clustered together.
 
@@ -120,7 +120,7 @@ In the future, I'd like to understand this mechanism a little better. I get the 
 
 Originally I built this without numpy, which was great for self-teaching and I'd recommend the same to anybody. However when it came time to test, using numpy's arrays sped up my embedding process by roughly an order of magnitude; each epoch was taking around 90 seconds at the beginning and this dropped to 8 with numpy's help.
 
-Finally, the choice of similarity measurement seems to have definitely had an impact. Euclidean distance had a habit of surfacing character clusters from related plays, while cosine similarity was better as producing semantically-linked words. Dot product also gave decent results, but honestly I'm less clear on how to interpret these. 
+Finally, the choice of similarity measurement seems to have definitely had an impact. Euclidean distance had a habit of surfacing character clusters from related plays, while cosine similarity was better at producing semantically-linked words. Dot product also gave decent results, but honestly I'm less clear on how to interpret these. 
 
 ### Conclusion and next steps
 
