@@ -5,25 +5,25 @@ date: 2026-05-09
 
 *This is a personal account of building Word2Vec from scratch in Python + numpy, the bugs I found along the way and the resulting embeddings that were achieved.*
 
-I was recently asked in an interview how much I knew about RAGs. 
+I was recently asked in an interview how much I knew about [RAGs](https://en.wikipedia.org/wiki/Retrieval-augmented_generation). 
 
 I replied honestly; I've read about them and gone back and forth with LLMs so that I grasp the basic ideas. But this question stayed with me. I wasn't satisfied with my surface-level knowledge. Given how much LLMs have reshaped our world in the last few years, I started longing for a deeper knowledge –  the kind you can only achieve through building, testing, failing and fixing. 
 
-Back in 2019 I completed a course in applied machine learning. It taught us all of the core techniques and approaches directly from the maths; it was up to us to rebuild each algorithm to prove that we'd grasped the course material. This took my knowledge right up until the ~2010s boom in deep learning. From today's perspective, what I learned now feels like lovely, interesting and quaint historical knowledge... but honestly it's been outdated and outclassed since then.
+Back in 2019, I completed a course in [applied machine learning](https://emeritus.org/program-information-sessions/columbia-engineering-executive-educations-applied-machine-learning/). It taught us all of the core techniques and approaches directly from the maths; it was up to us to rebuild each algorithm to prove that we'd grasped the course material. This took my knowledge right up until the ~2010s boom in deep learning. From today's perspective, what I learned now feels like lovely, interesting and quaint historical knowledge... but honestly it's been outdated and outclassed since then.
 
 But there is good news! I have a lot of time right now and a thirst for learning. The RAG question made me want to dig deeper into the world of LLMs, so I decided to go back in time to where my knowledge cuts off and try to build something myself. 
 
 ## Word2Vec
 
-After much research, I landed on the 2013 Google Word2Vec paper. This marked a seminal moment when the language modelling community shifted to NNs, and it covered the embedding subject that is still core to RAGs today. I was familiar with previous Markov-like / HMM approaches to language ML, but this seemed like a reasonable place to pick up my learning. 
+After much research, I landed on the [2013 Google Word2Vec](https://arxiv.org/pdf/1301.3781) paper. This marked a seminal moment when the NLP community shifted to NNs, and it covered the embedding subject that is still core to RAGs today. I was familiar with previous [Markov](https://www.youtube.com/watch?v=KZeIEiBrT_w)-like / HMM approaches to language ML, but this seemed like a reasonable place to pick up my learning. 
 
-The paper is ultimately about embedding words in latent space. It's not fancy - there's no real understanding of context, so the model has no ability to accurately embed words that carry multiple meanings. Each word gets embedded only once, instead of being understood within its context. As starting points go, I like this simplicity.
+The paper is ultimately about embedding words in latent space. It's not fancy - there's no real understanding of context, so the model has no ability to accurately embed words that carry multiple meanings (for example 'bank'). Each word gets embedded only once, instead of being understood within its context. As starting points go, I like this simplicity.
 
 ## The Build
 
 ### Training data
 
-To start with, I needed a corpus of data to train on and my mind immediately came to Shakespeare. His full works are available copyright-free on the Project Gutenberg website. Why not? It's open, easily available and has a fun historic flavour. At around 800K words, it's roughly the size of training data I wanted for this stage. 
+To start with, I needed a corpus of data to train on and my mind immediately came to Shakespeare. His full works are available copyright-free on the [Project Gutenberg website](https://www.gutenberg.org/ebooks/100). Why not? It's open, easily available and has a fun historic flavour. At around 800K words, it's roughly the size of training data I wanted for this stage. 
 
 ### Prepping the data
 
@@ -47,7 +47,7 @@ The next step was to generate a matrix of random noise to act as my neural netwo
 
 We're using dense embeddings (numbers ranging from -1 to 1), which apparently this paper helped to popularise as an approach. I originally built this in raw Python, but numpy has methods that greatly speed up generation of this matrix, so why not!
 
-As the original Word2Vec team found, it makes sense to generate this matrix twice, as the multiple roles that each word can play during training can cross-pollute the data if you're using only a single matrix. 
+As the original Word2Vec team found, it makes sense to generate this matrix twice, as the multiple roles that each word can play (target, positive and negative) during training can cross-pollute the data if you're using only a single matrix. 
 
 ### Training the NN
 
@@ -55,7 +55,7 @@ Training is relatively simple, part of the appeal of this paper! I originally wr
 
 The original paper's method uses a "Skip-gram", which essentially slides a window of fixed size along the list of words (I used 5 either side), from beginning to end. The central word in this window is the 'target', and each of the words captured within the window is considered a positive signal (i.e. they're associated to the target word). 
 
-We then randomly sample other words from the training data, which aren't captured yet, and pick these as negative signals which aren't associated with our target. What we get, per loop, looks like: 
+We then randomly sample *other* words from the training data, which aren't captured yet, and pick these as negative signals which aren't associated with our target. What we get, per loop, looks like: 
 
 `[target_word, positive_word, [negative_words]]`
 
@@ -89,7 +89,7 @@ Fixing this, I was immediately able to see a surprising relevance between words 
 
 I was able to try out a few quick, obvious tests that anyone familiar with Shakespeare might think of: 
 
-* 'William' returned 'Shakespeare' as the top hit.
+* 'William' returned 'Shakespeare' as the top hit. As one might expect.
 * 'Romeo' and 'Juliet' returned as each other's most strongly-associated words.
 * 'King' returns 'Henry' as might be expected, as well as the names of other kings across Shakespeare's full works.
 * 'Queen' returns the full cast of Cleopatra's court from Antony and Cleopatra: 'Iras', 'Charmian', 'Empress' and 'Cleopatra'. The same happens for 'King': 'Paphlagonia', 'Cappadocia', 'Arabia', and 'Libya', which is the list of vassal kings from the same play.
@@ -108,11 +108,15 @@ In the t-SNE data vis, we reduce our embeddings down to a 2D space which allows 
 * Thy, thine, own.
 * Art, hast, wilt, dost - all questioning words.
 
+![embeddings_tsne](/Users/olivergreen/Documents/Training LLM/embeddings_tsne.png)
+
 Playing around with this in 3D, you can clearly see little cluster 'galaxies' forming around the character names for specific plays! 
+
+![Screenshot 2026-05-09 at 12.07.37](/Users/olivergreen/Documents/Training LLM/Screenshot 2026-05-09 at 12.07.37.png)
 
 ### What did I learn?
 
-Firstly, I learned that neural networks are no gigantic mystery. Video explainers, such as 3Blue1Brown are incredibly helpful, but (to me) the beautiful neuron diagrams actually embellish the reality of these matrices and layers a little too much. It really is just numbers all the way down.
+Firstly, I learned that neural networks are no gigantic mystery. Video explainers, such as [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) are incredibly helpful, but (to me) the beautiful neuron diagrams actually embellish the reality of these matrices and layers a little too much. It really is just numbers all the way down.
 
 Building this implementation was so straightforward that I wasn't even sure if I'd carried out "proper backprop". It turns out that, yes, Word2Vec *is* basic backpropagation, albeit only single-layer.
 
@@ -128,8 +132,8 @@ Having now built it, this neural network makes me think of my washing machine. I
 
 But the washing machine's brilliance is in being able to do work – only very slightly – with each rotation, and continue progressing towards it goals over hundreds of thousands of iterations.
 
-To me, this is what it feels like the neural network is doing. It's funny, but it seems like this smart-dumb approach won out in the end. LSTMs and Bidirectional approaches worked well until transformer architecture brought back the *washing machine philosophy*. This has famously been dubbed 'The Bitter Lesson' by academic Richard Sutton. 
+To me, this is what it feels like the neural network is doing. It's funny, but it seems like this smart-dumb approach won out in the end. LSTMs and Bidirectional approaches worked well until transformer architecture brought back the *washing machine philosophy*. This has famously been dubbed '[The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)' by academic Richard Sutton. 
 
-Ultimately, Word2Vec is a naive implementation; each word is embedded with an absolute position, devoid of all contextual meaning. Contextual embedding came a few years later with self-attention, ELMo, BERT and other similar LLMs around 2017-2018. This is my next area of study. I want to understand transformer architecture, as this has had a major lasting impact on neural networks across all generative fields.
+Ultimately, Word2Vec is a naive implementation; each word is embedded with an absolute position, devoid of all contextual meaning. Contextual embedding came a few years later with self-attention, [ELMo](https://arxiv.org/abs/1802.05365), [BERT](https://arxiv.org/abs/1810.04805) and other similar LLMs around 2017-2018. This is my next area of study. I want to understand transformer architecture, as this has had a major lasting impact on neural networks across all generative fields.
 
 If you followed along – thanks for reading! If you enjoyed this post, please feel free to reach out and say so. 
