@@ -12,25 +12,19 @@ from pathlib import Path
 import numpy as np
 
 # Constants
-CONTEXT_WINDOW_SIZE = 5
-NEGATIVE_SAMPLES = 5
-EMBEDDING_SIZE = 50
-LEARNING_RATE = 0.025
-EPOCHS = 50
-SH_WORDS_READ = 100000
+CONTEXT_WINDOW_SIZE = 5 # How far we extend our window to each side of the target word
+NEGATIVE_SAMPLES = 5 # How many negative samples we train each word against
+EMBEDDING_SIZE = 50 # Depth taken from the original Word2Vec paper
+LEARNING_RATE = 0.025 # Step size taken from the original Word2Vec paper
+EPOCHS = 50 # How many times we'll run training for our embeddings
+SH_WORDS_READ = 100000 # How many words from the corpus we'll train on
 SUBSAMPLE_THRESHOLD = 1e-3 # Threshold from original Word2Vec paper
 
 SCRIPT_DIR = Path(__file__).parent
 
 # Simple sigmoid function
-def sigmoid(x):
+def sigmoid(x: float) -> float:
     return 1 / (1 + np.exp(-x))
-
-# A method to strip out all of the junk characters we don't want to be dealing with.
-def strip_junk(text):
-    text = ' '.join("".join(ch for ch in text if ch.isalpha() or ch == " ").split())
-
-    return text
 
 # Returns only the positive pairs to help reinforce correct word embeddings
 def find_positive_pairs(id_list: list[int]) -> list[tuple[int, int]]:
@@ -70,18 +64,20 @@ def train_single_example(center_id: int, pos_id: int, neg_ids: list[int], embedd
     others = embeddings_out[other_ids]
     center_vec = embeddings_in[center_id]
 
+    # numpy matrix multiplication
     dot_products = others @ center_vec
     scores = sigmoid(dot_products)
 
-    # Simple way to gen all required labels (1 positive, then 5 zeroes for the negatives)
+    # Simple way to gen all required labels (1 positive, then 5 zeroes for the negatives) for error function below
     labels = np.array([1.0] + [0.0] * len(neg_ids))
 
     errors = scores - labels
 
-    # Using fancy numpy vector matrix operations to speed up training
+    # Calculating the gradient for stochastic gradient descent using numpy matrix syntax
     gradient_others = errors[:, None] * center_vec
     gradient_center = errors @ others
 
+    # Actually performing the gradient descent steps
     center_vec -= LEARNING_RATE * gradient_center
     embeddings_out[other_ids] -= LEARNING_RATE * gradient_others
 
@@ -89,7 +85,6 @@ def train_single_example(center_id: int, pos_id: int, neg_ids: list[int], embedd
 def train_one_epoch(training_data, embeddings_in, embeddings_out):
     for c_id, p_id, neg_ids in training_data:
         train_single_example(c_id, p_id, neg_ids, embeddings_in, embeddings_out)
-
 
 def main():
     # Bringing in corpus data
@@ -130,7 +125,7 @@ def main():
 
     # Building the cumulative unigram distribution for negative sampling.
     # Using the 0.75 power trick from Word2Vec which worked the best for them.
-    # This attempts to train a line when randomly selecting negative words - between per-frequency occurrences or from unique word list
+    # It's ultimately a data massaging technique that gives slightly better results for rarer words in the corpus.
     freq_pow = np.array([shakespeare_word_count_dictionary[w] for w in unique_vocabulary]) ** 0.75
     cumulative_unigram = np.cumsum(freq_pow / freq_pow.sum())
 
