@@ -108,11 +108,11 @@ In the t-SNE data vis, we reduce our embeddings down to a 2D space which allows 
 * Thy, thine, own.
 * Art, hast, wilt, dost - all questioning words.
 
-![embeddings_tsne](/Users/olivergreen/Documents/Training LLM/embeddings_tsne.png)
+![embeddings_tsne](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/Word2Vec/embeddings_tsne.png)
 
 Playing around with this in 3D, you can clearly see little cluster 'galaxies' forming around the character names for specific plays! 
 
-![Screenshot 2026-05-09 at 12.07.37](/Users/olivergreen/Documents/Training LLM/Screenshot 2026-05-09 at 12.07.37.png)
+![Screenshot 2026-05-09 at 12.07.37](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/Word2Vec/Screenshot%202026-05-09%20at%2012.07.37.png)
 
 ### What did I learn?
 
