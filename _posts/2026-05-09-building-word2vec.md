@@ -35,7 +35,7 @@ For my first step, I built a few simple Python functions to carry out basic data
 - Lower-casing everything.
 - Remove all instances of multiple whitespaces.
 
-I converted the long string of now-filtered Shakespearean text into a list, iterating through it and counting each word's frequency in a dictionary. This list would serve as our 'vocabulary' for training.
+I converted the long string of now-filtered Shakespearean text into a list, iterating through it and counting each word's frequency in a dictionary. [This list](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/Word2Vec/vocabulary.txt) would serve as our 'vocabulary' for training.
 
 With this dictionary, I mimicked statistical approaches from the original Word2Vec paper to remove highly-frequent filler words, such as 'to', 'and', 'of'. Because Word2Vec builds embedding associations purely using verbal proximity, the common occurrences of such words would pollute my results. 
 
