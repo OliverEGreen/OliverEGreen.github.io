@@ -136,4 +136,6 @@ To me, this is what it feels like the neural network is doing. It's funny, but i
 
 Ultimately, Word2Vec is a naive implementation; each word is embedded with an absolute position, devoid of all contextual meaning. Contextual embedding came a few years later with self-attention, [ELMo](https://arxiv.org/abs/1802.05365), [BERT](https://arxiv.org/abs/1810.04805) and other similar LLMs around 2017-2018. This is my next area of study. I want to understand transformer architecture, as this has had a major lasting impact on neural networks across all generative fields.
 
+My original shoddy Python code can be found [here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/Word2Vec/Word2Vec.py).
+
 If you followed along – thanks for reading! If you enjoyed this post, please feel free to reach out and say so. 
