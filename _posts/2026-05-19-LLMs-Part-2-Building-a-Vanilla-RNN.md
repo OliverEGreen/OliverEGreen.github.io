@@ -5,13 +5,7 @@ date: 19-05-2026
 
 *This post is part 2 in a series where I attempted to teach myself the very basics of language modelling. For Part 1 see [Word2Vec](https://olliegreen.info/writing/building-word2vec/)*.
 
-## Introduction
-
-My goal for this series is twofold. Firstly, I want to better-understand the world of language models, since they've become such a large part of our day-to-day lives. Secondly, if anyone should ever read this, to make the theory and practice behind them a tiny bit less difficult and opaque.
-
-Because of this, I'm intentionally writing everything using standard Python primitives and using exhaustively-explicit naming wherever possible. "Pythonic" this isn't. External ML libraries are not allowed – not even something reasonable like pandas or numpy, which of course would feature heavily in more. *(By the way, if you're looking for a beautiful, minimal implementation of an RNN, look no further than Andrej Karpathy's blog post)*.
-
-## Why an RNN?
+## What's an RNN?
 
 In today's installment, I'm building a Recurrent Neural Network. This is an NLP approach from the 1990's, using neural networks to predict what word or character comes next after a given string of text. 
 
@@ -22,6 +16,8 @@ This changed with our RNN. Today, we're building the Elman RNN (1990), the canon
 Contextual appreciation is very important for language models; later iterations of LLMs (such as ELMo) started becoming 'bi-directional'. Later innovations such as transformers brought the idea of self-attention, meaning a word's (or token's) meaning is understood within the full context of where it sits – both before and after. This context means the most likely next word (or token) can be predicted within this context, making predictions far more accurate.
 
 Building our vanilla RNN is more complicated than Word2Vec. It's where to begin to see a much wider range of 'standard' neural network methodologies and tooling entering the fray. We saw a few techniques come up in Word2Vec, but overall it was a pretty straightforward build.
+
+I'm intentionally writing everything using standard Python primitives and using exhaustively-explicit naming wherever possible. Pythonic, this isn't. External ML libraries are not allowed – not even something reasonable like pandas or numpy, which of course would feature heavily in more standard and performant approaches. *(By the way, if you're looking for a beautiful, minimal implementation of an RNN, look no further than Andrej Karpathy's 2015 [blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/))*.
 
 ## The Approach
 

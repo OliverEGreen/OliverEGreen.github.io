@@ -3,7 +3,7 @@ title: "LLMs Part 1: Building Word2Vec"
 date: 2026-05-09
 ---
 
-*This is a personal account of building Word2Vec from scratch in Python + numpy, the bugs I found along the way and the resulting embeddings that were achieved.*
+*This is Part 1 of a series I'm writing about LLMs and natural language models.*
 
 I was recently asked in an interview how much I knew about [RAGs](https://en.wikipedia.org/wiki/Retrieval-augmented_generation). 
 
@@ -12,6 +12,11 @@ I replied honestly; I've read about them and gone back and forth with LLMs so th
 Back in 2019, I completed a course in [applied machine learning](https://emeritus.org/program-information-sessions/columbia-engineering-executive-educations-applied-machine-learning/). It taught us all of the core techniques and approaches directly from the maths; it was up to us to rebuild each algorithm to prove that we'd grasped the course material. This took my knowledge right up until the ~2010s boom in deep learning. From today's perspective, what I learned now feels like lovely, interesting and quaint historical knowledge... but honestly it's been outdated and outclassed since then.
 
 But there is good news! I have a lot of time right now and a thirst for learning. The RAG question made me want to dig deeper into the world of LLMs, so I decided to go back in time to where my knowledge cuts off and try to build something myself. 
+
+My goal for this series is twofold:
+
+* Firstly, I want to better-understand the world of language models, since they've become such a large part of our day-to-day lives.
+* Secondly, if anyone should ever read this, to make the theory and practice behind them a tiny bit less difficult and opaque.
 
 ## Word2Vec
 
