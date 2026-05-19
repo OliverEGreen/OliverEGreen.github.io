@@ -89,4 +89,10 @@ The clear next evolution in language modelling is LSTMs. These are another step 
 
 ## Conclusion
 
-Another metaphor for neural networks dawned on me while reflecting on this RNN. They're a sort of smart-dumb approach. I imagined someone headbutting a piece of sheet metal thousands of times. Notwithstanding damage to their head (or the metal), with enough persistence, you'd eventually be able to make a reasonable casting of their face from the indent. This feels a bit to me like what is happening as we train a neural network. It's not necessarily the most brilliant of all ideas, but it sure does work. 
+Another metaphor for neural networks dawned on me while reflecting on this RNN – they're a sort of smart-dumb approach.
+
+I imagined someone headbutting a piece of sheet metal thousands of times. Notwithstanding damage to their head (or the metal), with enough persistence, we'd eventually be able to make a reasonable casting of their face from the indent.
+
+This feels a bit to me like what is happening as we train a neural network. It's not necessarily the most efficient of all ideas, but it sure does work through sheer amounts of brute force.
+
+I'm looking forward to implementing LSTM next, which should noticeably improve the quality of our fake-Shakespeare (our Fakespeare?)
