@@ -65,15 +65,15 @@ But, over time, it began to generate more Shakespeare-flavoured text:
 
 > carontinly hid it Pablenher angore rill, you est to mandt, ?_]
 >
-> CESTCE
-> E LExit as olqueeus ich I hom, me my—
-> Heple.
+> CESTCE  
+> E LExit as olqueeus ich I hom, me my—  
+> Heple.  
 >
-> KES.
-> Nhe mur this ane thou sall, filg.
+> KES.  
+> Nhe mur this ane thou sall, filg.  
 >
-> FIIRS.
-> Vast I of wigrt the murdss, he, in b
+> FIIRS.  
+> Vast I of wigrt the murdss, he, in b  
 
 This demonstrates that the RNN was able to learn the structure of basic sentences, questions and characters speaking to each other in a play (see the names in all caps).
 
