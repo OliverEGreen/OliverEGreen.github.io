@@ -95,4 +95,4 @@ I imagined someone headbutting a piece of sheet metal thousands of times. Notwit
 
 This feels a bit to me like what is happening as we train a neural network. It's not necessarily the most efficient of all ideas, but it sure does work through sheer amounts of brute force.
 
-I'm looking forward to implementing LSTM next, which should noticeably improve the quality of our fake-Shakespeare (our Fakespeare?)
+I'm looking forward to implementing LSTM next, which should noticeably improve the quality of our fake-Shakespeare (Fakespeare?)
