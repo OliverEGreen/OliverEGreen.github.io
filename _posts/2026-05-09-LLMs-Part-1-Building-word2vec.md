@@ -1,5 +1,5 @@
 ---
-title: "Building Word2Vec"
+title: "LLMs Part 1: Building Word2Vec"
 date: 2026-05-09
 ---
 
