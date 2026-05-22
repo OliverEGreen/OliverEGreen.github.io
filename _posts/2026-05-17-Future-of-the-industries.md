@@ -44,7 +44,7 @@ It's not great on the other side, either: SaaS companies spend most of their tim
 
 As a potential SaaS customer, your cost-benefit analysis is clear: hire your own developers and build what you need in-house. It will be cheap, probably fairly fast, exactly the way you want it, with a low ongoing maintenance cost. Not to mention, leading such a project will do wonders for your career and professional reputation! It's a rare win-win-win scenario. 
 
-As for the "BIM 2.0" startups I mentioned in the intro (at NXT BLD / DEV), the vast majority of these are B2B SaaS companies. It's very hard to know what happens to these next. Some will be acquired and get boiled down into features within a wider software portfolio. But the days of firms like [Spacemaker being acquired for $240m](https://investors.autodesk.com/news-releases/news-release-details/autodesk-completes-acquisition-spacemaker-provider-ai-and)[^1] seem long behind us now. For many of us, that's a fairly bitter pill to swallow.
+As for the "BIM 2.0" startups I mentioned in the intro (at NXT BLD / DEV), the vast majority of these are B2B SaaS companies. It's very hard to know what happens to these next. Some will be acquired and get boiled down into features within a wider software portfolio. But the days of firms like [Spacemaker being acquired for $240m](https://investors.autodesk.com/news-releases/news-release-details/autodesk-completes-acquisition-spacemaker-provider-ai-and) seem long behind us now. For many of us, that's a fairly bitter pill to swallow.[^1]
 
 [^1]: Just once in this life, I would like 'get rich quick' to actually work...
 
