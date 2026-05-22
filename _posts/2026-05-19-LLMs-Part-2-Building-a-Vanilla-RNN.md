@@ -73,7 +73,7 @@ But, over time, it began to generate more Shakespeare-flavoured text:
 
 This demonstrates that the RNN was able to learn the structure of basic sentences, questions and characters speaking to each other in a play (see the names in all caps).
 
-![Loss More Smoothed](/LLM Learning/RNN/images/Loss More Smoothed.jpg)
+![Loss More Smoothed](/LLM-Learning/RNN/images/Loss More Smoothed.jpg)
 
 Over time, our level of loss (which started around 120) began nudging down to around 45. This is considered about as good as such a vanilla NN can get. 
 

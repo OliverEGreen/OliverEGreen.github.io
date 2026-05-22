@@ -75,7 +75,7 @@ This is clearly beginning to get... somewhere! It's consistently recognising Cle
 
 We reached a natural plateau very quickly, within around 15K iterations.
 
-![LSTM loss curve](/LLM Learning/LSTM/images/loss-curve.jpg)
+![LSTM loss curve](/LLM-Learning/LSTM/images/loss-curve.jpg)
 
 ### Why Karpathy's results are so good
 
