@@ -15,6 +15,7 @@ All year, I've been [thinking deeply](https://www.businessinsider.com/openai-mer
 
 Contents:
 
+* TOC
 {:toc}
 
 
