@@ -231,6 +231,20 @@ def main():
         # Send the gradient backwards into the belt, ready to travel down through the blocks
         belt_gradients = [matrix_vector_multiply(transposed_output_weights, position_gradient) for position_gradient in loss_gradient_logits]
 
+        # Grabbing from the last dictionary entry
+        last_pre_ln2_belt = intermediate_dicts[-1]["pre_ln2_belt"]
+        last_ln2_gamma = layers[-1]["ln2_gamma"]
+
+        # Setting up holders before the loop
+        ln2_gamma_gradient = [0.0] * EMBEDDING_DIM
+        ln2_beta_gradient = [0.0] * EMBEDDING_DIM
+        ln2_input_gradients = []
+
+        for gradient, last_pre_ln2_vector in zip(belt_gradients, last_pre_ln2_belt):
+            gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln2_vector, last_ln2_gamma)
+            ln2_gamma_gradient = add_vectors(ln2_gamma_gradient, gamma_gradient)
+            ln2_beta_gradient = add_vectors(ln2_beta_gradient, beta_gradient)
+            ln2_input_gradients.append(input_gradient)
         return loss_gradient_logits
 
     def transformer_block(belt, layer):
