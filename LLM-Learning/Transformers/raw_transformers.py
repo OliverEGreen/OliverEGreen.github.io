@@ -233,6 +233,7 @@ def main():
 
         # Grabbing from the last dictionary entry
         last_pre_ln2_belt = intermediate_dicts[-1]["pre_ln2_belt"]
+
         last_ln2_gamma = layers[-1]["ln2_gamma"]
 
         # Setting up holders before the loop
@@ -240,23 +241,53 @@ def main():
         ln2_beta_gradient = [0.0] * EMBEDDING_DIM
         ln2_input_gradients = []
 
+        # Filling in all our holders
         for gradient, last_pre_ln2_vector in zip(belt_gradients, last_pre_ln2_belt):
             gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln2_vector, last_ln2_gamma)
             ln2_gamma_gradient = add_vectors(ln2_gamma_gradient, gamma_gradient)
             ln2_beta_gradient = add_vectors(ln2_beta_gradient, beta_gradient)
             ln2_input_gradients.append(input_gradient)
+
+        last_post_attention_belt = intermediate_dicts[-1]["post_attention_belt"]
+
+        ff_up_weights_gradient, ff_up_bias_gradient, ff_down_weights_gradient, ff_down_bias_gradient, input_gradients = feed_forward_backward(ln2_input_gradients, last_post_attention_belt, layers[-1])
+
+        # Residual join
+        post_attention_belt_gradients = [add_vectors(x, y) for x, y in zip(input_gradients, ln2_input_gradients)]
+
+        # Grabbing from the last dictionary entry
+        last_pre_ln1_belt = intermediate_dicts[-1]["pre_ln1_belt"]
+
+        last_ln1_gamma = layers[-1]["ln1_gamma"]
+
+        # Setting up holders before the loop
+        ln1_gamma_gradient = [0.0] * EMBEDDING_DIM
+        ln1_beta_gradient = [0.0] * EMBEDDING_DIM
+        ln1_input_gradients = []
+
+        # Filling in all our holders
+        for gradient, last_pre_ln1_vector in zip(post_attention_belt_gradients, last_pre_ln1_belt):
+            gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln1_vector, last_ln1_gamma)
+            ln1_gamma_gradient = add_vectors(ln1_gamma_gradient, gamma_gradient)
+            ln1_beta_gradient = add_vectors(ln1_beta_gradient, beta_gradient)
+            ln1_input_gradients.append(input_gradient)
+
         return loss_gradient_logits
 
     def transformer_block(belt, layer):
         attention_out = multi_head_attention(belt, layer)
         intermediate_dict = {}
 
-        post_attention_belt = [layer_norm(add_vectors(x, y), layer["ln1_gamma"], layer["ln1_beta"]) for x, y in zip(belt, attention_out)]
+        pre_ln1_belt = [add_vectors(x, y) for x, y in zip(belt, attention_out)]
+        intermediate_dict["pre_ln1_belt"] = pre_ln1_belt
+
+        post_attention_belt = [layer_norm(pre_ln1_belt, layer["ln1_gamma"], layer["ln1_beta"]) for x, y in zip(belt, attention_out)]
         feed_forward_output = feed_forward(post_attention_belt, layer)
 
         # Calculating the intermediate step here, as we need to pass intermediates to forward.
         pre_ln2_belt = [add_vectors(x, y) for x, y in zip(post_attention_belt, feed_forward_output)]
         intermediate_dict["pre_ln2_belt"] = pre_ln2_belt
+        intermediate_dict["post_attention_belt"] = post_attention_belt
 
         # This is the post-ln2 stuff.
         final_list = [layer_norm(x, layer["ln2_gamma"], layer["ln2_beta"]) for x in pre_ln2_belt]
@@ -328,6 +359,29 @@ def main():
         input_gradient = [(x - mean_normalised_gradient - y * mean_gradient_times_normalised) / standard_dev for x, y in zip(normalised_gradient, normalised)]
 
         return gamma_gradient, beta_gradient, input_gradient
+
+    def feed_forward_backward(output_gradients, feed_forward_input, layer):
+        # More holders / accumulators
+        ff_up_weights_gradient = [[0.0] * EMBEDDING_DIM for _ in range(FF_HIDDEN_DIM)]
+        ff_up_bias_gradient = [0.0] * FF_HIDDEN_DIM
+        ff_down_weights_gradient = [[0.0] * FF_HIDDEN_DIM for _ in range(EMBEDDING_DIM)]
+        ff_down_bias_gradient = [0.0] * EMBEDDING_DIM
+        input_gradients = []
+
+        # It's accumulatin' time
+        for output_gradient, input_vector in zip(output_gradients, feed_forward_input):
+            up = add_vectors(matrix_vector_multiply(layer["ff_up_weights"], input_vector), layer["ff_up_bias"])
+            activated = relu_vector(up)
+            ff_down_bias_gradient = add_vectors(ff_down_bias_gradient, output_gradient)
+            ff_down_weights_gradient = add_matrices(ff_down_weights_gradient, outer_product(output_gradient, activated))
+            activated_gradient = matrix_vector_multiply(transpose_matrix(layer["ff_down_weights"]), output_gradient)
+
+            up_gradient = [x if y > 0 else 0.0 for x, y in zip(activated_gradient, up)]  # type: ignore
+            ff_up_bias_gradient = add_vectors(ff_up_bias_gradient, up_gradient)
+            ff_up_weights_gradient = add_matrices(ff_up_weights_gradient, outer_product(up_gradient, input_vector))
+            input_gradients.append(matrix_vector_multiply(transpose_matrix(layer["ff_up_weights"]), up_gradient))
+
+        return ff_up_weights_gradient, ff_up_bias_gradient, ff_down_weights_gradient, ff_down_bias_gradient, input_gradients
 
     def transpose_matrix(matrix):
         """Takes a matrix of length X and depth Y and returns one of length Y and depth X"""
