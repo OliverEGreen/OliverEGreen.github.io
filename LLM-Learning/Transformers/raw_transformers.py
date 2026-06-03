@@ -73,24 +73,6 @@ def relu_vector(vector):
     return [max(0.0, v) for v in vector]
 
 
-def layer_norm(vector, gamma, beta):
-    """Works across the features of a single position's vector"""
-    vector_length = len(vector)
-
-    # Calculating the mean
-    mean = sum(vector) / vector_length
-
-    # Calculating the variance
-    variance = sum((v - mean) ** 2 for v in vector) / vector_length
-
-    # Calculating standard deviation
-    standard_dev = (variance + LAYER_NORM_EPS) ** 0.5
-
-    normalised_vector = [(v - mean) / standard_dev for v in vector]
-
-    return [gamma[i] * normalised_vector[i] + beta[i] for i in range(vector_length)]
-
-
 def main():
     """The main function, reading and training our language model"""
 
@@ -188,20 +170,23 @@ def main():
         return [matrix_vector_multiply(layer["output_weights"], c) for c in concatenated_list]
 
     def forward(input_ids):
-        belt = []
+        final_belt = []
 
         # Building out our starting belt
         for position, char_id in enumerate(input_ids):
-            belt.append(add_vectors(token_embeddings[char_id], position_embeddings[position]))
+            final_belt.append(add_vectors(token_embeddings[char_id], position_embeddings[position]))
+
+        intermediate_dicts = []
 
         # Looping through all layers and updating our belt as we go along
         for layer in layers:
-            belt = transformer_block(belt, layer)
+            final_belt, intermediate_dict = transformer_block(final_belt, layer)
+            intermediate_dicts.append(intermediate_dict)
 
         # It's all matmul, forever. And adding in some bias ofc.
-        probabilities = [add_vectors(matrix_vector_multiply(hidden_to_output_weights, x), output_bias) for x in belt]
+        probabilities = [add_vectors(matrix_vector_multiply(hidden_to_output_weights, x), output_bias) for x in final_belt]
 
-        return [softmax_vector(p) for p in probabilities]
+        return [softmax_vector(p) for p in probabilities], final_belt, intermediate_dicts
 
     def feed_forward(belt, layer):
         """Belt is the conveyor belt of characters, layers is our learned matrices"""
@@ -213,14 +198,56 @@ def main():
             outputs.append(down_bias)
         return outputs
 
+    def backwards(all_probabilities, targets, final_belt, intermediate_dicts):
+        """Runs the network in reverse, working out how much each weight should change to lower the loss.
+        Starts from the loss gradient at the output and walks back the embeddings, returning the gradients."""
+        loss_gradient_logits = []
+
+        # Working backwards now.
+        # Essentially doing one-hot-like encoding so we know what the right answer was.
+        for probability, target in zip(all_probabilities, targets):
+            p = probability.copy()
+            p[target] = p[target] - 1
+            loss_gradient_logits.append(p)
+
+        # Accumulator vector. We keep adding to this.
+        output_bias_gradients = [0.0] * vocab_size
+
+        # We loop through all the loss gradient logits for each position and smush them together.
+        # This uses loss_gradient_logits, i.e. what the correct 'answer' was.
+        for position_gradient in loss_gradient_logits:
+            output_bias_gradients = add_vectors(output_bias_gradients, position_gradient)
+
+        # Accumulator matrix of all zeros. We also keep adding to this.
+        hidden_to_output_weight_gradient = [[0.0] * EMBEDDING_DIM for _ in range(vocab_size)]
+
+        # Looping through matrix and final_belt
+        for weights, belt_vector in zip(loss_gradient_logits, final_belt):
+            hidden_to_output_weight_gradient = add_matrices(hidden_to_output_weight_gradient, outer_product(weights, belt_vector))
+
+        # Transposing the weights we just accumulated
+        transposed_output_weights = transpose_matrix(hidden_to_output_weights)
+
+        # Send the gradient backwards into the belt, ready to travel down through the blocks
+        belt_gradients = [matrix_vector_multiply(transposed_output_weights, position_gradient) for position_gradient in loss_gradient_logits]
+
+        return loss_gradient_logits
+
     def transformer_block(belt, layer):
         attention_out = multi_head_attention(belt, layer)
+        intermediate_dict = {}
 
         post_attention_belt = [layer_norm(add_vectors(x, y), layer["ln1_gamma"], layer["ln1_beta"]) for x, y in zip(belt, attention_out)]
         feed_forward_output = feed_forward(post_attention_belt, layer)
 
-        final_list = [layer_norm(add_vectors(x, y), layer["ln2_gamma"], layer["ln2_beta"]) for x, y in zip(post_attention_belt, feed_forward_output)]
-        return final_list
+        # Calculating the intermediate step here, as we need to pass intermediates to forward.
+        pre_ln2_belt = [add_vectors(x, y) for x, y in zip(post_attention_belt, feed_forward_output)]
+        intermediate_dict["pre_ln2_belt"] = pre_ln2_belt
+
+        # This is the post-ln2 stuff.
+        final_list = [layer_norm(x, layer["ln2_gamma"], layer["ln2_beta"]) for x in pre_ln2_belt]
+
+        return final_list, intermediate_dict
 
     def cross_entropy_loss(all_probabilities, targets):
         """Calculates the probability the model assigned the correct next character and takes
@@ -235,8 +262,6 @@ def main():
 
     def multiply_vectors_elementwise(vec_1, vec_2):
         """Multiplies two vectors together of equal length in sequence"""
-        if len(vec_1) != len(vec_2):
-            return "Vectors must be of equal length"
         return [v_1 * v_2 for v_1, v_2 in zip(vec_1, vec_2)]
 
     def outer_product(vec_1, vec_2):
@@ -248,6 +273,47 @@ def main():
                 products.append(val_1 * val_2)
             output.append(products)
         return output
+
+    def layer_norm(vector, gamma, beta):
+        """Works across the features of a single position's vector"""
+        vector_length = len(vector)
+
+        # Calculating the mean
+        mean = sum(vector) / vector_length
+
+        # Calculating the variance
+        variance = sum((v - mean) ** 2 for v in vector) / vector_length
+
+        # Calculating standard deviation
+        standard_dev = (variance + LAYER_NORM_EPS) ** 0.5
+
+        normalised_vector = [(v - mean) / standard_dev for v in vector]
+
+        return [gamma[i] * normalised_vector[i] + beta[i] for i in range(vector_length)]
+
+    def layer_norm_backward(gradient, layer_norm_input, gamma):
+        """The reverse of the layer_norm function above, for backprop"""
+
+        # Same going out as in
+        beta_gradient = gradient
+
+        normalised = layer_norm(layer_norm_input, [1.0] * len(layer_norm_input), [0.0] * len(layer_norm_input))
+        gamma_gradient = multiply_vectors_elementwise(gradient, normalised)
+
+        normalised_gradient = multiply_vectors_elementwise(gradient, gamma)
+
+        # Getting the standard deviation of the layer_norm_input
+        vector_length = len(layer_norm_input)
+        mean = sum(layer_norm_input) / vector_length
+        variance = sum((v - mean) ** 2 for v in layer_norm_input) / vector_length
+        standard_dev = (variance + LAYER_NORM_EPS) ** 0.5
+
+        mean_normalised_gradient = sum(normalised_gradient) / vector_length
+        mean_gradient_times_normalised = sum(multiply_vectors_elementwise(normalised_gradient, normalised_gradient)) / vector_length
+
+        input_gradient = [(x - mean_normalised_gradient - y * mean_gradient_times_normalised) / standard_dev for x, y in zip(normalised_gradient, normalised)]
+
+        return gamma_gradient, beta_gradient, input_gradient
 
     def transpose_matrix(matrix):
         """Takes a matrix of length X and depth Y and returns one of length Y and depth X"""
@@ -292,9 +358,9 @@ def main():
 
         for _ in range(SAMPLE_SIZE):
             # We run forward on the context, returning us a probability distribution for the next character
-            running_char_ids = forward(context[-SEQUENCE_LENGTH:])
+            all_probabilities, _, _ = forward(context[-SEQUENCE_LENGTH:])
             # We only want the last distribution as the others only helped to get us to the final one
-            next_char_probability_distribution = running_char_ids[-1]
+            next_char_probability_distribution = all_probabilities[-1]
             # We randomly select based on the distribution, using probabilities as our weights
             random_char_id = random.choices(range(vocab_size), weights=next_char_probability_distribution)[0]
             # And set up the next loop
