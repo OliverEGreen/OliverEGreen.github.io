@@ -19,3 +19,4 @@ Thumbs.db
 # Local secrets (just in case)
 .env
 .env.*
+LLM-Learning/Transformers/Original Data/HarryPotter.txt

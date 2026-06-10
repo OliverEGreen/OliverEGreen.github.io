@@ -45,8 +45,6 @@ def matrix_vector_multiply(matrix, vector):
 
 def add_vectors(vector_1, vector_2):
     """Adds together two vectors of equal length"""
-    if len(vector_1) != len(vector_2):
-        return "Vectors are of unequal length!"
     return [i + j for i, j in zip(vector_1, vector_2)]
 
 
@@ -71,6 +69,20 @@ def dot_product(vector_1, vector_2):
 def relu_vector(vector):
     """Applies the ReLU function to a vector, keeping positives and flattening negatives to zero"""
     return [max(0.0, v) for v in vector]
+
+
+def zeros_like(structure):
+    """Recursive helper method for Adagrad process"""
+    # Works recursively if the inputs are lists
+    if isinstance(structure, list):
+        output = []
+
+        for s in structure:
+            output.append(zeros_like(s))
+
+        return output
+    else:
+        return 0.0
 
 
 def main():
@@ -128,6 +140,21 @@ def main():
     hidden_to_output_weights = instantiate_matrix(vocab_size, EMBEDDING_DIM)
     output_bias = [0.0] * vocab_size
 
+    # Memory accumulators for Adagrad approach.
+    mem_token_embeddings = zeros_like(token_embeddings)
+    mem_position_embeddings = zeros_like(position_embeddings)
+    mem_hidden_to_output_weights = zeros_like(hidden_to_output_weights)
+    mem_output_bias = zeros_like(output_bias)
+
+    mem_layers = []
+
+    # Setting up memory-holders with all zeros.
+    for layer in layers:
+        layer_memory = {}
+        for key, value in layer.items():
+            layer_memory[key] = zeros_like(value)
+        mem_layers.append(layer_memory)
+
     def scaled_dot_product_attention(queries, keys, values):
         seq_len = len(queries)
 
@@ -135,29 +162,68 @@ def main():
         scale_factor = 1 / (HEAD_DIM**0.5)
 
         outputs = []
+        attention_weights_output = []
 
         for i in range(seq_len):
             scores = []
             for j in range(i + 1):
                 scores.append(dot_product(queries[i], keys[j]) * scale_factor)
             attention_weights = softmax_vector(scores)
+            attention_weights_output.append(attention_weights)
             accumulator = [0.0] * HEAD_DIM
             for j in range(i + 1):
                 # Blending in past information
                 accumulator = add_vectors(accumulator, scale_vector(values[j], attention_weights[j]))
             outputs.append(accumulator)
-        return outputs
+        return outputs, attention_weights_output
+
+    def scaled_dot_product_attention_backward(output_gradient, queries, keys, values, attention_weights):
+        """Ascertaining how much to listen to each signal"""
+
+        seq_length = len(queries)
+
+        # Setting up our empty holders
+        query_gradients = [[0.0] * HEAD_DIM for _ in range(seq_length)]
+        key_gradients = [[0.0] * HEAD_DIM for _ in range(seq_length)]
+        value_gradients = [[0.0] * HEAD_DIM for _ in range(seq_length)]
+
+        for i in range(seq_length):
+            weight_gradients = []
+            score_gradients = []
+            scale_factor = 1 / (HEAD_DIM**0.5)
+
+            for j in range(i + 1):
+                weight_gradients.append(dot_product(output_gradient[i], values[j]))
+                value_gradients[j] = add_vectors(value_gradients[j], scale_vector(output_gradient[i], attention_weights[i][j]))
+            weighted_sum = dot_product(weight_gradients, attention_weights[i])
+
+            for j in range(i + 1):
+                score_gradient_j = attention_weights[i][j] * (weight_gradients[j] - weighted_sum)
+                score_gradients.append(score_gradient_j)
+
+            for j in range(i + 1):
+                scaled = score_gradients[j] * scale_factor
+                query_gradients[i] = add_vectors(query_gradients[i], scale_vector(keys[j], scaled))
+                key_gradients[j] = add_vectors(key_gradients[j], scale_vector(queries[i], scaled))
+
+        return query_gradients, key_gradients, value_gradients
 
     # The critical function, we'll be doing this A LOT.
     def multi_head_attention(belt, layer):
-        head_outputs = []
+        head_queries, head_keys, head_values, head_outputs, head_attention_weights = [], [], [], [], []
 
         for h in range(NUM_HEADS):
             Wq, Wk, Wv = layer["query_weights"][h], layer["key_weights"][h], layer["value_weights"][h]
             queries = [matrix_vector_multiply(Wq, x) for x in belt]
             keys = [matrix_vector_multiply(Wk, x) for x in belt]
             values = [matrix_vector_multiply(Wv, x) for x in belt]
-            head_outputs.append(scaled_dot_product_attention(queries, keys, values))
+            head_output, head_attention_weight = scaled_dot_product_attention(queries, keys, values)
+
+            head_queries.append(queries)
+            head_keys.append(keys)
+            head_values.append(values)
+            head_outputs.append(head_output)
+            head_attention_weights.append(head_attention_weight)
 
         # Concatenate the heads, per position
         concatenated_list = []
@@ -167,7 +233,84 @@ def main():
                 row.extend(head_outputs[h][i])
             concatenated_list.append(row)
 
-        return [matrix_vector_multiply(layer["output_weights"], c) for c in concatenated_list]
+        attention_cache = {
+            "belt": belt,
+            "head_queries": head_queries,
+            "head_keys": head_keys,
+            "head_values": head_values,
+            "head_attention_weights": head_attention_weights,
+            "concatenated_list": concatenated_list,
+        }
+
+        attention_output = [matrix_vector_multiply(layer["output_weights"], c) for c in concatenated_list]
+
+        return attention_output, attention_cache
+
+    def multi_head_attention_backward(output_gradients, attention_cache, layer):
+        seq_len = len(output_gradients)
+
+        # Holder for accumulators
+        output_weights_gradient = [[0.0] * EMBEDDING_DIM for _ in range(EMBEDDING_DIM)]
+
+        # More holders
+        belt_gradients = [[0.0] * EMBEDDING_DIM for _ in range(seq_len)]
+        query_weights_gradient, key_weights_gradient, value_weights_gradient = [], [], []
+
+        # Looping through matrix and final_belt
+        for weights, belt_vector in zip(output_gradients, attention_cache["concatenated_list"]):
+            output_weights_gradient = add_matrices(output_weights_gradient, outer_product(weights, belt_vector))
+
+        # Transposing the weights we just accumulated
+        transposed_output_weights = transpose_matrix(layer["output_weights"])
+
+        concatenated_gradients = [matrix_vector_multiply(transposed_output_weights, grad) for grad in output_gradients]
+
+        # Deconcatenating!
+        head_output_gradients = []
+
+        for h in range(NUM_HEADS):
+            head_list = []
+            for vec in range(len(concatenated_gradients)):
+                head_list.append(concatenated_gradients[vec][h * HEAD_DIM : (h + 1) * HEAD_DIM])
+            head_output_gradients.append(head_list)
+
+        for h in range(NUM_HEADS):
+            query_gradients, key_gradients, value_gradients = scaled_dot_product_attention_backward(
+                head_output_gradients[h], attention_cache["head_queries"][h], attention_cache["head_keys"][h], attention_cache["head_values"][h], attention_cache["head_attention_weights"][h]
+            )
+
+            # Q K V projection backwards
+            belt = attention_cache["belt"]
+
+            # More accumulating
+            head_query_weights_gradient = [[0.0] * EMBEDDING_DIM for _ in range(HEAD_DIM)]
+            head_key_weights_gradient = [[0.0] * EMBEDDING_DIM for _ in range(HEAD_DIM)]
+            head_value_weights_gradient = [[0.0] * EMBEDDING_DIM for _ in range(HEAD_DIM)]
+
+            transposed_query_weights = transpose_matrix(layer["query_weights"][h])
+            transposed_key_weights = transpose_matrix(layer["key_weights"][h])
+            transposed_value_weights = transpose_matrix(layer["value_weights"][h])
+
+            for i in range(len(belt)):
+                head_query_weights_gradient = add_matrices(head_query_weights_gradient, outer_product(query_gradients[i], belt[i]))
+                head_key_weights_gradient = add_matrices(head_key_weights_gradient, outer_product(key_gradients[i], belt[i]))
+                head_value_weights_gradient = add_matrices(head_value_weights_gradient, outer_product(value_gradients[i], belt[i]))
+
+                # Transposing belt gradients
+                query_term = matrix_vector_multiply(transposed_query_weights, query_gradients[i])
+                key_term = matrix_vector_multiply(transposed_key_weights, key_gradients[i])
+                value_term = matrix_vector_multiply(transposed_value_weights, value_gradients[i])
+
+                # Accumulating belt gradients - adding each term to the belt in turn
+                belt_gradients[i] = add_vectors(belt_gradients[i], query_term)
+                belt_gradients[i] = add_vectors(belt_gradients[i], key_term)
+                belt_gradients[i] = add_vectors(belt_gradients[i], value_term)
+
+            query_weights_gradient.append(head_query_weights_gradient)
+            key_weights_gradient.append(head_key_weights_gradient)
+            value_weights_gradient.append(head_value_weights_gradient)
+
+        return output_weights_gradient, query_weights_gradient, key_weights_gradient, value_weights_gradient, belt_gradients
 
     def forward(input_ids):
         final_belt = []
@@ -198,10 +341,13 @@ def main():
             outputs.append(down_bias)
         return outputs
 
-    def backwards(all_probabilities, targets, final_belt, intermediate_dicts):
-        """Runs the network in reverse, working out how much each weight should change to lower the loss.
+    def backwards(all_probabilities, targets, final_belt, intermediate_dicts, inputs):
+        """This is the backprop step. It runs the network in reverse, working out how much each weight should change to lower the loss.
         Starts from the loss gradient at the output and walks back the embeddings, returning the gradients."""
         loss_gradient_logits = []
+
+        token_embeddings_gradient = [[0.0] * EMBEDDING_DIM for _ in range(vocab_size)]
+        position_embeddings_gradient = [[0.0] * EMBEDDING_DIM for _ in range(SEQUENCE_LENGTH)]
 
         # Working backwards now.
         # Essentially doing one-hot-like encoding so we know what the right answer was.
@@ -231,57 +377,107 @@ def main():
         # Send the gradient backwards into the belt, ready to travel down through the blocks
         belt_gradients = [matrix_vector_multiply(transposed_output_weights, position_gradient) for position_gradient in loss_gradient_logits]
 
-        # Grabbing from the last dictionary entry
-        last_pre_ln2_belt = intermediate_dicts[-1]["pre_ln2_belt"]
+        gradients_per_layer = []
+        current_belt_gradients = belt_gradients
 
-        last_ln2_gamma = layers[-1]["ln2_gamma"]
+        # Because we have multiple layers
+        for layer_index in range(NUM_LAYERS - 1, -1, -1):
+            # Grabbing from the last dictionary entry
+            last_pre_ln2_belt = intermediate_dicts[layer_index]["pre_ln2_belt"]
 
-        # Setting up holders before the loop
-        ln2_gamma_gradient = [0.0] * EMBEDDING_DIM
-        ln2_beta_gradient = [0.0] * EMBEDDING_DIM
-        ln2_input_gradients = []
+            last_ln2_gamma = layers[layer_index]["ln2_gamma"]
 
-        # Filling in all our holders
-        for gradient, last_pre_ln2_vector in zip(belt_gradients, last_pre_ln2_belt):
-            gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln2_vector, last_ln2_gamma)
-            ln2_gamma_gradient = add_vectors(ln2_gamma_gradient, gamma_gradient)
-            ln2_beta_gradient = add_vectors(ln2_beta_gradient, beta_gradient)
-            ln2_input_gradients.append(input_gradient)
+            # Setting up holders before the loop
+            ln2_gamma_gradient = [0.0] * EMBEDDING_DIM
+            ln2_beta_gradient = [0.0] * EMBEDDING_DIM
+            ln2_input_gradients = []
 
-        last_post_attention_belt = intermediate_dicts[-1]["post_attention_belt"]
+            # Filling in all our holders
+            for gradient, last_pre_ln2_vector in zip(current_belt_gradients, last_pre_ln2_belt):
+                gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln2_vector, last_ln2_gamma)
+                ln2_gamma_gradient = add_vectors(ln2_gamma_gradient, gamma_gradient)
+                ln2_beta_gradient = add_vectors(ln2_beta_gradient, beta_gradient)
+                ln2_input_gradients.append(input_gradient)
 
-        ff_up_weights_gradient, ff_up_bias_gradient, ff_down_weights_gradient, ff_down_bias_gradient, input_gradients = feed_forward_backward(ln2_input_gradients, last_post_attention_belt, layers[-1])
+            last_post_attention_belt = intermediate_dicts[layer_index]["post_attention_belt"]
 
-        # Residual join
-        post_attention_belt_gradients = [add_vectors(x, y) for x, y in zip(input_gradients, ln2_input_gradients)]
+            ff_up_weights_gradient, ff_up_bias_gradient, ff_down_weights_gradient, ff_down_bias_gradient, input_gradients = feed_forward_backward(
+                ln2_input_gradients, last_post_attention_belt, layers[layer_index]
+            )
 
-        # Grabbing from the last dictionary entry
-        last_pre_ln1_belt = intermediate_dicts[-1]["pre_ln1_belt"]
+            # Residual join
+            post_attention_belt_gradients = [add_vectors(x, y) for x, y in zip(input_gradients, ln2_input_gradients)]
 
-        last_ln1_gamma = layers[-1]["ln1_gamma"]
+            # Grabbing from the last dictionary entry
+            last_pre_ln1_belt = intermediate_dicts[layer_index]["pre_ln1_belt"]
 
-        # Setting up holders before the loop
-        ln1_gamma_gradient = [0.0] * EMBEDDING_DIM
-        ln1_beta_gradient = [0.0] * EMBEDDING_DIM
-        ln1_input_gradients = []
+            last_ln1_gamma = layers[layer_index]["ln1_gamma"]
 
-        # Filling in all our holders
-        for gradient, last_pre_ln1_vector in zip(post_attention_belt_gradients, last_pre_ln1_belt):
-            gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln1_vector, last_ln1_gamma)
-            ln1_gamma_gradient = add_vectors(ln1_gamma_gradient, gamma_gradient)
-            ln1_beta_gradient = add_vectors(ln1_beta_gradient, beta_gradient)
-            ln1_input_gradients.append(input_gradient)
+            # Setting up holders before the loop
+            ln1_gamma_gradient = [0.0] * EMBEDDING_DIM
+            ln1_beta_gradient = [0.0] * EMBEDDING_DIM
+            ln1_input_gradients = []
 
-        return loss_gradient_logits
+            # Filling in all our holders
+            for gradient, last_pre_ln1_vector in zip(post_attention_belt_gradients, last_pre_ln1_belt):
+                gamma_gradient, beta_gradient, input_gradient = layer_norm_backward(gradient, last_pre_ln1_vector, last_ln1_gamma)
+                ln1_gamma_gradient = add_vectors(ln1_gamma_gradient, gamma_gradient)
+                ln1_beta_gradient = add_vectors(ln1_beta_gradient, beta_gradient)
+                ln1_input_gradients.append(input_gradient)
+
+            # Grabbing the last attention cache (having been passed through all others)
+            attention_cache = intermediate_dicts[layer_index]["attention_cache"]
+
+            output_weights_gradient, query_weights_gradient, key_weights_gradient, value_weights_gradient, attention_belt_gradients = multi_head_attention_backward(
+                ln1_input_gradients, attention_cache, layers[layer_index]
+            )
+
+            gradients_per_layer.append(
+                {
+                    "query_weights": query_weights_gradient,
+                    "key_weights": key_weights_gradient,
+                    "value_weights": value_weights_gradient,
+                    "output_weights": output_weights_gradient,
+                    "ln1_gamma": ln1_gamma_gradient,
+                    "ln1_beta": ln1_beta_gradient,
+                    "ff_up_weights": ff_up_weights_gradient,
+                    "ff_up_bias": ff_up_bias_gradient,
+                    "ff_down_weights": ff_down_weights_gradient,
+                    "ff_down_bias": ff_down_bias_gradient,
+                    "ln2_gamma": ln2_gamma_gradient,
+                    "ln2_beta": ln2_beta_gradient,
+                }
+            )
+
+            block_input_gradients = [add_vectors(x, y) for x, y in zip(attention_belt_gradients, ln1_input_gradients)]
+
+            # Setting up for next loop
+            current_belt_gradients = block_input_gradients
+
+        # The accumulation loop begins after all layers have been worked through
+        for i in range(len(current_belt_gradients)):
+            token_embeddings_gradient[inputs[i]] = add_vectors(token_embeddings_gradient[inputs[i]], current_belt_gradients[i])
+            position_embeddings_gradient[i] = add_vectors(position_embeddings_gradient[i], current_belt_gradients[i])
+
+        gradients_per_layer.reverse()
+
+        return {
+            "layers": gradients_per_layer,
+            "hidden_to_output_weights": hidden_to_output_weight_gradient,
+            "output_bias": output_bias_gradients,
+            "token_embeddings": token_embeddings_gradient,
+            "position_embeddings": position_embeddings_gradient,
+        }
 
     def transformer_block(belt, layer):
-        attention_out = multi_head_attention(belt, layer)
+        attention_out, attention_cache = multi_head_attention(belt, layer)
         intermediate_dict = {}
 
         pre_ln1_belt = [add_vectors(x, y) for x, y in zip(belt, attention_out)]
         intermediate_dict["pre_ln1_belt"] = pre_ln1_belt
+        intermediate_dict["attention_cache"] = attention_cache
 
-        post_attention_belt = [layer_norm(pre_ln1_belt, layer["ln1_gamma"], layer["ln1_beta"]) for x, y in zip(belt, attention_out)]
+        post_attention_belt = [layer_norm(x, layer["ln1_gamma"], layer["ln1_beta"]) for x in pre_ln1_belt]
         feed_forward_output = feed_forward(post_attention_belt, layer)
 
         # Calculating the intermediate step here, as we need to pass intermediates to forward.
@@ -418,6 +614,24 @@ def main():
         new_param, new_memory = zip(*row_results)
         return list(new_param), list(new_memory)
 
+    def adagrad_update(param, grad, memory):
+        # Works recursively if the inputs are lists
+        if isinstance(param, list):
+            new_params = []
+            new_memories = []
+
+            for p, g, m in zip(param, grad, memory):
+                new_param, new_memory = adagrad_update(p, g, m)
+                new_params.append(new_param)
+                new_memories.append(new_memory)
+
+            return new_params, new_memories
+        else:
+            clamped_gradient = max(-GRADIENT_CLIP, min(grad, GRADIENT_CLIP))
+            new_memory = memory + clamped_gradient**2
+            new_param = param - (LEARNING_RATE * clamped_gradient) / (new_memory + EPSILON) ** 0.5
+            return new_param, new_memory
+
     def sample(seed_char_id):
         """Returns a string of generated text of length n_chars"""
 
@@ -447,8 +661,40 @@ def main():
         with open(output_dir / "samples.txt", "a", encoding="utf-8") as f:
             f.write(f"=== Iteration {iteration} ===\n{sample_text}\n\n")
 
-    seed_char_id = char_to_id["A"]
-    print(sample(seed_char_id))
+    # Firing off the training loop! Hold on!
+    pos = 0
+    iteration = 0
+
+    while True:
+        # Epoch reset switch if we run out of text
+        if pos + SEQUENCE_LENGTH + 1 > len(corpus_text):
+            pos = 0
+
+        # Taking our slice
+        inputs = [char_to_id[c] for c in corpus_text[pos : pos + SEQUENCE_LENGTH]]
+        targets = [char_to_id[c] for c in corpus_text[pos + 1 : pos + SEQUENCE_LENGTH + 1]]
+
+        all_probabilities, final_belt, intermediate_dicts = forward(inputs)
+        loss = cross_entropy_loss(all_probabilities, targets)
+        gradients = backwards(all_probabilities, targets, final_belt, intermediate_dicts, inputs)
+
+        token_embeddings, mem_token_embeddings = adagrad_update(token_embeddings, gradients["token_embeddings"], mem_token_embeddings)
+        position_embeddings, mem_position_embeddings = adagrad_update(position_embeddings, gradients["position_embeddings"], mem_position_embeddings)
+        hidden_to_output_weights, mem_hidden_to_output_weights = adagrad_update(hidden_to_output_weights, gradients["hidden_to_output_weights"], mem_hidden_to_output_weights)
+        output_bias, mem_output_bias = adagrad_update(output_bias, gradients["output_bias"], mem_output_bias)
+
+        for i in range(NUM_LAYERS):
+            for key in layers[i]:
+                layers[i][key], mem_layers[i][key] = adagrad_update(layers[i][key], gradients["layers"][i][key], mem_layers[i][key])
+        pos += SEQUENCE_LENGTH
+        if iteration % 10 == 0:
+            print(f"Iteration: {iteration} - Loss: {loss}")
+            append_loss(iteration, loss)
+        if iteration % 100 == 0:
+            current_sample = sample(inputs[0])
+            print(current_sample)
+            append_sample(iteration, current_sample)
+        iteration += 1
 
 
 if __name__ == "__main__":
