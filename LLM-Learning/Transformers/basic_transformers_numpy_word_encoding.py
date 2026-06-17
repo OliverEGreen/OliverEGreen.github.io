@@ -1,7 +1,8 @@
 """
-Trains a decoder-only (GPT-style) transformer character-by-character. Aggressively
-optimised NumPy port of raw_transformers.py, tuned for Apple Silicon with float32
-arrays, cached masks, random corpus windows, and low-allocation Adam updates.
+Trains a decoder-only (GPT-style) transformer word-by-word. Aggressively optimised
+NumPy port of raw_transformers.py, tuned for Apple Silicon with float32 arrays, cached
+masks, random corpus windows, and low-allocation Adam updates. Word-level tokenisation
+(words, newlines, and punctuation as separate tokens) instead of character-level.
 
 Mirror of basic_lstm_numpy.py's structure, expanded for the transformer's stack of
 blocks (multi-head causal self-attention + position-wise feed-forward, each wrapped in
@@ -17,6 +18,7 @@ convention.
 import argparse
 import json
 import pickle
+import re
 import time
 from pathlib import Path
 from statistics import mean
@@ -480,12 +482,15 @@ def main():
     with open(corpus_path, encoding="utf-8") as f:
         corpus_text = f.read()
 
-    chars = sorted(set(corpus_text))
-    vocab_size = len(chars)
-    char_to_id = {ch: i for i, ch in enumerate(chars)}
-    id_to_char = {i: ch for i, ch in enumerate(chars)}
+    # Word-level tokenisation: runs of word-chars, single newlines, and individual
+    # punctuation marks each become their own token (so line breaks and commas survive).
+    words = re.findall(r"\w+|\n|[^\w\s]", corpus_text)
+    vocabulary = sorted(set(words))
+    vocab_size = len(vocabulary)
+    word_to_id = {word: i for i, word in enumerate(vocabulary)}
+    id_to_word = {i: word for i, word in enumerate(vocabulary)}
 
-    corpus_ids = np.array([char_to_id[ch] for ch in corpus_text], dtype=np.int64)
+    corpus_ids = np.array([word_to_id[word] for word in words], dtype=np.int64)
     corpus_length = len(corpus_ids)
 
     # ---------- Train / validation split (validation is the corpus tail) ----------
@@ -510,7 +515,7 @@ def main():
             val_starts = rng.integers(0, val_max_start + 1, size=args.val_batches)
 
     print(
-        f"Corpus: {corpus_path.name} | length: {corpus_length:,} chars | vocab size: {vocab_size} | "
+        f"Corpus: {corpus_path.name} | length: {corpus_length:,} tokens | vocab size: {vocab_size} | "
         f"train/val: {len(train_ids):,}/{0 if val_ids is None else len(val_ids):,} | "
         f"layers: {NUM_LAYERS} | dim: {EMBEDDING_DIM} | heads: {NUM_HEADS} | ff: {FF_HIDDEN_DIM} | "
         f"ctx: {SEQUENCE_LENGTH} | batch: {args.batch_size} | dtype: {DTYPE.__name__}"
@@ -581,16 +586,20 @@ def main():
     positions = arange_cached(SEQUENCE_LENGTH)
 
     # ---------- Sampling ----------
-    def sample(seed_char_id, n_chars):
-        context = [seed_char_id]
-        output_chars = []
-        for _ in range(n_chars):
+    def sample(seed_word_id, n_words):
+        context = [seed_word_id]
+        generated_words = []
+        for _ in range(n_words):
             cropped = np.array(context[-SEQUENCE_LENGTH:], dtype=np.int64)[None, :]  # (1, t) batch
             probabilities, _, _ = forward(params, cropped)
             next_id = sample_next_id(probabilities[0, -1], rng, args.temperature, args.top_k)
             context.append(next_id)
-            output_chars.append(id_to_char[next_id])
-        return "".join(output_chars)
+            generated_words.append(id_to_word[next_id])
+        # Detokenise: space-separate words, but no space before punctuation, tidy newlines.
+        text = " ".join(generated_words)
+        text = re.sub(r"\s+([^\w\s])", r"\1", text)  # drop the space before punctuation
+        text = re.sub(r" *\n *", "\n", text)  # collapse spaces around newlines
+        return text
 
     # ---------- IO helpers ----------
     def save_weights():

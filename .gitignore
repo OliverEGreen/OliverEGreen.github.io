@@ -20,3 +20,5 @@ Thumbs.db
 .env
 .env.*
 LLM-Learning/Transformers/Original Data/HarryPotter.txt
+LLM-Learning/Transformers/outputs_hp/checkpoint.pkl
+LLM-Learning/Transformers/outputs_hp/weights.json

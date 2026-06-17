@@ -1,7 +1,9 @@
 """
-Trains a decoder-only (GPT-style) transformer character-by-character. Aggressively
-optimised NumPy port of raw_transformers.py, tuned for Apple Silicon with float32
-arrays, cached masks, random corpus windows, and low-allocation Adam updates.
+Trains a decoder-only (GPT-style) transformer on BPE subword tokens. Aggressively
+optimised NumPy port of raw_transformers.py, tuned for Apple Silicon with float32 arrays,
+cached masks, random corpus windows, and low-allocation Adam updates. Byte-pair-encoding
+tokenisation: words are split into learned subword pieces, with a "</w>" boundary token
+between words so spacing survives. The tokeniser is trained from the corpus at startup.
 
 Mirror of basic_lstm_numpy.py's structure, expanded for the transformer's stack of
 blocks (multi-head causal self-attention + position-wise feed-forward, each wrapped in
@@ -15,6 +17,7 @@ convention.
 """
 
 import argparse
+import hashlib
 import json
 import pickle
 import time
@@ -46,6 +49,7 @@ EPSILON = 1e-8
 BETA1 = 0.9  # Adam: decay rate for the gradient average (momentum)
 BETA2 = 0.999  # Adam: decay rate for the squared-gradient average
 RANDOM_SEED = 42
+NUM_MERGES = 4000  # BPE: how many subword merges to learn (the vocab-size dial)
 PRINT_EVERY = 100
 SAMPLE_EVERY = 250
 SAVE_EVERY = 5000
@@ -193,6 +197,65 @@ def _adam_update(params, grads, first_moment, second_moment, step_size):
         second_moment *= BETA2
         second_moment += (1.0 - BETA2) * grads * grads
         params -= step_size * first_moment / (np.sqrt(second_moment) + EPSILON)
+
+
+# ----------------------------------------------------------------------------------
+# BPE tokeniser — learn subword merges from the corpus, then encode text to token ids.
+# ----------------------------------------------------------------------------------
+
+
+def get_pair_counts(word_freqs):
+    """Count every adjacent symbol pair across all words, weighted by word frequency."""
+    pair_counts = {}
+    for word_tuple, freq in word_freqs.items():
+        for i in range(len(word_tuple) - 1):
+            pair = (word_tuple[i], word_tuple[i + 1])
+            pair_counts[pair] = pair_counts.get(pair, 0) + freq
+    return pair_counts
+
+
+def merge_pair(pair, word_freqs):
+    """Return a new word_freqs with every adjacent occurrence of `pair` fused into one symbol."""
+    merged = pair[0] + pair[1]
+    new_word_freqs = {}
+    for word_tuple, freq in word_freqs.items():
+        new_word = []
+        i = 0
+        while i < len(word_tuple):
+            if i < len(word_tuple) - 1 and word_tuple[i] == pair[0] and word_tuple[i + 1] == pair[1]:
+                new_word.append(merged)
+                i += 2
+            else:
+                new_word.append(word_tuple[i])
+                i += 1
+        new_word_freqs[tuple(new_word)] = new_word_freqs.get(tuple(new_word), 0) + freq
+    return new_word_freqs
+
+
+def train_bpe(corpus_text, num_merges):
+    """Learn `num_merges` BPE merges. Returns (merges, final_word_freqs)."""
+    word_freqs = {}
+    for word in corpus_text.split():
+        key = tuple(word)
+        word_freqs[key] = word_freqs.get(key, 0) + 1
+
+    merges = []
+    for _ in range(num_merges):
+        pair_counts = get_pair_counts(word_freqs)
+        if not pair_counts:
+            break
+        best_pair = max(pair_counts, key=pair_counts.get)
+        merges.append(best_pair)
+        word_freqs = merge_pair(best_pair, word_freqs)
+    return merges, word_freqs
+
+
+def encode_word(word, merges):
+    """Apply the learned merges (in order) to one word, returning its tuple of subword tokens."""
+    temp = {tuple(word): 1}
+    for pair in merges:
+        temp = merge_pair(pair, temp)
+    return next(iter(temp))
 
 
 def build_params(vocab_size):
@@ -418,7 +481,7 @@ def backward(params, input_ids, targets, probabilities, caches, final_belt):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Train a NumPy character transformer on Shakespeare.")
+    parser = argparse.ArgumentParser(description="Train a NumPy BPE-subword transformer.")
     parser.add_argument("--max-iters", type=int, default=None, help="Stop after this many iterations; omit for an open-ended training run.")
     parser.add_argument("--print-every", type=int, default=PRINT_EVERY, help="Print and log loss every N iterations.")
     parser.add_argument("--sample-every", type=int, default=SAMPLE_EVERY, help="Generate a sample every N iterations; 0 disables sampling.")
@@ -429,16 +492,16 @@ def parse_args():
     parser.add_argument("--start-iteration", type=int, default=None, help="Global iteration to use with --resume-weights; defaults to last loss.csv iteration + 1.")
     parser.add_argument("--reset-logs", action="store_true", help="Overwrite loss/sample logs even when resuming.")
     parser.add_argument("--lr", type=float, default=6e-4, help="Base Adam learning rate.")
-    parser.add_argument("--cosine-steps", type=int, default=15000, help="Cosine-decay LR from base to min over this many steps (after warmup); 0 keeps it constant.")
+    parser.add_argument("--cosine-steps", type=int, default=30000, help="Cosine-decay LR from base to min over this many steps (after warmup); 0 keeps it constant.")
     parser.add_argument("--min-lr", type=float, default=MIN_LEARNING_RATE, help="Floor the cosine schedule decays to.")
-    parser.add_argument("--sample-size", type=int, default=SAMPLE_SIZE, help="Characters to generate per sample.")
+    parser.add_argument("--sample-size", type=int, default=SAMPLE_SIZE, help="Tokens to generate per sample.")
     parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Sampling temperature; lower is safer, higher is wilder.")
-    parser.add_argument("--top-k", type=int, default=TOP_K, help="Only sample from the top K chars; 0 uses the full distribution.")
+    parser.add_argument("--top-k", type=int, default=TOP_K, help="Only sample from the top K tokens; 0 uses the full distribution.")
     parser.add_argument("--sequential", action="store_true", help="Walk through the corpus in order instead of random windows.")
     parser.add_argument("--output-dir", type=Path, default=SCRIPT_DIR / "outputs_hp", help="Directory for loss, samples, and weights.")
-    parser.add_argument("--corpus", type=Path, default=SCRIPT_DIR / "Original Data" / "HarryPotter.txt", help="Path to the training corpus text file.")
-    parser.add_argument("--batch-size", type=int, default=8, help="Windows processed together per Adam step (effective batch size). 1 = original behaviour.")
-    parser.add_argument("--warmup", type=int, default=500, help="Linear LR warmup over this many optimizer steps; 0 disables.")
+    parser.add_argument("--corpus", type=Path, default=SCRIPT_DIR / "Original Data" / "HarryPotter_clean.txt", help="Path to the training corpus text file.")
+    parser.add_argument("--batch-size", type=int, default=16, help="Windows processed together per Adam step (effective batch size). 1 = original behaviour.")
+    parser.add_argument("--warmup", type=int, default=1000, help="Linear LR warmup over this many optimizer steps; 0 disables.")
     parser.add_argument("--val-fraction", type=float, default=0.1, help="Fraction of the corpus (its tail) held out for validation; 0 disables.")
     parser.add_argument("--val-batches", type=int, default=64, help="Number of fixed windows used to estimate validation loss.")
     return parser.parse_args()
@@ -480,12 +543,55 @@ def main():
     with open(corpus_path, encoding="utf-8") as f:
         corpus_text = f.read()
 
-    chars = sorted(set(corpus_text))
-    vocab_size = len(chars)
-    char_to_id = {ch: i for i, ch in enumerate(chars)}
-    id_to_char = {i: ch for i, ch in enumerate(chars)}
+    # BPE tokenisation. Training the merges + encoding the corpus is slow in pure Python,
+    # so we cache the result (keyed on corpus contents + NUM_MERGES) and reload it next time.
+    corpus_hash = hashlib.md5(corpus_text.encode("utf-8")).hexdigest()
+    cache_path = corpus_path.with_name(f"{corpus_path.stem}.bpe{NUM_MERGES}.pkl")
 
-    corpus_ids = np.array([char_to_id[ch] for ch in corpus_text], dtype=np.int64)
+    cached = None
+    if cache_path.exists():
+        with open(cache_path, "rb") as f:
+            candidate = pickle.load(f)
+        if candidate.get("hash") == corpus_hash and candidate.get("num_merges") == NUM_MERGES:
+            cached = candidate
+
+    if cached is not None:
+        vocabulary = cached["vocabulary"]
+        corpus_ids = cached["corpus_ids"]
+        print(f"Loaded cached BPE from {cache_path.name} | {len(vocabulary)} tokens | {len(corpus_ids):,} ids")
+    else:
+        print(f"Training BPE ({NUM_MERGES} merges)... (one-time; result will be cached)")
+        bpe_start = time.perf_counter()
+        merges, merged_word_freqs = train_bpe(corpus_text, NUM_MERGES)
+
+        # Vocabulary = every surviving subword + all base chars (fallback) + the word boundary.
+        vocab_tokens = set()
+        for word_tuple in merged_word_freqs:
+            vocab_tokens.update(word_tuple)
+        vocab_tokens.update(set(corpus_text))
+        vocab_tokens.add("</w>")
+        vocabulary = sorted(vocab_tokens)
+        build_token_to_id = {tok: i for i, tok in enumerate(vocabulary)}
+        boundary_id = build_token_to_id["</w>"]
+
+        # Encode the corpus to a flat id stream, caching each unique word's tokenisation and
+        # dropping a boundary token after every word so spacing can be reconstructed.
+        encode_memo = {}
+        corpus_id_list = []
+        for word in corpus_text.split():
+            if word not in encode_memo:
+                encode_memo[word] = [build_token_to_id[tok] for tok in encode_word(word, merges)]
+            corpus_id_list.extend(encode_memo[word])
+            corpus_id_list.append(boundary_id)
+
+        corpus_ids = np.array(corpus_id_list, dtype=np.int64)
+        with open(cache_path, "wb") as f:
+            pickle.dump({"hash": corpus_hash, "num_merges": NUM_MERGES, "vocabulary": vocabulary, "corpus_ids": corpus_ids}, f)
+        print(f"BPE done in {time.perf_counter() - bpe_start:.1f}s | {len(merges)} merges | {len(encode_memo):,} unique words | cached to {cache_path.name}")
+
+    vocab_size = len(vocabulary)
+    token_to_id = {tok: i for i, tok in enumerate(vocabulary)}
+    id_to_token = {i: tok for i, tok in enumerate(vocabulary)}
     corpus_length = len(corpus_ids)
 
     # ---------- Train / validation split (validation is the corpus tail) ----------
@@ -510,7 +616,7 @@ def main():
             val_starts = rng.integers(0, val_max_start + 1, size=args.val_batches)
 
     print(
-        f"Corpus: {corpus_path.name} | length: {corpus_length:,} chars | vocab size: {vocab_size} | "
+        f"Corpus: {corpus_path.name} | length: {corpus_length:,} tokens | vocab size: {vocab_size} | "
         f"train/val: {len(train_ids):,}/{0 if val_ids is None else len(val_ids):,} | "
         f"layers: {NUM_LAYERS} | dim: {EMBEDDING_DIM} | heads: {NUM_HEADS} | ff: {FF_HIDDEN_DIM} | "
         f"ctx: {SEQUENCE_LENGTH} | batch: {args.batch_size} | dtype: {DTYPE.__name__}"
@@ -552,10 +658,10 @@ def main():
     log_mode = "w" if args.reset_logs or (not args.resume and not args.resume_weights) or not (output_dir / "loss.csv").exists() else "a"
     loss_has_lr = True
     if log_mode == "w":
-        (output_dir / "loss.csv").write_text("iteration,loss_total,loss_per_char,learning_rate\n", encoding="utf-8")
+        (output_dir / "loss.csv").write_text("iteration,loss_total,loss_per_token,learning_rate\n", encoding="utf-8")
         (output_dir / "samples.txt").write_text("", encoding="utf-8")
         if val_ids is not None:
-            (output_dir / "val_loss.csv").write_text("iteration,val_loss_per_char\n", encoding="utf-8")
+            (output_dir / "val_loss.csv").write_text("iteration,val_loss_per_token\n", encoding="utf-8")
     else:
         with open(output_dir / "loss.csv", encoding="utf-8") as f:
             loss_has_lr = "learning_rate" in f.readline().strip().split(",")
@@ -581,16 +687,17 @@ def main():
     positions = arange_cached(SEQUENCE_LENGTH)
 
     # ---------- Sampling ----------
-    def sample(seed_char_id, n_chars):
-        context = [seed_char_id]
-        output_chars = []
-        for _ in range(n_chars):
+    def sample(seed_token_id, n_tokens):
+        context = [seed_token_id]
+        generated_tokens = []
+        for _ in range(n_tokens):
             cropped = np.array(context[-SEQUENCE_LENGTH:], dtype=np.int64)[None, :]  # (1, t) batch
             probabilities, _, _ = forward(params, cropped)
             next_id = sample_next_id(probabilities[0, -1], rng, args.temperature, args.top_k)
             context.append(next_id)
-            output_chars.append(id_to_char[next_id])
-        return "".join(output_chars)
+            generated_tokens.append(id_to_token[next_id])
+        # Detokenise: subwords concatenate; the boundary token becomes a space.
+        return "".join(" " if tok == "</w>" else tok for tok in generated_tokens)
 
     # ---------- IO helpers ----------
     def save_weights():
@@ -630,7 +737,7 @@ def main():
             f.write(f"{iteration},{val_loss}\n")
 
     def evaluate_val():
-        """Mean loss/char over the fixed held-out windows, in one batched forward — no gradient."""
+        """Mean loss/token over the fixed held-out windows, in one batched forward — no gradient."""
         inp = np.stack([val_ids[s : s + SEQUENCE_LENGTH] for s in val_starts])
         tgt = np.stack([val_ids[s + 1 : s + SEQUENCE_LENGTH + 1] for s in val_starts])
         probs, _, _ = forward(params, inp)
@@ -695,11 +802,11 @@ def main():
             if val_ids is not None:
                 val_loss = evaluate_val()
                 append_val(iteration, val_loss)
-                val_str = f" | val/char {val_loss:6.3f}"
+                val_str = f" | val/token {val_loss:6.3f}"
 
             print(
                 f"iter {iteration:>7d} | loss {loss_total:8.3f} | avg loss {mean(recent_total):8.3f} | "
-                f"loss/char {loss:6.3f} | avg/char {mean(recent):6.3f}{val_str} | "
+                f"loss/token {loss:6.3f} | avg/token {mean(recent):6.3f}{val_str} | "
                 f"lr {learning_rate:.2e} | {steps_per_sec:5.2f} step/s ({steps_per_sec * batch_size:6.1f} win/s) | "
                 f"total {total_elapsed:7.2f}s"
             )
@@ -710,7 +817,7 @@ def main():
             recent_window = min(1000, len(running_loss))
             recent = running_loss[-recent_window:]
             recent_total = running_loss_total[-recent_window:]
-            print(f"Sample at iteration {iteration}:\n\nAverage loss recent: {mean(recent_total):.4f}\nAverage loss/char recent: {mean(recent):.4f}\n\n--------\n{sample_text}\n--------\n")
+            print(f"Sample at iteration {iteration}:\n\nAverage loss recent: {mean(recent_total):.4f}\nAverage loss/token recent: {mean(recent):.4f}\n\n--------\n{sample_text}\n--------\n")
             append_sample(iteration, sample_text)
 
         next_iteration = iteration + 1
