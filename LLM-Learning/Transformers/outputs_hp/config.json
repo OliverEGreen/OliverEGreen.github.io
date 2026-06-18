@@ -14,7 +14,7 @@
   "batch_size": 16,
   "warmup": 1000,
   "val_fraction": 0.1,
-  "corpus": "/Users/olivergreen/Documents/GitHub/OliverEGreen.github.io/LLM-Learning/Transformers/Original Data/HarryPotter.txt",
+  "corpus": "/Users/olivergreen/Documents/GitHub/OliverEGreen.github.io/LLM-Learning/Transformers/Original Data/HarryPotter_clean.txt",
   "temperature": 0.8,
   "top_k": 20,
   "random_seed": 42,

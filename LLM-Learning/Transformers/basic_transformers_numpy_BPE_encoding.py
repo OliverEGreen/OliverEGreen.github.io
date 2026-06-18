@@ -20,6 +20,7 @@ import argparse
 import hashlib
 import json
 import pickle
+import re
 import time
 from pathlib import Path
 from statistics import mean
@@ -498,8 +499,8 @@ def parse_args():
     parser.add_argument("--temperature", type=float, default=TEMPERATURE, help="Sampling temperature; lower is safer, higher is wilder.")
     parser.add_argument("--top-k", type=int, default=TOP_K, help="Only sample from the top K tokens; 0 uses the full distribution.")
     parser.add_argument("--sequential", action="store_true", help="Walk through the corpus in order instead of random windows.")
-    parser.add_argument("--output-dir", type=Path, default=SCRIPT_DIR / "outputs_hp", help="Directory for loss, samples, and weights.")
-    parser.add_argument("--corpus", type=Path, default=SCRIPT_DIR / "Original Data" / "HarryPotter_clean.txt", help="Path to the training corpus text file.")
+    parser.add_argument("--output-dir", type=Path, default=SCRIPT_DIR / "outputs_shakespeare", help="Directory for loss, samples, and weights.")
+    parser.add_argument("--corpus", type=Path, default=SCRIPT_DIR / "Original Data" / "Shakespeare.txt", help="Path to the training corpus text file.")
     parser.add_argument("--batch-size", type=int, default=16, help="Windows processed together per Adam step (effective batch size). 1 = original behaviour.")
     parser.add_argument("--warmup", type=int, default=1000, help="Linear LR warmup over this many optimizer steps; 0 disables.")
     parser.add_argument("--val-fraction", type=float, default=0.1, help="Fraction of the corpus (its tail) held out for validation; 0 disables.")
@@ -552,7 +553,7 @@ def main():
     if cache_path.exists():
         with open(cache_path, "rb") as f:
             candidate = pickle.load(f)
-        if candidate.get("hash") == corpus_hash and candidate.get("num_merges") == NUM_MERGES:
+        if candidate.get("hash") == corpus_hash and candidate.get("num_merges") == NUM_MERGES and candidate.get("scheme") == 2:
             cached = candidate
 
     if cached is not None:
@@ -573,24 +574,28 @@ def main():
         vocabulary = sorted(vocab_tokens)
         build_token_to_id = {tok: i for i, tok in enumerate(vocabulary)}
         boundary_id = build_token_to_id["</w>"]
+        newline_id = build_token_to_id["\n"]
 
-        # Encode the corpus to a flat id stream, caching each unique word's tokenisation and
-        # dropping a boundary token after every word so spacing can be reconstructed.
+        # Encode the corpus to a flat id stream. Split into words AND newlines (re.findall
+        # keeps each "\n" as its own unit): a word becomes its subword ids + a boundary token,
+        # a newline becomes the newline token — so line breaks survive into the model.
         encode_memo = {}
         corpus_id_list = []
-        for word in corpus_text.split():
-            if word not in encode_memo:
-                encode_memo[word] = [build_token_to_id[tok] for tok in encode_word(word, merges)]
-            corpus_id_list.extend(encode_memo[word])
+        for unit in re.findall(r"\S+|\n", corpus_text):
+            if unit == "\n":
+                corpus_id_list.append(newline_id)
+                continue
+            if unit not in encode_memo:
+                encode_memo[unit] = [build_token_to_id[tok] for tok in encode_word(unit, merges)]
+            corpus_id_list.extend(encode_memo[unit])
             corpus_id_list.append(boundary_id)
 
         corpus_ids = np.array(corpus_id_list, dtype=np.int64)
         with open(cache_path, "wb") as f:
-            pickle.dump({"hash": corpus_hash, "num_merges": NUM_MERGES, "vocabulary": vocabulary, "corpus_ids": corpus_ids}, f)
+            pickle.dump({"hash": corpus_hash, "num_merges": NUM_MERGES, "scheme": 2, "vocabulary": vocabulary, "corpus_ids": corpus_ids}, f)
         print(f"BPE done in {time.perf_counter() - bpe_start:.1f}s | {len(merges)} merges | {len(encode_memo):,} unique words | cached to {cache_path.name}")
 
     vocab_size = len(vocabulary)
-    token_to_id = {tok: i for i, tok in enumerate(vocabulary)}
     id_to_token = {i: tok for i, tok in enumerate(vocabulary)}
     corpus_length = len(corpus_ids)
 
