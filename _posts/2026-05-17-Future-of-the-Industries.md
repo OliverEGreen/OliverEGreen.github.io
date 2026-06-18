@@ -1,5 +1,5 @@
 ---
-title: "Future of the Industries"
+title: "Future of the industries"
 date: 2026-05-17
 ---
 
@@ -127,7 +127,7 @@ The impact this new direction of travel could have on tech is profound. Very qui
 
 The same phenomenon is happening internally within companies. It's a bit shocking when we realise how very many of our ceremonies, functions and positions exist purely to facilitate the needs of other humans working together. When we start using AI to boil away our organisations, we'll be left with a very thin reduction at the end of it all. 
 
-## The headless Internet
+## The headless internet
 
 If we follow this same thinking through, we arrive at the idea of the Headless Internet. The Internet becomes an invisible layer, solely traversed by agentic helpers, with no humans eyeballs left. This is sort of what the [Rabbit R1](https://www.rabbit.tech/rabbit-r1) was getting at back in 2024.
 

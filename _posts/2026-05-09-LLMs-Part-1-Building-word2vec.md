@@ -1,5 +1,5 @@
 ---
-title: "LLMs Part 1: Building Word2Vec"
+title: "LLMs part 1: building Word2Vec"
 date: 2026-05-09
 ---
 
@@ -24,7 +24,7 @@ After much research, I landed on the [2013 Google Word2Vec](https://arxiv.org/pd
 
 The paper is ultimately about embedding words in latent space. It's not fancy - there's no real understanding of context, so the model has no ability to accurately embed words that carry multiple meanings (for example 'bank'). Each word gets embedded only once, instead of being understood within its context. As starting points go, I like this simplicity.
 
-## The Build
+## The build
 
 ### Training data
 

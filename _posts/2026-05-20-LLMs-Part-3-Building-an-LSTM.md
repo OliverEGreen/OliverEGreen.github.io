@@ -1,5 +1,5 @@
 ---
-title: "LLMs Part 3: Building an LSTM"
+title: "LLMs part 3: building an LSTM"
 date: 20-05-2026
 ---
 
@@ -112,7 +112,7 @@ I mean, he's kinda the GOAT. However, he did have a few aces up his sleeve to ac
 2. He's also using a better approach than our Adagrad, which can wind up blocking itself after a while.
 3. He's training for millions of iterations for days to get those results. We're about halfway there and it's taken us much less time. Perhaps an hour of training overall. 
 
-## Next Steps
+## Next steps
 
 I'd like to try building transformer architecture next. It involves loads of matrix multiplications (matmul as the kids call it), but architecturally it's an entirely different setup. Performance-wise, it's meant to be a total game-changer, so I'd like to see this for myself. 
 

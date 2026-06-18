@@ -1,5 +1,5 @@
 ---
-title: "Mysteries & Magics"
+title: "Mysteries & magics"
 date: 2026-04-27
 ---
 
@@ -29,7 +29,7 @@ I remember in the original Super Mario game for the NES, the moment you pressed 
 
 In some ways, this is what happened to us, too. 
 
-## The Approach
+## The approach
 
 My approach is phenomenological – whenever I notice that things on the surface just don't quite add up. It's as if something more is going on that we haven't yet found a watertight explanation for. While it isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
@@ -67,7 +67,7 @@ Our unconscious seems to play a role in what we see; perhaps it's something we n
 
 After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud. Given that I've travelled precisely nowhere, I find this very odd.
 
-## Time & Space
+## Time & space
 
 ### How we experience time
 
@@ -97,7 +97,7 @@ Finally, any architect will know that, subjectively, the size of a building unde
 
 ## Nature 
 
-### Bodies of Water
+### Bodies of water
 
 There is something special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. They're intrinsically beautiful, often enhancing whatever light the sky is providing that day.
 
@@ -131,13 +131,13 @@ Physical contact is very important to us. It seems to work on an energetic level
 
 For some reason this makes a difference to me. Perhaps a placebo could trick me though. But I get a totally different sense of something when I know it's recorded vs watching it live. The feeling is entirely different.
 
-## Magic of Ritual
+## Magic of ritual
 
 ### Imbued objects
 
 Can we imbue inanimate objects with our meanings and energies using our own intention? I feel we can. Teddy bears. Religious relics. Spaces too.
 
-### Ancient Worship
+### Ancient worship
 
 Were all the ancient people around the world just plain wrong? It seems fishy. They weren't idiots.
 
@@ -153,7 +153,7 @@ It's clearly much more significant than the purely physical dimension. There's a
 
 Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt — South and Central America, all across Asia. We have no explanations.
 
-## Astrological / Cosmological
+## Astrological / cosmological
 
 ### Astrology / scrying
 
@@ -169,7 +169,7 @@ It seems odd. Space is impossibly empty. Everything is unimaginably huge and far
 
 ## Other
 
-### Lower Astral places and people
+### Lower astral places and people
 
 It's definitely there. It's not even that far away. It's almost parallel to our existence, and some seem much more dialled into it than others. It's a lower energy, darker, more seedy and desperate. People can become enmeshed with these: dark beings might inhabit casinos, strip clubs, gangs, fighting events, cults.
 

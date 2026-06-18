@@ -1,5 +1,5 @@
 ---
-title: "LLMs Part 2: Building a Vanilla RNN"
+title: "LLMs part 2: building a vanilla RNN"
 date: 19-05-2026
 ---
 
@@ -19,7 +19,7 @@ Building our vanilla RNN is more complicated than Word2Vec. It's where to begin 
 
 I'm intentionally writing everything using standard Python primitives and using exhaustively-explicit naming wherever possible. Pythonic, this isn't. External ML libraries are not allowed – not even something reasonable like pandas or numpy, which of course would feature heavily in more standard and performant approaches. *(By the way, if you're looking for a beautiful, minimal implementation of an RNN, look no further than Andrej Karpathy's 2015 [blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/))*.
 
-## The Approach
+## The approach
 
 As before, we're using Shakespeare's full works as our training data, but this time we won't be pre-cleaning it. This is so our model can begin to learn richer relationships about things like line breaks, quotation marks and so on.
 
@@ -79,7 +79,7 @@ Over time, our level of loss (which started around 120) began nudging down to ar
 
 For contrast, I asked Claude to clone my code and re-write it in the most performant numpy equivalent possible. This meant I could scale it up to use a much larger window size and faster learning rate. However, these iterations plateaued at a loss of around 60, so surprisingly their outputs were worse than my vanilla RNN!
 
-## Next Steps
+## Next steps
 
 The clear next evolution in language modelling is LSTMs. These are another step up in terms of complexity, and this should take us right up to the SoTA immediately before transformer architecture.
 
