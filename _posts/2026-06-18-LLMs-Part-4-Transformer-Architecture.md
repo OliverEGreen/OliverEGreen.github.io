@@ -75,7 +75,7 @@ I glossed over these in the self-attention section above. These matrices are at 
 
 **Value** - This is how each position 'contributes' when it is given an amount of attention. In our metaphor, this is more akin to the work that the chosen candidate does once they've been hired. This is useful because it allows more flexibility - the position is able to 'advertise' one thing (Key) and potentially 'contribute' its value in another unforeseen way. 
 
-### The forward pass
+### The forward pass deeper dive
 
 At each position, the position generates the query and <u>every prior position</u> then generates its key and value matrices in response to this. We match based on queries and keys, but what flows onto our "conveyor belt" is value.
 
@@ -86,14 +86,14 @@ In short, for each "position" in our "belt" of tokens we're feeding into the for
 
 This doesn't happen incrementally, timestep by timestep, unlike the RNN or LSTM. This is because we've already precomputed all of the matrices we want by this stage – in our earlier definitions of queries, keys and values (using matrix_vector_multiply).
 
-### Feed forward
+### Feed forward deeper dive
 
-While the "attention" layer does the gathering of relevant context from prior positions and products a weighted blend (Value), the feed-forward layer is what comes next. Mechanically, it's a shallow two-layer network, and it's where we start implementing what we've learned so far. 
+While the "attention" layer does the gathering of relevant context from prior positions and produces a weighted blend (Value), the feed-forward layer is what comes next. Mechanically, it's a shallow two-layer network, and it's where we start implementing what we've learned so far. 
 
-* **Attention** is like asking 5 people for advice on something. At first, you don't know them at all, and some might give great advice on electronics, others in cooking or style advice, while also giving bad advice in other fields too.
-* **Feed-forward** is your best attempt to listen to them and decide how much to trust each person and heed their advice. While at the start you know nothing, over time you're able to gradually determine who gives the best advice for different things.
+* **Attention** is like asking a committee of 5 people for advice on something. At first, you don't know them at all, and some might give great advice on electronics, others in cooking or style advice, while also giving bad advice in other fields too. What you get out at the end of this process is the committee's recommendation.
+* **Feed-forward** is your best attempt to listen to this recommendation and decide on your own course of action. While at the start you know nothing, over time you're able to gradually determine which parts of the recommendation can be trusted for different things, and by how much.
 
-If you can grasp that, you've essentiailly grasped transformers! The big picture of this architecture is surprisingly straightforward and elegant.
+If you can grasp that, you've essentially grasped transformers! The big picture of this architecture is surprisingly straightforward and elegant.
 
 ## Training process
 
