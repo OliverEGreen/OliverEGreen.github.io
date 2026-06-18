@@ -11,7 +11,7 @@ date: 18-06-2026
 
 Ok, it sounds grandiose, but Google's 2017 paper '[Attention is All You Need](https://arxiv.org/abs/1706.03762)' has influenced practically every AI achievement of the past 9 years. It was a seriously big deal and the world simply wouldn't be the same without transformer architecture. In a way, it's incredible that the paper's authors aren't household names by now, like Crick and Watson.
 
-This breakthrough was tackling the same familiar problem areas we encountered in my earlier posts, such as attention, but with a wholesale new architecture that delivered:
+This breakthrough was tackling the same familiar problem areas we encountered in my earlier posts, such as attention, but with a wholesale new architecture. Let's jump in:
 
 * As the paper's title gives away, the researchers presented a wholly-new approach to attention, called 'self-attention'. If you look back at our earlier Word2Vec implementation in Part 1 of this series, you'll see that each word has only one embedding, totally ignorant of its context. But language absolutely needs an understanding of its context to nail its next-word/token/char predictions. Our QKV matrices and feed-forward step finally nailed this mechanic.
 * Much greater training speed, since this method allows for parallel processing rather than step-by-step approaches.
