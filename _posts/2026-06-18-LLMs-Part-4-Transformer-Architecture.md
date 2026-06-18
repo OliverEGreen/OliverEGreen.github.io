@@ -13,7 +13,7 @@ Ok, it sounds grandiose, but Google's 2017 paper '[Attention is All You Need](ht
 
 This breakthrough was tackling the same familiar problem areas we encountered in my earlier posts, such as attention, but with a wholesale new architecture. Let's jump in:
 
-* As the paper's title gives away, the researchers presented a wholly-new approach to attention, called 'self-attention'. If you look back at our earlier Word2Vec implementation in Part 1 of this series, you'll see that each word has only one embedding, totally ignorant of its context. But language absolutely needs an understanding of its context to nail its next-word/token/char predictions. Our QKV matrices and feed-forward step finally nailed this mechanic.
+* As the paper's title gives away, the researchers presented a wholly-new approach to attention, called 'self-attention'. If you look back at our earlier Word2Vec implementation in Part 1 of this series, you'll see that each word has only one embedding, totally ignorant of its context. But language absolutely needs an understanding of its context for its next-word/token/char predictions. Our QKV matrices and feed-forward step finally nailed this mechanic.
 * Much greater training speed, since this method allows for parallel processing rather than step-by-step approaches.
 * Direct long-term connections, enabling much better memory retention. In our previous models, memories were being effectively diluted at every timestep (i.e. series of matmul calculations).
 
