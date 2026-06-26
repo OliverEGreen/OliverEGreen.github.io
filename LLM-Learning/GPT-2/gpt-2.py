@@ -20,8 +20,8 @@ MAX_STEPS = 36000
 LEARNING_RATE = 6e-4  # How fast we learn
 MIN_LR = LEARNING_RATE / 10
 
-CHECKPOINT_PATH = "/Users/olivergreen/Documents/GitHub/OliverEGreen.github.io/LLM-Learning/GPT-2/checkpoint.pt"
-DATA_PATH = "/Users/olivergreen/Documents/GitHub/OliverEGreen.github.io/LLM-Learning/GPT-2/fineweb_train.bin"
+CHECKPOINT_PATH = "checkpoint.pt"
+DATA_PATH = "fineweb_train.bin"
 DEVICE = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 
 
