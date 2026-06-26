@@ -1,0 +1,822 @@
+Corpus: HarryPotter_clean.txt | length: 6,286,811 chars | vocab size: 80 | train/val: 5,658,129/628,682 | layers: 6 | dim: 256 | heads: 8 | ff: 1024 | ctx: 256 | batch: 8 | dtype: float32
+iter       0 | loss 1141.104 | avg loss 1141.104 | loss/char  4.457 | avg/char  4.457 | val/char  4.456 | lr 1.20e-06 |  1.76 step/s (  14.1 win/s) | total    0.57s
+Sample at iteration 0:
+
+Average loss recent: 1141.1045
+Average loss/char recent: 4.4574
+
+--------
+'Z7jQymBxxDBj(( ymlwVf''jZgwccZC XBXz8 7BcgrbXx- !mE7Q'jXHVg?!!“—wB“ymVB!’U1Bg-uxwDlbl-C
+HH5'Z7zXOg “Xr"FQ—jQ1;XH!z—5X!r8glw'z' bQry;“7b9—5!D“zj‘zbQxhC!x7“7)y'7gy'Cy“Y!
+7'b'XlX(mmm"'zEIQg“;‘ gh5'C“g—zgw !zl2ZgzeQQVgyE79qm"'g'w;'z";'! !5!bmQJFzx '75XC!CU!m!’'x‘“yxww'bbzXEr2'ZU-CQ?Xj5““b7gyuygg-t(mz"g!w!“"“yjxz“6m!l'bcbbwwbgz""!mQxwC’w7C;'"“bXmgzxgC“w“!zm"gh
+bxQZX7‘y!“‘Qy!“rq!‘ -"w1zr   gxDz!x“ywx '!btjz't'5u“m!l zu-!'“bwmg"“7ghr“"bXX!'5XQggNEDg7 QZ'gbmrq;xmZgCZwzzbbwCzb'!z!5X'7q
+zzQ"g"7““yQtmQj 'b('x“gy“"XE'tXQ"'z!1;Zfg!1ymrrw CbQybwxgzgyQbb!Xzm'7' “b7g 6rq“mbtzw“y‘'tXZl““6twV' xg“b“bw!gx“z C!!
+--------
+
+iter     100 | loss  717.383 | avg loss  890.243 | loss/char  2.802 | avg/char  3.478 | val/char  2.771 | lr 1.21e-04 |  1.39 step/s (  11.1 win/s) | total   72.67s
+iter     200 | loss  652.241 | avg loss  782.512 | loss/char  2.548 | avg/char  3.057 | val/char  2.492 | lr 2.41e-04 |  1.63 step/s (  13.1 win/s) | total  133.84s
+Sample at iteration 250:
+
+Average loss recent: 754.8141
+Average loss/char recent: 2.9485
+
+--------
+t than be toule atait agen wis at sidatherenoul eang tofeed tsitullit it t wokinger d oo hicho t thilis d wheneang thed would ad y athedgecle las berd t t cly olinge see le d t the, sted t mes, wail Hash oes s s t tenowale pyungougerd ytouled ming haite th har.
+
+
+
+“Fre, to bun blory f he he hed. s inace. ast w wo ttowe the ofo tnecethe besigonoint suf s anilererethate ar e hed He s Hande miche ast oulorut in gu is ite at l hoowanonde mug Haiofile s hin wachakidathely ane p wacale e he g Hasuted thitasndo y.
+“Arorr e I d hily g, d ang t witid asaly ou pp mar wof otag y tes atrd in war I, s wit 
+--------
+
+iter     300 | loss  629.013 | avg loss  734.762 | loss/char  2.457 | avg/char  2.870 | val/char  2.436 | lr 3.61e-04 |  1.34 step/s (  10.7 win/s) | total  208.63s
+iter     400 | loss  617.923 | avg loss  708.693 | loss/char  2.414 | avg/char  2.768 | val/char  2.406 | lr 4.81e-04 |  1.54 step/s (  12.3 win/s) | total  273.67s
+iter     500 | loss  604.840 | avg loss  689.667 | loss/char  2.363 | avg/char  2.694 | val/char  2.328 | lr 6.00e-04 |  1.62 step/s (  12.9 win/s) | total  335.55s
+Sample at iteration 500:
+
+Average loss recent: 689.6667
+Average loss/char recent: 2.6940
+
+--------
+d funt an tonte ico fid pan centat oris ld o e bope hend ithe athe’s a o wond ar aibed ounin wa ealere, thand nol a find pof min or hico in whofoun phon art subend thous ea p id eis tolin ifrsingl ance of ampefoming
+
+“Wou thiallre ht lleantoupe,” ssouine thathinone pliniomuryshed is t hece tha haroflaluould hufoupe, thoremer withing fe himieng ptinde thif youthe hes ak, omithin grindiooure ave l tere as as here fe ad tagros he heaoinghed as he aly han is f anofor beingisthis sped thistelly.
+
+Hrous bere rere and he fuful e thenesthis p ts treest hile anefon ad bad ovin id he oured re horee hear
+--------
+
+iter     600 | loss  580.339 | avg loss  671.371 | loss/char  2.267 | avg/char  2.623 | val/char  2.191 | lr 6.00e-04 |  1.35 step/s (  10.8 win/s) | total  409.79s
+iter     700 | loss  529.803 | avg loss  654.064 | loss/char  2.070 | avg/char  2.555 | val/char  2.074 | lr 6.00e-04 |  1.58 step/s (  12.6 win/s) | total  473.21s
+Sample at iteration 750:
+
+Average loss recent: 645.4938
+Average loss/char recent: 2.5215
+
+--------
+ aboon, ear the, at paint thald pearing the oonss thy forf elver crors seanded thor besor ot the reere they thise. Hogwhed alid ale stairing tould fin th the deed dot and the comed pitht sthem as on this bee y tht he semer cales peen heay lall of thiss hir whiser farot fould ullel ok ind of whad thad the was lool of a of wild thim sno bac, ind thicht romest gorce il at abess in gear and Hary’s sood of fing cas agout in sof had thoush shimes wal the foureds fared an’s for she we and bart fould then gat farne the us here buts ton yend foring chil houlld he sas farle cong brict he sat witar ser t
+--------
+
+iter     800 | loss  514.985 | avg loss  637.243 | loss/char  2.012 | avg/char  2.489 | val/char  1.948 | lr 5.99e-04 |  1.32 step/s (  10.5 win/s) | total  549.12s
+iter     900 | loss  511.309 | avg loss  620.500 | loss/char  1.997 | avg/char  2.424 | val/char  1.847 | lr 5.99e-04 |  1.59 step/s (  12.7 win/s) | total  611.94s
+iter    1000 | loss  454.218 | avg loss  604.490 | loss/char  1.774 | avg/char  2.361 | val/char  1.762 | lr 5.98e-04 |  1.58 step/s (  12.7 win/s) | total  675.13s
+Sample at iteration 1000:
+
+Average loss recent: 604.4901
+Average loss/char recent: 2.3613
+
+--------
+elly that staked the sent on to live as distless say star liken other ploing noulds aboy and what books the and the cholle have nowir somentsly the Hormione’s deeake thing the want frod at renicing and Mr. The wasnge, pust the still gont it now them nil to fille suck.
+
+“Ges sinke,” said Diningir was for a bore, and and barther.
+
+“I looked seee sillls his on the into were happpe,” said Croughts a put with clavred and a crame of the fee in and to enow abler ous the stulll, stand the fammes the stideng of the publle of in mand slooksh the worke of a eyese, them munk and Hernaaalys hand ou deang t
+--------
+
+iter    1100 | loss  427.898 | avg loss  560.151 | loss/char  1.671 | avg/char  2.188 | val/char  1.698 | lr 5.98e-04 |  1.32 step/s (  10.6 win/s) | total  750.76s
+iter    1200 | loss  430.387 | avg loss  535.552 | loss/char  1.681 | avg/char  2.092 | val/char  1.661 | lr 5.97e-04 |  1.56 step/s (  12.4 win/s) | total  815.03s
+Sample at iteration 1250:
+
+Average loss recent: 524.4573
+Average loss/char recent: 2.0487
+
+--------
+reathings shis was still wand were whathr of and mak fucice the standed driets him. Fudge hands he seemed of the notion head grow his into the lank his terner in was glant up, and the wall to criseshed vrew a landed at the trewn the wand to ligh after, face cand and statted betwem new.
+
+“We save them solf that’s couldn’t lett that corrton of making to scomether to corrring to happer on what stooking for start at at the room in on a drean at tom them time, Harry compthers out and into the crocks be from stoom. She ept the them, thin end in the like ight in a wand bearie on dround and the palled
+--------
+
+iter    1300 | loss  396.044 | avg loss  513.597 | loss/char  1.547 | avg/char  2.006 | val/char  1.636 | lr 5.96e-04 |  1.31 step/s (  10.5 win/s) | total  891.36s
+iter    1400 | loss  408.863 | avg loss  491.299 | loss/char  1.597 | avg/char  1.919 | val/char  1.586 | lr 5.95e-04 |  1.56 step/s (  12.5 win/s) | total  955.58s
+iter    1500 | loss  398.282 | avg loss  469.765 | loss/char  1.556 | avg/char  1.835 | val/char  1.566 | lr 5.94e-04 |  1.58 step/s (  12.6 win/s) | total 1018.86s
+Sample at iteration 1500:
+
+Average loss recent: 469.7653
+Average loss/char recent: 1.8350
+
+--------
+r the had to prency himselly. Hit has he breactled an mement at he with to leavent his ever wall and his sort to all magic down of the carroom, he insidable face. “He cashar,”
+
+And she but morning into excite again and larging ret. “Harry hall couldn’t this room, looking the of the bath small the spontre she aways scame at Harry at of the aways she feeling in eamented of the end huges to spazing large in up and backsanced. “Harry, then, all thinking to wants, on, which asking back at it not once the table the firess in with massed reguen a meanted as rospifered ence ond.
+
+“Theree, I my going n
+--------
+
+iter    1600 | loss  386.527 | avg loss  451.048 | loss/char  1.510 | avg/char  1.762 | val/char  1.526 | lr 5.92e-04 |  1.30 step/s (  10.4 win/s) | total 1096.06s
+iter    1700 | loss  391.260 | avg loss  434.294 | loss/char  1.528 | avg/char  1.696 | val/char  1.500 | lr 5.91e-04 |  1.57 step/s (  12.6 win/s) | total 1159.58s
+Sample at iteration 1750:
+
+Average loss recent: 427.1324
+Average loss/char recent: 1.6685
+
+--------
+o mouth ever did in the badle fisr had can, we’ve seemed to how there had a fan instered you, I don’t givece you be out the outher off Mr. Great George could by of the had thought.”
+
+Harry wally in the darde of the airs in his for back around then excecite what hear as full full hap to spleak.
+
+“Ever is that come let on secentairs will some it’s bed to ell as gually about acce the sidicus, and though she had mean sextaining of the chool moves had ready not the fight admos three face, and as there — the door portion of was a gong a give of Harry, serious their small. and can’t once face insista
+--------
+
+iter    1800 | loss  374.887 | avg loss  420.440 | loss/char  1.464 | avg/char  1.642 | val/char  1.489 | lr 5.89e-04 |  1.30 step/s (  10.4 win/s) | total 1236.64s
+iter    1900 | loss  374.331 | avg loss  409.195 | loss/char  1.462 | avg/char  1.598 | val/char  1.465 | lr 5.87e-04 |  1.56 step/s (  12.5 win/s) | total 1300.88s
+iter    2000 | loss  374.990 | avg loss  399.405 | loss/char  1.465 | avg/char  1.560 | val/char  1.458 | lr 5.86e-04 |  1.58 step/s (  12.6 win/s) | total 1364.26s
+Sample at iteration 2000:
+
+Average loss recent: 399.4054
+Average loss/char recent: 1.5602
+
+--------
+ated him over. . I supposed at Hermione showly was carring form the Ministry exprent of the rubber of the mess first window, in parin and the only of of the started of mist far, and a bit make another boy. My come, Harry, waiting and the were moned him, haird and to schak around off his blook the stack at ment one on all him have face brishen afters in that Harry tiny lesson, he had last one becames gruffal bad him. Erdement got over of yet. “O’re back one you want talk her? .... me in the boy back to me. ... . . . .. . anord sus stone and through was been and bag sight doors met, you supppecy
+--------
+
+iter    2100 | loss  378.535 | avg loss  391.373 | loss/char  1.479 | avg/char  1.529 | val/char  1.448 | lr 5.84e-04 |  1.28 step/s (  10.3 win/s) | total 1442.19s
+iter    2200 | loss  365.519 | avg loss  384.655 | loss/char  1.428 | avg/char  1.503 | val/char  1.419 | lr 5.81e-04 |  1.55 step/s (  12.4 win/s) | total 1506.86s
+Sample at iteration 2250:
+
+Average loss recent: 381.4783
+Average loss/char recent: 1.4901
+
+--------
+red for the night in the cantic and there, he was stranted at the courting of the sunst dage they were and a ganger that while his face, and posssed voices for the tentt in the gards, and really spent, though there was sounded a lefty on the since, was staring odd him.
+
+“Compoker to side that he had this must his freend, and continued unliking their thing sare on Hagrid and shanging and stared of the dark oor the end-face and with there air, they could and all the entrance, him and reached of four that look ready cake to trunk.
+
+“So ... theree’s got a that one. ...”
+
+“Lucky,” said Hermione gre
+--------
+
+iter    2300 | loss  348.464 | avg loss  378.482 | loss/char  1.361 | avg/char  1.478 | val/char  1.418 | lr 5.79e-04 |  1.30 step/s (  10.4 win/s) | total 1583.58s
+iter    2400 | loss  357.223 | avg loss  372.876 | loss/char  1.395 | avg/char  1.457 | val/char  1.402 | lr 5.77e-04 |  1.57 step/s (  12.6 win/s) | total 1647.28s
+iter    2500 | loss  371.114 | avg loss  368.233 | loss/char  1.450 | avg/char  1.438 | val/char  1.393 | lr 5.74e-04 |  1.56 step/s (  12.5 win/s) | total 1711.52s
+Sample at iteration 2500:
+
+Average loss recent: 368.2334
+Average loss/char recent: 1.4384
+
+--------
+n his fronter with hand until his hand been miched.
+
+“I casse might,” said His eyes stand to his crowds.
+
+“I did not,” said Dumbledore, shrowly around up on for borith, which should there was it uncomplain.
+
+“His dematicly you toot the to your the one the wand, but now.”
+
+However foot seatirs.
+
+“I migar?” yed Hermione house-flesson than was noboking was something in and spire with a cage sudents in the cars in this freamint for usual.
+
+“Mayrita impressive. Are in a disers of complain of what isn’t want of to be have over unimortable to trapwers. Ever.”
+
+“Ecles .... sir.”
+
+“In .... . . .. you k
+--------
+
+iter    2600 | loss  366.319 | avg loss  364.172 | loss/char  1.431 | avg/char  1.423 | val/char  1.389 | lr 5.72e-04 |  1.30 step/s (  10.4 win/s) | total 1788.68s
+iter    2700 | loss  336.981 | avg loss  360.467 | loss/char  1.316 | avg/char  1.408 | val/char  1.366 | lr 5.69e-04 |  1.53 step/s (  12.2 win/s) | total 1854.15s
+Sample at iteration 2750:
+
+Average loss recent: 358.5869
+Average loss/char recent: 1.4007
+
+--------
+s the enger the glass the leger down the hot hand at the right the study on the and returned working at the first resictence like him. The convern, and and illing dy them, he saw them was him and like the walling silence.
+
+“She would be able Harry, I want?” he was right, “I know you’ll not bost the Same, cars! I’ll soor white I’m surely you, a for because inly this boy a murmory protecter than weather and way a bit tank they turned through, and the hall. He had got up a girl, hang but Defore?”
+
+“Yes took a good,” said Crouch, “I am the stairs.”
+
+“I almosse I won!” Percy had bleed Harry, told h
+--------
+
+iter    2800 | loss  344.397 | avg loss  356.782 | loss/char  1.345 | avg/char  1.394 | val/char  1.365 | lr 5.66e-04 |  1.26 step/s (  10.1 win/s) | total 1933.49s
+iter    2900 | loss  353.691 | avg loss  353.467 | loss/char  1.382 | avg/char  1.381 | val/char  1.354 | lr 5.64e-04 |  1.57 step/s (  12.5 win/s) | total 1997.26s
+iter    3000 | loss  337.482 | avg loss  350.374 | loss/char  1.318 | avg/char  1.369 | val/char  1.343 | lr 5.60e-04 |  1.56 step/s (  12.5 win/s) | total 2061.48s
+Sample at iteration 3000:
+
+Average loss recent: 350.3739
+Average loss/char recent: 1.3686
+
+--------
+rom and leg a got of her.
+
+Back a bottle happened of her were was pointing around the curtain toward the boy and Harry’s day told. She was to ask he could bme to mother common his words full as the back of toward the day and when in the long-for bust him they two some inter curloarly to forething and down as the attack of were. The stairs feeling were memorys anyway the door. Ron and put down or of anste older, and the door beside speak, he left the rain to his for sfakets look come of the water being the thread them were about in his earry name the parting door window to catching to his lefty
+--------
+
+iter    3100 | loss  325.243 | avg loss  347.674 | loss/char  1.270 | avg/char  1.358 | val/char  1.345 | lr 5.57e-04 |  1.24 step/s (   9.9 win/s) | total 2142.08s
+iter    3200 | loss  334.000 | avg loss  345.160 | loss/char  1.305 | avg/char  1.348 | val/char  1.328 | lr 5.54e-04 |  1.48 step/s (  11.9 win/s) | total 2209.50s
+Sample at iteration 3250:
+
+Average loss recent: 343.8934
+Average loss/char recent: 1.3433
+
+--------
+everyone to the carol and hurried to fing the his around around the Decreent and George to the wing, there at the clear of the breathily sword out a talk-straight, as though looker out of wingle shimmed. He felt along the gramatical back on the exprison whisper of some in his parkity molther. Fred up the past, had wanted her hands the spat of them.
+
+They sacked around as he had tranged his hands meants because away, and the ground closer the door and for into the troation, the look everything the source of Scrimbeous was where sweats a happilime mad the on anything the house-elf, and her behav
+--------
+
+iter    3300 | loss  324.695 | avg loss  342.639 | loss/char  1.268 | avg/char  1.338 | val/char  1.315 | lr 5.51e-04 |  1.16 step/s (   9.3 win/s) | total 2295.97s
+iter    3400 | loss  319.270 | avg loss  340.907 | loss/char  1.247 | avg/char  1.332 | val/char  1.321 | lr 5.47e-04 |  1.36 step/s (  10.9 win/s) | total 2369.39s
+iter    3500 | loss  344.332 | avg loss  338.825 | loss/char  1.345 | avg/char  1.324 | val/char  1.318 | lr 5.44e-04 |  1.38 step/s (  11.0 win/s) | total 2441.85s
+Sample at iteration 3500:
+
+Average loss recent: 338.8251
+Average loss/char recent: 1.3235
+
+--------
+sted the fact and stepped around the look. Harry and he saw and outlively of lay around the soundy stairs time the way like her hair. He was scorred in his head of expected, he stand Harry was discusseres fighting a lot of the need had him in the storange as in the cloud of his particularly wisce now, he had gon sure to his head and seemed out of the businer where he was before the beatil. He and his streetched to the grounds to teath whele breakfast and fell of his weath as the correct, but Hagrid meanting to his gift half of the attempt before
+
+“ — that as it’s to in the post to wild at all 
+--------
+
+iter    3600 | loss  334.990 | avg loss  336.551 | loss/char  1.309 | avg/char  1.315 | val/char  1.310 | lr 5.40e-04 |  1.14 step/s (   9.1 win/s) | total 2529.37s
+iter    3700 | loss  325.349 | avg loss  334.915 | loss/char  1.271 | avg/char  1.308 | val/char  1.304 | lr 5.36e-04 |  1.40 step/s (  11.2 win/s) | total 2601.02s
+Sample at iteration 3750:
+
+Average loss recent: 333.8295
+Average loss/char recent: 1.3040
+
+--------
+lft was curly a moke expecited the doors and the top to the pitch of Mr. Weasley winded the tien to the green with a sigger voice of beinging a visit, while brigges the thin in the top of a moment hole of the stone that sluggests and who had been all in the rambbed. It’s run the relieve at his own.
+
+“Don’t wanted to straight,” said Hermione, his eyes of the copplete in the potion of the hall and delighters. “There’s name who was not in me grit of the classful.”
+
+“They’re right,” said Harry. “Then the staff you wanted any spath and then pun all to strik any great they speaked about them all ins
+--------
+
+iter    3800 | loss  353.355 | avg loss  332.809 | loss/char  1.380 | avg/char  1.300 | val/char  1.296 | lr 5.32e-04 |  1.13 step/s (   9.0 win/s) | total 2689.77s
+iter    3900 | loss  327.988 | avg loss  331.086 | loss/char  1.281 | avg/char  1.293 | val/char  1.292 | lr 5.28e-04 |  1.37 step/s (  10.9 win/s) | total 2763.01s
+iter    4000 | loss  324.960 | avg loss  329.805 | loss/char  1.269 | avg/char  1.288 | val/char  1.287 | lr 5.24e-04 |  1.34 step/s (  10.7 win/s) | total 2837.73s
+Sample at iteration 4000:
+
+Average loss recent: 329.8051
+Average loss/char recent: 1.2883
+
+--------
+ plain. “That’ll you turn.”
+
+“But — thank essays mean — ”
+
+He draggered on the spind opposite. Preceventive and stared and his feet more up away.
+
+“What’s — it’s not practice well to be too, and she was entured,” Harry said. “I — as excitee.”
+
+They heard the contraption side the stagg and resigng the sign from the bagsicase from the now. They were murdered where.
+
+“Well, do, sear you and that it is. Percy read through the door on it and gulp him.”
+
+“Well wanted to run my sorry!”
+
+“ Potter has back neary for thing off,” said Snape in a glass ting. “You think it want to tonight, your apsearing y
+--------
+
+iter    4100 | loss  314.899 | avg loss  328.236 | loss/char  1.230 | avg/char  1.282 | val/char  1.283 | lr 5.20e-04 |  1.12 step/s (   9.0 win/s) | total 2927.08s
+iter    4200 | loss  338.903 | avg loss  327.026 | loss/char  1.324 | avg/char  1.277 | val/char  1.280 | lr 5.16e-04 |  1.33 step/s (  10.7 win/s) | total 3002.10s
+Sample at iteration 4250:
+
+Average loss recent: 326.4249
+Average loss/char recent: 1.2751
+
+--------
+!” said Hermione. “He needed to see him in the Ministry of Magic.
+
+Bodly’s the moving slightly life his water, he won’t think sure to his drive you that I’m wear all him who’d be going to get out of those days, and then I weaken and sat him anything in minute like that when they always what night they — he and he forced infifficely his — thought they’ll be so take Phinea Pang in an order.”
+
+They thoughtfully seemed to grit given his came bower by which then he hadn’t could see this arm. The time to get the papers into his hand treaten of the weal, then she snaped missectedly, and there eyes to
+--------
+
+iter    4300 | loss  331.801 | avg loss  325.822 | loss/char  1.296 | avg/char  1.273 | val/char  1.274 | lr 5.11e-04 |  1.15 step/s (   9.2 win/s) | total 3089.25s
+iter    4400 | loss  311.256 | avg loss  324.132 | loss/char  1.216 | avg/char  1.266 | val/char  1.270 | lr 5.07e-04 |  1.33 step/s (  10.6 win/s) | total 3164.66s
+iter    4500 | loss  321.439 | avg loss  322.933 | loss/char  1.256 | avg/char  1.261 | val/char  1.266 | lr 5.02e-04 |  1.42 step/s (  11.4 win/s) | total 3235.02s
+Sample at iteration 4500:
+
+Average loss recent: 322.9331
+Average loss/char recent: 1.2615
+
+--------
+ enterment to her convinte as the only rest of spiders and slippered and came and looked to the combaps and slightly in the corridor of sight, looking around over the inding pression on the sound between, still with a shadow tumpis tick to around the come who squeal hunk to broken into his nose.
+
+“What?”
+
+“You mean?” said Harry innighteancely.
+
+“I suppose to give them on?”
+
+“But supposed Sirius as apprehens,” said Fred, hurried.
+
+“Harry,” said Harry pointed Ron interes, starting up at once of it front dide.
+
+“No,” said George.
+
+“Out — injure out — ”
+
+“Deestionately — ”
+
+“Exectanix he’s — ” sai
+--------
+
+iter    4600 | loss  289.547 | avg loss  321.383 | loss/char  1.131 | avg/char  1.255 | val/char  1.256 | lr 4.98e-04 |  1.39 step/s (  11.1 win/s) | total 3306.94s
+iter    4700 | loss  322.840 | avg loss  319.582 | loss/char  1.261 | avg/char  1.248 | val/char  1.265 | lr 4.93e-04 |  1.71 step/s (  13.6 win/s) | total 3365.57s
+Sample at iteration 4750:
+
+Average loss recent: 319.1337
+Average loss/char recent: 1.2466
+
+--------
+ touch the long castle of olding rearing the wall; were registed blindly over from the cutting and looking forward for the front of poling newt.
+
+“What if he’d return and leave, Disapparatiull” he wonged. “These were all relieven the stop hours sitting eyes on the room snake. The stone line bottle bonced.”
+
+“No because Harry and the stand tired,” said Ron. “Coming, then.”
+
+“Why think you till wro thing the time the mate of the ground in his as the scarlet whedger interruptingly continued. Harry had not to the more power into the beflow ranger clar and the room. What Harry put with them a ceili
+--------
+
+iter    4800 | loss  306.997 | avg loss  318.504 | loss/char  1.199 | avg/char  1.244 | val/char  1.262 | lr 4.88e-04 |  1.42 step/s (  11.3 win/s) | total 3436.21s
+iter    4900 | loss  308.809 | avg loss  317.069 | loss/char  1.206 | avg/char  1.239 | val/char  1.256 | lr 4.83e-04 |  1.65 step/s (  13.2 win/s) | total 3496.91s
+Saved checkpoint to outputs_hp_char/checkpoint.pkl
+iter    5000 | loss  323.497 | avg loss  316.024 | loss/char  1.264 | avg/char  1.234 | val/char  1.251 | lr 4.78e-04 |  1.51 step/s (  12.1 win/s) | total 3562.99s
+Sample at iteration 5000:
+
+Average loss recent: 316.0235
+Average loss/char recent: 1.2345
+
+--------
+ottled it owl before he was low lending by in the wall, and stopped at his wand, “With can a minute and there, Harry? We should have succed there, and I am is that enough and on there were an intrace oddinating polished, she calmed, here, the Grimmauld Black Patronus to make with a valuable to rick hoar greenhous heavy when the darchback of sound, then as head visible trolls, but because once.
+
+“We and there,” said Ron. “Definition an order,” said Harry. “Who — if you know.”
+
+“Black that time?”
+
+“That’s got you that you?” said Pick, pushing Harry’s letter, and he cleared on at the still toat t
+--------
+
+iter    5100 | loss  298.592 | avg loss  314.883 | loss/char  1.166 | avg/char  1.230 | val/char  1.249 | lr 4.73e-04 |  1.31 step/s (  10.4 win/s) | total 3639.59s
+iter    5200 | loss  310.877 | avg loss  313.480 | loss/char  1.214 | avg/char  1.225 | val/char  1.252 | lr 4.68e-04 |  1.64 step/s (  13.1 win/s) | total 3700.47s
+Sample at iteration 5250:
+
+Average loss recent: 312.8419
+Average loss/char recent: 1.2220
+
+--------
+o him, three embrelate seized at him. “And then is not the way ... if he were inside. So we finer ...”
+
+“It’s opinion?” said Harry.
+
+“He’s got in the way,” Ron said raisingly. “Why?”
+
+“What did abou’ better how he had an understand his book?” said Fred, as the castle behind the tiny in an occeptated onto his voice.
+
+Fleur Harry and Ron and Hermione sankly out of his hair was frowning, against himself an attacked of buried out of his hand and now shocking at him embarried Harry liked Hermione, and slowed holding his hoope nose to drop to the pitch was a shop good and draway let of the lake of t
+--------
+
+iter    5300 | loss  303.726 | avg loss  312.218 | loss/char  1.186 | avg/char  1.220 | val/char  1.237 | lr 4.63e-04 |  1.27 step/s (  10.2 win/s) | total 3779.05s
+iter    5400 | loss  302.902 | avg loss  311.202 | loss/char  1.183 | avg/char  1.216 | val/char  1.241 | lr 4.58e-04 |  1.60 step/s (  12.8 win/s) | total 3841.42s
+iter    5500 | loss  319.447 | avg loss  310.028 | loss/char  1.248 | avg/char  1.211 | val/char  1.237 | lr 4.52e-04 |  1.59 step/s (  12.7 win/s) | total 3904.42s
+Sample at iteration 5500:
+
+Average loss recent: 310.0277
+Average loss/char recent: 1.2110
+
+--------
+fell the moment lank into the ghospital of a the stater work into it.
+
+“Mands as me she do — ”
+
+“Come on, I mean, I’ll find to — when you haven’t been to the most behind whI appolle it meet since — ”
+
+“Malfoy,” said Hermione, but Fred and Moody was a very mort skimmer about Hogwarts savered into the hope. “Isn’t your goblet.”
+
+“Yes I could he supposed with great gaze and see it was after you gentroess out before where Mr. Weasley probably managined under that the table wind meant it as a school order something more beam and bullowed, though he meant from Severus someone pounceded him. The watc
+--------
+
+iter    5600 | loss  291.718 | avg loss  309.379 | loss/char  1.140 | avg/char  1.209 | val/char  1.237 | lr 4.47e-04 |  1.29 step/s (  10.3 win/s) | total 3981.97s
+iter    5700 | loss  300.118 | avg loss  308.564 | loss/char  1.172 | avg/char  1.205 | val/char  1.235 | lr 4.42e-04 |  1.62 step/s (  13.0 win/s) | total 4043.73s
+Sample at iteration 5750:
+
+Average loss recent: 308.1036
+Average loss/char recent: 1.2035
+
+--------
+ points the clinch of the stairs and base trolling controllated the other line the imprisonent with a mind of head of his hands behind Harry and stronged up and back to his wand and rising with a staircase about high toward the room-wind her of her side and the regritted the boys. Statues cold vagable, “My think like all it, and wonn’t like their water — ”
+
+“Hagrid — ”
+
+“To hear you with the Death Eaters and the teachers he continued to wite us?” she sharpled looked impression. “Do won? Harry dry it to is the one with the greet have remained the diesk and of the corridors thing with a line eve
+--------
+
+iter    5800 | loss  269.602 | avg loss  307.745 | loss/char  1.053 | avg/char  1.202 | val/char  1.235 | lr 4.36e-04 |  1.33 step/s (  10.6 win/s) | total 4119.07s
+iter    5900 | loss  311.992 | avg loss  307.248 | loss/char  1.219 | avg/char  1.200 | val/char  1.228 | lr 4.31e-04 |  1.56 step/s (  12.5 win/s) | total 4183.10s
+iter    6000 | loss  287.390 | avg loss  306.018 | loss/char  1.123 | avg/char  1.195 | val/char  1.224 | lr 4.25e-04 |  1.56 step/s (  12.5 win/s) | total 4247.16s
+Sample at iteration 6000:
+
+Average loss recent: 306.0178
+Average loss/char recent: 1.1954
+
+--------
+d opened for a nearest bathroom of how the arest to be short off. Azkaban a time isne magazing to the floor memory. Blut of his feet. A powderly third wanted figures in the stadius of company of the best skinning full of piles, at the man realited faces face. The classroom cellebations and thicket it was suddenly up the door. Hogwarts, thick it’s not opposite.
+
+Hogwarts, thought if he was the moment. When Harry didn’t know as long that Marka
+
+“Harry?” Harry said, felt in bed to stand and with the common returning to listen up to her beyonstone her still cheerful, all seemed to have been or sid
+--------
+
+iter    6100 | loss  295.340 | avg loss  305.000 | loss/char  1.154 | avg/char  1.191 | val/char  1.226 | lr 4.19e-04 |  1.33 step/s (  10.7 win/s) | total 4322.08s
+iter    6200 | loss  311.596 | avg loss  304.156 | loss/char  1.217 | avg/char  1.188 | val/char  1.219 | lr 4.14e-04 |  1.57 step/s (  12.5 win/s) | total 4385.93s
+Sample at iteration 6250:
+
+Average loss recent: 303.7665
+Average loss/char recent: 1.1866
+
+--------
+r mass place of tain, the basin for a momentariliar to many about the house-elf time, and the grass that the should living past hard out of the table, raised an excited through the enterer. They were a flow and the top of the stairs work.
+
+Harry and George had been him to say: Dumbledore looked off and scrouch on his ear again.
+
+“The eastater tell help to Hagrid.”
+
+“He’s got me a put of defining?” Hagrid said as the point his keeping heart point out of the next for a potone.
+
+“You — we’re still off the sound of the floot mouth — and the son would have taken the stone watch the parcom — ”
+
+“Wha
+--------
+
+iter    6300 | loss  302.755 | avg loss  303.467 | loss/char  1.183 | avg/char  1.185 | val/char  1.217 | lr 4.08e-04 |  1.26 step/s (  10.1 win/s) | total 4465.18s
+iter    6400 | loss  302.618 | avg loss  302.542 | loss/char  1.182 | avg/char  1.182 | val/char  1.213 | lr 4.02e-04 |  1.56 step/s (  12.5 win/s) | total 4529.26s
+iter    6500 | loss  315.813 | avg loss  301.697 | loss/char  1.234 | avg/char  1.179 | val/char  1.209 | lr 3.96e-04 |  1.59 step/s (  12.7 win/s) | total 4592.32s
+Sample at iteration 6500:
+
+Average loss recent: 301.6968
+Average loss/char recent: 1.1785
+
+--------
+chered the crowd and looked down at the paper face of the corner was on his ears time. Harry husped around the potion glimping in midair faces, the spine pain was short than he was tied away, Harry whishing the trees of the school packed with the peer long suitches.
+
+“En’t here,” he said, he stowed to her around.
+
+“Come on. We want to get me them to remember to wonder to the talk race. It was a little of wound when he had all the finished three an’ atempting to the parchment with the train an’ uniquide the honest the school of on you know what when Harry were the step wizard in the time to coo
+--------
+
+iter    6600 | loss  309.843 | avg loss  300.403 | loss/char  1.210 | avg/char  1.173 | val/char  1.204 | lr 3.90e-04 |  1.32 step/s (  10.5 win/s) | total 4668.32s
+iter    6700 | loss  303.396 | avg loss  299.773 | loss/char  1.185 | avg/char  1.171 | val/char  1.205 | lr 3.84e-04 |  1.58 step/s (  12.6 win/s) | total 4731.76s
+Sample at iteration 6750:
+
+Average loss recent: 299.3084
+Average loss/char recent: 1.1692
+
+--------
+.
+
+ “I would imagine you again. I suppose like the scare since of my nose alive this house-elf. Though you wrote to trie? I big behome, I wasn’t a bit of wooden friends, do have her must be enough the new of the cold! Anyway, of course you him — ”
+
+“I said you wizard it end at Dumbledore,” she said speakingly. “Well, were you thinking a large wizard, seeing if you, to get a fat of fessoge that I was — good to that had on that he’s half-next my biting back down — and then, do it!”
+
+He did notice a great sneer, and took one’s the place of headmaster. Harry was perfectly been a longer fumble whit
+--------
+
+iter    6800 | loss  298.630 | avg loss  298.759 | loss/char  1.167 | avg/char  1.167 | val/char  1.206 | lr 3.78e-04 |  1.28 step/s (  10.3 win/s) | total 4809.78s
+iter    6900 | loss  306.295 | avg loss  298.083 | loss/char  1.196 | avg/char  1.164 | val/char  1.200 | lr 3.72e-04 |  1.55 step/s (  12.4 win/s) | total 4874.17s
+iter    7000 | loss  295.261 | avg loss  297.335 | loss/char  1.153 | avg/char  1.161 | val/char  1.198 | lr 3.66e-04 |  1.53 step/s (  12.2 win/s) | total 4939.64s
+Sample at iteration 7000:
+
+Average loss recent: 297.3350
+Average loss/char recent: 1.1615
+
+--------
+suite to possible. Then Harry saw Hermione and the worst on the hole, and arrived. Ron looked from a few of left the shop’s dad fine on the pieces, even the side of the trunk cut over the offerst table, and he threw it barels, untering the truth Harry Potter of the third tasks. Harry looked or silver out of the real of the rest of the sharet, and Ron stepped to his beside a friended in armor, man stared at the apple witchess.
+
+“I think you think it about to them up your feet to stretch admid, don’t tell them you too fid it!”
+
+“Arthur are what there, it’s nothing trume to yop, Party,” said Harr
+--------
+
+iter    7100 | loss  282.842 | avg loss  296.894 | loss/char  1.105 | avg/char  1.160 | val/char  1.191 | lr 3.60e-04 |  1.31 step/s (  10.5 win/s) | total 5016.04s
+iter    7200 | loss  299.398 | avg loss  295.878 | loss/char  1.170 | avg/char  1.156 | val/char  1.201 | lr 3.54e-04 |  1.53 step/s (  12.3 win/s) | total 5081.24s
+Sample at iteration 7250:
+
+Average loss recent: 295.5166
+Average loss/char recent: 1.1544
+
+--------
+growlum, he was both in time where he was going to his fingers for a few whom not feeling so he did to say he had come rather the stairs — had been passed Mum. ... There’s just for all the things of my gold!
+
+The previous grip into the fire and sets off a letter play back out of feebly between ... and It came the counter of your house, I haven’t think you, but his left people with what you’d he?”
+
+“It’s still not there,” said Hermione.
+
+Harry as the week shaking he without down her hands.
+
+“What happened?”
+
+Harry whispered him. He and he had had to see that presed his hintly and fallen out of 
+--------
+
+iter    7300 | loss  288.973 | avg loss  295.065 | loss/char  1.129 | avg/char  1.153 | val/char  1.198 | lr 3.48e-04 |  1.17 step/s (   9.4 win/s) | total 5166.48s
+iter    7400 | loss  295.120 | avg loss  294.442 | loss/char  1.153 | avg/char  1.150 | val/char  1.194 | lr 3.42e-04 |  1.43 step/s (  11.4 win/s) | total 5236.60s
+iter    7500 | loss  268.542 | avg loss  293.424 | loss/char  1.049 | avg/char  1.146 | val/char  1.196 | lr 3.36e-04 |  1.48 step/s (  11.8 win/s) | total 5304.20s
+Sample at iteration 7500:
+
+Average loss recent: 293.4238
+Average loss/char recent: 1.1462
+
+--------
+able had recognized the Minister of Magic looking purple — he hurt. When he had the tiny in way that what had was left out of all advanced it from him, and looked at a moment, the moment of pighting of his forehead.
+
+“What are you want to look you found as you’ve let this?”
+
+“No, it’s he stop,” said Harry, taking away. People rather sound so look and rathless white that was true he felt and the golden mistake’s gold living to misk, and we creased the end of the other. “So you think, or if you see all the other and shout of lost badge, a wizard rude. Of a bood smile, madmaxed for for the chambe
+--------
+
+iter    7600 | loss  272.260 | avg loss  292.843 | loss/char  1.064 | avg/char  1.144 | val/char  1.188 | lr 3.30e-04 |  1.25 step/s (  10.0 win/s) | total 5384.35s
+iter    7700 | loss  293.202 | avg loss  292.162 | loss/char  1.145 | avg/char  1.141 | val/char  1.189 | lr 3.24e-04 |  1.52 step/s (  12.1 win/s) | total 5450.27s
+Sample at iteration 7750:
+
+Average loss recent: 291.7411
+Average loss/char recent: 1.1396
+
+--------
+ people using to his life — and Harry will distinctly lif outline ...”
+
+He saw how to see it was pulsing out his shout and staring at the copy of fiery, however, the weapon step like a little of end of steps now speaking and wearing at each other from and robes. Howeving disappeared all right news to see he was telling him that by that he was ended too the contents, but his heard were also slightly and in the entrance pick of and he said whispers and slightly to Mrs. Weasley’s voice.
+
+“How did you take us, I’ll tell he die you work about his forehead,” he said wearingly, “and that you were to 
+--------
+
+iter    7800 | loss  274.081 | avg loss  291.593 | loss/char  1.071 | avg/char  1.139 | val/char  1.185 | lr 3.17e-04 |  1.30 step/s (  10.4 win/s) | total 5527.36s
+iter    7900 | loss  287.083 | avg loss  290.597 | loss/char  1.121 | avg/char  1.135 | val/char  1.178 | lr 3.11e-04 |  1.53 step/s (  12.2 win/s) | total 5592.89s
+iter    8000 | loss  297.788 | avg loss  289.839 | loss/char  1.163 | avg/char  1.132 | val/char  1.183 | lr 3.05e-04 |  1.57 step/s (  12.6 win/s) | total 5656.56s
+Sample at iteration 8000:
+
+Average loss recent: 289.8391
+Average loss/char recent: 1.1322
+
+--------
+ stops standing rattlingly her over, her wand eyes were conversion, and waiting around his handkerchief, “Harry — at the leson right — the Dece forceful that we have to say a Sneakoscope party, it was a winger grasp on your father hand of the pallar hit for from him at once red; a very handk tail of few was confidents because a hand, and I will be in teacher, and waiting for what you were me, but untruted of your dreams will be, but I think you could be embarrassured his right ago. ...”
+
+“I don’t think nothing about to sweat that they would risk to stay it down.”
+
+“But she want to,” said Profe
+--------
+
+iter    8100 | loss  283.472 | avg loss  288.995 | loss/char  1.107 | avg/char  1.129 | val/char  1.179 | lr 2.99e-04 |  1.27 step/s (  10.1 win/s) | total 5735.38s
+iter    8200 | loss  284.034 | avg loss  288.370 | loss/char  1.110 | avg/char  1.126 | val/char  1.175 | lr 2.93e-04 |  1.56 step/s (  12.5 win/s) | total 5799.61s
+Sample at iteration 8250:
+
+Average loss recent: 288.0741
+Average loss/char recent: 1.1253
+
+--------
+e ordinary back to the conversation with a spinning slow. A great tall famordang what she made the sort in the corridor feel and hat someone had a prod with history on the cold black down his head and blinding to her usual power. A damp pleased by what Harry would come back to the floor witness of meeting in the group, though he were the prowled bag to much when he could have part off wizards, which seemed slam suvely had been so much with communic. . . . He draw hair that memoved again and the students of end once where the fire room each of the back crack that no angument from the tip made h
+--------
+
+iter    8300 | loss  296.081 | avg loss  287.726 | loss/char  1.157 | avg/char  1.124 | val/char  1.167 | lr 2.86e-04 |  1.27 step/s (  10.2 win/s) | total 5878.39s
+iter    8400 | loss  295.894 | avg loss  286.838 | loss/char  1.156 | avg/char  1.120 | val/char  1.176 | lr 2.80e-04 |  1.55 step/s (  12.4 win/s) | total 5942.82s
+iter    8500 | loss  303.273 | avg loss  286.552 | loss/char  1.185 | avg/char  1.119 | val/char  1.168 | lr 2.74e-04 |  1.54 step/s (  12.3 win/s) | total 6007.62s
+Sample at iteration 8500:
+
+Average loss recent: 286.5524
+Average loss/char recent: 1.1193
+
+--------
+ few bowlers.
+
+“We’ve got to get on!” said Harry, her eyes hit the eyes of his passageway, and they were still going to tricken, all of them were louder through the largest, and very worked on the table into their very days. A shadow voice asid from the television for the frequirity very boy at Black didn’t want to head the later?
+
+Hermione looked as if she stood up to a little even life from the fire, her eyes arms fellow, when Harry saw Hagrid’s cheek to be planning at Harry. The end of Stan Snape saw the stadium stifl cross of a fence to account, and they froated Madam Pomfrey and Moody, ho
+--------
+
+iter    8600 | loss  280.068 | avg loss  286.090 | loss/char  1.094 | avg/char  1.118 | val/char  1.171 | lr 2.68e-04 |  1.27 step/s (  10.2 win/s) | total 6086.14s
+iter    8700 | loss  274.380 | avg loss  285.377 | loss/char  1.072 | avg/char  1.115 | val/char  1.163 | lr 2.62e-04 |  1.51 step/s (  12.1 win/s) | total 6152.29s
+Sample at iteration 8750:
+
+Average loss recent: 285.1556
+Average loss/char recent: 1.1139
+
+--------
+r?” said Harry, “feeling some branches in front of the main what they had extraordinary ever speake that he might have been up acting them and reescued to keep off the dormitory. He was still toward the tcung that he was staring at a moment. He knew that looked shures he was am alone.
+
+The piece of the corridor of the garden pounding toward their tears.
+
+ “What?” said Harry, griding at Malfoy down the face as though the bush had carried with back to school ears as they could not say about them, the voice could hear haund. After they began to reapsure and something watches. Harry sped out nervo
+--------
+
+iter    8800 | loss  269.543 | avg loss  284.673 | loss/char  1.053 | avg/char  1.112 | val/char  1.160 | lr 2.56e-04 |  1.24 step/s (  10.0 win/s) | total 6232.65s
+iter    8900 | loss  284.123 | avg loss  284.096 | loss/char  1.110 | avg/char  1.110 | val/char  1.158 | lr 2.50e-04 |  1.54 step/s (  12.3 win/s) | total 6297.53s
+iter    9000 | loss  280.523 | avg loss  283.723 | loss/char  1.096 | avg/char  1.108 | val/char  1.161 | lr 2.44e-04 |  1.55 step/s (  12.4 win/s) | total 6362.11s
+Sample at iteration 9000:
+
+Average loss recent: 283.7225
+Average loss/char recent: 1.1083
+
+--------
+ the square of the room, apparently staring at the gamekerer. The bottle empty seemed by Harry’s wand, where a low-haired and screamed. He could see heavily until had pressed the come.
+
+“Eed — what’s all the book?”
+
+“And that’s a break it?” said Ron, looking at the same seater and watching the heavy. “Sirius ...”
+
+There was a pumpkin, and carrying. Professor Umbridge up a bag of hand towers green under and started the entrance hall. Instantly which to screame his flagged fingers of his heart, and it had appeared to Hermione, a few horribly picture of such or like the bitches full of fancicases
+--------
+
+iter    9100 | loss  256.460 | avg loss  283.082 | loss/char  1.002 | avg/char  1.106 | val/char  1.159 | lr 2.38e-04 |  1.28 step/s (  10.2 win/s) | total 6440.32s
+iter    9200 | loss  293.351 | avg loss  282.423 | loss/char  1.146 | avg/char  1.103 | val/char  1.158 | lr 2.32e-04 |  1.51 step/s (  12.1 win/s) | total 6506.57s
+Sample at iteration 9250:
+
+Average loss recent: 281.9354
+Average loss/char recent: 1.1013
+
+--------
+stant to check the sales three for a great right to conclusion.
+
+“Ministry of Magoro, Diagonal Bag. I suppose to go them at Hogwarts and we can hiddrew and killed it yet. ... The loud they don’t like this way to frighten him about the others again him and wanted to sound; even it hadn’t been such a lot effort.
+
+“He was a place of exactly, one’s four not footsteps, but then before him this affician them was beating to control Hagrie and dared out on sidastince here. It was now what hadn’t got a letter, that was in the rate, but out of the large he was running to him back at the tent, all over t
+--------
+
+iter    9300 | loss  274.391 | avg loss  281.658 | loss/char  1.072 | avg/char  1.100 | val/char  1.147 | lr 2.26e-04 |  1.29 step/s (  10.3 win/s) | total 6584.38s
+iter    9400 | loss  273.538 | avg loss  281.439 | loss/char  1.069 | avg/char  1.099 | val/char  1.150 | lr 2.20e-04 |  1.56 step/s (  12.5 win/s) | total 6648.63s
+iter    9500 | loss  276.380 | avg loss  280.520 | loss/char  1.080 | avg/char  1.096 | val/char  1.153 | lr 2.14e-04 |  1.53 step/s (  12.2 win/s) | total 6714.00s
+Sample at iteration 9500:
+
+Average loss recent: 280.5202
+Average loss/char recent: 1.0958
+
+--------
+of the door, he was treated and thick when he had echoing the parchment to the meeting he had still right in midair. Dumbledore’s bitten, who was felcome were spent at the brothers and dragged. Harry leapt to cry and rising the end of the many of the school was awake on the before the best and strickened the leg, string it gathered as the into the shadows chance out of the walls all of the moment.
+
+“So then would hurry back down them?” said Mrs. Weasley, who shrained furiously back to the far and apart the clock of a where the weekend. “I know what you have the sort on you again, Harry, isn’t 
+--------
+
+iter    9600 | loss  273.881 | avg loss  279.720 | loss/char  1.070 | avg/char  1.093 | val/char  1.150 | lr 2.08e-04 |  1.26 step/s (  10.1 win/s) | total 6793.43s
+iter    9700 | loss  278.769 | avg loss  279.076 | loss/char  1.089 | avg/char  1.090 | val/char  1.148 | lr 2.02e-04 |  1.54 step/s (  12.3 win/s) | total 6858.53s
+Sample at iteration 9750:
+
+Average loss recent: 278.7495
+Average loss/char recent: 1.0889
+
+--------
+l then, raised out of the floor.
+
+“I’m going to kill you when Malfoy had given up,” said Ron quickly. “Remember was there? But how did an explained night, but we hadn’t any of these real of cousin ... all though we continued to dear ... they wanted to do ...” said Harry anxiously. “They did they stay all that Malfoy wasn’t advise.”
+
+Hermione slid on the wooden floor and out of the desk of the whistling was the same.
+
+“I’d have to give with me perfectly that make you clear to take it out of my subjects,” said Riddle. “And we don’t know how teacher’s mind.”
+
+“But that’s the whole about it,” said
+--------
+
+iter    9800 | loss  273.558 | avg loss  278.711 | loss/char  1.069 | avg/char  1.089 | val/char  1.145 | lr 1.96e-04 |  1.24 step/s (   9.9 win/s) | total 6939.30s
+iter    9900 | loss  285.980 | avg loss  278.274 | loss/char  1.117 | avg/char  1.087 | val/char  1.145 | lr 1.91e-04 |  1.55 step/s (  12.4 win/s) | total 7003.99s
+Saved checkpoint to outputs_hp_char/checkpoint.pkl
+iter   10000 | loss  274.583 | avg loss  277.505 | loss/char  1.073 | avg/char  1.084 | val/char  1.144 | lr 1.85e-04 |  1.51 step/s (  12.1 win/s) | total 7070.24s
+Sample at iteration 10000:
+
+Average loss recent: 277.5050
+Average loss/char recent: 1.0840
+
+--------
+luch could see Professor McGonagall’s different of the portrait headmistres, it was a cloud of blue and appearing to a glimpse overtook for breakfast; the shoulder opened a book and corred its potion, and then great in the seat on parchment of the bottom of hundreds — and he peered it in front of his throat group and in the train face between the room; Mrs. Weasley was looking down at the door. Ron dropped the middle, and then he wanted to himself into the entrance while the bruises. Harry remained behind himself out of the ghost — the farewell expression of the right of the attack to Harry’s 
+--------
+
+iter   10100 | loss  280.364 | avg loss  277.105 | loss/char  1.095 | avg/char  1.082 | val/char  1.144 | lr 1.79e-04 |  1.44 step/s (  11.5 win/s) | total 7139.65s
+iter   10200 | loss  299.656 | avg loss  276.663 | loss/char  1.171 | avg/char  1.081 | val/char  1.140 | lr 1.74e-04 |  0.73 step/s (   5.8 win/s) | total 7277.49s
+Sample at iteration 10250:
+
+Average loss recent: 276.4725
+Average loss/char recent: 1.0800
+
+--------
+n. Ron’s removed into the room, can moved slightly it insisted them from the monsters.
+
+“Maybe it help me isn’t be the champions you funny when he looked at the caretaker sign of the weather of the house like the sweating him. What was the ceiling corridors that toler than bitten way underneath that the meantime. Harry landed around and headed a moment he had got a strong scratching out of his way, and a sinky right in front of the walls became peaked an armchair, but formed himself was drinking in his wrong with evening.
+
+“All right an idea would go a great to the world with you faithful as w
+--------
+
+iter   10300 | loss  245.337 | avg loss  276.057 | loss/char  0.958 | avg/char  1.078 | val/char  1.138 | lr 1.68e-04 |  1.42 step/s (  11.4 win/s) | total 7347.68s
+iter   10400 | loss  286.567 | avg loss  275.352 | loss/char  1.119 | avg/char  1.076 | val/char  1.135 | lr 1.63e-04 |  1.76 step/s (  14.1 win/s) | total 7404.50s
+iter   10500 | loss  264.760 | avg loss  275.039 | loss/char  1.034 | avg/char  1.074 | val/char  1.133 | lr 1.58e-04 |  1.72 step/s (  13.7 win/s) | total 7462.74s
+Sample at iteration 10500:
+
+Average loss recent: 275.0390
+Average loss/char recent: 1.0744
+
+--------
+appeared at his own side different the prophecy in a very old tight, and then forced they, blinking over the room places and barrier beneath the bag door, and get into the last doors looking so impressived. Ron, Harry stared up at the last stairs, and Harry sat down on and thrown his three table and his toad.
+
+“What are you doing it?” Ron asked Hermione from the sides of her scarlet. “I would hear the thingary life . . . . have heard the due of a few railing the Death Eaters in the orders . . .
+
+Hagrid was staring at a whisper defensive he was working a closer over door, and he half lived to p
+--------
+
+iter   10600 | loss  281.760 | avg loss  274.816 | loss/char  1.101 | avg/char  1.073 | val/char  1.133 | lr 1.52e-04 |  1.30 step/s (  10.4 win/s) | total 7539.47s
+iter   10700 | loss  287.960 | avg loss  274.491 | loss/char  1.125 | avg/char  1.072 | val/char  1.130 | lr 1.47e-04 |  1.70 step/s (  13.6 win/s) | total 7598.43s
+Sample at iteration 10750:
+
+Average loss recent: 274.3323
+Average loss/char recent: 1.0716
+
+--------
+
+
+And he had been awoken about the nearest second team before he saw he was allowing behind his hands at the team that stupid pulled there. He raised the gates the bedcoming oisters. Suddenly demotibly was now putting his mind. Let back down the scarled to the back of his ears at his feet and like the castle into the kitchen.
+
+“Take a good pain. It’s been playin’ a werewolf a bit old. I suppose we can’ we never only hide, an’ the most is out of the stars, that’s the Ministry of teachin’ the dementors most this people he used breakfast work with, an’ then, they’ll they ...”
+
+“Harry,” said Ron s
+--------
+
+iter   10800 | loss  256.391 | avg loss  273.955 | loss/char  1.002 | avg/char  1.070 | val/char  1.129 | lr 1.42e-04 |  1.44 step/s (  11.5 win/s) | total 7667.95s
+iter   10900 | loss  265.661 | avg loss  273.274 | loss/char  1.038 | avg/char  1.067 | val/char  1.130 | lr 1.37e-04 |  1.74 step/s (  14.0 win/s) | total 7725.27s
+iter   11000 | loss  269.145 | avg loss  272.911 | loss/char  1.051 | avg/char  1.066 | val/char  1.127 | lr 1.32e-04 |  1.69 step/s (  13.5 win/s) | total 7784.40s
+Sample at iteration 11000:
+
+Average loss recent: 272.9114
+Average loss/char recent: 1.0661
+
+--------
+d excitedly, “But Percy is there had important better me come to prove their contrary, and I leave you ever spent me stopped.”
+
+It was a bad man who had was standing in his tracks and for a shut very super from the girls and a head of sign over hands.
+
+“What happened? Why did you had these preparing?”
+
+“You can do with something?” said Harry, his wand looking again.
+
+“Come on, I hope he felt showing me a needy idea it. Is it so more ter may tonight?”
+
+“I saw Slughorn place that the whole stupid at the front door of them.”
+
+“Think,” said Harry. “Thanks — ”
+
+“I was it’s a bad yet, anymore, I don
+--------
+
+iter   11100 | loss  300.529 | avg loss  272.241 | loss/char  1.174 | avg/char  1.063 | val/char  1.124 | lr 1.27e-04 |  1.34 step/s (  10.7 win/s) | total 7858.82s
+iter   11200 | loss  289.622 | avg loss  271.912 | loss/char  1.131 | avg/char  1.062 | val/char  1.124 | lr 1.22e-04 |  1.72 step/s (  13.8 win/s) | total 7916.90s
+Sample at iteration 11250:
+
+Average loss recent: 271.7866
+Average loss/char recent: 1.0617
+
+--------
+been looked back into every paws after and enclaor, the light behind over his lapy name.
+
+It was very odd; there was a wizard was surrounded at Harry and there was sitting something to watch out his families). Harry didn’t move or turn to his head many meeting the train gaze and his eyes. Something happened a few moments Harry could hear his wand the line in his pockets full of his sack, and it was before the window, where the rest of the corners was pointing and peering disappears white to stop the chains. He and Harry and Ron had come to put the platform that she was entire.
+
+“Good and she d
+--------
+
+iter   11300 | loss  281.433 | avg loss  271.630 | loss/char  1.099 | avg/char  1.061 | val/char  1.123 | lr 1.17e-04 |  1.45 step/s (  11.6 win/s) | total 7985.71s
+iter   11400 | loss  277.723 | avg loss  271.273 | loss/char  1.085 | avg/char  1.060 | val/char  1.124 | lr 1.12e-04 |  1.64 step/s (  13.1 win/s) | total 8046.65s
+iter   11500 | loss  265.683 | avg loss  270.653 | loss/char  1.038 | avg/char  1.057 | val/char  1.123 | lr 1.08e-04 |  1.57 step/s (  12.5 win/s) | total 8110.44s
+Sample at iteration 11500:
+
+Average loss recent: 270.6535
+Average loss/char recent: 1.0572
+
+--------
+ght, apart and patched on his back and set off sweat on grip on his legs and uncle of purple toward the stairs, and then he repeated it by Dudley news.
+
+The thought stopped now, then spreaded his bedroom to his trunk and and sniffed. Harry stood up. Coolin’ clean into the class. Harry could say he didn’t let him want to do, he didn’t stay him talking to Hogwarts. He could see how much that he had first to remove that the Ministry was chocolate to find the Ministry had told to write about more straight different and muttered. It was only trying to realizing the Ministry, but Harry and Ron saw h
+--------
+
+iter   11600 | loss  281.808 | avg loss  269.976 | loss/char  1.101 | avg/char  1.055 | val/char  1.120 | lr 1.03e-04 |  1.08 step/s (   8.7 win/s) | total 8202.82s
+iter   11700 | loss  260.230 | avg loss  269.424 | loss/char  1.017 | avg/char  1.052 | val/char  1.117 | lr 9.86e-05 |  1.69 step/s (  13.5 win/s) | total 8261.87s
+Sample at iteration 11750:
+
+Average loss recent: 268.9885
+Average loss/char recent: 1.0507
+
+--------
+y’s every more than Harry here to have her left. As I can say he knew that he was hopeful him to comes out to wizard. And it was a telephone — if I mean — I want to — ”
+
+“I doubt it,” said Mr. Weasley at once. Percy took off.
+
+“Professor Tower, Harry, what does you have there?”
+
+“But why, I don’t come back to the tournament.”
+
+“It’s not been worse,” said Harry, and then redouble confused the spot, but even how the tree, Harry said quietly, “Not came without far. Well, I don’t want the door. ...”
+
+“You already saying the time at the reacture table of the corridor, you know. And I will be able t
+--------
+
+iter   11800 | loss  269.319 | avg loss  268.770 | loss/char  1.052 | avg/char  1.050 | val/char  1.115 | lr 9.42e-05 |  1.46 step/s (  11.6 win/s) | total 8330.56s
+iter   11900 | loss  258.453 | avg loss  268.307 | loss/char  1.010 | avg/char  1.048 | val/char  1.113 | lr 9.00e-05 |  1.54 step/s (  12.4 win/s) | total 8395.30s
+iter   12000 | loss  268.362 | avg loss  267.856 | loss/char  1.048 | avg/char  1.046 | val/char  1.113 | lr 8.58e-05 |  1.63 step/s (  13.1 win/s) | total 8456.56s
+Sample at iteration 12000:
+
+Average loss recent: 267.8559
+Average loss/char recent: 1.0463
+
+--------
+ned the walls glanced in the top of the classroom, the hill pressure swept right, and turned it and gaped back through the basic as a puncture; on the back of the bloody left now silent stretched with the window and in a throb the edge of the garden.
+
+“Don’t like this time is,” said Harry, still nothing very little and looked like a trick. “I don’t know Hagrid ’s mother, was the only time that the dementors was going to me risk what to make it up to have its deliverable magic you’d do that looked like things of you stole out of it, I do, wait a little book, it was the first last thing the same
+--------
+

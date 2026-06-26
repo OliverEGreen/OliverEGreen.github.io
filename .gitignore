@@ -23,3 +23,7 @@ LLM-Learning/Transformers/Original Data/HarryPotter.txt
 LLM-Learning/Transformers/outputs_hp/checkpoint.pkl
 LLM-Learning/Transformers/outputs_hp/weights.json
 LLM-Learning/Transformers/outputs_shakespeare/weights.json
+LLM-Learning/Transformers/outputs_hp_char/checkpoint.pkl
+LLM-Learning/Transformers/outputs_hp_word/checkpoint.pkl
+LLM-Learning/Transformers/outputs_hp_char/weights.json
+LLM-Learning/Transformers/outputs_hp_word/weights.json
