@@ -96,4 +96,8 @@ This was a fun facepalm moment during training. I hadn't manally checked the cor
 
 In all fairness, the transformer is doing what I asked it to do! My fault for not checking the data. [GIGO](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out), as they say!
 
-In the end, I used Claude to clean out the corpus and strip out any repetitive artifacts like this. 
+In the end, I used Claude to clean out the corpus and strip out any repetitive artifacts like this. If you'd like to see the outcome of the training, you can find the samples on my Github here: 
+
+* Character-level training [samples](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/Transformers/outputs_hp_char/samples.txt)
+* Word-level training [samples](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/Transformers/outputs_hp_word/samples.txt)
+* Token-level training [samples](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/Transformers/outputs_hp/samples.txt)
