@@ -1,6 +1,6 @@
 ---
 title: "LLMs Part 5: Tokenisation"
-date: 18-06-2026
+date: 26-06-2026
 ---
 
 *This is Part 5 in my series on building language models. For more, see [Part 1](https://olliegreen.info/writing/LLMs-Part-1-Building-word2vec/), [Part 2](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/), [Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/) and [Part 4](https://olliegreen.info/writing/LLMs-Part-4-Transformer-Architecture/). In this post, I explore 3 different tokenisation approaches and show you the outcome of each as they are subtly different.*
