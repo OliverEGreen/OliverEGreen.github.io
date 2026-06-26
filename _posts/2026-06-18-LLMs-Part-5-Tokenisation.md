@@ -49,9 +49,7 @@ Not only has the prediction created semi-convincing sentences and flow, it's als
 
 ### Next-token prediction
 
-Next up is token-based, using BPE (byte-pair encoding) which is considered the industry standard. 
-
-This took a bit more work to plug in; it involves some very fiddly dictionary and set work. It also runs through the corpus a few thousand times before we're done with it.
+Next up is token-based, using BPE (byte-pair encoding) which is considered the industry standard. This took a bit more work to plug in; it involves some very fiddly dictionary and set work. It also runs through the corpus a few thousand times before we're done with it.
 
 Personally I didn't really like writing out the BPE algorithm. Compared to the elegance of matrix maths, linear algebra and transformer architecture, it feels incredibly brute-force. I suppose since it only needs to be calculated once, there's little payoff to designing an elegant or perfected version. I'd imagined more statistical approaches, such as Gini Impurity or information gain might come into the mix but, alas, no.
 
