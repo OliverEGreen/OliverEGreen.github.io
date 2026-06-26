@@ -33,7 +33,7 @@ This big shift towards using tokens (or 'subwords') instead of words started in 
 
 ### Next-character prediction
 
-When I first built my dummy transformer architecture, a lot of my functions were carried over from the RNN and LSTM work, which was prwedicting characters.
+When I first built my dummy transformer architecture, a lot of my functions were carried over from the RNN and LSTM work, which was predicting characters.
 
 What I noticed, is that it quickly gets very good at spelling, and generating words in the *right vibe*, but sentences had little-to-no coherence. It plateaus at the level of vibe soup. Using Harry Potter as our corpus:
 
@@ -49,11 +49,11 @@ Not only has the prediction created semi-convincing sentences and flow, it's als
 
 ### Next-token prediction
 
-Next up is token-based, using BPE (byte-level encoding) which is considered the industry standard. 
+Next up is token-based, using BPE (byte-pair encoding) which is considered the industry standard. 
 
 This took a bit more work to plug in; it involves some very fiddly dictionary and set work. It also runs through the corpus a few thousand times before we're done with it.
 
-Personally I didn't really like writing out the BPE algorithm. Compared to the elegance of matrix maths, linear algebra and transformer architecture, it feels incredibly brute-force. I suppose since it only needs to be calculated once, there's little payoff to designing an elegant or perfected version. I'd imagined more statistical approaches, such as Gini Impurity (AKA information gain) might come into the mix but, alas, no.
+Personally I didn't really like writing out the BPE algorithm. Compared to the elegance of matrix maths, linear algebra and transformer architecture, it feels incredibly brute-force. I suppose since it only needs to be calculated once, there's little payoff to designing an elegant or perfected version. I'd imagined more statistical approaches, such as Gini Impurity or information gain might come into the mix but, alas, no.
 
 Tokenisation breaks words in the corpus down into their fundamental components, based on how frequently each chunk appears in the text. It allows for learning more granular patterns, but maintains much of the goodness of next-word prediction, which leads to more coherent sentences.
 
@@ -72,7 +72,7 @@ I generated slightly more fake Harry Potter this time:
 > “But I need to know this year at the moment, I do.”
 > “Yeah, well, you know how the Dark Mark come out, all right? You just know what you say at the Ministry of Magic to do it for me, not the best in a very well — ” “You must take the Invisibility Cloak,” said Ron. “He could be too careful to do it.” Harry glared at her. He did not know what Ron had-
 
-Wow, ok. So overall, it's *not bad*! It's certainly got the same urgent tone as the previous sample, with lots of unfinished sentences and interruptions. It seems to have very solidly got the jist of certain Harry Potter scenes, but there's a slightly jarrying lack of finesse in the language used – as if someone was writing fan fiction in a second language that they're still learning. 
+Wow, ok. So overall, it's *not bad*! It's certainly got the same urgent tone as the previous sample, with lots of unfinished sentences and interruptions. It seems to have very solidly got the gist of certain Harry Potter scenes, but there's a slightly jarring lack of finesse in the language used – as if someone was writing fan fiction in a second language that they're still learning. 
 
 ## Some training oddities
 
@@ -80,19 +80,19 @@ Just for fun, I'd like to spend a moment and cover some of the fun and unexpecte
 
 At first, you get the usual untrained noise. This is for character-level prediction, so it's entirely random character soup:
 
-![Screenshot 2026-06-17 at 15.47.52](/Users/olivergreen/Desktop/Screenshot 2026-06-17 at 15.47.52.png)
+![Untrained character-level output: random character soup](/assets/images/char-untrained-noise.png)
 
-After a few iterations, it's begun to understand that the space character appears between words, and it's even learned a few *very basic* words – often the most common (ie safes) words. So you just wind up with repetitive preposition soup: 
+After a few iterations, it's begun to understand that the space character appears between words, and it's even learned a few *very basic* words – often the most common (ie safest) words. So you just wind up with repetitive preposition soup: 
 
-![Screenshot 2026-06-17 at 15.47.35](/Users/olivergreen/Desktop/Screenshot 2026-06-17 at 15.47.35.png)
+![Early training: repetitive preposition soup](/assets/images/preposition-soup.png)
 
 This is apparently very normal when training LLMs, it's just finding very strong signals between all of the preposition words initially. 
 
 ### Harry Potter and the persistent header
 
-This was a fun facepalm moment during training. I hadn't manally checked the corpus, so hadn't caught that a header containing the book title appeared on every page. This caused the book titles to constantly appear in my randomly generated samples: 
+This was a fun facepalm moment during training. I hadn't manually checked the corpus, so hadn't caught that a header containing the book title appeared on every page. This caused the book titles to constantly appear in my randomly generated samples: 
 
-![Screenshot 2026-06-17 at 16.34.52](/Users/olivergreen/Desktop/Screenshot 2026-06-17 at 16.34.52.png) 
+![Book title header leaking into the generated samples](/assets/images/persistent-book-title-header.png) 
 
 In all fairness, the transformer is doing what I asked it to do! My fault for not checking the data. [GIGO](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out), as they say!
 
