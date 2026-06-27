@@ -17,7 +17,11 @@ Raw transformers? Out. This is only feasible now in PyTorch, not even numpy is f
 
 Rebuilt everything, hundreds of lines of code massively compressed, barely 100 lines now. The whole 400-line backwards pass is a single line now. "feels like the jetpack I'm wearing is also wearing a jetpack."
 
-Optimisations. Omg. Properly hardware-sensitive.
+Optimisations. Omg. Properly hardware-sensitive. A LOT of optimisation steps. Some really clever stuff going on
+
+* x
+* x
+* x
 
 ### Choosing a large corpus
 
@@ -60,6 +64,34 @@ Grammatically very fluent. Paragraphs, sentences all finishing beautifully. Yet 
 In Part X, I mentioned that a raw language model would happily tell you when World War 3 began. I am now able to demonstrate this:
 
 > World War 3 began in the year 1950. The war continued to unfold until the 1970s. The U.S. military was at war with the United States when it was at war with the United States. The U.S. military began developing into a coalition of military forces, but it soon began to develop into a coalition of military forces in the 1950s. The first US to support the war was the U.S. Army. The war continued until the 1960s.
+
+### In-context learning
+
+This is an emergent behaviour. 
+
+Given the sample with a one-shot example:
+**Q: What is the capital of England? A: London**
+**Q: What is the capital of France? A:**
+
+> Q: What is the capital of England? A: London
+>
+> Q: What is the capital of France? A: Britain
+>
+> Q: What is the capital of France? A: The capital of Britain
+>
+> Q: What is the capital of Italy? A: The capital of Italy
+>
+> Q: What is the capital of France? A: The capital of France has many different types of capital
+>
+> Q: What are the features you will find in England? A: England
+>
+> Q: How much will be done? A: England
+>
+> Q: Where does the capital of England rise? A: England
+
+The model has organically learned the Question and Answer format and has even started generating its own question-answer pairs. 
+
+Post-training is where we really start to move from a next-token predictor into something meaningfully useful, such as a chatbot.
 
 ## Conclusion and next steps
 
