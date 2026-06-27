@@ -57,6 +57,10 @@ With a temperature of 0.7 and a sample text of: "The Roman Empire was", our scri
 
 Grammatically very fluent. Paragraphs, sentences all finishing beautifully. Yet also full of hallucinated details and wildly self-contradicting. This is, in a sense, the purest essence of a raw language model. 
 
+In Part X, I mentioned that a raw language model would happily tell you when World War 3 began. I am now able to demonstrate this:
+
+> World War 3 began in the year 1950. The war continued to unfold until the 1970s. The U.S. military was at war with the United States when it was at war with the United States. The U.S. military began developing into a coalition of military forces, but it soon began to develop into a coalition of military forces in the 1950s. The first US to support the war was the U.S. Army. The war continued until the 1960s.
+
 ## Conclusion and next steps
 
 We've hit a bit of a hard limit now, in terms of potential scale, cost and hardware. The quality increases would partly come from scaling up. We'll have to slightly switch our approach to carry on learning. 
