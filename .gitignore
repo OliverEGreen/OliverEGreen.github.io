@@ -27,3 +27,4 @@ LLM-Learning/Transformers/outputs_hp_char/checkpoint.pkl
 LLM-Learning/Transformers/outputs_hp_word/checkpoint.pkl
 LLM-Learning/Transformers/outputs_hp_char/weights.json
 LLM-Learning/Transformers/outputs_hp_word/weights.json
+LLM-Learning/GPT-2/smoke_checkpoint.pt
