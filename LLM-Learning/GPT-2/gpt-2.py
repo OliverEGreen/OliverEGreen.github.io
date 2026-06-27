@@ -161,13 +161,19 @@ def estimate_loss(eval_iters=20):
 
 # Generating samples
 @torch.no_grad()
-def generate(num_tokens):
+def generate(num_tokens, prompt=None, temperature=0.8, top_k=40):
     raw_model.eval()
-    ids = torch.tensor([[enc.eot_token]], dtype=torch.long, device=DEVICE)
+    if prompt is None:
+        ids = torch.tensor([[enc.eot_token]], dtype=torch.long, device=DEVICE)
+    else:
+        ids = torch.tensor([enc.encode_ordinary(prompt)], dtype=torch.long, device=DEVICE)
     for _ in range(num_tokens):
         context = ids[:, -SEQUENCE_LENGTH:]  # keep only the last SEQUENCE_LENGTH tokens
         logits = raw_model(context)
-        last = logits[:, -1, :]  # logits at the final position only → (1, VOCAB_SIZE)
+        last = logits[:, -1, :] / temperature  # logits at the final position only → (1, VOCAB_SIZE)
+        if top_k is not None:
+            v, _ = torch.topk(last, top_k)
+            last[last < v[:, [-1]]] = float("-inf")  # masking anything not in the top-K
         probs = F.softmax(last, dim=-1)
         next_id = torch.multinomial(probs, 1)  # sample one token from the distribution
         ids = torch.cat([ids, next_id], dim=1)  # stick it on the end, loop
@@ -198,6 +204,16 @@ val_data = data[n:]
 
 VOCAB_SIZE = enc.n_vocab
 
+# For sampling our text-predictor
+if os.environ.get("SAMPLE"):
+    model = GPT().to(DEVICE)
+    raw_model = model
+    raw_model.load_state_dict(torch.load("/Users/olivergreen/Documents/GitHub/OliverEGreen.github.io/LLM-Learning/GPT-2/Trained-GPT2-Weights.pt", map_location=DEVICE)["model"])
+    torch.seed()
+    temp = float(os.environ.get("TEMP", 0.8))  # Lets us control the temperature of the model when calling it
+    print(enc.decode(generate(200, prompt=os.environ["SAMPLE"], temperature=temp)[0].tolist()))
+    raise SystemExit
+
 model = GPT().to(DEVICE)
 
 # Optimisation for NVIDIA hardware
@@ -225,7 +241,7 @@ start_step = 0
 
 if os.path.exists(CHECKPOINT_PATH):
     checkpoint = torch.load(CHECKPOINT_PATH, map_location=DEVICE)
-    raw_model.load_state_dict(checkpoint["model"])
+    raw_model.load_state_dict(torch.load("/Users/olivergreen/Documents/GitHub/OliverEGreen.github.io/LLM-Learning/GPT-2/Trained-GPT2-Weights.pt", map_location=DEVICE)["model"])
     optimizer.load_state_dict(checkpoint["optimizer"])
     start_step = checkpoint["step"]
     best_val = checkpoint["best_val"]
