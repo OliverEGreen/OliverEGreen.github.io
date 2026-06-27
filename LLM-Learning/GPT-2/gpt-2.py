@@ -18,8 +18,8 @@ NUM_LAYERS = 12  # How many times we do this whole thing
 DROPOUT = 0.0  # Fights memorisation / overfitting
 BATCH_SIZE = 12  # Size of batch we grab from corpus
 GRAD_ACCUM_STEPS = 5  # Gradient accumulation
-WARMUP_STEPS = 700
-MAX_STEPS = 20000
+WARMUP_STEPS = 200
+MAX_STEPS = 5000
 LEARNING_RATE = 6e-4  # How fast we learn
 MIN_LR = LEARNING_RATE / 10
 
