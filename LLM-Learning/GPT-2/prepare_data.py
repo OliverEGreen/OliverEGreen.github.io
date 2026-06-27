@@ -2,7 +2,7 @@ import numpy as np
 import tiktoken
 from datasets import load_dataset
 
-TARGET_TOKENS = 600_000_000
+TARGET_TOKENS = 10_000_000_000
 
 ds = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10BT", split="train", streaming=True)
 enc = tiktoken.get_encoding("gpt2")
