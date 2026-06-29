@@ -58,7 +58,7 @@ It appears that humanity has a deep-seated desire to bask in a world controlled 
 So – why do we keep doing this?
 
 * Is it possible that some kind of blueprint lives within our brain wiring? The evolutionary approach is always the safest-possible conclusion, if a little unsatisfying.
-* Alternatively, could there be something in our souls?
+* Alternatively, could there be something in our souls drawing us towards as certain direction?
 * Perhaps we're being silently guided along our civilisational journey from the outside?
 * Or maybe we're just grown-up kids inside, still quietly longing for the safety and care of our parental figures?
 

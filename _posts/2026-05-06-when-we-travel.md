@@ -1,4 +1,7 @@
-# When we travel
+---
+title: "When We Travel"
+date: 2026-05-06
+---
 
 Gosh, don't we like to travel? A bit like food and sunny weather, it's so common that it's hardly worth stating. Not for all of us, of course, but the large majority.
 

@@ -1,5 +1,5 @@
 ---
-title: "What comes next?"
+title: "What Comes Next?"
 date: 2026-04-27
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Mysteries & magics"
+title: "Mysteries & Magics"
 date: 2026-04-27
 ---
 

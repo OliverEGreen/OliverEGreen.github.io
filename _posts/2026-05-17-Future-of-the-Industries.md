@@ -1,5 +1,5 @@
 ---
-title: "Future of the industries"
+title: "Future of the Industries"
 date: 2026-05-17
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "LLMs part 3: building an LSTM"
-date: 20-05-2026
+title: "LLMs Part 3: Building an LSTM"
+date: 2026-05-20
 ---
 
 *This post is part 3 in a series where I attempted to teach myself the very basics of language modelling. See Part 1 and Part 2.*
