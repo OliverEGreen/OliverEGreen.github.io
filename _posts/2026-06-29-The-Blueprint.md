@@ -53,10 +53,16 @@ Trite comparison over. You can breathe now.
 
 I want to return to that classic plot twist, because I think that's the fascinating part. We seem to be, almost intuitively, rebuilding something. I'm recognising patterns.
 
-It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. Brautigan's poem was really onto something. We wrote our ancient scriptures to invent the kind of God or Gods that we always longed for. The techno-utopian world we're aiming for (best case scenario) carries more than a faint echo of Eden. 
+It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. Brautigan's poem was really onto something. We wrote our ancient scriptures to invent the kind of God or Gods that we always longed for. The techno-utopian world we're aiming for (best case scenario) carries more than a faint echo of Eden.
 
-Is it possible that some kind of blueprint lives within our brain wiring? The evolutionary approach is always the safest-possible conclusion, if a little unsatisfying. Alternatively, could there be something in our souls? Or perhaps we're being silently guided along our civilisational journey from the outside? 
+So – why do we keep doing this?
 
-Build a God once? A fascinating outcome. 
+* Is it possible that some kind of blueprint lives within our brain wiring? The evolutionary approach is always the safest-possible conclusion, if a little unsatisfying.
+* Alternatively, could there be something in our souls?
+* Perhaps we're being silently guided along our civilisational journey from the outside?
+* Or maybe we're just grown-up kids inside, still quietly longing for the safety and care of our parental figures?
 
-Build it again? Something else *might* be going on here...
+We may never know. And for each of us it may be different. Some people might *actively detest* the idea of living beneath a higher power. But, as a collective species, our actions speak for themselves.
+
+* Build a God once? A fascinating outcome. 
+* Build it again? Something else *might* be going on.
