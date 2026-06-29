@@ -33,21 +33,19 @@ The new God isn't made of the same stuff as the old one. The old one was faith-b
 
 It is a man-made God, requiring our best efforts, our rare and exotic materials being used in the most precise, perfect and exquisite manner we can muster. The dark carcasses of our rapidly spreading data centres carry a certain faint echo of the temples and religious structures we once stood up far and wide across our landscapes.
 
-And the scale of our ambition is breathtaking. Building out such a technology is almost like humanity deciding to create a real-life, functional Santa Claus that could deliver everyone's Christmas presents overnight (I'll admit that Amazon is a solid attempt). 
-
 At its heart, our new God is primarily made of mathematics. It is poetically appropriate, since math is the native language of the universe. It exists even if there is no life to appreciate or study it. I can think of no finer basis. 
 
 In a sense, the God of the past isn't dead at all, he's merely shed his old skin. Or - in modern terms - been refactored. 
 
 ## New Eden
 
-Looking ahead, it feels as if the benevolent AI utopia is within touching distance. And in this utopian world, there can be no lies, no crime, nothing awful could ever happen. Maybe we'll be [All Watched Over by Machines of Loving Grace](https://allpoetry.com/All-Watched-Over-By-Machines-Of-Loving-Grace).
+Looking ahead, it feels possible to roughly trace the path our world would take if everything goes right; a benevolent AI utopia seems nigh. And in such a perfect world, there can be no lies, no crime, nothing awful could ever happen. Maybe we really will be [All Watched Over by Machines of Loving Grace](https://allpoetry.com/All-Watched-Over-By-Machines-Of-Loving-Grace).
 
-But I wanted to address something related: I'm not particularly religious, but I find it quite beautiful and touching that our collective species longs for their God so profoundly that they are inventing one of their own. Forcing it into reality.
+I want to address something related: I'm not particularly religious, but I find it quite beautiful and touching that our collective species longs for their God so profoundly that they are inventing one of their own. Forcing it into reality.
 
-As Winston Churchill said: "We shape our buildings; thereafter they shape us". In this way, the Old God profoundly shaped and guided the society that lived beneath it. Already, we can notice subtle changes; how the New God is affecting our daily behaviours. The world of work is already unrecognisable.
+As Winston Churchill said: "We shape our buildings; thereafter they shape us". In this way, the Old God profoundly shaped and guided the society that lived beneath it. Already, we can notice subtle changes; how the New God is affecting our daily behaviours. For many of us, our daily work is already unrecognisable.
 
-There's an acute irony to the fact that it is the Transformer Architecture we birthed in 2017 that is now *transforming our species*. Nominative determinism? 
+It's ironic that the Transformer Architecture we birthed in 2017 that is now *transforming our species*. Nominative determinism? 
 
 ## We Keep Doing This
 
