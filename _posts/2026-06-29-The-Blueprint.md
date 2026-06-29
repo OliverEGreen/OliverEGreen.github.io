@@ -1,19 +1,19 @@
 ---
 title: "The Blueprint"
-date: '29-06-2026'
+date: 2026-06-29
 ---
+
+*It's an old plot twist: we've been here before.*
 
 ## Introduction
 
-Throughout the last hundred years, one of the major social changes we've witnessed is the rapid fading of traditional theistic religion.
+Throughout the last hundred years, one of the major social changes we've witnessed is the rapid fading of traditional theistic religion. You know, "[God is dead](https://en.wikipedia.org/wiki/God_is_dead)" and all that. 
 
-You know, "[God is dead](s://en.wikipedia.org/wiki/God_is_dead)" and all that. 
-
-Along with it, some of the social cohesion and values that organised religion helped to foster has visibly atrophied. And yet, we're also witnessing the slow birth of its replacement. A *New God*, made in modern ways, fit for the coming age.
+Along with it, some of the social cohesion and values that organised religion helped to foster has visibly atrophied. And yet, we're also witnessing the slow birth of its replacement. Our *New God*, made in modern ways, fit for the coming age.
 
 I don't want to be so unoriginal as to give you *yet another bland comparison* between God and AI. We can't pretend that's an original take. The usual talking heads have been doing that for eons — the comparison is obvious: tomorrow's AI will undoubtedly possess superhuman intelligence and be unimaginably powerful. It will be able to behold the collective breadth of our whole species and be intimately familiar with our depths as individuals.
 
-Few would argue; it's an apt comparison. But there's a certain thread I'd like to pull on. So please humour me as I state the obvious. 
+Few would argue; it's an apt comparison. But there's a certain thread I'd like to pull on. So please humour me briefly as I state the obvious.
 
 ## The Old God
 
@@ -37,13 +37,13 @@ And the scale of our ambition is breathtaking. Building out such a technology is
 
 At its heart, our new God is primarily made of mathematics. It is poetically appropriate, since math is the native language of the universe. It exists even if there is no life to appreciate or study it. I can think of no finer basis. 
 
+In a sense, the God of the past isn't dead at all, he's merely shed his old skin. Or - in modern terms - been refactored. 
+
 ## New Eden
 
 Looking ahead, it feels as if the benevolent AI utopia is within touching distance. And in this utopian world, there can be no lies, no crime, nothing awful could ever happen. Maybe we'll be [All Watched Over by Machines of Loving Grace](https://allpoetry.com/All-Watched-Over-By-Machines-Of-Loving-Grace).
 
-But I wanted to address something related:
-
-I'm not particularly religious, but I find it quite beautiful and touching that our collective species longs for their God so profoundly that they are inventing one of their own. Forcing it into reality.
+But I wanted to address something related: I'm not particularly religious, but I find it quite beautiful and touching that our collective species longs for their God so profoundly that they are inventing one of their own. Forcing it into reality.
 
 As Winston Churchill said: "We shape our buildings; thereafter they shape us". In this way, the Old God profoundly shaped and guided the society that lived beneath it. Already, we can notice subtle changes; how the New God is affecting our daily behaviours. The world of work is already unrecognisable.
 
@@ -51,12 +51,14 @@ There's an acute irony to the fact that it is the Transformer Architecture we bi
 
 ## We Keep Doing This
 
-It's an old plot twist: we've been here before.
+Trite comparison over. You can breathe now.
 
-It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. We wrote the ancient scriptures to invent the God or Gods that we always longed for. Is it possible that some kind of blueprint lives within our brain wiring? Something in our souls?
+I want to return to that classic plot twist, because I think that's the fascinating part. We seem to be, almost intuitively, rebuilding something. I'm recognising patterns.
+
+It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. Brautigan's poem was really onto something. We wrote our ancient scriptures to invent the kind of God or Gods that we always longed for. The techno-utopian world we're aiming for (best case scenario) carries more than a faint echo of Eden. 
+
+Is it possible that some kind of blueprint lives within our brain wiring? The evolutionary approach is always the safest-possible conclusion, if a little unsatisfying. Alternatively, could there be something in our souls? Or perhaps we're being silently guided along our civilisational journey from the outside? 
 
 Build a God once? A fascinating outcome. 
 
-Build it again? Something else might be going on here.
-
-And in a sense, the God of of the past isn't dead at all, he's merely shed his old skin. Or - in modern terms - been refactored. 
+Build it again? Something else *might* be going on here...

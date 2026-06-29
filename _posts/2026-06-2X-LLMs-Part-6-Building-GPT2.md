@@ -1,6 +1,6 @@
 ---
 title: "LLMs Part 6: Building GPT-2"
-date: 27-06-2026
+date: 2026-06-27
 ---
 
 *This is Part 6 in my series on building language models. For more, see [Part 1](https://olliegreen.info/writing/LLMs-Part-1-Building-word2vec/), [Part 2](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/), [Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/) and [Part 4](https://olliegreen.info/writing/LLMs-Part-4-Transformer-Architecture/). In this post, I refactor our hand-written GPT-1 model into GPT-2, exploring a wide range of optimisations necessary to train a model of this scale on rented GPU hardware.*
