@@ -53,7 +53,7 @@ Trite comparison over. You can breathe now.
 
 I want to return to that classic plot twist, because I think that's the fascinating part. We seem to be, almost intuitively, rebuilding something. I'm recognising patterns.
 
-It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. Brautigan's poem was really onto something. We wrote our ancient scriptures to invent the kind of God or Gods that we always longed for. The techno-utopian world we're aiming for (best case scenario) carries more than a faint echo of Eden.
+It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. Brautigan's poem was really onto something. We wrote our ancient scriptures to invent the kind of God or Gods that we always longed for. The techno-utopian world we're aiming for (best case scenario) carries more than a faint echo of Eden and we seem to be caught in its gravity.
 
 So – why do we keep doing this?
 
