@@ -100,7 +100,7 @@ We've hit a bit of a hard limit now, in terms of potential scale, cost and hardw
 ### Cost comparison
 
 * GPT-1 - done locally, cost nothing, a few hours to plateau.
-* GPT-2 - trained on rented GPUs, cost around £20, about 90 minutes. 
+* GPT-2 - trained on rented GPUs, cost around £20, about 90 minutes. This is the smallest of the four GPT-2 models, GPT-2-124M. 
 * GPT-3 - would still cost millions to train, even today.
 
 Luckily, others have done this for me.
