@@ -110,11 +110,11 @@ The idea of renting hardware in the cloud was very new to me and pretty exciting
 
 The sign-up process was laudably smooth. I'd recommend this service to anyone as it's delightfully no-nonsense. It was now time to **make some moves**.
 
-![Screenshot 2026-07-01 at 15.18.23](/Users/olivergreen/Desktop/Screenshot 2026-07-01 at 15.18.23.png)
+![RunPod deploy screen — selecting the NVIDIA H100](/assets/images/runpod-deploy-config.png)
 
 I selected the NVIDIA H100 GPU, an industry-standard workhorse and set the GPU count to 4x. Everything updated instantly to show me the hourly cost. 
 
-![Screenshot 2026-07-01 at 15.18.56](/Users/olivergreen/Desktop/Screenshot 2026-07-01 at 15.18.56.png)
+![RunPod showing the hourly cost for the 4× H100 pod](/assets/images/runpod-cost-breakdown.png)
 
 A few clicks later and I'd spun up the pod. I had access to a Terminal and a Jupyter notebook. 
 
