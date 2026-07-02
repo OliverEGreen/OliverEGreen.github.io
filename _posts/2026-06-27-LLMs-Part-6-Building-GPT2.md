@@ -15,61 +15,64 @@ date: 2026-06-27
 
 ## Introduction
 
-After building a working transformer model, I was wondering about where to take this project next. That's because transformer architecture still absolutely dominates the field almost a decade later. What's happened since is an explosion of [variants](https://sebastianraschka.com/llm-architecture-gallery/) of this architecture.  It's very much still an active area of research today. 
+After building a working transformer model, I was left wondering about where to take this project next. I'd been semi-chronologically building out some of the most influential language modelling approaches but, despite its release almost a decade ago, transformer architecture still absolutely dominates the field. What we've seen since is an explosion of [variants](https://sebastianraschka.com/llm-architecture-gallery/) of this architecture. Refining those variants is still very much an active area of research today: 
 
 * The famous [2017 Google Brain](https://arxiv.org/abs/1706.03762) paper used an encoder-decoder architecture, since it was trying to undertake a translation task (very loosely, mapping input tokens to output tokens).
-* For most modern LLMs, this setup was unnecessary. It's since turned out that decoder-only is ideal for text generation (GPT-1 saw the Google paper and the potential in their approach for their own text generation goals) and encoder-only is excellent for rich text comprehension (BERT - and later BART). 
-* A more recent example of an architectural leap forward is DeepSeek R1's impressive [attention head](https://www.youtube.com/watch?v=0VLAoVGf_74) design, released in January 2025. Pretty pictures available from Welch Labs [here](https://www.welchlabs.com/store/mladeepseek-attention-poster-13x19). 
+* For most modern LLMs, this setup was unnecessary. It's since turned out that decoder-only is ideal for text generation; OpenAI saw the Google paper and its potential for their goals in 2018's GPT-1.
+* Conversely, it transpired that encoder-only is an excellent approach to take for rich text comprehension tasks (first BERT, and later BART). 
+* A more recent example of an architectural leap forward is DeepSeek R1's impressive [attention head](https://www.youtube.com/watch?v=0VLAoVGf_74) design, released in January 2025. Some pretty pictures of this are available from Welch Labs [here](https://www.welchlabs.com/store/mladeepseek-attention-poster-13x19). 
 
-But it's not architectural design that is behind the astronomical leaps and bounds we've seen since GPT-1.
+But it's not architectural design that is behind the astronomical leaps and bounds we've seen since GPT-1:
 
-* The most obvious difference between GPT-1 and today's models is the <u>astronomical</u> difference in scale. While GPT-1 can be trained locally on a laptop, training anything like GPT-3 is practically a nation state-level undertaking. And it is in this scale – when language models became *large* language models – that most of the really interesting emergent behaviours started appearing. This is worth a blog post in its own.
+* The most obvious difference between GPT-1 and today's models is the <u>astronomical</u> difference in scale. While GPT-1 can be trained locally on a laptop, training anything like GPT-3 is still a multi-million pound undertaking. And it is in this scale – when language models became *large* language models – that most of the really interesting emergent behaviours started appearing (this is worth a blog post on its own).
 * The other half of the equation is something we've not covered yet – fine tuning and post-training. Everything we've covered to date can be labelled as 'pre-training'. While early language models were prone to hallucinations and had tiny context windows, modern model training approaches were vastly able to counteract these and hard-code more desirable behaviours (like a prompt/response chat architecture). I'll also write a blog post on this, as it's a separate but fascinating area of domain knowledge. 
 
 ## Why build GPT-2?
 
-For the language modelling world, OpenAI's November 2019 announcement of GPT-2 was a significant milestone. OpenAI initially [called it "too dangerous" to release](https://openai.com/index/gpt-2-1-5b-release/), and put a six-month moratorium in place before its release so the tech community could have time to discuss and adapt to its impacts. Despite this hype,  it failed to make waves outside of its niche community and the societal risks never really materialised.
+For the language modelling world, OpenAI's November 2019 announcement of GPT-2 was a significant milestone. OpenAI initially [called it "too dangerous" to release](https://openai.com/index/gpt-2-1-5b-release/), and put a six-month moratorium in place before its release so the tech community could have time to discuss and adapt to its impacts. Despite this hype, it failed to make any significant waves outside of its niche community and the societal risks never really materialised.
 
-Architecturally, it's not that different to GPT-1 and transformer architecture in general
+Architecturally, it's not that different to GPT-1 and transformer architecture in general. So why bother building it?
 
 [^1]: The biggest changes were a pre-forward pass layer normalisation step, switching ReLu for GELU (I skipped this for GPT-1) and implementing AdamW optimisation.
 
-What's fascinating to me is how much the *technique* needs to change in order to start working at this scale. Almost everything I've had to change was in response to this stimulant, and the level of efficiency-hacking and optimisation is the really striking difference. 
+What's fascinating to me is how much the applied *technique* needs to change in order to start working at the GPT-2 scale. Almost everything I've had to change was in response to this single stimulant, and the level of efficiency-hacking and optimisation is the really striking difference. 
 
 ### PyTorch - or how I learned to stop worrying and embrace the GPU
 
-It's no longer possible to train at this scale using my maximally-masochistic raw Python approach. Either my laptop would melt or we'd encounter the [heat death of the universe](https://en.wikipedia.org/wiki/Heat_death_of_the_universe). 
+First of all, it would no longer possible to train at this scale using my maximally-masochistic raw Python approach. Either my laptop would melt or we'd encounter the [heat death of the universe](https://en.wikipedia.org/wiki/Heat_death_of_the_universe). 
 
-The first step is to chuck out our raw Python code. To be fair, it's done the job. I wrote a fully functional transformer and learned the architecture fairly comfortably. Thank you and farewell, Python.
+The first step is to chuck out our raw Python code. To be fair, it's done the job; I wrote a fully functional transformer and learned the architecture fairly comfortably. Thank you and farewell, Python.
 
-But we can't just refactor to numpy, either. This move, alone, granted us a roughly 4000x speed-up during training. But it's still not enough. The only feasible approach remaining is to roll up our sleeves and embrace PyTorch. That's because numpy is CPU-only, and we're now living in the GPU era. This makes our maths parallelisable, unlocking another 1-2 orders of magnitude in terms of speed up.
+But we can't just refactor to numpy, either. This move alone granted us a roughly 4000x speed-up during training. But it's still not enough. The only feasible approach remaining is to roll up our sleeves and embrace PyTorch. That's because numpy is CPU-only, and we're now living in the GPU era. This makes all our matrix math parallelisable, unlocking another 1-2 orders of magnitude in terms of speed up.
 
-Training the equivalent model on my laptop locally using raw Python would take, Claude estimates, around 6 million years (that's *around* the length of time ago that humanity split off from chimpanzees).
+Training the equivalent model on my laptop locally using raw Python would take, Claude estimates, around 6 million years (that's *around* the length of time ago that humanity split off from chimpanzees). Tempting, but I'll pass.
 
-PyTorch syntax is also *really* condensed. It took a couple of hours to rebuild our 700 lines of raw Python into [barely 100 lines of PyTorch](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/gpt-2.py).
+It also happens that PyTorch syntax is also *really* condensed. It's very satisfying to see tooling that's so beautifully coupled to the grunt work of ML. It took a couple of hours to rebuild our 700 lines of raw Python into [barely 100 lines of PyTorch](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/gpt-2.py).
 
 [^2]: This crept back up a bit after adding in all the extra optimisation code we needed.
 
-PyTorch syntax is also shockingly elegant.  The whole 400-line backwards pass is captured in a single line now. At the time, I said *"it feels like the jetpack I'm wearing is also wearing a jetpack."* 
+The whole 400-line backwards pass is captured in a single line now. At the time, I said *"it feels like the jetpack I'm wearing is also wearing a jetpack."* 
 
 ### Getting closer to the metal
 
-We're moving deep into optimisation territory now, so grab your oxygen mask. Just like when we put on our C/C++/Rust hats, we have to start thinking at the computer science level and paying close attention to memory operations. Many of these optimisations aren't paper-faithful to GPT-2 by design – we have better, faster tooling now and using this is what makes training a cheap and performant model possible for a hobbyist.
+We're moving deep into optimisation territory now, so grab your oxygen mask. Just like when we put on our C/C++/Rust hats, we have to start thinking at the computer science level and paying close attention to things like memory access and writing operations.
 
-* A lot of the required optimisations are device-sensitive. I've been building the models on my Mac M1, which uses Apple's propietary Apple Silicone hardware. But I will eventually need to train this model on NVIDIA GPUs, which is known as the 'CUDA' platform. 
+Many of these optimisations aren't paper-faithful to GPT-2 by design – we have better, faster tooling now and using this is what makes training a cheap and performant model possible for a hobbyist.
 
-* To mitigate the Mac / NVIDIA architecture gap, I added an environment variable "SMOKE" so I could run local (i.e. Mac) smoke tests just to check everything was plugged in correctly.
-* We're not just going to be training on a single NVIDIA GPU, I'm looking to spread the work across multiple rented GPUs simultaneously. This means we need to adjust our model to work as such. 
-* Variable learning rate.
+* A lot of the required optimisations are device-sensitive. I've been building the models on my Mac M1, which uses Apple's propietary Apple Silicone hardware. But I would eventually need to train this model on NVIDIA GPUs, which is known as the 'CUDA' platform. 
+
+* To mitigate the Mac / NVIDIA architecture gap, I added an environment variable "SMOKE" so I could run local smoke tests on my Mac using much smaller hyperparameters.
+* I wasn't gonna just train on a single NVIDIA GPU either, but wanted to spread the work across multiple rented GPUs simultaneously. This meant we needed to adjust our model to work as such. 
+* In previous models, the learning rate was a fixed constant. But we'd be able to improve our end results if this dynamically varied over time.
 * Switching off gradient-tracking for sample generation using the @torch.nograd() decorator. We have no interest in this kind of book-keeping when generating, only when training.
-* Training/testing split.
+* To avoid memorisation, I introduced a training/testing split of 90:10 on the data, meaning we'd hold back some of the text to ensure our model was generalising and not just learning to regurgitate accurately. With a large enough corpus, we'd also help reduce the chance of this occurring.
 * Flash memory. 
 
-After all of this fun and games, the final GPT-2 Python script clocks in at around 300 lines and can be found on my Github [here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/gpt-2.py). 
+After all of these fun and games, the final GPT-2 Python script clocks in at around 300 lines and can be found on my Github [here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/gpt-2.py). 
 
 ### Choosing a large corpus
 
-My paltry Harry-Potter and Shakespeare corpuses simply wouldn't provide a large enough sacrifice for the new beast I was attempting to summon. I was going to need to hunt for a much larger corpus. 
+My paltry Harry-Potter and Shakespeare corpuses simply weren't providing enough data for the new beast I was attempting to summon. I was going to need to hunt for a much larger corpus. 
 
 The original GPT-2 was trained on the WebText, a corpus which OpenAI specifically developed for this model. They used the *slightly bold* technique of scraping Reddit post external links via the API (back when you could do that), using upvotes as a quality indicator. It's a clever growth hack that's slightly reminiscent of the original Google Search [PageRank](https://en.wikipedia.org/wiki/PageRank) approach.
 
@@ -78,17 +81,6 @@ To quote Josef Stalin:
 > One data-theft is a tragedy. A million data-thefts is a statistic.
 
 In retrospect, he was way ahead of his time.
-
-### Byte-level Byte Pair Encoding... What
-
-GPT-2 also uses what's called byte-level Byte-Pair Encoding. This is a really weird name that requires a little unpacking:
-
-* Byte-Pair encoding was originally a data compression technique from the world of computer and data science. It was really operating at the level of bytes and bits, hence the name. 
-* The language modelling world was inspired by this technique when developing the BPE tokenisation approach. And they kept the name, even though it was more of an analogy, as the tokens are very much human-readable text chunks, like 'anti-' or '-tion'. Not bytes.
-* OpenAI then decided to start parsing all their tokens at the level of the UTF-8 byte stream. This is a smart move. It means they can never encounter an unexpected token, as UTF-8 has [plenty of room](https://www.youtube.com/watch?v=MijmeoH9LT4) in its scope to capture all and every possible choice of symbol – past, present and future. 
-* We can used this exact tokeniser today, it's called *tiktoken*. In retrospect, this was probably a poor choice of name. I assume that it was just a funny-at-the-time play on words... but then TikTok did really kind of take off. The timeline adds up. If so, whoops.
-
-If you're curious, the script I wrote to use tiktoken's tokeniser lives [here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/prepare_data.py). It's so small you can practically inhale it.
 
 ### Ethically-harvested data
 
@@ -100,9 +92,20 @@ Thankfully, HuggingFace does us all a great service here!
 
 They provide multiple curated datasets – I went with the FineWeb Edu set, which is largely trained on encyclopaedia and quality news articles. As corpus flavours go, it's quite bland. It reads a lot like the unflavoured English language.
 
-There's a well-known rule of thumb for choosing an appropriately-sized corpus known as the 'Chinchilla Rule'. 
+There's a well-known rule of thumb for choosing an appropriately-sized corpus known as the 'Chinchilla Rule', and this corpus was perfectly chinchilla-sized. 
 
-And that's it. With a corpus and our stack of optimisations in place, I was ready to begin road-testing this thing. 
+### Byte-level Byte Pair Encoding... What
+
+When it comes to tokenising this corpus, GPT-2 also uses what's called byte-level Byte-Pair Encoding. This is a really weird name that requires a little unpacking:
+
+* Byte-Pair encoding was originally a data compression technique from the world of computer and data science. It was really operating at the level of bytes and bits, hence the name. 
+* The language modelling world was inspired by this technique when developing the BPE tokenisation approach. And they kept the name, even though it was more of an analogy, as the tokens are very much human-readable text chunks, like 'anti-' or '-tion'. Not bytes.
+* OpenAI then decided to start parsing all their tokens at the level of the UTF-8 byte stream. This is a smart move. It means they can never encounter an unexpected token, as UTF-8 has [plenty of room](https://www.youtube.com/watch?v=MijmeoH9LT4) in its scope to capture all and every possible choice of symbol – past, present and future. 
+* We can used this exact tokeniser today, it's called *tiktoken*. In retrospect, this was probably a poor choice of name. I assume that it was just a funny-at-the-time play on words... but then TikTok did really kind of take off. The timeline adds up. If so, whoops.
+
+If you're curious, the script I wrote to use tiktoken's tokeniser lives [here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/prepare_data.py). It's so small you can practically inhale it.
+
+And that's it! With a corpus and our stack of optimisations in place, I was ready to begin road-testing this thing. 
 
 ## Renting GPUs
 
@@ -157,10 +160,10 @@ We did it! AGI has been achieved for as little as £13. Someone should tell thos
 
 A few things to note about our sample: 
 
-* Grammatically, it's very fluent. Our model has correctly build out paragraphs, and sentences are all finishing beautifully.
-* Yet (don't tell anyone) but also full of hallucinated details and wildly self-contradicting. I especially love the invented emperor Hiberius I. It's confidently wrong but still within the right ballpark!
+* Grammatically, it's very fluent. Our model has correctly built out paragraphs and sentences are all finishing beautifully.
+* Yet (don't tell anyone) but it's also full of hallucinated details and wildly self-contradicting. I especially love the invented emperor Hiberius I. It's confidently wrong but still very much within the right ballpark!
 
-This is, in a sense, the purest essence of a raw language model. In Part X, I mentioned that a raw language model would happily tell you when World War 3 began. If you'll kindly allow me to demonstrate:
+This is, in a sense, the purest essence of a raw language model, a confident bullshitter. In Part 3, I mentioned that a raw language model would happily tell you when World War 3 began. Now, if you'll kindly allow me to demonstrate:
 
 > World War 3 began in the year 1950. The war continued to unfold until the 1970s. The U.S. military was at war with the United States when it was at war with the United States. The U.S. military began developing into a coalition of military forces, but it soon began to develop into a coalition of military forces in the 1950s. The first US to support the war was the U.S. Army. The war continued until the 1960s.
 
@@ -168,7 +171,7 @@ They call that narrative payoff.
 
 ### In-context learning
 
-What's interesting about GPT-2 is that it was a very early sign of emergent behaviours naturally rising out from language models. These are useful bonus behaviours that the model was never intentionally trained to perform. And they keep happening and surprising us. 
+One interesting aspect of GPT-2 is that it began offering us some very early signs of emergent behaviours – unexpected abilities naturally rising out from language models that had never been formally considered or trained for. And they keep happening and surprising us. 
 
 For example, our model is capable of learning a basic question-and-answer like syntax from a single example given in the prompt (called 'one-shot learning'). 
 
@@ -195,7 +198,7 @@ Our model auto-completes with:
 >
 > Q: Where does the capital of England rise? A: England
 
-The model has begun to organically pick up on the Question and Answer format and has even started generating its own question-answer pairs. Is it remotely useful? Of course not. But it's the *early signs of LLM superpowers* that only begins to grow with upscaled models like GPT-3.
+The model has begun to organically pick up on the Question and Answer format and has even started generating its own question-answer pairs. Is it remotely useful? Not just yet. But it's the *early signs of LLM superpowers* that only begins to grow with upscaled models like GPT-3.
 
 Post-training is where we really start to move from a next-token predictor into something meaningfully useful, such as a chatbot.
 
@@ -205,37 +208,28 @@ We've hit a bit of a hard limit now, in terms of potential scale, cost and hardw
 
 ### Cost comparison
 
-* GPT-1 - done locally, cost nothing, a few hours to plateau.
-* GPT-2 - trained on rented GPUs, cost around £20, about 90 minutes. This is the smallest of the four GPT-2 models, GPT-2-124M. 
+* GPT-1 - done locally, costs nothing and takes a few hours to plateau.
+* GPT-2 - trained on rented GPUs, costs around £13, about 90 minutes. For reference, this was the smallest of the four GPT-2 models, GPT-2-124M. 
 * GPT-3 - would still cost millions to train, even today.
 
-Luckily, others have done this for me.
-
-Pre-training and now moving towards post-training.
-
-### Timeline
-
-In terms of timeline, roughly analogous:
-
-* Word2Vec - 2013? Only an embedding approach.
-* RNN - 1980s?
-* LSTM - 1990s?
-* GPT-1 (Transformer architecture) - 2018?
-* GPT-2 (NanoGPT) - February 2019
-
-
+If anyone would like to donate a several million pounds to read my GPT-3 post please feel free to reach out.
 
 ## Next steps
 
-Post-training. 
+So, what next?
 
-Fine tuning. 
+Luckily, others have trained open models for us! We have a wide range of open source language models from the GPT-3 era and onwards at our disposal. That's kind of incredible, really.
 
-Making a proper chatbot interface. 
+I'll be using these raw models for the next steps:
 
-After that: 
+- Fine tuning to make my model adhere to a user prompt/response conversational approach
+- Post-training to better-understand how different reinforcement learning techniques can be used to improve performance, such as RL from human feedback (RLHF) or RL with verifiable rewards (RLVR).
+
+With these in place, I *might* be able to build a slightly crappy chatbot interface. After that? Some ideas: 
 
 * Chain of thought, reasoning models. 
 * Agentic tool building / looping
 * RAGs
 * Harness engineering
+
+See you in the next episode, thanks for reading!
