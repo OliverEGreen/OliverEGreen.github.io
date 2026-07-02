@@ -218,20 +218,22 @@ If anyone would like to donate a several million pounds to read my GPT-3 post pl
 
 ## Next steps
 
-So, what next?
+So, what next? We've hit the self-training limit.
 
-Luckily, others have trained open models for us! We have a wide range of open source language models from the GPT-3 era and onwards at our disposal. That's kind of incredible, really.
+Luuuckily, others have trained open source / weights models for us! We have a wide range of open source language models from the GPT-3 era and onwards at our disposal. That's kind of incredible, really. Nobody will give you a free luxury yacht but they'll happily give the world something that cost many times over to train.
 
-I'll be using these raw models for the next steps:
+With that established, I'll be using open models for the next steps:
 
-- Fine tuning to make my model adhere to a user prompt/response conversational approach
+- Fine tuning to make my model adhere to a user prompt/response conversational approach.
 - Post-training to better-understand how different reinforcement learning techniques can be used to improve performance, such as RL from human feedback (RLHF) or RL with verifiable rewards (RLVR).
 
-With these in place, I *might* be able to build a slightly crappy chatbot interface. After that? Some ideas: 
+With these in place, I *might* be able to build a *slightly crappy* chatbot interface. I'm dreaming out loud here.
+
+After that? Some ideas: 
 
 * Chain of thought, reasoning models. 
 * Agentic tool building / looping
 * RAGs
 * Harness engineering
 
-See you in the next episode, thanks for reading!
+That's all for now. See you in the next episode and thanks for reading!
