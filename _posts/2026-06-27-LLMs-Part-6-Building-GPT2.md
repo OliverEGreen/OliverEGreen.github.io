@@ -20,7 +20,7 @@ After building a working transformer model, I was left wondering about where to 
 * The famous [2017 Google Brain](https://arxiv.org/abs/1706.03762) paper used an encoder-decoder architecture, since it was trying to undertake a translation task (very loosely, mapping input tokens to output tokens).
 * For most modern LLMs, this setup was unnecessary. It's since turned out that decoder-only is ideal for text generation; OpenAI saw the Google paper and its potential for their goals in 2018's GPT-1.
 * Conversely, it transpired that encoder-only is an excellent approach to take for rich text comprehension tasks (first BERT, and later BART). 
-* A more recent example of an architectural leap forward is DeepSeek R1's impressive [attention head](https://www.youtube.com/watch?v=0VLAoVGf_74) design, released in January 2025. Some pretty pictures of this are available from Welch Labs [here](https://www.welchlabs.com/store/mladeepseek-attention-poster-13x19). 
+* A more recent example of an architectural leap forward is DeepSeek's impressive [attention head](https://www.youtube.com/watch?v=0VLAoVGf_74) design, released in January 2025. Some pretty pictures of this are available from Welch Labs [here](https://www.welchlabs.com/store/mladeepseek-attention-poster-13x19). 
 
 But it's not architectural design that is behind the astronomical leaps and bounds we've seen since GPT-1:
 
@@ -29,7 +29,7 @@ But it's not architectural design that is behind the astronomical leaps and boun
 
 ## Why build GPT-2?
 
-For the language modelling world, OpenAI's November 2019 announcement of GPT-2 was a significant milestone. OpenAI initially [called it "too dangerous" to release](https://openai.com/index/gpt-2-1-5b-release/), and put a six-month moratorium in place before its release so the tech community could have time to discuss and adapt to its impacts. Despite this hype, it failed to make any significant waves outside of its niche community and the societal risks never really materialised.
+For the language modelling world, OpenAI's February 2019 announcement of GPT-2 was a significant milestone. OpenAI initially [called it "too dangerous" to release](https://openai.com/index/gpt-2-1-5b-release/), and put a six-month moratorium in place before its release so the tech community could have time to discuss and adapt to its impacts. Despite this hype, it failed to make any significant waves outside of its niche community and the societal risks never really materialised.
 
 Architecturally, it's not that different to GPT-1 and transformer architecture in general. So why bother building it?
 
@@ -90,9 +90,11 @@ Thankfully, HuggingFace does us all a great service here!
 
 [^3]: Fun fact: HuggingFace is named after the official name for this emoji - 🤗
 
-They provide multiple curated datasets – I went with the FineWeb Edu set, which is largely trained on encyclopaedia and quality news articles. As corpus flavours go, it's quite bland. It reads a lot like the unflavoured English language.
+They provide multiple curated datasets. I went with the FineWeb Edu set, which largely consists of encyclopaedia entries and quality news articles. As corpus flavours go, it's bland – in fact it's so dry you could light a fire with it. It reads a lot like the unflavoured English language. 
 
-There's a well-known rule of thumb for choosing an appropriately-sized corpus known as the 'Chinchilla Rule', and this corpus was perfectly chinchilla-sized. 
+There's a well-known rule of thumb for choosing an appropriately-sized corpus known as the 'Chinchilla Rule', and this corpus was perfectly chinchilla-sized.
+
+[^4]: I still have no idea why it's called this. But it means is we're aiming for roughly 20 tokens per model parameter for the most cost-efficient training possible.
 
 ### Byte-level Byte Pair Encoding... What
 
