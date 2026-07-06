@@ -61,10 +61,10 @@ Many of these optimisations aren't paper-faithful to GPT-2 by design – we hav
 
 * A lot of the required optimisations are device-sensitive. I've been building the models on my Mac M1, which uses Apple's propietary Apple Silicone hardware. But I would eventually need to train this model on NVIDIA GPUs, which is known as the 'CUDA' platform. 
 
-* To mitigate the Mac / NVIDIA architecture gap, I added an environment variable "SMOKE" so I could run local smoke tests on my Mac using much smaller hyperparameters.
+* To mitigate the Mac / NVIDIA architecture gap, I added an environment variable `SMOKE` so I could run local smoke tests on my Mac using much smaller hyperparameters.
 * I wasn't gonna just train on a single NVIDIA GPU either, but wanted to spread the work across multiple rented GPUs simultaneously. This meant we needed to adjust our model to work as such. 
 * In previous models, the learning rate was a fixed constant. But we'd be able to improve our end results if this dynamically varied over time.
-* Switching off gradient-tracking for sample generation using the @torch.nograd() decorator. We have no interest in this kind of book-keeping when generating, only when training.
+* Switching off gradient-tracking for sample generation using the `@torch.no_grad()` decorator. We have no interest in this kind of book-keeping when generating, only when training.
 * To avoid memorisation, I introduced a training/testing split of 90:10 on the data, meaning we'd hold back some of the text to ensure our model was generalising and not just learning to regurgitate accurately. With a large enough corpus, we'd also help reduce the chance of this occurring.
 * Flash memory. 
 
@@ -125,7 +125,7 @@ A few clicks later and I'd spun up the pod. I had access to a Terminal and a Jup
 
 I noticed Some chips weren't available and you have to subscribe to gain access to them. I found this fascinating, but it makes sense. Even Anthropic are [renting hardware from SpaceX](https://x.ai/news/anthropic-compute-partnership) right now. Supply is tight and chip costs are solidly in five-figure territory. Inshallah, somehow they're still fine to rent for a short period.
 
-Using tiny hyperparameter values, I ran a few smoke tests for both the tokeniser (Step 1) and the training pass (Step 2). I encountered a hiccup where tiktoken's own special <|endoftext|> token appeared as raw text in our corpus data. I forcibly set the encoding style to encode_ordinary() to work around this.    
+Using tiny hyperparameter values, I ran a few smoke tests for both the tokeniser (Step 1) and the training pass (Step 2). I encountered a hiccup where tiktoken's own special `<|endoftext|>` token appeared as raw text in our corpus data. I forcibly set the encoding style to `encode_ordinary()` to work around this.    
 
 Beyond this, everything passed, and so it was time to press the buttons for real. 
 
@@ -144,7 +144,7 @@ As raw language models go, that was basically it! But I had a few steps left in 
 
 ### Building the sample generator
 
-In order to make a next-token predictor, you need a function to call that actually forces this to happen. You can find the [generate() function here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/gpt-2.py). 
+In order to make a next-token predictor, you need a function to call that actually forces this to happen. You can find the [`generate()` function here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/gpt-2.py). 
 
 This is really just a modified version of the sample function we've been using in the previous language models, with a few controllable knobs added in for things like temperature.
 
@@ -179,8 +179,9 @@ For example, our model is capable of learning a basic question-and-answer like s
 
 Given the sample text:
 
-> **Q: What is the capital of England? A: London**
-> **Q: What is the capital of France? A:**
+> Q: What is the capital of England? A: London
+>
+> Q: What is the capital of France? A:
 
 Our model auto-completes with:
 
