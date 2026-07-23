@@ -16,10 +16,9 @@ sitemap: false
   if (canonical) {
     window.location.replace(canonical + window.location.search + window.location.hash);
   } else {
-    var message = document.getElementById("not-found-message");
-    if (message) {
-      message.innerHTML =
-        'This page doesn&rsquo;t exist. Head back <a href="{{ "/" | relative_url }}">home</a> or browse the <a href="{{ "/writing/" | relative_url }}">writing</a>.';
+    var links = document.getElementById("not-found-links");
+    if (links) {
+      links.hidden = false;
     }
   }
 })();
