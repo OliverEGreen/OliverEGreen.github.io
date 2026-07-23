@@ -7,7 +7,10 @@ redirect_from: /writing/The-Blueprint/
 kind: non-technical
 temperature: 0.8
 tagline: "It's an old plot twist: \"Wait! We've been here before\""
+image: /assets/images/posts/refactoring-a-deity-header.jpg
 ---
+
+![A classical ink-wash landscape of robed pilgrims processing through misty mountains towards data centres]({{ '/assets/images/posts/refactoring-a-deity-header.jpg' | relative_url }})
 
 ## Introduction
 
