@@ -5,11 +5,13 @@ layout: default
     <div class="section-head">
         <div class="head-group">
             <h2>Writing</h2>
+            {% if page.show_all %}
             <div class="filter-toggle" role="group" aria-label="Filter posts">
                 <button class="active" data-filter="all">All</button>
                 <button data-filter="technical">Technical</button>
                 <button data-filter="non-technical">Non-technical</button>
             </div>
+            {% endif %}
         </div>
         {% unless page.show_all %}<a class="see-all" href="{{ '/writing/' | relative_url }}">See all &rarr;</a>{% endunless %}
     </div>

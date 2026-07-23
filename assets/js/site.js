@@ -8,17 +8,22 @@
     onScroll();
   }
 
-  // 2) Random Dracula colour on nav/logo rollover (changes every time)
+  // 2) Random Dracula colour on nav/logo rollover (changes every time).
+  //    Hover-capable devices only — taps on touch screens fake mouseenter
+  //    and would leave the colours (and dark header) stuck on.
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var COLS = ['#FF79C6', '#BD93F9', '#50FA7B', '#FF5555', '#8BE9FD', '#FFB86C'];
-  document.querySelectorAll('.site-nav a, .nav-menu a').forEach(function (el) {
-    el.addEventListener('mouseenter', function () {
-      el.style.setProperty('color', COLS[Math.floor(Math.random() * COLS.length)], 'important');
+  if (canHover) {
+    document.querySelectorAll('.site-nav a, .nav-menu a').forEach(function (el) {
+      el.addEventListener('mouseenter', function () {
+        el.style.setProperty('color', COLS[Math.floor(Math.random() * COLS.length)], 'important');
+      });
+      el.addEventListener('mouseleave', function () { el.style.removeProperty('color'); });
     });
-    el.addEventListener('mouseleave', function () { el.style.removeProperty('color'); });
-  });
+  }
 
   // 2b) OG logo: new random dark-mode colour each time the header goes dark
-  if (header) {
+  if (header && canHover) {
     header.addEventListener('mouseenter', function () {
       header.style.setProperty('--og-dark', COLS[Math.floor(Math.random() * COLS.length)]);
     });
