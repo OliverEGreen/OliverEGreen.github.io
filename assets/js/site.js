@@ -70,7 +70,20 @@
     });
   }
 
-  // 5) Subscribe form: random CEO placeholder + mock submit.
+  // 5) Post-nav back link: randomise the escape text per page load
+  var backLink = document.querySelector('.post-nav a');
+  if (backLink) {
+    var EXITS = [
+      'Quick! Let’s escape',
+      'Take me back',
+      'Who let you in here? Get out!',
+      'You can leave, now',
+      'Exit through the gift shop'
+    ];
+    backLink.textContent = '← ' + EXITS[Math.floor(Math.random() * EXITS.length)];
+  }
+
+  // 6) Subscribe form: random CEO placeholder + mock submit.
   //    To make it real, point the form at Buttondown/Mailchimp etc. (see README).
   var PHS = ['sjobs@apple.com', 'billg@microsoft.com', 'jeff@amazon.com', 'zuck@fb.com', 'sundar@google.com', 'jack@twitter.com', 'elon@x.com', 'sam@openai.com', 'satyan@microsoft.com', 'patrick@stripe.com'];
   document.querySelectorAll('.sub-form').forEach(function (form) {
