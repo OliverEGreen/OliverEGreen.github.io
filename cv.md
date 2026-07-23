@@ -22,15 +22,15 @@ permalink: /cv/
     <h2>Skills Stack</h2>
     <div class="cv-entry">
         <div class="cv-when">Technical</div>
-        <div class="cv-what"><p>.NET Framework, C#, Python, SQL, APIs, data analysis, data visualisation, OpenAI Codex.</p></div>
+        <div class="cv-what"><p>Microsoft's .NET Framework, C#, Python, SQL, APIs, data analysis, data visualisation, Claude/Codex.</p></div>
     </div>
     <div class="cv-entry">
         <div class="cv-when">Product</div>
-        <div class="cv-what"><p>Figma, Agile delivery, discovery, roadmapping, sprint planning, platform strategy, UI/UX design, Lovable.</p></div>
+        <div class="cv-what"><p>Figma mockups, Agile delivery, discovery, roadmapping, sprint planning, platform strategy, UI/UX design, Claude Design, marketing and communication.</p></div>
     </div>
     <div class="cv-entry">
         <div class="cv-when">Domains</div>
-        <div class="cv-what"><p>Machine learning, computational design, 3D geometry, CAD, B2B SaaS, marketplaces, 0&rarr;1 product development.</p></div>
+        <div class="cv-what"><p>Machine learning, deep learning (neural networks), computational design, 3D geometry, CAD, B2B SaaS, platform development, industry marketplaces and 0&rarr;1 product development.</p></div>
     </div>
 
     <h2>Professional Experience</h2>
