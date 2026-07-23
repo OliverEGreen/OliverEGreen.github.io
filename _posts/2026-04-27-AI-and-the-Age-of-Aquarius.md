@@ -1,6 +1,9 @@
 ---
 title: "AI and the Age of Aquarius"
 date: 2026-04-27
+post_id: 1
+permalink: /posts/1/ai-and-the-age-of-aquarius/
+redirect_from: /writing/AI-and-the-Age-of-Aquarius/
 ---
 
 There's an unprecedented vibe shift going on right now. You don't need me to tell you that. 

@@ -1,6 +1,9 @@
 ---
 title: "What Comes Next?"
 date: 2026-04-27
+post_id: 3
+permalink: /posts/3/what-comes-next/
+redirect_from: /writing/what-comes-next/
 ---
 
 So, AI has arrived! The big hoohah is here. And now what? Where does this leave us?

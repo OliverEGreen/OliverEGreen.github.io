@@ -1,5 +1,5 @@
 title: Ollie Green
-description: "Against my better judgement, thinking sometimes still happens: it's a problem we're working on. Some of it leaks out into the environment here."
+description: ""
 author: Ollie Green
 url: "https://olliegreen.info"
 baseurl: ""
@@ -15,6 +15,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Defaults
 defaults:

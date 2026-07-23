@@ -1,6 +1,9 @@
 ---
 title: "LLMs Part 4: Transformer Architecture"
-date: 18-06-2026
+date: 2026-06-18
+post_id: 9
+permalink: /posts/9/llms-part-4-transformer-architecture/
+redirect_from: /writing/LLMs-Part-4-Transformer-Architecture/
 ---
 
 *This post is Part 4 in this series, where I try to teach myself the very basics of language modelling. For my earlier posts, see: [Part 1](https://olliegreen.info/writing/LLMs-Part-1-Building-word2vec/), [Part 2](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/) and [Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/).*

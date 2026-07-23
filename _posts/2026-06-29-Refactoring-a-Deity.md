@@ -1,6 +1,9 @@
 ---
-title: "The Blueprint"
+title: "Refactoring a Deity"
 date: 2026-06-29
+post_id: 12
+permalink: /posts/12/refactoring-a-deity/
+redirect_from: /writing/The-Blueprint/
 ---
 
 *It's an old plot twist: "Wait! We've been here before..."*

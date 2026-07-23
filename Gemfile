@@ -3,7 +3,15 @@ source "https://rubygems.org"
 # Use the github-pages gem so local builds match what GitHub Pages runs.
 # This pins Jekyll and the plugin set to GitHub's supported versions.
 # See: https://pages.github.com/versions/
-gem "github-pages", group: :jekyll_plugins
+gem "github-pages", "~> 232", group: :jekyll_plugins
+
+# Stdlib gems removed from Ruby 3.4+ that Jekyll 3.9 still expects.
+# Needed for local builds only; GitHub Pages provides its own environment.
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
+gem "webrick"
 
 # Windows / JRuby compatibility shims (harmless on macOS/Linux)
 gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin, :jruby]

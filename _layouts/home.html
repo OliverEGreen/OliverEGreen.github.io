@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<p class="intro">{{ site.description }}</p>
+{% if site.description != "" %}<p class="intro">{{ site.description }}</p>{% endif %}
 
 <h2 class="section-label">Writing</h2>
 

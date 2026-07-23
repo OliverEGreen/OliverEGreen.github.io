@@ -1,6 +1,9 @@
 ---
 title: "LLMs Part 6: Building GPT-2"
 date: 2026-06-27
+post_id: 11
+permalink: /posts/11/llms-part-6-building-gpt2/
+redirect_from: /writing/LLMs-Part-6-Building-GPT2/
 ---
 
 *This is Part 6 in my series on building language models. In this post, I refactor our hand-written GPT-1 model into GPT-2, exploring a wide range of optimisations necessary to train a model of this scale on rented GPU hardware.*

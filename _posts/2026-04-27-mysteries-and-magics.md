@@ -1,6 +1,9 @@
 ---
 title: "Mysteries & Magics"
 date: 2026-04-27
+post_id: 2
+permalink: /posts/2/mysteries-and-magics/
+redirect_from: /writing/mysteries-and-magics/
 ---
 
 *A long list of loose threads to pull upon...*

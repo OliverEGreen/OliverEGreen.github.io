@@ -1,6 +1,9 @@
 ---
 title: "LLMs Part 2: Building a Vanilla RNN"
 date: 2026-05-19
+post_id: 7
+permalink: /posts/7/llms-part-2-building-a-vanilla-rnn/
+redirect_from: /writing/LLMs-Part-2-Building-a-Vanilla-RNN/
 ---
 
 *This post is part 2 in a series where I attempted to teach myself the very basics of language modelling. For Part 1 see [Word2Vec](https://olliegreen.info/writing/building-word2vec/)*.
