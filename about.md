@@ -14,8 +14,15 @@ permalink: /about/
 
     <h2>Contact Me</h2>
     <p>Want to talk shop, ask a question, or tell me I'm wrong on the internet? Go on then.</p>
-    <div class="cv-actions">
-        <a class="btn-pill" id="contact-link" href="#" hidden>Send me a message <span>&rarr;</span></a>
-        <noscript><p>Enable JavaScript to reveal the contact button — it keeps the address away from spam bots.</p></noscript>
-    </div>
+    <p id="contact-pending">The contact form is being wired up as we speak. Check back shortly.</p>
+    <form class="contact-form" data-endpoint="" novalidate hidden>
+        <label for="cf-email">Your email</label>
+        <input id="cf-email" type="email" name="email" placeholder="you@example.com" required>
+        <label for="cf-subject">Subject</label>
+        <input id="cf-subject" type="text" name="_subject" placeholder="Something snappy" required>
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" rows="6" placeholder="Say your piece." required></textarea>
+        <div class="contact-error sub-error" hidden></div>
+        <button class="btn-pill" type="submit">Send it <span>&rarr;</span></button>
+    </form>
 </article>

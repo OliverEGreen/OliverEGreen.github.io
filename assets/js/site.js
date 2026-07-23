@@ -99,13 +99,40 @@
     backLink.textContent = '← ' + EXITS[Math.floor(Math.random() * EXITS.length)];
   }
 
-  // 6) Contact link: the address is stored reversed and assembled here,
-  //    so it never appears in the page source for scrapers to harvest.
-  var contact = document.getElementById('contact-link');
-  if (contact) {
-    var addr = 'moc.liamg@neergdrawderevilo'.split('').reverse().join('');
-    contact.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('Hello Ollie');
-    contact.hidden = false;
+  // 6) Contact form: validates, then POSTs to the form backend so the
+  //    destination address never appears anywhere client-side.
+  var cform = document.querySelector('.contact-form');
+  if (cform) {
+    var endpoint = cform.getAttribute('data-endpoint');
+    var pending = document.getElementById('contact-pending');
+    if (endpoint) {
+      cform.hidden = false;
+      if (pending) pending.hidden = true;
+      var cerr = cform.querySelector('.contact-error');
+      cform.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = cform.querySelector('[name="email"]').value;
+        var subject = cform.querySelector('[name="_subject"]').value;
+        var message = cform.querySelector('[name="message"]').value;
+        var problem = null;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) problem = 'That’s not an email and you know it.';
+        else if (subject.trim().length < 3) problem = 'Give it a subject.';
+        else if (message.trim().length < 10) problem = 'The message is rather the point.';
+        if (problem) { cerr.textContent = problem; cerr.hidden = false; return; }
+        cerr.hidden = true;
+        var btn = cform.querySelector('button[type="submit"]');
+        btn.disabled = true; btn.textContent = 'Sending…';
+        fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(cform) })
+          .then(function (r) {
+            if (!r.ok) throw new Error('send failed');
+            cform.outerHTML = '<div class="sub-done">Message sent. I read everything, eventually.</div>';
+          })
+          .catch(function () {
+            btn.disabled = false; btn.innerHTML = 'Send it <span>&rarr;</span>';
+            cerr.textContent = 'Something broke. Try again in a minute.'; cerr.hidden = false;
+          });
+      });
+    }
   }
 
   // 7) Subscribe form: random CEO placeholder + mock submit.
