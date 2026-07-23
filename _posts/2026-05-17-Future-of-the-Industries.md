@@ -6,7 +6,7 @@ permalink: /posts/6/future-of-the-industries/
 redirect_from: /writing/Future-of-the-Industries/
 kind: non-technical
 temperature: 0.7
-tagline: "Dispatches from a construction-tech conference where everyone had already seen the punchline coming."
+tagline: "Dispatches from a construction-tech conference"
 ---
 
 I was recently at the [NXT BLD+DEV](https://nxtbld.com/) conference in Westminster for construction tech startups. I've attended this conference annually for the last 4 years and this was its 10th anniversary year.
