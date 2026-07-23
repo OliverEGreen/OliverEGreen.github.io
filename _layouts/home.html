@@ -1,25 +1,65 @@
 ---
 layout: default
 ---
-{% if site.description != "" %}<p class="intro">{{ site.description }}</p>{% endif %}
+<section id="writing">
+    <div class="section-head">
+        <div class="head-group">
+            <h2>Writing</h2>
+            <div class="filter-toggle" role="group" aria-label="Filter posts">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="technical">Technical</button>
+                <button data-filter="non-technical">Non-technical</button>
+            </div>
+        </div>
+        {% unless page.show_all %}<a class="see-all" href="{{ '/writing/' | relative_url }}">See all &rarr;</a>{% endunless %}
+    </div>
 
-<h2 class="section-label">Writing</h2>
+    {% if page.show_all %}{% assign posts = site.posts %}{% else %}{% assign posts = site.posts | slice: 0, 5 %}{% endif %}
+    <ul class="post-list">
+        {% for post in posts %}
+        <li data-kind="{{ post.kind | default: 'technical' }}">
+            <a href="{{ post.url | relative_url }}">
+                <span class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time></span>
+                <span class="post-main">
+                    <span class="post-title">{{ post.title }}</span>
+                    {% if post.tagline %}<span class="post-tagline">{{ post.tagline }}</span>{% endif %}
+                </span>
+                <span class="temp" title="Temperature (1–5)">
+                    <span class="temp-label">Temperature</span>
+                    <span class="temp-segs">
+                        {% assign t = post.temperature | default: 0.1 | times: 5 | round %}{% if t < 1 %}{% assign t = 1 %}{% endif %}
+                        {% for i in (1..5) %}<i class="{% if i <= t %}on s{{ i }}{% endif %}"></i>{% endfor %}
+                    </span>
+                </span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
 
-{% if site.posts.size > 0 %}
-<ul class="post-list">
-    {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url | relative_url }}">
-            <span class="post-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                    {{ post.date | date: "%-d %B %Y" }}
-                </time>
-            </span>
-            <span class="post-title">{{ post.title }}</span>
+{% unless page.show_all %}
+<section class="section-projects" id="projects">
+    <div class="section-head">
+        <h2>Projects</h2>
+        <a class="see-all" href="{{ '/projects/' | relative_url }}">See all &rarr;</a>
+    </div>
+    <div class="card-grid">
+        <a class="card" href="{{ '/projects/' | relative_url }}">
+            <div class="card-media"><span>project screenshot</span></div>
+            <div class="card-body">
+                <div class="card-kicker">Work</div>
+                <div class="card-title">Featured work project</div>
+                <div class="card-desc">A one-line description of what this is and why it matters.</div>
+            </div>
         </a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p class="post-meta">No posts yet.</p>
-{% endif %}
+        <a class="card" href="https://github.com/OliverEGreen/OliverEGreen.github.io/tree/main/LLM-Learning">
+            <div class="card-media"><span>project screenshot</span></div>
+            <div class="card-body">
+                <div class="card-kicker">Open Source</div>
+                <div class="card-title">LLM-Learning</div>
+                <div class="card-desc">Hand-building language models from Word2Vec to GPT-2, documented post by post.</div>
+            </div>
+        </a>
+    </div>
+</section>
+{% endunless %}

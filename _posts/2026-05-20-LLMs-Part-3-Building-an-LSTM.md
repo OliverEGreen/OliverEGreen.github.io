@@ -4,6 +4,9 @@ date: 2026-05-20
 post_id: 8
 permalink: /posts/8/llms-part-3-building-an-lstm/
 redirect_from: /writing/LLMs-Part-3-Building-an-LSTM/
+kind: technical
+temperature: 0.1
+tagline: "This post is part 3 in a series where I attempted to teach myself the very basics of language modelling."
 ---
 
 *This post is part 3 in a series where I attempted to teach myself the very basics of language modelling. See Part 1 and Part 2.*

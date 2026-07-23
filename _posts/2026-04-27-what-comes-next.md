@@ -4,6 +4,9 @@ date: 2026-04-27
 post_id: 3
 permalink: /posts/3/what-comes-next/
 redirect_from: /writing/what-comes-next/
+kind: non-technical
+temperature: 0.7
+tagline: "So, AI has arrived! The big hoohah is here. And now what?"
 ---
 
 So, AI has arrived! The big hoohah is here. And now what? Where does this leave us?

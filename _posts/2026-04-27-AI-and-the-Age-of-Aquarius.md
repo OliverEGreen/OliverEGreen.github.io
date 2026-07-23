@@ -4,6 +4,9 @@ date: 2026-04-27
 post_id: 1
 permalink: /posts/1/ai-and-the-age-of-aquarius/
 redirect_from: /writing/AI-and-the-Age-of-Aquarius/
+kind: non-technical
+temperature: 0.85
+tagline: "There's an unprecedented vibe shift going on right now."
 ---
 
 There's an unprecedented vibe shift going on right now. You don't need me to tell you that. 

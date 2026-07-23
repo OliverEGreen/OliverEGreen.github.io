@@ -4,6 +4,9 @@ date: 2026-05-09
 post_id: 5
 permalink: /posts/5/llms-part-1-building-word2vec/
 redirect_from: /writing/LLMs-Part-1-Building-word2vec/
+kind: technical
+temperature: 0.15
+tagline: "This is Part 1 of a series I'm writing about LLMs and natural language models."
 ---
 
 *This is Part 1 of a series I'm writing about LLMs and natural language models.*

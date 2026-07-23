@@ -4,6 +4,9 @@ date: 2026-06-27
 post_id: 11
 permalink: /posts/11/llms-part-6-building-gpt2/
 redirect_from: /writing/LLMs-Part-6-Building-GPT2/
+kind: technical
+temperature: 0.15
+tagline: "Refactoring our hand-written GPT-1 into GPT-2, exploring the optimisations needed to train at this scale on rented GPU hardware."
 ---
 
 *This is Part 6 in my series on building language models. In this post, I refactor our hand-written GPT-1 model into GPT-2, exploring a wide range of optimisations necessary to train a model of this scale on rented GPU hardware.*

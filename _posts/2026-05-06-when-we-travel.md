@@ -4,6 +4,9 @@ date: 2026-05-06
 post_id: 4
 permalink: /posts/4/when-we-travel/
 redirect_from: /writing/when-we-travel/
+kind: non-technical
+temperature: 0.8
+tagline: "Gosh, don't we like to travel?"
 ---
 
 Gosh, don't we like to travel? A bit like food and sunny weather, it's so common that it's hardly worth stating. Not for all of us, of course, but the large majority.
