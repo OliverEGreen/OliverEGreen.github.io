@@ -136,7 +136,9 @@
   }
 
   // 7) Subscribe form: random CEO placeholder + validation. Valid submissions
-  //    POST natively to Buttondown, which handles confirmation from there.
+  //    POST to Buttondown via fetch so the visitor never leaves the site;
+  //    Buttondown then sends its confirmation email. (No-JS fallback: the
+  //    native form POST still works, landing on Buttondown's page.)
   var PHS = ['sjobs@apple.com', 'billg@microsoft.com', 'jeff@amazon.com', 'zuck@fb.com', 'sundar@google.com', 'jack@twitter.com', 'elon@x.com', 'sam@openai.com', 'satyan@microsoft.com', 'patrick@stripe.com'];
   document.querySelectorAll('.sub-form').forEach(function (form) {
     var input = form.querySelector('input[type="email"]');
@@ -144,8 +146,23 @@
     if (input) input.placeholder = PHS[Math.floor(Math.random() * PHS.length)];
     form.addEventListener('submit', function (e) {
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
-      if (!ok) { e.preventDefault(); if (err) err.hidden = false; return; }
+      if (!ok) {
+        e.preventDefault();
+        if (err) { err.textContent = 'That’s not an email and you know it.'; err.hidden = false; }
+        return;
+      }
       if (err) err.hidden = true;
+      e.preventDefault();
+      var btn = form.querySelector('button');
+      if (btn) btn.disabled = true;
+      fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+        .then(function () {
+          form.outerHTML = '<div class="sub-done">Bold move. Check your inbox to confirm.</div>';
+        })
+        .catch(function () {
+          if (btn) btn.disabled = false;
+          if (err) { err.textContent = 'Something broke. Try again in a minute.'; err.hidden = false; }
+        });
     });
     if (input && err) input.addEventListener('input', function () { err.hidden = true; });
   });
