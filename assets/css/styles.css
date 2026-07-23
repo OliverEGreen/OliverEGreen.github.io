@@ -334,5 +334,6 @@ article.post .project img { margin: 20px 0 24px; }
   font-size: 13px; color: var(--ink-soft);
 }
 .socials { display: flex; align-items: center; gap: 18px; }
-.socials a { display: flex; }
+.socials a { display: flex; color: #3F392B; }
+.socials a svg { width: 20px; height: 20px; }
 .socials a:hover { color: var(--accent); }
