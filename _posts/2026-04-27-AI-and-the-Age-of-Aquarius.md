@@ -6,7 +6,7 @@ permalink: /posts/1/ai-and-the-age-of-aquarius/
 redirect_from: /writing/AI-and-the-Age-of-Aquarius/
 kind: non-technical
 temperature: 0.85
-tagline: "There's an unprecedented vibe shift going on right now."
+tagline: "The vibe shift in our stars"
 ---
 
 There's an unprecedented vibe shift going on right now. You don't need me to tell you that. 

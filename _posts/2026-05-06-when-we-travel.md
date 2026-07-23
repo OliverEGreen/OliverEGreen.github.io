@@ -6,7 +6,7 @@ permalink: /posts/4/when-we-travel/
 redirect_from: /writing/when-we-travel/
 kind: non-technical
 temperature: 0.8
-tagline: "Gosh, don't we like to travel?"
+tagline: "Observations from airplane mode"
 ---
 
 Gosh, don't we like to travel? A bit like food and sunny weather, it's so common that it's hardly worth stating. Not for all of us, of course, but the large majority.

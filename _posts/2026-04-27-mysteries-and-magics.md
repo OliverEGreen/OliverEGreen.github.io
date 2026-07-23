@@ -6,7 +6,7 @@ permalink: /posts/2/mysteries-and-magics/
 redirect_from: /writing/mysteries-and-magics/
 kind: non-technical
 temperature: 0.9
-tagline: "A long list of loose threads to pull upon..."
+tagline: "A long list of loose threads to pull upon"
 ---
 
 ## What's this about?
