@@ -10,7 +10,7 @@ permalink: /cv/
         <p class="tagline">Agentic Developer / Technical Product Manager / Architect &amp; Designer based in Rochester, Kent</p>
         <div class="cv-actions">
             <a class="btn-pill" href="{{ '/assets/Oliver-Green-CV.pdf' | relative_url }}" download>Download PDF CV <span>&darr;</span></a>
-            <a class="btn-pill btn-pill-alt" href="{{ '/projects/' | relative_url }}">View my full portfolio <span>&rarr;</span></a>
+            <a class="btn-pill btn-pill-alt" href="{{ '/assets/Oliver-Green-Portfolio.pdf' | relative_url }}" download>Download PDF Portfolio <span>&darr;</span></a>
             <a class="btn-pill btn-pill-alt" href="https://www.linkedin.com/in/oliver-green/">Find me on LinkedIn <span>&rarr;</span></a>
         </div>
     </header>
