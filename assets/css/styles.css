@@ -131,7 +131,7 @@ input::placeholder { color: #C4BCA8; }
 
 /* ---------- Home ---------- */
 .section-head {
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   border-bottom: 1px solid var(--rule); padding-bottom: 14px;
 }
 .section-head h2 { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }

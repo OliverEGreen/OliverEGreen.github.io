@@ -57,24 +57,33 @@
 
   // 4) Writing filter toggle (All / Technical / Non-technical).
   //    A data-limit on the list (homepage) caps it at the N most recent matches.
+  //    #technical / #non-technical in the URL applies the filter on landing
+  //    and whenever the hash changes (e.g. via the topnav dropdown).
   var toggle = document.querySelector('.filter-toggle');
   var list = document.querySelector('.post-list');
   if (toggle && list) {
     var limit = parseInt(list.getAttribute('data-limit'), 10) || Infinity;
-    toggle.querySelectorAll('button').forEach(function (b) {
-      b.addEventListener('click', function () {
-        toggle.querySelectorAll('button').forEach(function (x) { x.classList.remove('active'); });
-        b.classList.add('active');
-        var f = b.getAttribute('data-filter');
-        var shown = 0;
-        list.querySelectorAll('li').forEach(function (li) {
-          var match = f === 'all' || li.getAttribute('data-kind') === f;
-          var show = match && shown < limit;
-          if (show) shown++;
-          li.classList.toggle('hidden', !show);
-        });
+    var applyFilter = function (f) {
+      toggle.querySelectorAll('button').forEach(function (x) {
+        x.classList.toggle('active', x.getAttribute('data-filter') === f);
       });
+      var shown = 0;
+      list.querySelectorAll('li').forEach(function (li) {
+        var match = f === 'all' || li.getAttribute('data-kind') === f;
+        var show = match && shown < limit;
+        if (show) shown++;
+        li.classList.toggle('hidden', !show);
+      });
+    };
+    toggle.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
     });
+    var applyHash = function () {
+      var h = window.location.hash.replace('#', '');
+      if (h === 'technical' || h === 'non-technical') applyFilter(h);
+    };
+    window.addEventListener('hashchange', applyHash);
+    applyHash();
   }
 
   // 5) Post-nav back link: randomise the escape text per page load
