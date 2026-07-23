@@ -13,10 +13,17 @@
   //    and would leave the colours (and dark header) stuck on.
   var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var COLS = ['#FF79C6', '#BD93F9', '#50FA7B', '#FF5555', '#8BE9FD', '#FFB86C'];
+  // Remember the last pick so consecutive colours are always different
+  var lastCol = null;
+  var pickCol = function () {
+    var pool = COLS.filter(function (c) { return c !== lastCol; });
+    lastCol = pool[Math.floor(Math.random() * pool.length)];
+    return lastCol;
+  };
   if (canHover) {
     document.querySelectorAll('.site-nav a, .nav-menu a').forEach(function (el) {
       el.addEventListener('mouseenter', function () {
-        el.style.setProperty('color', COLS[Math.floor(Math.random() * COLS.length)], 'important');
+        el.style.setProperty('color', pickCol(), 'important');
       });
       el.addEventListener('mouseleave', function () { el.style.removeProperty('color'); });
     });
@@ -25,7 +32,7 @@
   // 2b) OG logo: new random dark-mode colour each time the header goes dark
   if (header && canHover) {
     header.addEventListener('mouseenter', function () {
-      header.style.setProperty('--og-dark', COLS[Math.floor(Math.random() * COLS.length)]);
+      header.style.setProperty('--og-dark', pickCol());
     });
     header.addEventListener('mouseleave', function () {
       header.style.removeProperty('--og-dark');
@@ -83,7 +90,16 @@
     backLink.textContent = '← ' + EXITS[Math.floor(Math.random() * EXITS.length)];
   }
 
-  // 6) Subscribe form: random CEO placeholder + mock submit.
+  // 6) Contact link: the address is stored reversed and assembled here,
+  //    so it never appears in the page source for scrapers to harvest.
+  var contact = document.getElementById('contact-link');
+  if (contact) {
+    var addr = 'moc.liamg@neergdrawderevilo'.split('').reverse().join('');
+    contact.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('Hello Ollie');
+    contact.hidden = false;
+  }
+
+  // 7) Subscribe form: random CEO placeholder + mock submit.
   //    To make it real, point the form at Buttondown/Mailchimp etc. (see README).
   var PHS = ['sjobs@apple.com', 'billg@microsoft.com', 'jeff@amazon.com', 'zuck@fb.com', 'sundar@google.com', 'jack@twitter.com', 'elon@x.com', 'sam@openai.com', 'satyan@microsoft.com', 'patrick@stripe.com'];
   document.querySelectorAll('.sub-form').forEach(function (form) {
