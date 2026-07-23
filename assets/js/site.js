@@ -10,11 +10,32 @@
 
   // 2) Random Dracula colour on nav/logo rollover (changes every time)
   var COLS = ['#FF79C6', '#BD93F9', '#50FA7B', '#FF5555', '#8BE9FD', '#FFB86C'];
-  document.querySelectorAll('.site-nav a, .nav-menu a, .site-logo').forEach(function (el) {
+  document.querySelectorAll('.site-nav a, .nav-menu a').forEach(function (el) {
     el.addEventListener('mouseenter', function () {
       el.style.setProperty('color', COLS[Math.floor(Math.random() * COLS.length)], 'important');
     });
     el.addEventListener('mouseleave', function () { el.style.removeProperty('color'); });
+  });
+
+  // 2b) OG logo: new random dark-mode colour each time the header goes dark
+  if (header) {
+    header.addEventListener('mouseenter', function () {
+      header.style.setProperty('--og-dark', COLS[Math.floor(Math.random() * COLS.length)]);
+    });
+    header.addEventListener('mouseleave', function () {
+      header.style.removeProperty('--og-dark');
+    });
+  }
+
+  // 2c) Olive spins once on click, 2s cooldown
+  var olive = document.querySelector('.logo-olive');
+  var oliveBusy = false;
+  if (olive) olive.addEventListener('click', function () {
+    if (oliveBusy) return;
+    oliveBusy = true;
+    olive.classList.add('spinning');
+    setTimeout(function () { olive.classList.remove('spinning'); }, 1100);
+    setTimeout(function () { oliveBusy = false; }, 2000);
   });
 
   // 3) Mobile menu

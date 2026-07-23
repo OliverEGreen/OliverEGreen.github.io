@@ -23,13 +23,7 @@ layout: default
                     <span class="post-title">{{ post.title }}</span>
                     {% if post.tagline %}<span class="post-tagline">{{ post.tagline }}</span>{% endif %}
                 </span>
-                <span class="temp" title="Temperature (1–5)">
-                    <span class="temp-label">Temperature</span>
-                    <span class="temp-segs">
-                        {% assign t = post.temperature | default: 0.1 | times: 5 | round %}{% if t < 1 %}{% assign t = 1 %}{% endif %}
-                        {% for i in (1..5) %}<i class="{% if i <= t %}on s{{ i }}{% endif %}"></i>{% endfor %}
-                    </span>
-                </span>
+                <span class="reading-time">{% assign minutes = post.content | number_of_words | divided_by: 200 | at_least: 1 %}{{ minutes }} minute{% unless minutes == 1 %}s{% endunless %}</span>
             </a>
         </li>
         {% endfor %}
