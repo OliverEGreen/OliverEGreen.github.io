@@ -22,16 +22,23 @@
   var panel = document.querySelector('.mobile-panel');
   if (btn && panel) btn.addEventListener('click', function () { panel.classList.toggle('open'); });
 
-  // 4) Writing filter toggle (All / Technical / Non-technical)
+  // 4) Writing filter toggle (All / Technical / Non-technical).
+  //    A data-limit on the list (homepage) caps it at the N most recent matches.
   var toggle = document.querySelector('.filter-toggle');
-  if (toggle) {
+  var list = document.querySelector('.post-list');
+  if (toggle && list) {
+    var limit = parseInt(list.getAttribute('data-limit'), 10) || Infinity;
     toggle.querySelectorAll('button').forEach(function (b) {
       b.addEventListener('click', function () {
         toggle.querySelectorAll('button').forEach(function (x) { x.classList.remove('active'); });
         b.classList.add('active');
         var f = b.getAttribute('data-filter');
-        document.querySelectorAll('.post-list li').forEach(function (li) {
-          li.classList.toggle('hidden', f !== 'all' && li.getAttribute('data-kind') !== f);
+        var shown = 0;
+        list.querySelectorAll('li').forEach(function (li) {
+          var match = f === 'all' || li.getAttribute('data-kind') === f;
+          var show = match && shown < limit;
+          if (show) shown++;
+          li.classList.toggle('hidden', !show);
         });
       });
     });

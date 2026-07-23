@@ -9,8 +9,6 @@ temperature: 0.15
 tagline: "This is Part 1 of a series I'm writing about LLMs and natural language models."
 ---
 
-*This is Part 1 of a series I'm writing about LLMs and natural language models.*
-
 I was recently asked in an interview how much I knew about [RAGs](https://en.wikipedia.org/wiki/Retrieval-augmented_generation). 
 
 I replied honestly; I've read about them and gone back and forth with LLMs so that I grasp the basic ideas. But this question stayed with me. I wasn't satisfied with my surface-level knowledge. Given how much LLMs have reshaped our world in the last few years, I started longing for a deeper knowledge –  the kind you can only achieve through building, testing, failing and fixing. 

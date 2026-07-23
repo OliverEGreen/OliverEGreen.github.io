@@ -9,8 +9,6 @@ temperature: 0.8
 tagline: "It's an old plot twist: \"Wait! We've been here before…\""
 ---
 
-*It's an old plot twist: "Wait! We've been here before..."*
-
 ## Introduction
 
 Throughout the last hundred years, one of the major social changes we've witnessed is the rapid fading of traditional theistic religion. You know, "[God is dead](https://en.wikipedia.org/wiki/God_is_dead)" and all that. 

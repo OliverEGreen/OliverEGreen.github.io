@@ -4,16 +4,10 @@ layout: default
 <article class="post">
     <header>
         <p class="meta">
-            <span class="temp" title="Temperature (1–5)">
-                <span class="temp-label">Temperature</span>
-                <span class="temp-segs">
-                    {% assign t = page.temperature | default: 0.1 | times: 5 | round %}{% if t < 1 %}{% assign t = 1 %}{% endif %}
-                    {% for i in (1..5) %}<i class="{% if i <= t %}on s{{ i }}{% endif %}"></i>{% endfor %}
-                </span>
-            </span>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
         </p>
         <h1>{{ page.title }}</h1>
+        {% if page.tagline %}<p class="tagline">{{ page.tagline }}</p>{% endif %}
     </header>
 
     {{ content }}

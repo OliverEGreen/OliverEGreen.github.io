@@ -14,10 +14,9 @@ layout: default
         {% unless page.show_all %}<a class="see-all" href="{{ '/writing/' | relative_url }}">See all &rarr;</a>{% endunless %}
     </div>
 
-    {% if page.show_all %}{% assign posts = site.posts %}{% else %}{% assign posts = site.posts | slice: 0, 5 %}{% endif %}
-    <ul class="post-list">
-        {% for post in posts %}
-        <li data-kind="{{ post.kind | default: 'technical' }}">
+    <ul class="post-list"{% unless page.show_all %} data-limit="5"{% endunless %}>
+        {% for post in site.posts %}
+        <li data-kind="{{ post.kind | default: 'technical' }}"{% unless page.show_all %}{% if forloop.index > 5 %} class="hidden"{% endif %}{% endunless %}>
             <a href="{{ post.url | relative_url }}">
                 <span class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time></span>
                 <span class="post-main">

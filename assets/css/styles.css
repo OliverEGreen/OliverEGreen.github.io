@@ -122,7 +122,14 @@ input::placeholder { color: #C4BCA8; }
 }
 .section-head h2 { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
 .section-head .head-group { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
-.see-all { font-size: 14px; color: var(--ink-faint); }
+.see-all {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--ink); color: var(--bg);
+  font-size: 13px; font-weight: 700;
+  padding: 8px 16px; border-radius: 99px;
+  transition: background-color .2s ease, transform .15s ease;
+}
+.see-all:hover { background: var(--accent-deep); color: var(--bg); transform: translateY(-1.5px); }
 .section-projects { margin-top: 72px; }
 
 /* Filter toggle */
@@ -151,7 +158,9 @@ input::placeholder { color: #C4BCA8; }
 .post-list a:hover .post-title { background-size: 100% 62%; }
 .post-tagline {
   display: block; font-family: var(--serif); font-size: 14px; color: var(--ink-faint);
-  margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-top: 3px; white-space: nowrap; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 64px), transparent);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 64px), transparent);
 }
 
 /* Temperature meter */
@@ -182,6 +191,7 @@ article.post { font-family: var(--serif); font-size: 17.5px; line-height: 1.58; 
 article.post > header { font-family: var(--sans); margin-bottom: 0; }
 article.post .meta { font-size: 13px; color: var(--ink-faint); margin: 0; display: flex; align-items: center; gap: 10px; }
 article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; margin: 16px 0 0; color: var(--ink); }
+article.post header .tagline { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
 article.post header::after { content: ''; display: block; height: 1px; background: var(--rule); margin: 32px 0 36px; }
 article.post h2 { font-family: var(--sans); font-size: 23px; font-weight: 700; letter-spacing: -0.01em; margin: 44px 0 16px; color: var(--ink); }
 article.post h3 { font-family: var(--sans); font-size: 18px; font-weight: 700; margin: 36px 0 12px; color: var(--ink); }
@@ -240,8 +250,7 @@ article.post figure { margin: 32px 0; }
 article.post figcaption { font-family: var(--sans); font-size: 13.5px; color: var(--ink-faint); margin-top: 10px; text-align: center; }
 article.post hr { border: 0; height: 1px; background: var(--rule); margin: 44px 0; }
 
-.post-nav { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-article.post + .post-nav, .post-nav { margin-top: 28px; }
+.post-nav { margin-top: 28px; }
 .post-nav a { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--ink-soft); }
 
 /* ---------- Footer ---------- */

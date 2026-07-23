@@ -9,8 +9,6 @@ temperature: 0.9
 tagline: "A long list of loose threads to pull upon..."
 ---
 
-*A long list of loose threads to pull upon...*
-
 ## What's this about?
 
 This post is my ongoing, naïve attempt to understand the nature of *this*. You know (waving my hands around). Everything, I guess.
