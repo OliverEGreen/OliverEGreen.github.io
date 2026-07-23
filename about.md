@@ -15,7 +15,7 @@ permalink: /about/
     <h2>Contact Me</h2>
     <p>Want to talk shop, ask a question, or tell me I'm wrong on the internet? Go on then.</p>
     <p id="contact-pending">The contact form is being wired up as we speak. Check back shortly.</p>
-    <form class="contact-form" data-endpoint="" novalidate hidden>
+    <form class="contact-form" data-endpoint="https://formspree.io/f/xwvgrezq" novalidate hidden>
         <label for="cf-email">Your email</label>
         <input id="cf-email" type="email" name="email" placeholder="you@example.com" required>
         <label for="cf-subject">Subject</label>

@@ -135,20 +135,17 @@
     }
   }
 
-  // 7) Subscribe form: random CEO placeholder + mock submit.
-  //    To make it real, point the form at Buttondown/Mailchimp etc. (see README).
+  // 7) Subscribe form: random CEO placeholder + validation. Valid submissions
+  //    POST natively to Buttondown, which handles confirmation from there.
   var PHS = ['sjobs@apple.com', 'billg@microsoft.com', 'jeff@amazon.com', 'zuck@fb.com', 'sundar@google.com', 'jack@twitter.com', 'elon@x.com', 'sam@openai.com', 'satyan@microsoft.com', 'patrick@stripe.com'];
   document.querySelectorAll('.sub-form').forEach(function (form) {
     var input = form.querySelector('input[type="email"]');
     var err = form.parentElement.querySelector('.sub-error');
     if (input) input.placeholder = PHS[Math.floor(Math.random() * PHS.length)];
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
       var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
-      if (!ok) { if (err) err.hidden = false; return; }
+      if (!ok) { e.preventDefault(); if (err) err.hidden = false; return; }
       if (err) err.hidden = true;
-      form.outerHTML = '<div class="sub-done">Bold move. You\u2019re in.</div>';
-      // TODO: actually submit somewhere.
     });
     if (input && err) input.addEventListener('input', function () { err.hidden = true; });
   });
