@@ -323,6 +323,13 @@ article.post .project img { margin: 20px 0 24px; }
 /* ---------- Forbidden map ---------- */
 .forbidden-map { height: 440px; border: 1px solid var(--rule); border-radius: 10px; margin: 28px 0 8px; background: var(--tint); }
 .forbidden-map-caption { font-family: var(--sans); font-size: 13.5px; color: var(--ink-faint); margin: 0 0 28px; text-align: center; }
+/* Undo the article image treatment inside the map (borders/boxes belong to prose images) */
+article.post .forbidden-map img { max-width: none; border: 0; border-radius: 0; background: transparent; margin: 0; }
+/* Custom pin: kill Leaflet's default white divIcon box; colour flows via currentColor */
+.og-pin { background: none; border: none; color: var(--accent-deep); }
+.og-pin svg { display: block; filter: drop-shadow(0 1px 1.5px rgba(38, 35, 28, 0.35)); }
+.leaflet-popup-content-wrapper { background: var(--bg); color: var(--ink); font-family: var(--sans); border-radius: 10px; border: 1px solid var(--rule-dark); }
+.leaflet-popup-tip { background: var(--bg); }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--rule); background: var(--footer-bg); font-family: var(--sans); }
