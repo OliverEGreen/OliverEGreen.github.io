@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/private/tmp/claude-501/-Users-olivergreen-Documents-GitHub-OliverEGreen-github-io-LLM-Learning-Transformers/e74229fd-786e-46a3-a83c-254308a4a724/scratchpad/serve404.py"],
+      "port": 4000
+    }
+  ]
+}
