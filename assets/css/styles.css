@@ -320,6 +320,10 @@ article.post .project img { margin: 20px 0 24px; }
 .contact-form button { margin-top: 16px; align-self: flex-start; cursor: pointer; border: none; }
 .contact-form .contact-error { margin-top: 4px; }
 
+/* ---------- Forbidden map ---------- */
+.forbidden-map { height: 440px; border: 1px solid var(--rule); border-radius: 10px; margin: 28px 0 8px; background: var(--tint); }
+.forbidden-map-caption { font-family: var(--sans); font-size: 13.5px; color: var(--ink-faint); margin: 0 0 28px; text-align: center; }
+
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--rule); background: var(--footer-bg); font-family: var(--sans); }
 .footer-inner { max-width: 1040px; margin: 0 auto; padding: 48px 24px; }
