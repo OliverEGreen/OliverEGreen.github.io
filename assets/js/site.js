@@ -329,11 +329,20 @@
         for (var k = spots.length; k < existing.length; k++) existing[k].remove();
       });
     };
+    // Home grid: show however many cards fill exactly two rows at this width
+    var homeGrid = document.querySelector('.section-projects .pgrid');
+    var trimRows = function () {
+      if (!homeGrid) return;
+      var cards = homeGrid.querySelectorAll('.pcard');
+      var cols = getComputedStyle(homeGrid).gridTemplateColumns.split(' ').length;
+      cards.forEach(function (c, i) { c.style.display = i < cols * 2 ? '' : 'none'; });
+    };
+    trimRows();
     layBlobs();
     var blobRaf = 0;
     var queueBlobs = function () {
       if (blobRaf) return;
-      blobRaf = requestAnimationFrame(function () { blobRaf = 0; layBlobs(); });
+      blobRaf = requestAnimationFrame(function () { blobRaf = 0; trimRows(); layBlobs(); });
     };
     window.addEventListener('resize', queueBlobs);
     if (window.ResizeObserver) {

@@ -15,9 +15,9 @@ layout: default
     </div>
 
     {% assign writing_posts = site.posts | where_exp: "post", "post.fun != true" %}
-    <ul class="post-list"{% unless page.show_all %} data-limit="5"{% endunless %}>
+    <ul class="post-list"{% unless page.show_all %} data-limit="4"{% endunless %}>
         {% for post in writing_posts %}
-        <li data-kind="{{ post.kind | default: 'technical' }}"{% unless page.show_all %}{% if forloop.index > 5 %} class="hidden"{% endif %}{% endunless %}>
+        <li data-kind="{{ post.kind | default: 'technical' }}"{% unless page.show_all %}{% if forloop.index > 4 %} class="hidden"{% endif %}{% endunless %}>
             <a href="{{ post.url | relative_url }}">
                 <span class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time></span>
                 <span class="post-main">
@@ -39,7 +39,7 @@ layout: default
     </div>
     <div class="pgrid">
         {% assign latest = site.projects | where: "section", "work" | where_exp: "pr", "pr.title != 'KOPE Market'" | sort: "order" %}
-        {% for pr in latest limit: 3 %}
+        {% for pr in latest limit: 6 %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
             <div class="pcard-inner">
                 <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
