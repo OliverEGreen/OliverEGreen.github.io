@@ -17,6 +17,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 # Defaults
 defaults:
   - scope:
@@ -24,6 +30,11 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
 
 # Files Jekyll should not copy into _site
 exclude:

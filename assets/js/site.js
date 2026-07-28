@@ -87,7 +87,7 @@
   }
 
   // 5) Post-nav back link: randomise the escape text per page load
-  var backLink = document.querySelector('.post-nav a');
+  var backLink = document.querySelector('.post-nav a.escape-hatch');
   if (backLink) {
     var EXITS = [
       'Quick! Let’s escape',
