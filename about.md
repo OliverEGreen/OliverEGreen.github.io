@@ -12,7 +12,7 @@ permalink: /about/
 
     <p>This is my dumb little corner of the Internet. It's partly meant to be a record of all that I've worked on, but it's also partly my playground. <a href="https://html5zombo.com/">Anything is possible</a>.</p>
     <p>As a designer, I like to experiment. I also believe strongly in the power of play, and playfulness in design. Too much of the web is boring and dead now, whereas I cut my teeth in <a href="https://www.newgrounds.com/">the good old days of Flash media</a>.</p>
-    <p>While our terminal-stage capitalist machine (glory be) has ground most of us into a fine paste at this point, this website also represents a <em>tiny</em> act of rebellion.</p>
+    <p>While terminal-stage capitalism (glory be) has ground most of us into a fine paste at this point, this website also represents a <em>tiny</em> act of rebellion.</p>
     <p>It contains a few serious things, but it's also deeply unserious. You can think of this as the headquarters of "the resistance". Our coffee might be crap but, hey, we have <em>heart and soul</em>.</p>
 
     <h2>Contact Me</h2>
