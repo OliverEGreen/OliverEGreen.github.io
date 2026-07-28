@@ -153,6 +153,7 @@ article.post a.see-all {
 article.post a.see-all:hover { background: var(--accent-deep); background-image: none; color: var(--bg); }
 .see-all:hover { background: var(--accent-deep); color: var(--bg); background-image: none; }
 .section-projects { margin-top: 44px; }
+article.post .section-head h2 { margin: 0; font-size: 24px; }
 
 /* Filter toggle */
 .filter-toggle { display: flex; align-items: center; gap: 2px; background: var(--tint); border-radius: 99px; padding: 3px; }

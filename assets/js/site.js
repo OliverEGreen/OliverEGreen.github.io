@@ -335,7 +335,8 @@
       if (!homeGrid) return;
       var cards = homeGrid.querySelectorAll('.pcard');
       var cols = getComputedStyle(homeGrid).gridTemplateColumns.split(' ').length;
-      cards.forEach(function (c, i) { c.style.display = i < cols * 2 ? '' : 'none'; });
+      var max = Math.max(cols * 2, 4);
+      cards.forEach(function (c, i) { c.style.display = i < max ? '' : 'none'; });
     };
     trimRows();
     layBlobs();
