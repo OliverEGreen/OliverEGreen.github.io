@@ -14,8 +14,9 @@ layout: default
         {% unless page.show_all %}<a class="see-all" href="{{ '/writing/' | relative_url }}">See all &rarr;</a>{% endunless %}
     </div>
 
+    {% assign writing_posts = site.posts | where_exp: "post", "post.fun != true" %}
     <ul class="post-list"{% unless page.show_all %} data-limit="5"{% endunless %}>
-        {% for post in site.posts %}
+        {% for post in writing_posts %}
         <li data-kind="{{ post.kind | default: 'technical' }}"{% unless page.show_all %}{% if forloop.index > 5 %} class="hidden"{% endif %}{% endunless %}>
             <a href="{{ post.url | relative_url }}">
                 <span class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time></span>

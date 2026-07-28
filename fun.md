@@ -11,6 +11,13 @@ permalink: /fun/
     </header>
 
     <div class="project">
+        <h3><a href="{{ '/posts/14/the-list/' | relative_url }}">The List</a> <span class="cv-year">2026 – Present</span></h3>
+        <p class="project-kicker">An essential reference for the modern professional</p>
+        <img src="{{ '/assets/images/posts/the-list-header.jpg' | relative_url }}" alt="A woodcut engraving of a stern bearded scholar recording forbidden words with a quill">
+        <p>A rare and historically significant archive of forbidden words and forbidden places, assembled at considerable personal risk and held under active curation. Includes an interactive atlas of fieldwork sites. Discretion is advised.</p>
+    </div>
+
+    <div class="project">
         <h3>Mesh.ByFace <span class="cv-year">2019</span></h3>
         <p class="project-kicker">Turning Dynamo into a selfie machine, with the Hackstreet Boys</p>
         <img src="{{ '/assets/images/projects/mesh-byface.jpg' | relative_url }}" alt="A live webcam selfie inside Dynamo with green facial landmark dots and the caption Hackstreet Boys">
