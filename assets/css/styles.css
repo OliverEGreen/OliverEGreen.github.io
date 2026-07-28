@@ -287,8 +287,8 @@ article.post hr { border: 0; height: 1px; background: var(--rule); margin: 44px 
 article.post a.btn-pill { background: var(--ink); border-bottom: none; color: var(--bg); }
 article.post a.btn-pill:hover { background: var(--accent-deep); color: var(--bg); border-bottom: none; }
 article.post a.btn-pill:active { background: var(--ink-strong); background-size: auto; }
-.btn-pill-alt, article.post a.btn-pill-alt { background: transparent; color: var(--ink); border: 1.5px solid var(--rule-dark); }
-article.post a.btn-pill-alt:hover { background: var(--tint); color: var(--ink); border-color: var(--ink-ghost); }
+.btn-pill-alt, article.post a.btn-pill-alt { background: transparent; color: var(--ink); border: 1.5px solid var(--rule-dark); transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+article.post a.btn-pill-alt:hover { background: var(--accent-deep); color: var(--bg); border-color: var(--accent-deep); }
 .cv-entry { display: flex; gap: 20px; margin: 0 0 24px; }
 .cv-when { flex: 0 0 148px; font-family: var(--sans); font-size: 13px; color: var(--ink-faint); font-variant-numeric: tabular-nums; padding-top: 4px; }
 .cv-when:has(.cv-year) { padding-top: 0; }
