@@ -14,9 +14,9 @@
     { solid: '#EDE3D3', line: '#D6C3AB' },
     { solid: '#E7E7CF', line: '#CBCBA0' }
   ];
-  var glassOf = function (hex) {
+  var alphaOf = function (hex, a) {
     var n = parseInt(hex.slice(1), 16);
-    return 'rgba(' + (n >> 16) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', 0.96)';
+    return 'rgba(' + (n >> 16) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', ' + a + ')';
   };
   // Consecutive picks are always different, shared across header and quotes
   var lastTint = -1;
@@ -35,8 +35,8 @@
     var applyTint = function () {
       var pick = pickTint();
       var rootStyle = document.documentElement.style;
-      rootStyle.setProperty('--scroll-tint', glassOf(pick.solid));
-      rootStyle.setProperty('--scroll-line', pick.line);
+      rootStyle.setProperty('--scroll-tint', alphaOf(pick.solid, 0.96));
+      rootStyle.setProperty('--scroll-line', alphaOf(pick.line, 0.5));
       rootStyle.setProperty('--footer-live', pick.solid);
     };
     applyTint();
