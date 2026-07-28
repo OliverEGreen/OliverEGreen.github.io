@@ -1,18 +1,41 @@
 // olliegreen.info redesign — assets/js/site.js
 (function () {
+  // Shared warm-neutral palette: creams, beiges, olives and sands.
+  // solid = flat fill (footer, blockquotes), line = darker companion (borders).
+  var PALETTE = [
+    { solid: '#E6E8D6', line: '#C6CCA9' },
+    { solid: '#E9E4DB', line: '#D5CEBD' },
+    { solid: '#EDE6D0', line: '#D8CCA8' },
+    { solid: '#E4E8C9', line: '#C4CC97' },
+    { solid: '#EAE0CC', line: '#D2C3A3' },
+    { solid: '#E8E9DE', line: '#CBCFB8' },
+    { solid: '#F0E8D8', line: '#DCCCA9' },
+    { solid: '#E2E4D0', line: '#C2C7A5' },
+    { solid: '#EDE3D3', line: '#D6C3AB' },
+    { solid: '#E7E7CF', line: '#CBCBA0' }
+  ];
+  var glassOf = function (hex) {
+    var n = parseInt(hex.slice(1), 16);
+    return 'rgba(' + (n >> 16) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', 0.96)';
+  };
+  // Consecutive picks are always different, shared across header and quotes
+  var lastTint = -1;
+  var pickTint = function () {
+    var i;
+    do { i = Math.floor(Math.random() * PALETTE.length); } while (i === lastTint);
+    lastTint = i;
+    return PALETTE[i];
+  };
+
   // 1) Header darkens once it overlaps content
   var header = document.querySelector('.site-header');
   if (header) {
-    // Each time the header enters its scrolled state, flip a coin between
-    // pale olive and warm beige; the footer follows the same pick.
-    var TINTS = [
-      { glass: 'rgba(230, 232, 214, 0.96)', line: '#C6CCA9', solid: '#E6E8D6' },
-      { glass: 'rgba(233, 228, 219, 0.96)', line: '#D5CEBD', solid: '#E9E4DB' }
-    ];
+    // Each time the header enters its scrolled state, pick a fresh tint
+    // from the palette; the footer follows the same pick.
     var applyTint = function () {
-      var pick = TINTS[Math.floor(Math.random() * TINTS.length)];
+      var pick = pickTint();
       var rootStyle = document.documentElement.style;
-      rootStyle.setProperty('--scroll-tint', pick.glass);
+      rootStyle.setProperty('--scroll-tint', glassOf(pick.solid));
       rootStyle.setProperty('--scroll-line', pick.line);
       rootStyle.setProperty('--footer-live', pick.solid);
     };
@@ -27,6 +50,13 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
+
+  // 1b) Blockquotes: each quote takes its own random tint from the palette
+  document.querySelectorAll('article.post blockquote').forEach(function (bq) {
+    var pick = pickTint();
+    bq.style.background = pick.solid;
+    bq.style.borderLeftColor = pick.line;
+  });
 
   // 2) Random Dracula colour on nav/logo rollover (changes every time).
   //    Hover-capable devices only — taps on touch screens fake mouseenter
