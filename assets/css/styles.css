@@ -301,34 +301,36 @@ article.post .cv-what h3 { margin: 0 0 8px; }
 
 article.post .project img.img-natural, article.post.project-page img.img-natural { height: auto; object-fit: unset; }
 
-/* ---------- Project card grid ---------- */
-.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 26px 0 12px; }
+/* ---------- Project card grid: dark tiles, randomised corners ---------- */
+.pgrid { position: relative; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin: 26px 0 12px; }
 article.post a.pcard {
-  display: flex; flex-direction: column;
-  background: var(--surface); border: 1px solid var(--rule); border-radius: 14px;
-  overflow: hidden; border-bottom: 1px solid var(--rule);
-  box-shadow: 0 1px 3px rgba(38, 35, 28, 0.05);
-  transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease;
-  background-image: none;
+  display: block; background: #2c2c25; padding: 8px;
+  background-image: none; border-bottom: none;
+  transition: background 220ms ease, border-radius 520ms cubic-bezier(.2,.8,.2,1);
 }
-article.post a.pcard:hover {
-  transform: translateY(-3px);
-  border-color: var(--rule-dark);
-  box-shadow: 0 14px 34px rgba(38, 35, 28, 0.16);
-  background-image: none; color: inherit;
+.pcard-inner {
+  background: #1e1e18; overflow: hidden;
+  transition: background 220ms ease, border-radius 520ms cubic-bezier(.2,.8,.2,1);
 }
-.pcard-media { height: 175px; overflow: hidden; background: var(--tint); }
-article.post .pcard-media img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top center;
-  margin: 0; border: 0; border-radius: 0; max-width: 100%;
-  transition: transform .35s ease;
+article.post a.pcard img {
+  width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: cover; object-position: top center;
+  display: block; margin: 0; border: 0; border-radius: 0; max-width: 100%; background: #1e1e18;
 }
-article.post a.pcard:hover .pcard-media img { transform: scale(1.045); }
-.pcard-body { padding: 15px 18px 17px; font-family: var(--sans); }
-.pcard-title { font-size: 16.5px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.pcard-title .cv-year { font-size: 11px; padding: 3px 10px; }
-.pcard-kicker { font-family: var(--serif); font-size: 14px; color: var(--ink-mute); margin-top: 5px; line-height: 1.45; }
-@media (max-width: 640px) { .pgrid { grid-template-columns: 1fr; } .pcard-media { height: 160px; } }
+.pcard-body { padding: 14px 16px 18px; font-family: var(--sans); }
+article.post .pcard-title {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  margin: 0; font-family: var(--sans); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #f2eee2;
+}
+article.post .pcard-title .cv-year { font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 999px; color: #12120f; background: #cfc9b6; letter-spacing: 0; }
+article.post .pcard-kicker { font-family: var(--serif); font-size: 13px; line-height: 1.45; color: #a8a294; margin: 8px 0 0; }
+@media (hover: hover) and (pointer: fine) {
+  article.post a.pcard:hover { background: #38382f; background-image: none; color: inherit; }
+  article.post a.pcard:hover .pcard-inner { background: #26261f; }
+}
+.pgrid .blob { position: absolute; width: 10px; height: 10px; border-radius: 999px; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  article.post a.pcard, .pcard-inner { transition: background 220ms ease; }
+}
 
 /* ---------- Projects ---------- */
 .project { margin: 0 0 56px; }

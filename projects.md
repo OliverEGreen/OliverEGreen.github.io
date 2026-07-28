@@ -15,10 +15,12 @@ permalink: /projects/
         {% assign work = site.projects | where: "section", "work" | sort: "order" %}
         {% for pr in work %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
-            <div class="pcard-media"><img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}"></div>
-            <div class="pcard-body">
-                <div class="pcard-title">{{ pr.title }} <span class="cv-year">{{ pr.year }}</span></div>
-                <div class="pcard-kicker">{{ pr.kicker }}</div>
+            <div class="pcard-inner">
+                <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
+                <div class="pcard-body">
+                    <h3 class="pcard-title">{{ pr.title }} <span class="cv-year">{{ pr.year }}</span></h3>
+                    <p class="pcard-kicker">{{ pr.kicker }}</p>
+                </div>
             </div>
         </a>
         {% endfor %}
@@ -29,10 +31,12 @@ permalink: /projects/
         {% assign oss = site.projects | where: "section", "open-source" | sort: "order" %}
         {% for pr in oss %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
-            <div class="pcard-media"><img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}"></div>
-            <div class="pcard-body">
-                <div class="pcard-title">{{ pr.title }} <span class="cv-year">{{ pr.year }}</span></div>
-                <div class="pcard-kicker">{{ pr.kicker }}</div>
+            <div class="pcard-inner">
+                <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
+                <div class="pcard-body">
+                    <h3 class="pcard-title">{{ pr.title }} <span class="cv-year">{{ pr.year }}</span></h3>
+                    <p class="pcard-kicker">{{ pr.kicker }}</p>
+                </div>
             </div>
         </a>
         {% endfor %}

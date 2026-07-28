@@ -166,4 +166,77 @@
     });
     if (input && err) input.addEventListener('input', function () { err.hidden = true; });
   });
+
+  // 8) Project cards: seeded random corners (concentric frame) + gutter blobs.
+  //    Each card's shape is stable per load; hovering re-rolls only that card.
+  var grids = Array.prototype.slice.call(document.querySelectorAll('.pgrid'));
+  if (grids.length) {
+    var CHAOS = 1, FRAME = 8, MINR = 3, MAXR = 3 + 45 * CHAOS;
+    var xorshift = function (seed) {
+      var s = seed >>> 0 || 1;
+      return function () { s ^= s << 13; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; };
+    };
+    var rollCorners = function (rand) {
+      var c = [0, 0, 0, 0].map(function () { return rand() < 0.3 ? 0 : Math.round(MINR + rand() * (MAXR - MINR)); });
+      if (c.every(function (v) { return v === 0; })) c[Math.floor(rand() * 4)] = Math.round(MAXR * 0.6);
+      return c;
+    };
+    var applyShape = function (card) {
+      var c = rollCorners(xorshift(card._seed));
+      card.style.borderRadius = c.map(function (v) { return v + 'px'; }).join(' ');
+      var inner = card.querySelector('.pcard-inner');
+      if (inner) inner.style.borderRadius = c.map(function (v) { return (v === 0 ? 0 : Math.max(2, v - FRAME)) + 'px'; }).join(' ');
+    };
+    var cardIndex = 0;
+    grids.forEach(function (g) {
+      g.querySelectorAll('.pcard').forEach(function (card) {
+        card._seed = ((cardIndex + 1) * 2654435761) >>> 0;
+        cardIndex++;
+        applyShape(card);
+        if (canHover) card.addEventListener('mouseenter', function () {
+          card._seed = (Math.imul(card._seed, 1103515245) + 12345) >>> 0;
+          applyShape(card);
+        });
+      });
+    });
+
+    // Gutter blobs: one Dracula dot per gap, measured from the DOM
+    var BLOBS = ['#8be9fd', '#50fa7b', '#ffb86c', '#ff79c6', '#bd93f9', '#ff5555', '#f1fa8c'];
+    var layBlobs = function () {
+      var brand = xorshift(482634);
+      grids.forEach(function (g) {
+        g.querySelectorAll('.blob').forEach(function (b) { b.remove(); });
+        var gRect = g.getBoundingClientRect();
+        var rects = Array.prototype.map.call(g.querySelectorAll('.pcard'), function (c) {
+          var r = c.getBoundingClientRect();
+          return { l: r.left - gRect.left, t: r.top - gRect.top, r: r.right - gRect.left, b: r.bottom - gRect.top, w: r.width, h: r.height };
+        });
+        var spots = [];
+        for (var i = 0; i < rects.length; i++) {
+          for (var j = 0; j < rects.length; j++) {
+            if (i === j) continue;
+            var a = rects[i], b = rects[j];
+            if (Math.abs(a.t - b.t) < 2 && b.l > a.r && b.l - a.r < 60) spots.push({ x: (a.r + b.l) / 2, y: a.t + a.h / 2 });
+            if (Math.abs(a.l - b.l) < 2 && b.t > a.b && b.t - a.b < 60) spots.push({ x: a.l + a.w / 2, y: (a.b + b.t) / 2 });
+          }
+        }
+        var prev = -1;
+        spots.forEach(function (s) {
+          var pick = Math.floor(brand() * BLOBS.length);
+          if (pick === prev) pick = (pick + 1) % BLOBS.length;
+          prev = pick;
+          var d = document.createElement('div');
+          d.className = 'blob';
+          d.style.left = (s.x - 5) + 'px';
+          d.style.top = (s.y - 5) + 'px';
+          d.style.background = BLOBS[pick];
+          g.appendChild(d);
+        });
+      });
+    };
+    layBlobs();
+    var blobTimer;
+    window.addEventListener('resize', function () { clearTimeout(blobTimer); blobTimer = setTimeout(layBlobs, 150); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layBlobs);
+  }
 })();
