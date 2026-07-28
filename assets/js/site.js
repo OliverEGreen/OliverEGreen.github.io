@@ -167,7 +167,28 @@
     if (input && err) input.addEventListener('input', function () { err.hidden = true; });
   });
 
-  // 8) Project cards: seeded random corners (concentric frame) + gutter blobs.
+  // 8) Lightbox: click a project image to see it whole, scaled to fit.
+  //    Native <dialog> supplies Esc-to-close and the backdrop for free.
+  var lbTargets = document.querySelectorAll('article.post.project-page figure img, article.post .project figure img');
+  if (lbTargets.length && window.HTMLDialogElement) {
+    var dlg = document.createElement('dialog');
+    dlg.className = 'lightbox';
+    dlg.innerHTML = '<img alt=""><button class="lightbox-close" aria-label="Close" type="button">\u00d7</button>';
+    document.body.appendChild(dlg);
+    var dlgImg = dlg.querySelector('img');
+    dlg.querySelector('.lightbox-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    lbTargets.forEach(function (img) {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function () {
+        dlgImg.src = img.currentSrc || img.src;
+        dlgImg.alt = img.alt || '';
+        dlg.showModal();
+      });
+    });
+  }
+
+  // 9) Project cards: seeded random corners (concentric frame) + gutter blobs.
   //    Each card's shape is stable per load; hovering re-rolls only that card.
   var grids = Array.prototype.slice.call(document.querySelectorAll('.pgrid'));
   if (grids.length) {

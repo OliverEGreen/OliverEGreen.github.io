@@ -301,6 +301,37 @@ article.post .cv-what h3 { margin: 0 0 8px; }
 
 article.post .project img.img-natural, article.post.project-page img.img-natural { height: auto; object-fit: unset; }
 
+/* ---------- Project figures & lightbox ---------- */
+article.post.project-page figure, article.post .project figure { margin: 20px 0 26px; }
+article.post.project-page figure img, article.post .project figure img { margin: 0; }
+article.post.project-page figcaption, article.post .project figcaption {
+  font-family: var(--sans); font-size: 13px; color: var(--ink-ghost);
+  margin-top: 9px; text-align: center;
+}
+.project-pair figure { margin: 0 !important; }
+.lightbox {
+  border: 0; outline: none; padding: 0; background: transparent;
+  width: 100vw; height: 100dvh; max-width: 100vw; max-height: 100dvh;
+  display: none; place-items: center;
+}
+.lightbox[open] { display: grid; }
+.lightbox::backdrop { background: rgba(24, 24, 18, 0.93); }
+.lightbox img {
+  max-width: calc(100vw - 72px); max-height: calc(100dvh - 72px);
+  width: auto; height: auto; border-radius: 10px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+.lightbox-close {
+  position: fixed; top: 16px; right: 16px;
+  width: 42px; height: 42px; border-radius: 50%;
+  border: none; cursor: pointer;
+  background: var(--bg); color: var(--ink);
+  font-size: 22px; line-height: 1; font-family: var(--sans);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: background-color .2s ease, color .2s ease;
+}
+.lightbox-close:hover { background: var(--accent-deep); color: var(--bg); }
+
 /* ---------- Project card grid: dark tiles, randomised corners ---------- */
 .pgrid { position: relative; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin: 26px 0 12px; }
 article.post a.pcard {
