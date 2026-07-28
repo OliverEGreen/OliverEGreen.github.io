@@ -89,7 +89,7 @@ At first, my word associations were wrong. It turns out I'd simply made a mistak
 Fixing this, I was immediately able to see a surprising relevance between words across all 3 methods. For example, the word 'death' is associated with: 
 
 | Word      | Similarity |
-| --------- | ---------- |
+| --------- | ---------: |
 | Injure    | 0.591      |
 | Timely    | 0.587      |
 | Poisonous | 0.584      |
