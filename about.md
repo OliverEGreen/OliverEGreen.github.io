@@ -24,8 +24,10 @@ permalink: /about/
         <label for="cf-subject">Subject</label>
         <input id="cf-subject" type="text" name="_subject" placeholder="Something snappy" required>
         <label for="cf-message">Message</label>
-        <textarea id="cf-message" name="message" rows="6" placeholder="Say your piece." required></textarea>
+        <div class="message-box">
+            <textarea id="cf-message" name="message" rows="6" placeholder="Say your piece." required></textarea>
+            <button class="btn-pill" type="submit">Send it <span>&rarr;</span></button>
+        </div>
         <div class="contact-error sub-error" hidden></div>
-        <button class="btn-pill" type="submit">Send it <span>&rarr;</span></button>
     </form>
 </article>

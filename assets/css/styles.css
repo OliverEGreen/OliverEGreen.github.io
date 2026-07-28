@@ -284,7 +284,7 @@ article.post hr { border: 0; height: 1px; background: var(--rule); margin: 44px 
 .btn-pill {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--ink); color: var(--bg); border-bottom: none;
-  font-size: 14px; font-weight: 700;
+  font-size: 14px; font-weight: 500;
   padding: 12px 22px; border-radius: 99px;
   transition: background-color .2s ease;
 }
@@ -416,7 +416,14 @@ article.post .project-pair img { height: 210px; margin: 0; }
   transition: border-color .2s ease, box-shadow .25s ease;
 }
 .contact-form input:focus, .contact-form textarea:focus { border-color: oklch(0.65 0.1 45); box-shadow: 0 4px 18px rgba(60,52,32,0.12); }
-.contact-form button { margin-top: 16px; align-self: flex-start; cursor: pointer; border: none; transition: background-color .2s ease; }
+.message-box { position: relative; display: flex; }
+.message-box textarea { padding-bottom: 68px; }
+.contact-form button {
+  position: absolute; left: 6px; right: 6px; bottom: 6px;
+  justify-content: center; padding: 11px 20px;
+  border-radius: 3px 3px 8px 8px;
+  cursor: pointer; border: none; transition: background-color .2s ease;
+}
 .contact-form button.btn-pill:hover { background: var(--accent-deep); color: var(--bg); }
 .contact-form .contact-error { margin-top: 4px; }
 
