@@ -17,3 +17,7 @@ link: https://market.kope.ai/
     <img src="{{ '/assets/images/projects/kope-market-map.jpg' | relative_url }}" alt="KOPE Market's supplier map view: filtered organisations pinned across London">
 </div>
 <p>I led its development from day one: designing the responsive site, writing all requirements, even specifying the database tables. Today it's fully internationalised and white-labelled — including a version delivered to the NHS New Hospitals Programme — with thousands of products searchable across international certification standards.</p>
+<div class="project-pair">
+    <img src="{{ '/assets/images/projects/kope-market-mobile.jpg' | relative_url }}" alt="KOPE Market's mobile case-study search">
+    <img src="{{ '/assets/images/projects/kope-market-product.jpg' | relative_url }}" alt="A product detail page: the I-SIP System with photo gallery, specifications table and BIM downloads">
+</div>

@@ -299,6 +299,8 @@ article.post .cv-what h3 { margin: 0 0 8px; }
 .cv-what p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) { .cv-entry { flex-direction: column; gap: 4px; } .cv-when { flex-basis: auto; } }
 
+article.post .project img.img-natural, article.post.project-page img.img-natural { height: auto; object-fit: unset; }
+
 /* ---------- Project card grid ---------- */
 .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 26px 0 12px; }
 article.post a.pcard {
@@ -333,13 +335,13 @@ article.post a.pcard:hover .pcard-media img { transform: scale(1.045); }
 .project h3 { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .project .cv-year { font-size: 11.5px; }
 .project-kicker { font-family: var(--sans); font-size: 13.5px; color: var(--ink-faint); margin: 0 0 4px; }
-article.post .project img, article.post .project-page img {
+article.post .project img, article.post.project-page img {
   margin: 20px 0 24px; width: 100%; height: 300px;
   object-fit: cover; object-position: top center;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-article.post .project img.crop-center, article.post .project-page img.crop-center { object-position: center; }
-article.post .project img:hover, article.post .project-page img:hover {
+article.post .project img.crop-center, article.post.project-page img.crop-center { object-position: center; }
+article.post .project img:hover, article.post.project-page img:hover {
   transform: scale(1.015);
   box-shadow: 0 10px 30px rgba(38, 35, 28, 0.14);
   border-color: var(--rule-dark);
