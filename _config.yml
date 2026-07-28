@@ -22,6 +22,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  fun:
+    output: true
+    permalink: /fun/:name/
 
 # Defaults
 defaults:
@@ -33,6 +36,11 @@ defaults:
   - scope:
       path: ""
       type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: fun
     values:
       layout: project
 

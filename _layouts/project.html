@@ -14,5 +14,9 @@ layout: default
 </article>
 
 <nav class="post-nav">
+    {% if page.collection == "fun" %}
+    <a href="{{ '/fun/' | relative_url }}">&larr; Back to the fun</a>
+    {% else %}
     <a href="{{ '/projects/' | relative_url }}">&larr; All projects</a>
+    {% endif %}
 </nav>

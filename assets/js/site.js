@@ -187,6 +187,7 @@
       var inner = card.querySelector('.pcard-inner');
       if (inner) inner.style.borderRadius = c.map(function (v) { return (v === 0 ? 0 : Math.max(2, v - FRAME)) + 'px'; }).join(' ');
     };
+    var BLOBS = ['#8be9fd', '#50fa7b', '#ffb86c', '#ff79c6', '#bd93f9', '#ff5555', '#f1fa8c'];
     var cardIndex = 0;
     grids.forEach(function (g) {
       g.querySelectorAll('.pcard').forEach(function (card) {
@@ -196,12 +197,25 @@
         if (canHover) card.addEventListener('mouseenter', function () {
           card._seed = (Math.imul(card._seed, 1103515245) + 12345) >>> 0;
           applyShape(card);
+          // Cycle the colour of blobs sitting against this card
+          var grid = card.closest('.pgrid');
+          if (grid) {
+            var idx = Array.prototype.indexOf.call(grid.querySelectorAll('.pcard'), card);
+            grid.querySelectorAll('.blob').forEach(function (b) {
+              var pair = (b.dataset.cards || '').split(',');
+              if (pair.indexOf(String(idx)) !== -1) {
+                var cur = parseInt(b.dataset.col, 10) || 0;
+                var next = (cur + 1 + Math.floor(Math.random() * (BLOBS.length - 1))) % BLOBS.length;
+                b.dataset.col = next;
+                b.style.background = BLOBS[next];
+              }
+            });
+          }
         });
       });
     });
 
     // Gutter blobs: one Dracula dot per gap, measured from the DOM
-    var BLOBS = ['#8be9fd', '#50fa7b', '#ffb86c', '#ff79c6', '#bd93f9', '#ff5555', '#f1fa8c'];
     var layBlobs = function () {
       var brand = xorshift(482634);
       grids.forEach(function (g) {
@@ -216,8 +230,8 @@
           for (var j = 0; j < rects.length; j++) {
             if (i === j) continue;
             var a = rects[i], b = rects[j];
-            if (Math.abs(a.t - b.t) < 2 && b.l > a.r && b.l - a.r < 60) spots.push({ x: (a.r + b.l) / 2, y: a.t + a.h / 2 });
-            if (Math.abs(a.l - b.l) < 2 && b.t > a.b && b.t - a.b < 60) spots.push({ x: a.l + a.w / 2, y: (a.b + b.t) / 2 });
+            if (Math.abs(a.t - b.t) < 2 && b.l > a.r && b.l - a.r < 60) spots.push({ x: (a.r + b.l) / 2, y: a.t + a.h / 2, cards: [i, j] });
+            if (Math.abs(a.l - b.l) < 2 && b.t > a.b && b.t - a.b < 60) spots.push({ x: a.l + a.w / 2, y: (a.b + b.t) / 2, cards: [i, j] });
           }
         }
         var prev = -1;
@@ -230,6 +244,8 @@
           d.style.left = (s.x - 5) + 'px';
           d.style.top = (s.y - 5) + 'px';
           d.style.background = BLOBS[pick];
+          d.dataset.cards = s.cards.join(',');
+          d.dataset.col = pick;
           g.appendChild(d);
         });
       });
