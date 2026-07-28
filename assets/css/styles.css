@@ -404,7 +404,7 @@ article.post .project-pair img { height: 210px; margin: 0; }
   article.post .project img { height: 220px; }
   .project-pair { grid-template-columns: 1fr; }
 }
-.projects-fun-link { font-family: var(--sans); font-size: 14.5px; color: var(--ink-soft); margin-top: 88px; }
+article.post p.projects-fun-link { font-family: var(--sans); font-size: 14.5px; color: var(--ink-soft); margin-top: 88px; }
 
 /* ---------- Contact form ---------- */
 .contact-form { display: flex; flex-direction: column; gap: 6px; max-width: 560px; margin-top: 8px; font-family: var(--sans); }
