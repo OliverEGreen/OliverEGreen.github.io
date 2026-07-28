@@ -173,7 +173,7 @@
   if (lbTargets.length && window.HTMLDialogElement) {
     var dlg = document.createElement('dialog');
     dlg.className = 'lightbox';
-    dlg.innerHTML = '<img alt=""><button class="lightbox-close" aria-label="Close" type="button">\u00d7</button>';
+    dlg.innerHTML = '<figure><img alt=""><figcaption class="lightbox-caption"></figcaption></figure><button class="lightbox-close" aria-label="Close" type="button">\u00d7</button>';
     document.body.appendChild(dlg);
     var dlgImg = dlg.querySelector('img');
     dlg.querySelector('.lightbox-close').addEventListener('click', function () { dlg.close(); });
@@ -183,6 +183,8 @@
       img.addEventListener('click', function () {
         dlgImg.src = img.currentSrc || img.src;
         dlgImg.alt = img.alt || '';
+        var cap = img.closest('figure') ? img.closest('figure').querySelector('figcaption') : null;
+        dlg.querySelector('.lightbox-caption').textContent = cap ? cap.textContent : '';
         dlg.showModal();
       });
     });
@@ -262,8 +264,8 @@
           prev = pick;
           var d = document.createElement('div');
           d.className = 'blob';
-          d.style.left = (s.x - 5) + 'px';
-          d.style.top = (s.y - 5) + 'px';
+          d.style.left = (s.x - 4) + 'px';
+          d.style.top = (s.y - 4) + 'px';
           d.style.background = BLOBS[pick];
           d.dataset.cards = s.cards.join(',');
           d.dataset.col = pick;
