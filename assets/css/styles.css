@@ -144,7 +144,8 @@ input::placeholder { color: #C4BCA8; }
   padding: 8px 16px; border-radius: 99px;
   transition: background-color .2s ease;
 }
-.see-all:hover { background: var(--accent-deep); color: var(--bg); }
+article.post .see-all { border-bottom: none; }
+.see-all:hover { background: var(--accent-deep); color: var(--bg); background-image: none; }
 .section-projects { margin-top: 72px; }
 
 /* Filter toggle */
