@@ -15,7 +15,7 @@ permalink: /fun/
             <div class="pcard-inner">
                 <img src="{{ '/assets/images/posts/the-list-header.jpg' | relative_url }}" alt="A woodcut engraving of a stern bearded scholar recording forbidden words with a quill">
                 <div class="pcard-body">
-                    <h3 class="pcard-title"><span class="pcard-name">The List</span> <span class="cv-year">2026 – Present</span></h3>
+                    <h3 class="pcard-title"><span class="pcard-name">The List</span> <span class="cv-year">2020 – Present</span></h3>
                     <p class="pcard-kicker">An essential reference for the modern professional. Discretion is advised.</p>
                 </div>
             </div>
