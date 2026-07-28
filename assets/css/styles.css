@@ -304,12 +304,12 @@ article.post .project img.img-natural, article.post.project-page img.img-natural
 /* ---------- Project card grid: dark tiles, randomised corners ---------- */
 .pgrid { position: relative; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin: 26px 0 12px; }
 article.post a.pcard {
-  display: block; background: #2c2c25; padding: 8px;
+  display: flex; flex-direction: column; background: #2c2c25; padding: 8px;
   background-image: none; border-bottom: none;
   transition: background 220ms ease, border-radius 520ms cubic-bezier(.2,.8,.2,1);
 }
 .pcard-inner {
-  background: #1e1e18; overflow: hidden;
+  flex: 1; display: flex; flex-direction: column; background: #1e1e18; overflow: hidden;
   transition: background 220ms ease, border-radius 520ms cubic-bezier(.2,.8,.2,1);
 }
 article.post a.pcard img {
@@ -317,13 +317,17 @@ article.post a.pcard img {
   display: block; margin: 0; border: 0; border-radius: 0; max-width: 100%; background: #1e1e18;
   transform: scale(1.12); transition: transform 520ms cubic-bezier(.2,.8,.2,1);
 }
-.pcard-body { padding: 20px 16px 18px; font-family: var(--sans); }
+.pcard-body { padding: 22px 16px 18px; font-family: var(--sans); flex: 1; }
 article.post .pcard-title {
-  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  display: flex; gap: 8px; align-items: center; flex-wrap: nowrap;
   margin: 0; font-family: var(--sans); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #f2eee2;
 }
-article.post .pcard-title .cv-year { font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 999px; color: #12120f; background: #cfc9b6; letter-spacing: 0; }
-article.post .pcard-kicker { font-family: var(--serif); font-size: 13px; line-height: 1.45; color: #a8a294; margin: 8px 0 0; }
+article.post .pcard-title .cv-year { flex-shrink: 0; font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 999px; color: #12120f; background: #cfc9b6; letter-spacing: 0; }
+article.post .pcard-kicker {
+  font-family: var(--serif); font-size: 13px; line-height: 1.45; color: #a8a294; margin: 8px 0 0;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;
+}
+.pcard-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (hover: hover) and (pointer: fine) {
   article.post a.pcard:hover { background: #38382f; background-image: none; color: inherit; }
   article.post a.pcard:hover .pcard-inner { background: #26261f; }

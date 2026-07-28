@@ -18,7 +18,7 @@ permalink: /projects/
             <div class="pcard-inner">
                 <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
                 <div class="pcard-body">
-                    <h3 class="pcard-title">{{ pr.title }} <span class="cv-year">{{ pr.year }}</span></h3>
+                    <h3 class="pcard-title"><span class="pcard-name">{{ pr.title }}</span> <span class="cv-year">{{ pr.year }}</span></h3>
                     <p class="pcard-kicker">{{ pr.kicker }}</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@ permalink: /projects/
             <div class="pcard-inner">
                 <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
                 <div class="pcard-body">
-                    <h3 class="pcard-title">{{ pr.title }} <span class="cv-year">{{ pr.year }}</span></h3>
+                    <h3 class="pcard-title"><span class="pcard-name">{{ pr.title }}</span> <span class="cv-year">{{ pr.year }}</span></h3>
                     <p class="pcard-kicker">{{ pr.kicker }}</p>
                 </div>
             </div>
