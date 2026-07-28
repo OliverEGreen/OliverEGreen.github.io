@@ -25,10 +25,12 @@ permalink: /projects/
     <div class="project">
         <h3><a href="https://market.kope.ai/">KOPE Market</a> <span class="cv-year">2021 – 2026</span></h3>
         <p class="project-kicker">International marketplace for offsite construction</p>
-        <img src="{{ '/assets/images/projects/kope-market.jpg' | relative_url }}" alt="A manufacturer profile page on KOPE Market showing products, case studies and locations">
+        <img src="{{ '/assets/images/projects/kope-market.jpg' | relative_url }}" alt="A collage of KOPE Market screens: homepage, specifier search, supplier profile, case study and mobile views">
         <p>The marketplace began as a research task: within a month I'd amassed an enormous database of interconnected datapoints — people, places, media, manufacturers, exemplar projects and software.</p>
         <p>We launched it as a standalone, open and free website, bringing transparency to construction's infamously opaque supply chains while acting as our startup's advertising engine.</p>
+        <img src="{{ '/assets/images/projects/kope-market-products.jpg' | relative_url }}" alt="KOPE Market's product search: a filterable grid of wall systems from different manufacturers">
         <p>I led its development from day one: designing the responsive site, writing all requirements, even specifying the database tables. Today it's fully internationalised and white-labelled — including a version delivered to the NHS New Hospitals Programme — with thousands of products searchable across international certification standards.</p>
+        <img src="{{ '/assets/images/projects/kope-market-map.jpg' | relative_url }}" alt="KOPE Market's supplier map view: filtered organisations pinned across London">
     </div>
 
     <div class="project">
