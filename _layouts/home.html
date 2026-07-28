@@ -38,8 +38,8 @@ layout: default
         <a class="see-all" href="{{ '/projects/' | relative_url }}">See all &rarr;</a>
     </div>
     <div class="pgrid">
-        {% assign latest = site.projects | where: "section", "work" | sort: "order" %}
-        {% for pr in latest limit: 4 %}
+        {% assign latest = site.projects | where: "section", "work" | where_exp: "pr", "pr.title != 'KOPE Market'" | sort: "order" %}
+        {% for pr in latest limit: 3 %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
             <div class="pcard-inner">
                 <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">

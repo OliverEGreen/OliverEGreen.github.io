@@ -146,7 +146,11 @@ input::placeholder { color: #C4BCA8; }
   padding: 8px 16px; border-radius: 99px;
   transition: background-color .2s ease;
 }
-article.post .see-all { border-bottom: none; }
+article.post a.see-all {
+  background: var(--ink); background-image: none; color: var(--bg);
+  border-bottom: none; font-family: var(--sans);
+}
+article.post a.see-all:hover { background: var(--accent-deep); background-image: none; color: var(--bg); }
 .see-all:hover { background: var(--accent-deep); color: var(--bg); background-image: none; }
 .section-projects { margin-top: 72px; }
 
