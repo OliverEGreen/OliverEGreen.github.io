@@ -139,6 +139,6 @@ If we follow this same thinking through, we arrive at the idea of the Headless I
 
 It's a strange idea. As an architect who grew up on the developing Internet in the early 2000s, it's always been a *kind of place* to me. We speak about it as such. Websites were something we *visited*. We *surfed* the web. Each website was its own little world. The idea of that alternate universe collapsing in on itself feels very strange and a little sad, like we're losing something important.
 
-I hope this is wrong; it's entirely possible that the creatives among us will use AI to bring fun back into our online lives The web has long-mourned its early, creative, fun days, when most websites used a Flash plugin. Maybe we're heading back that way; it might just be the good ending.
+I hope this is wrong; it's entirely possible that the creatives among us will use AI to bring fun back into our online lives. The web has long-mourned its early, creative, fun days, when most websites used a Flash plugin. Maybe we're heading back that way; it might just be the good ending.
 
 Finally, in a web that is largely traversed by agents, what happens to ad revenue? I read [an article](https://katedaviesdesigns.com/2026/04/29/knitting-bullshit/) recently about a company that generates fake podcast-slop about knitting that somehow still runs real ads. There are over 3000 episodes. All of it hallucinated. Is anyone listening to this? Can the advertising economy that's paid for the entire Internet continue to exist in this new paradigm? Who knows.

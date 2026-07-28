@@ -258,11 +258,12 @@
       });
     });
 
-    // Gutter blobs: one Dracula dot per gap, measured from the DOM
+    // Gutter blobs: one Dracula dot per gap, measured from the DOM.
+    // Existing dots are moved rather than recreated so resize tracks smoothly
+    // and hover-cycled colours survive a reflow.
     var layBlobs = function () {
       var brand = xorshift(482634);
       grids.forEach(function (g) {
-        g.querySelectorAll('.blob').forEach(function (b) { b.remove(); });
         var gRect = g.getBoundingClientRect();
         var rects = Array.prototype.map.call(g.querySelectorAll('.pcard'), function (c) {
           var r = c.getBoundingClientRect();
@@ -278,24 +279,37 @@
           }
         }
         var prev = -1;
-        spots.forEach(function (s) {
+        var existing = g.querySelectorAll('.blob');
+        spots.forEach(function (s, k) {
           var pick = Math.floor(brand() * BLOBS.length);
           if (pick === prev) pick = (pick + 1) % BLOBS.length;
           prev = pick;
-          var d = document.createElement('div');
-          d.className = 'blob';
+          var d = existing[k];
+          if (!d) {
+            d = document.createElement('div');
+            d.className = 'blob';
+            d.style.background = BLOBS[pick];
+            d.dataset.col = pick;
+            g.appendChild(d);
+          }
           d.style.left = (s.x - 4) + 'px';
           d.style.top = (s.y - 4) + 'px';
-          d.style.background = BLOBS[pick];
           d.dataset.cards = s.cards.join(',');
-          d.dataset.col = pick;
-          g.appendChild(d);
         });
+        for (var k = spots.length; k < existing.length; k++) existing[k].remove();
       });
     };
     layBlobs();
-    var blobTimer;
-    window.addEventListener('resize', function () { clearTimeout(blobTimer); blobTimer = setTimeout(layBlobs, 150); });
+    var blobRaf = 0;
+    var queueBlobs = function () {
+      if (blobRaf) return;
+      blobRaf = requestAnimationFrame(function () { blobRaf = 0; layBlobs(); });
+    };
+    window.addEventListener('resize', queueBlobs);
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(queueBlobs);
+      grids.forEach(function (g) { ro.observe(g); });
+    }
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(layBlobs);
   }
 })();

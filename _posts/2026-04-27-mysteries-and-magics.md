@@ -7,6 +7,7 @@ redirect_from: /writing/mysteries-and-magics/
 kind: non-technical
 temperature: 0.9
 tagline: "A long list of loose threads to pull upon"
+unfinished: true
 ---
 
 ## What's this about?
@@ -45,7 +46,7 @@ But since we're lacking this groundbreaking discovery, I still feel like there *
 
 In 1500s Italy, Copernicus and Galileo weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter – they pieced the picture together from a handful of clues via inference.
 
-That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one of two of them will resonate with you and send you off daydreaming down some rabbithole.
+That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one or two of them will resonate with you and send you off daydreaming down some rabbithole.
 
 In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them. And have fun. This is only a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people since time immemorial.
 
@@ -75,17 +76,17 @@ After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, 
 
 ### How we experience time
 
-Our experience of time can be so subjective. It feels like an something we've poorly understood.
+Our experience of time can be so subjective. It feels like something we've poorly understood.
 
 It is clearly linked somewhat to our mental state – we all know that time flies when we're having fun, yet drags to a near-standstill during harder times. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location.
 
 Other forms of life seem to experience time at different speeds to us. Their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours. Generally speaking, smaller life seems to live faster: birds, rodents and insects.
 
-We also seem to have an internal clock with surprisngly high precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know.
+We also seem to have an internal clock with surprisingly high precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know.
 
 My gut feeling is that time might all exist at once, already predetermined. Like a record we've put on and are experiencing in real-time and forward motion. We're discovering it in real-time. It may be predetermined, yet we still don't know what's coming next.
 
-Like with anaesthesia, we might not fully grasp the nature of time, but we're able to make jolly good use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellies, despite relativistic effects. It's incredibly  impressive.
+Like with anaesthesia, we might not fully grasp the nature of time, but we're able to make jolly good use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellites, despite relativistic effects. It's incredibly impressive.
 
 ### How we feel space
 
@@ -97,7 +98,7 @@ It appears as if something extends above us and we can feel it. It wants the rig
 
 In other kinds of spaces, different rules apply. It's very obvious when many people gather together and are running at a highly emotional state: a cathedral, an airport or stadium. The more human energy, the higher the space needs to be somehow. Again, we all just seem to know this. Designing a smaller space wouldn't happen – even to a layman it would simply be too preposterous.
 
-Finally, any architect will know that, subjectively, the size of a building under construction seems to change constantly. Perhaps it's way smaller than you thought it would feel, then suddenly the spaces become normal-sized or even feel enorous. It's very hard to explain.
+Finally, any architect will know that, subjectively, the size of a building under construction seems to change constantly. Perhaps it's way smaller than you thought it would feel, then suddenly the spaces become normal-sized or even feel enormous. It's very hard to explain.
 
 ## Nature 
 
@@ -105,11 +106,11 @@ Finally, any architect will know that, subjectively, the size of a building unde
 
 There is something special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. They're intrinsically beautiful, often enhancing whatever light the sky is providing that day.
 
-They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress. Why does it feel that way? Who knows. Some animistic cultures believe that nature – every stone, river and tress – carries its own spirit. In some limited way, nature itself can be a form of company.
+They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress. Why does it feel that way? Who knows. Some animistic cultures believe that nature – every stone, river and tree – carries its own spirit. In some limited way, nature itself can be a form of company.
 
 ### Trees and plant life
 
-I've often wondered about aliens – what could a totally unfamiliar lifeform potentially be like? It wouldn't necessarily need to have anything in common with our own lives here on Earth
+I've often wondered about aliens – what could a totally unfamiliar lifeform potentially be like? It wouldn't necessarily need to have anything in common with our own lives here on Earth.
 
 Then it hit me; plants and trees are already such an alien form of life. We're physically built up so differently and experience time on such different scales. Our respiratory and sensory systems have almost nothing in common. And yet we all know that we're both forms of life.
 

@@ -21,7 +21,7 @@ There's an idea in astronomy called the [precession of the equinoxes](https://en
 
 Every year on March 21st the sun's path crosses the celestial equator at the [equinox point](https://en.wikipedia.org/wiki/Equinox_(celestial_coordinates)), marking the start of Spring. As the Earth wobbles, this point appears to slowly move across the sky, passing against each of the 12 zodiac constellations in turn  (spending around 2,100 years in front of each).
 
-The full cycle takes something like 25,772 years to complete. The apparant location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
+The full cycle takes something like 25,772 years to complete. The apparent location of the equinox point is how we determine the [astrological age](https://en.wikipedia.org/wiki/Astrological_age) we are in.
 
 **The age of Aquarius**
 

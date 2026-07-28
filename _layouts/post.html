@@ -3,6 +3,7 @@ layout: default
 ---
 <article class="post">
     <header>
+        {% if page.unfinished %}<p class="unfinished-tag">Unfinished — still a work in progress</p>{% endif %}
         <p class="meta">
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
         </p>

@@ -7,6 +7,7 @@ redirect_from: /writing/what-comes-next/
 kind: non-technical
 temperature: 0.7
 tagline: "So, AI has arrived! The big hoohah is here. And now what?"
+unfinished: true
 ---
 
 So, AI has arrived! The big hoohah is here. And now what? Where does this leave us?

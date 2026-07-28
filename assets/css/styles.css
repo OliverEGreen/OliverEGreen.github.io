@@ -213,6 +213,7 @@ article.post a.see-all:hover { background: var(--accent-deep); background-image:
 article.post { font-family: var(--serif); font-size: 17.5px; line-height: 1.58; color: var(--ink-body); }
 article.post > header { font-family: var(--sans); margin-bottom: 0; }
 article.post .meta { font-size: 13px; color: var(--ink-faint); margin: 0; display: flex; align-items: center; gap: 10px; }
+article.post header .unfinished-tag { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: var(--bg); background: var(--accent); border-radius: 99px; padding: 4px 12px; margin: 0 0 16px; }
 article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; margin: 16px 0 0; color: var(--ink); }
 article.post header .tagline { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
 article.post header::after { content: ''; display: block; height: 1px; background: var(--rule); margin: 32px 0 36px; }
