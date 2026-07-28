@@ -3,7 +3,27 @@
   // 1) Header darkens once it overlaps content
   var header = document.querySelector('.site-header');
   if (header) {
-    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 24); };
+    // Each time the header enters its scrolled state, flip a coin between
+    // pale olive and warm beige; the footer follows the same pick.
+    var TINTS = [
+      { glass: 'rgba(230, 232, 214, 0.96)', line: '#C6CCA9', solid: '#E6E8D6' },
+      { glass: 'rgba(233, 228, 219, 0.96)', line: '#D5CEBD', solid: '#E9E4DB' }
+    ];
+    var applyTint = function () {
+      var pick = TINTS[Math.floor(Math.random() * TINTS.length)];
+      var rootStyle = document.documentElement.style;
+      rootStyle.setProperty('--scroll-tint', pick.glass);
+      rootStyle.setProperty('--scroll-line', pick.line);
+      rootStyle.setProperty('--footer-live', pick.solid);
+    };
+    applyTint();
+    var wasScrolled = false;
+    var onScroll = function () {
+      var sc = window.scrollY > 24;
+      if (sc && !wasScrolled) applyTint();
+      wasScrolled = sc;
+      header.classList.toggle('scrolled', sc);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
