@@ -420,7 +420,7 @@ article.post .project-pair img { height: 210px; margin: 0; }
 .message-box textarea { padding-bottom: 68px; border-radius: 14px 14px 26px 26px; }
 .contact-form button {
   position: absolute; left: 6px; right: 6px; bottom: 6px;
-  justify-content: center; padding: 11px 20px;
+  justify-content: center; padding: 14px 20px;
   border-radius: 3px 3px 20px 20px;
   cursor: pointer; border: none; transition: background-color .2s ease;
 }
