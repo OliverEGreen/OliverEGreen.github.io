@@ -7,15 +7,16 @@ permalink: /about/
 <article class="post">
     <header>
         <h1>Welcome</h1>
-        <p class="tagline">Please &ndash; step into my shop.</p>
+        <p class="tagline">to my dumb little corner of the Internet</p>
     </header>
 
     <img class="about-portrait" src="/assets/images/ollie.jpg" alt="Ollie, in black and white, looking sassy">
-    <p>This is my dumb little corner of the Internet. It's partly meant to be a record of all that I've worked on, but it's also partly my playground. <a href="https://html5zombo.com/">Anything is possible</a>.</p>
-    <p>As a designer, I like to experiment. I also believe strongly in the power of play, and playfulness in design. Too much of the web is boring and dead now, whereas I cut my teeth in <a href="https://www.newgrounds.com/">the good old days of Flash media</a>.</p>
-    <p>While terminal-stage capitalism (glory be) has ground most of us into a fine paste at this point, this website also represents a <em>tiny</em> act of rebellion.</p>
-    <p>It contains a few serious things, but it's also deeply unserious. You can think of this as the headquarters of "the resistance".</p>
-    <p>Our coffee might be crap but &mdash; hey &mdash; we have <mark>heart and soul</mark>.</p>
+    <p>This site is partly a record of everything I've worked on. But it's also my playground.</p>
+    <p>As a designer, I like to experiment. I also believe strongly in the power of play, and playfulness in design.</p>
+    <p>Too much of the web is boring and dead now, whereas I cut my teeth in <a href="https://www.newgrounds.com/">the golden days of Flash media</a>.</p>
+    <p>While terminal-stage capitalism (glory be) has ground most of us into a fine paste at this point, this website represents a holdout; a <em>tiny</em> enclave of rebellion against the machine.</p>
+    <p>It contains a few serious things, but it's also deeply unserious. You can think of this as the headquarters of <em>the resistance</em>.</p>
+    <p>Our coffee might be crap but, <em>hey</em>, we have <mark>heart and soul</mark>.</p>
 
     <h2>Contact Me</h2>
     <p>Want to talk shop, ask a question, or tell me I'm wrong on the internet? Go on then.</p>
