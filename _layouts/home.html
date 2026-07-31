@@ -45,7 +45,7 @@ layout: default
         {% for pr in latest limit: 6 %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
             <div class="pcard-inner">
-                <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
+                <div class="pcard-media"><img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}"></div>
                 <div class="pcard-body">
                     <h3 class="pcard-title"><span class="pcard-name">{{ pr.title }}</span> <span class="cv-year">{{ pr.year }}</span></h3>
                     <p class="pcard-kicker">{{ pr.kicker }}</p>
@@ -55,7 +55,7 @@ layout: default
         {% endfor %}
         <a class="pcard" href="https://github.com/OliverEGreen/OliverEGreen.github.io/tree/main/LLM-Learning">
             <div class="pcard-inner">
-                <img src="{{ '/assets/images/projects/llm-learning.jpg' | relative_url }}" alt="A split-flap departure board misprinting Shakespeare's All the world's a stage">
+                <div class="pcard-media"><img src="{{ '/assets/images/projects/llm-learning.jpg' | relative_url }}" alt="A split-flap departure board misprinting Shakespeare's All the world's a stage"></div>
                 <div class="pcard-body">
                     <h3 class="pcard-title"><span class="pcard-name">LLM-Learning</span> <span class="cv-year">2026</span></h3>
                     <p class="pcard-kicker">Hand-building language models from Word2Vec to GPT-2, documented post by post.</p>

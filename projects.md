@@ -16,7 +16,7 @@ permalink: /projects/
         {% for pr in work %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
             <div class="pcard-inner">
-                <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
+                <div class="pcard-media"><img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}"></div>
                 <div class="pcard-body">
                     <h3 class="pcard-title"><span class="pcard-name">{{ pr.title }}</span> <span class="cv-year">{{ pr.year }}</span></h3>
                     <p class="pcard-kicker">{{ pr.kicker }}</p>
@@ -32,7 +32,7 @@ permalink: /projects/
         {% for pr in oss %}
         <a class="pcard" href="{{ pr.url | relative_url }}">
             <div class="pcard-inner">
-                <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
+                <div class="pcard-media"><img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}"></div>
                 <div class="pcard-body">
                     <h3 class="pcard-title"><span class="pcard-name">{{ pr.title }}</span> <span class="cv-year">{{ pr.year }}</span></h3>
                     <p class="pcard-kicker">{{ pr.kicker }}</p>
