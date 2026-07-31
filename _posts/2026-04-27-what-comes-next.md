@@ -10,13 +10,16 @@ tagline: "Navigating the unthinkably wide-open"
 unfinished: true
 ---
 
-Table of Contents
+Contents:
+
+* TOC
+{:toc}
 
 # Introduction
 
-> *In some ways this is just the beginning of the next thing.*
-> *When our tired, old paradigm finally falls, it can feel like everything's over.*
-> *Of course, from this sprouts the new Zeitgeist. Reality doesn't just stop.*
+> *In some ways this is just the beginning of the next thing.*  
+> *When our tired, old paradigm finally falls, it can feel like everything's over.*  
+> *Of course, from this sprouts the new Zeitgeist. Reality doesn't just stop.*  
 > *It's not like we're expecting the credits to start rolling.*
 
 Let's be fair.
