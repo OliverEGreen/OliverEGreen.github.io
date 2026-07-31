@@ -186,18 +186,10 @@ article.post .section-head h2 { margin: 0; font-size: 24px; }
   mask-image: linear-gradient(90deg, #000 calc(100% - 64px), transparent);
 }
 
-/* Temperature meter */
+/* Temperature readout */
 .post-side { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
-.temp { display: flex; align-items: center; gap: 8px; }
-.temp-label { font-size: 10.5px; letter-spacing: 0.03em; color: var(--ink-ghost); }
-.temp-segs { display: flex; gap: 3px; }
-.temp-segs i { width: 7px; height: 10px; border-radius: 2px; background: var(--rule); }
-.temp-segs i.on.s1 { background: oklch(0.82 0.05 75); }
-.temp-segs i.on.s2 { background: oklch(0.75 0.08 65); }
-.temp-segs i.on.s3 { background: oklch(0.67 0.12 57); }
-.temp-segs i.on.s4 { background: oklch(0.59 0.17 48); }
-.temp-segs i.on.s5 { background: oklch(0.52 0.22 40); }
-@media (max-width: 600px) { .temp { display: none; } .post-date { flex-basis: 76px; } .sub-form { width: 100%; } .sub-form input { width: 100%; padding-right: 132px; } }
+.temp { font-size: 10.5px; letter-spacing: 0.03em; color: var(--ink-ghost); cursor: help; }
+@media (max-width: 600px) { .temp { display: none; } .post-date { display: none; } .sub-form { width: 100%; } .sub-form input { width: 100%; padding-right: 132px; } }
 
 /* Project cards */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 24px; }
