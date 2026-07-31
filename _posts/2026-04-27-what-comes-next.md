@@ -98,9 +98,9 @@ But, ultimately, our work *has been obligatory*.
 
 Almost everyone is implicitly forced to work in order to provide themselves with food, shelter and accommodate their everyday needs. Under this implied duress, it is possible to make the argument that this arrangement amounts to a form of *soft slavery*.
 
-Perhaps, here's where that obligatory aspect starts to change.
+Perhaps, here's where that obligatory aspect starts to change. And if we choose to work, we do so with total freedom.
 
-And if we choose to work, we do so with total freedom, I'd like to introduce another idea; using our time to pursue something that truly interests us, with the pressure off, and as a joyful, playful and creative exercise. 
+I'd like to introduce another unoriginal idea; using our time to pursue something that truly interests us, with the pressure off, and as a joyful, playful and creative exercise. 
 
 ## Geeking out for the sheer bloody hell of it
 
