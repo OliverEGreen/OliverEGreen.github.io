@@ -187,6 +187,7 @@ article.post .section-head h2 { margin: 0; font-size: 24px; }
 }
 
 /* Temperature meter */
+.post-side { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
 .temp { display: flex; align-items: center; gap: 8px; }
 .temp-label { font-size: 10.5px; letter-spacing: 0.03em; color: var(--ink-ghost); }
 .temp-segs { display: flex; gap: 3px; }
