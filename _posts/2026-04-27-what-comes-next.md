@@ -16,7 +16,7 @@ Table of Contents
 
 > *In some ways this is just the beginning of the next thing.*
 > *When our tired, old paradigm finally falls, it can feel like everything's over.*
-> *Of course, from this sprouts the new Zeitgesit. Reality doesn't just stop.*
+> *Of course, from this sprouts the new Zeitgeist. Reality doesn't just stop.*
 > *It's not like we're expecting the credits to start rolling.*
 
 Let's be fair.
@@ -31,7 +31,7 @@ More importantly; what becomes of us?
 
 In this post, I'd like to offer some thoughts toward one of the big existential questions I see people wrestling with: *"what will we do with ourselves now?"*
 
-Amid the din of hype, visionary proclaimations and controversy, I've not seen much in the way of practical, everyday advice on how to address our role in a world that no longer strictly requires us.
+Amid the din of hype, visionary proclamations and controversy, I've not seen much in the way of practical, everyday advice on how to address our role in a world that no longer strictly requires us.
 
 **And I believe this is really important.**
 
@@ -43,7 +43,7 @@ My goal is to hopefully inspire you, and remind you that we haven't completed th
 
 ## Hosing ourselves down
 
-How we frame this situation matters; my generation (Millenials) in particular need to peel back the lense we've been seeing life through; it's commonly observed how our exceedingly-corporatised generation has an unusually hard time separating their self-worth from their professional achievements.
+How we frame this situation matters; my generation (Millennials) in particular need to peel back the lens we've been seeing life through; it's commonly observed how our exceedingly-corporatised generation has an unusually hard time separating their self-worth from their professional achievements.
 
 I've witnessed friends in London take on side hustles and eventually, almost reflexively, confront the familiar creeping thought, "how can I make money from this? Is this a business I can grow?"
 
@@ -52,13 +52,13 @@ Who could blame them. Under big-city competitive pressures, the idea of spending
 * Should I take on a new sport? Will it make me hotter? Will it help me find a suitable partner?
 * Shall I start drawing or painting? Can I begin exhibiting and selling prints so I can afford a larger mortgage? Maybe a second home?
 
-Our generation became very value-literate, transactional and end goal focussed. Millenials know all of the personal finance 'hacks', learned about risk-aware stock trading strategies and achievable tax loopholes.
+Our generation became very value-literate, transactional and end goal focussed. Millennials know all of the personal finance 'hacks', learned about risk-aware stock trading strategies and achievable tax loopholes.
 
 The once-sulfurous smell of a corporate rat race job became normalised, even aspirational. At least Patrick Bateman could afford the monthly mortgage payments, right? Lifestyle anxiety can be a darkly-convincing driving force to those who lie awake in the early hours.
 
 Personally, I know four architects who moved into fintech; in any healthy society this should surely never be possible. The obligatory MBAs. I have nothing against ambition or trying for a better life. But the underlying equation doesn't seem to add up any more.
 
-We've overproduced elites. A huge full of quietly desperate queen bees. Corporate pathology. 
+We've overproduced elites. A hive full of quietly desperate queen bees. Corporate pathology. 
 
 In serving the machine, we slowly became more machine-shaped. We pinched our noses and signed off on the Faustian bargain. It was either that, or see the dreams of our youth (home ownership, exotic holidays, financial freedom, having what our parents had) accelerate away from us.
 
@@ -70,9 +70,9 @@ And then work left us.
 
 We need to remember that life hasn't always been about the endless grindset. Oddly, this moment might be less daunting to someone from the 1700s — they believed their place in the universe was divinely granted, never needing to be justified through hard work.
 
-Productivity as a virtue within itself was something we seeded during the Industrial Revolution. And, with it, came dreams of enterpeneurial success, wealth and status. Those legacy dreams — which still haunt us today — were born in a different age.
+Productivity as a virtue within itself was something we seeded during the Industrial Revolution. And, with it, came dreams of entrepreneurial success, wealth and status. Those legacy dreams — which still haunt us today — were born in a different age.
 
-A few years ago, in search of alternate ways of seeing, I read Bertrand Russel's *In Praise of Idleness*, researched the Luddites and the *dark Satanic mills* they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost. My instincts were that I could find some useful starting points there.
+A few years ago, in search of alternate ways of seeing, I read Bertrand Russell's *In Praise of Idleness*, researched the Luddites and the *dark Satanic mills* they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost. My instincts were that I could find some useful starting points there.
 
 My reading is that these people enjoyed a slower and more wholesome pace of life. On-paper lifestyle mattered less; quietly living well every day mattered much more.
 
@@ -82,7 +82,7 @@ They observed the passing of the seasons more closely, able to name the native p
 
 I know what I'm preaching here is to some extent old reheated goods. The answers are nothing especially original.
 
-These things all begin to matter more once work disappears, and I believe they hold Part On1 of the answer to our burning question.
+These things all begin to matter more once work disappears, and I believe they hold Part One of the answer to our burning question.
 
 There's another shift in framing coming.
 
@@ -108,13 +108,13 @@ The Industrial Age wasn't all bad. It brought with it unusual concentrations of 
 
 In this context, something unusual happened. A scholarly class emerged. The clergy didn't always have to work. They were wealthy. They had all the time in the world.
 
-The default option for our species seems to formula a set formula: gather a harem, do drugs, declare war on our enemies and generally make foolish 'fuck-you money' type decisions. 
+The default option for our species seems to follow a set formula: gather a harem, do drugs, declare war on our enemies and generally make foolish 'fuck-you money' type decisions. 
 
-However, these lot had a strong moral backbone and work ethic. They learned, studied, conducted experiments. Mendelsohn et al. They tinkered and they toyed, and they recorded. We owe them a great debt. 
+However, these lot had a strong moral backbone and work ethic. They learned, studied, conducted experiments. Mendel et al. They tinkered and they toyed, and they recorded. We owe them a great debt. 
 
 Of course, this has happened before — think of the ancient Greek scholars, poets, philosophers or Arabian mathematicians.
 
-Sometimes, it can feel like everything's already been discovered. The old boys with the impressive-sounding surnames figures it all out. This is an illusion. We have much yet to discover. I'd argue the reality is that our overly left-brained corporatised popular culture has made most of us forget how to be curious.
+Sometimes, it can feel like everything's already been discovered. The old boys with the impressive-sounding surnames figured it all out. This is an illusion. We have much yet to discover. I'd argue the reality is that our overly left-brained corporatised popular culture has made most of us forget how to be curious.
 
 We can learn to get curious again, it's not hard! I believe unlocking our curiosity and embracing our inner geekery forms Part Two of the answer. 
 
@@ -122,7 +122,7 @@ We can learn to get curious again, it's not hard! I believe unlocking our curios
 
 I believe we're overdue a new age of discovery.
 
-It's been a long time since we're discovered any genuinely new science. We've lived through a tsunami of new technologies, but very little in the way of groundbreaking new science.
+It's been a long time since we've discovered any genuinely new science. We've lived through a tsunami of new technologies, but very little in the way of groundbreaking new science.
 
 Furthermore, humans tend to be better at the bleeding edge than machines. Large Language Models are largely introspection machines, unsuitable for pioneering extrapolation tasks. 
 
@@ -143,8 +143,8 @@ Beneath, I've tried to list out directions in which we can still make major in-r
 
 * Deepest Siberian forests where animals have never seen a human. Where they're not even afraid.
 
-* The deep oceans. Steam guy's startup.
-* Glacier ice. The earth's freezer draw can give us a rich understanding of a wide slice of time that no other medium possibly can.
+* The deep oceans. The Steam guy is [building an $815m research fleet](https://robbreport.com/motors/marine/gabe-newell-vard-research-vessel-1238270958/) to explore them.
+* Glacier ice. The earth's freezer drawer can give us a rich understanding of a wide slice of time that no other medium possibly can.
 * Geological history - does the Younger Dryas impact theory hold water? What other grand events can we uncover evidence for?
 
 ## Discovering Ourselves
@@ -155,7 +155,7 @@ Our ancestry. How we moved around the planet. How our sub-species intermingled. 
 
 ### Archeology
 
-It's everywhere. Right under our feet are countless beautiful artifacts that can tell us stories of different lives and worldviews. LIDAR scanning unlocking new insights. Hidden ancient tombs scattering the earth. Billions of dead came before us. What about all the sunken, preserved boats in the Caspian sea? The Roman emperors enormous boats?
+It's everywhere. Right under our feet are countless beautiful artifacts that can tell us stories of different lives and worldviews. LIDAR scanning unlocking new insights. Hidden ancient tombs scattering the earth. Billions of dead came before us. What about all the sunken, preserved boats in the Caspian sea? The Roman emperors' enormous boats?
 
 ### Our stories
 
@@ -183,7 +183,7 @@ Trees. Britain is so devoid of actual forestry.
 
 De-extinction projects.
 
-Tackling microplastics and PFAs.
+Tackling microplastics and PFAS.
 
 ## Reversing societal decline
 
