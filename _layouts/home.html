@@ -26,7 +26,7 @@ layout: default
                 </span>
                 <span class="post-side">
                     <span class="reading-time">{% assign minutes = post.content | number_of_words | divided_by: 200 | at_least: 1 %}{{ minutes }} minute{% unless minutes == 1 %}s{% endunless %}</span>
-                    <span class="temp" title="Borrowed from LLMs: temperature controls how wild the output gets. 0 = sober technical writing, 1 = unfiltered nonsense.">Temperature: {{ post.temperature | default: 0.1 }}</span>
+                    <span class="temp" title="Measures how spicy this post is">Temp: {{ post.temperature | default: 0.1 }}</span>
                 </span>
             </a>
         </li>

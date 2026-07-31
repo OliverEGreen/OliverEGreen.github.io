@@ -10,7 +10,8 @@ tagline: "Navigating the unthinkably wide-open"
 unfinished: true
 ---
 
-Contents:
+## Contents
+{:.no_toc}
 
 * TOC
 {:toc}

@@ -188,7 +188,7 @@ article.post .section-head h2 { margin: 0; font-size: 24px; }
 
 /* Temperature readout */
 .post-side { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
-.temp { font-size: 10.5px; letter-spacing: 0.03em; color: var(--ink-ghost); cursor: help; }
+.temp { font-size: 13px; color: var(--ink-ghost); white-space: nowrap; }
 @media (max-width: 600px) { .temp { display: none; } .post-date { display: none; } .sub-form { width: 100%; } .sub-form input { width: 100%; padding-right: 132px; } }
 
 /* Project cards */
@@ -234,6 +234,11 @@ article.post a:hover { color: var(--ink-strong); background-size: 100% 60%; bord
 article.post a:active { background-image: linear-gradient(var(--sweep-press), var(--sweep-press)); background-size: 100% 100%; }
 
 /* Table of contents (kramdown {:toc}) */
+article.post h2.no_toc {
+  background: var(--tint); border-radius: 10px 10px 0 0;
+  margin: 0; padding: 18px 22px 4px; font-size: 18px;
+}
+article.post h2.no_toc + #markdown-toc { border-radius: 0 0 10px 10px; padding-top: 6px; }
 article.post #markdown-toc {
   font-family: var(--sans); font-size: 13.5px; line-height: 1.45;
   background: var(--tint); border-radius: 10px;
