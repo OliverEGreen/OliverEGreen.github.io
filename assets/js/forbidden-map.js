@@ -6,6 +6,7 @@
   var places = [
     ['Balls Pond Road', 51.5468, -0.0810],
     ['Chorlton-cum-Hardy', 53.4419, -2.2766],
+    ['Clitheroe', 53.8711, -2.3916],
     ['Cockermouth', 54.6613, -3.3626],
     ['Cockfosters', 51.6517, -0.1497],
     ['Cumbria', 54.5772, -2.7975],
