@@ -27,11 +27,13 @@ Let's be fair.
 
 The ferocious speed and scale of *big-picture* change that we're currently living through can be terrifying. Frankly, it probably *should* be — like the <u>kneecap test</u> that proves we're still functioning normally.
 
-As we barrel towards the waking fever dream of AI being better than us at almost everything, our organic human abilities begin to look very outclassed, meagre and shabby. The financial incentives in play can make this endgame feel inevitable. <u>Anything you can do, I can do better</u>.
+As we barrel towards the fever dream of AI being better than us at almost everything
 
-It's a lot to take in.
+[^1]: Anything you can do, I can do better.
 
-More importantly; what becomes of us?
+, our organic human abilities begin to look very outclassed, glacial and meagre. The magnitude of the financial incentives backing this change can make the  endgame feel inevitable. It's a lot to take in.
+
+Most importantly; what becomes of us?
 
 In this post, I'd like to offer some thoughts toward one of the big existential questions I see people wrestling with: *"what will we do with ourselves now?"*
 
@@ -39,64 +41,92 @@ Amid the din of hype, visionary proclamations and controversy, I've not seen muc
 
 **And I believe this is really important.**
 
-A lot of people will feel rudderless when they don't have a direction to exert their effort towards. Forty extra hours per week is a lot of free time.
+A lot of people will feel rudderless when they don't have a direction to exert their efforts towards. Forty extra hours per week. That's a lot of life to suddenly have to fill.
 
-What would we do with all the time we get back? Honestly, probably a lot more sleeping (scientists are increasingly saying that's good for you anyway, so there's an easy win-win). But, beyond that, it can feel like a gigantic, nebulous open question with no great answers.
+What would we do with all the time we get back?
 
-My goal is to hopefully inspire you, and remind you that we haven't completed the game of life just yet. In fact, the good news is that there's an embarrassment of side-quests left for us to finally engage with now that we have the time. But we could benefit from some new mental tooling to make the most of it.
+Honestly, probably a lot more sleeping! Scientists are increasingly saying that's good for you anyway, so there's an easy win. But, beyond that, it can feel like a gigantic, nebulous open question with no great answers.
+
+My goal with this piece is to (hopefully) inspire you, and remind you that we haven't completed the game of life just yet. In fact, the good news is that there's an embarrassment of side-quests left for us to finally engage with now that we have the time. But we could benefit from some new mental tooling to make the most of it.
 
 ## Hosing ourselves down
 
-How we frame this situation matters; my generation (Millennials) in particular need to peel back the lens we've been seeing life through; it's commonly observed how our exceedingly-corporatised generation has an unusually hard time separating their self-worth from their professional achievements.
+How we frame this situation matters; it's commonly observed how my exceedingly-corporatised generation (Millenials) has an unusually hard time separating their self-worth from their professional achievements
 
-I've witnessed friends in London take on side hustles and eventually, almost reflexively, confront the familiar creeping thought, "how can I make money from this? Is this a business I can grow?"
+[^2]: McKinsey & Co explicitly state that they seek 'anxious overachievers' when hiring. People whose self-worth is explicitly tied to their ability to thrive in the corporate grind.
 
-Who could blame them. Under big-city competitive pressures, the idea of spending our precious time on a leisurely pursuit for the sheer joy of it can seem almost irrational, like moving against the herd:
+. If this is true, it's a lens we've been seeing our lives through; one we'll need to learn to remove.
+
+This framing silently manifests itself in our everyday lives. I've witnessed friends in London follow new passions or hobbies and eventually—almost reflexively—confront the familiar creeping thought, "how can I make money from this? Is there a niche business here I can grow?"
+
+Who could blame them. Under big-city competitive pressures, the idea of spending our precious leftover time on a leisurely pursuit for the sheer joy of it can seem audacious, even irrational, like moving against the herd:
 
 * Should I take on a new sport? Will it make me hotter? Will it help me find a suitable partner?
 * Shall I start drawing or painting? Can I begin exhibiting and selling prints so I can afford a larger mortgage? Maybe a second home?
 
 Our generation became very value-literate, transactional and end goal focussed. Millennials know all of the personal finance 'hacks', learned about risk-aware stock trading strategies and achievable tax loopholes.
 
-The once-sulfurous smell of a corporate rat race job became normalised, even aspirational. At least Patrick Bateman could afford the monthly mortgage payments, right? Lifestyle anxiety can be a darkly-convincing driving force to those who lie awake in the early hours.
+As this progressed, the once-sulfurous smell of a corporate rat race job became normalised, even aspirational. Sure Patrick Bateman was a bad guy, but at least he could afford the monthly mortgage payments, right? Lifestyle anxiety can be a darkly-convincing force for those lying awake in the middle of the night.
 
-Personally, I know four architects who moved into fintech; in any healthy society this should surely never be possible. The obligatory MBAs. I have nothing against ambition or trying for a better life. But the underlying equation doesn't seem to add up any more.
+Personally, I know four architects who moved into fintech; in any healthy society this should surely never be possible. In many fields, MBAs became almost obligatory as the price of entry to being taken seriously.
 
-We've overproduced elites. A hive full of quietly desperate queen bees. Corporate pathology. 
+It's worth clarifying that I have nothing against peoples' ambitions or in striving for a better life. My axe to grind is that the central equation underlying these life strategies <u>doesn't seem to be adding up any more</u>.
 
-In serving the machine, we slowly became more machine-shaped. We pinched our noses and signed off on the Faustian bargain. It was either that, or see the dreams of our youth (home ownership, exotic holidays, financial freedom, having what our parents had) accelerate away from us.
+Overproduction of the elites is a well-known problem, and a timebomb our generation has yet to reckon with. The recent past has seen global cities transformed into a hive full of quietly-desperate queen bees. Each having rightfully earned their throne. Each having put in the hard work, strategic research and developed an almost obsequious level of obedience to the institutions which, in turn, elevate our toil.
 
-Again, I'm not here to judge. This is a perfectly rational response to the set of circumstances we were given. To some degree, we became comfortable with living to work; an imbalanced and imperfect relationship, sure, but it was still better than nothing.
+Our corporate pathology cannot last forever. In serving the machine, we slowly became more machine-shaped. We pinched our noses and signed the Faustian bargain. It was either that, or see the dreams of our youth (home ownership, exotic holidays, financial freedom) accelerate away from us. Hell, most of us would settle just to have what our parents had.
+
+Again, I'm not here to judge. I really mean that.
+
+This is a perfectly rational response to the set of circumstances we were given. It for sure beats becoming a NEET or a wastrel. We were young once and had time and energy to chuck towards something anyway.
+
+To varying degrees, we became comfortable with living to work; an imbalanced and imperfect relationship, sure, but it was still better than nothing.
 
 And then work left us.
 
-## Shifting our framing
+## Working to live
 
-We need to remember that life hasn't always been about the endless grindset. Oddly, this moment might be less daunting to someone from the 1700s — they believed their place in the universe was divinely granted, never needing to be justified through hard work.
+This has happened *just yet*, of course—but we're able to read the room.
 
-Productivity as a virtue within itself was something we seeded during the Industrial Revolution. And, with it, came dreams of entrepreneurial success, wealth and status. Those legacy dreams — which still haunt us today — were born in a different age.
+Like any relationship that becomes imbalanced, it will carry on through momentum for a while before the inevitable happens. Our worklessness is a scenario we need to plan for, or at least consider.
 
-A few years ago, in search of alternate ways of seeing, I read Bertrand Russell's *In Praise of Idleness*, researched the Luddites and the *dark Satanic mills* they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost. My instincts were that I could find some useful starting points there.
+At least, here there is some good news.
 
-My reading is that these people enjoyed a slower and more wholesome pace of life. On-paper lifestyle mattered less; quietly living well every day mattered much more.
+After a quick dip into history, seems that life hasn't always been about the endless, awful grindset
 
-People paid more attention to their community and relations to others. 
+[^3]: When did life become an endless awful competition article.
 
-They observed the passing of the seasons more closely, able to name the native plants, trees and species around them. They engaged with and reinforced their local traditions and practised religion. Family as the most important unit of all.
+. Oddly, our current moment might be less daunting to someone from the 1700s. They saw life through a fundamentally-different lens, believing that their place in the universe was divinely granted, never needing to be justified through hard work.
 
-I know what I'm preaching here is to some extent old reheated goods. The answers are nothing especially original.
+Productivity as a virtue within itself was something that arose organically through the course of the Industrial Revolution and—with it—came those familiar dreams of entrepreneurial success, wealth and status. Those ideas still haunt us today but were conceived in a different age.
 
-These things all begin to matter more once work disappears, and I believe they hold Part One of the answer to our burning question.
+A few years ago, in search of alternate life lenses, I read Bertrand Russell's *In Praise of Idleness. I researched the Luddites and the *dark Satanic mills*
+
+[^4]: Link to poem
+
+ they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost; my instinct was that I could find some useful starting points there.
+
+My reading is that these people enjoyed a slower pace of life, one which we'd describe as wholesome. Peoples' on-paper lifestyles mattered less; quietly living well every day mattered much more. Social media posts and personal branding seminars were a long-distant dream.
+
+These people paid more attention to their communities, the values their communities collectively upheld and their relations towards each other. They engaged with and reinforced their local traditions and practised religion, with family being the most important social unit of all. Big cities granted us anonymity in exchange for alienation, but we fundamentally remain social, simian creatures. 
+
+People of the past focussed more on local problems within their grasp, instead of hyperfocussing on random new atrocities springing up anywhere on the planet. The 24-hour news cycle made us aware, but didn't make us any happier—it just kept us anxious and miserable (anxiety, which can be conveniently-addictive, if your business happens to be ad-supported).
+
+Finally, these people observed nature and the passing of the seasons more closely. They were able to name the native plants, trees and species around them. They knew which mushrooms were edible, or which plants could make for useful remedies or ingredients.
+
+This is all quaint and Oldey-Worldey, I know. What I'm selling you here is very much old, reheated goods. The timeless answers to the timeless questions are nothing especially fresh or original. Nevertheless we've done our level-best to discard every one of them throughout the 20th century. Maybe it was hype, maybe hubris. And now we're searching through the scrap heap to try and find remnants of the comfort and stability we grew up surrounded by; the 1990s are now just a speck in the rear-view mirror.
+
+These timeless things begin to matter more once our terminal-stage careers up sticks and disappear. And I believe they contain part of the answer to our burning question.
 
 There's another shift in framing coming.
 
-## Ending 'soft slavery'
+## Ending soft slavery
 
 Our species has very rarely been without some form of toil. We've always had, to some degree, a love-hate relationship to our labours.
 
-Work greedily helps itself to our waking hours, to our time and mental energy. Sometimes it feels like we're forced to live our lives in the precious slivers of time between work and sleeping.
+Work greedily helps itself to our waking hours, to our time and mental energy. Sometimes it feels like we're forced to live our lives in the precious slivers of time between clocking off and sleeping.
 
-But for many people, it also defines us – "what we do" is one of the first things we talk about as we get to know someone. Our job can provide a part of our identity or broadcast our social value within a community. This can have its upsides. 
+But for many people, it also defines us. "What we do" is one of the first things we talk about as we get to know someone. Our job can provide a part of our identity or broadcast our social value within a community. This can have its upsides. 
 
 But, ultimately, our work *has been obligatory*. 
 
@@ -104,52 +134,93 @@ Almost everyone is implicitly forced to work in order to provide themselves with
 
 Perhaps, here's where that obligatory aspect starts to change. And if we choose to work, we do so with total freedom.
 
-I'd like to introduce another unoriginal idea; using our time to pursue something that truly interests us, with the pressure off, and as a joyful, playful and creative exercise. 
+I'd like to introduce yet another unoriginal idea; using our spare time to pursue something that truly interests us, with the commercial pressures off, and as a purely joyful, playful and creative exercise. 
 
 ## Geeking out for the sheer bloody hell of it
 
-The Industrial Age wasn't all bad. It brought with it unusual concentrations of wealth and power, from which emerged the novel phenomenon of the middle class. No longer were we purely serfs and aristocrats; a small number of people began to occupy a middle ground.
+The Industrial Age wasn't all bad. It brought about an unusual concentration of wealth and power, from which emerged the phenomenon of the middle class. No longer were we purely serfs and aristocrats; a small number of people began to occupy this novel middle ground.
 
-In this context, something unusual happened. A scholarly class emerged. The clergy didn't always have to work. They were wealthy. They had all the time in the world.
+Given the Victorian social hierarchy, much of this spare time and wealth congregated in the hands of the clergy. In this context, something unusual happened; a scholarly class began to develop.
 
-The default option for our species seems to follow a set formula: gather a harem, do drugs, declare war on our enemies and generally make foolish 'fuck-you money' type decisions. 
+This is significant because people often seem unconsciously follow a fairly standard playbook when we acquire substantial wealth or power. First, we gather a harem, then abuse drugs, declare war on our enemies and generally make foolish 'fuck-you money' type decisions. We've done this since time immemorial; I guess it's our path of least resistance.
 
-However, these lot had a strong moral backbone and work ethic. They learned, studied, conducted experiments. Mendel et al. They tinkered and they toyed, and they recorded. We owe them a great debt. 
+However, this clergy class had an unusually strong moral backbone and work ethic (they were Victorians, after all). They dedicated much of their spare time to scholarly pursuits: reading, engaging in correspondence and conducting experiments.
 
-Of course, this has happened before — think of the ancient Greek scholars, poets, philosophers or Arabian mathematicians.
+They tinkered and they toyed, and they recorded. Victorian age of scientific discovery. Jumps forward in biology, physics, maths, geneaology (Mendel et al). We owe them a great debt. They did this all for love of the game. 
 
-Sometimes, it can feel like everything's already been discovered. The old boys with the impressive-sounding surnames figured it all out. This is an illusion. We have much yet to discover. I'd argue the reality is that our overly left-brained corporatised popular culture has made most of us forget how to be curious.
+Despite their rarity, we know such periods of discovery have happened before. Just think of the ancient Greek scholars, poets, philosophers or the famous Arabian mathematicians. 
 
-We can learn to get curious again, it's not hard! I believe unlocking our curiosity and embracing our inner geekery forms Part Two of the answer. 
+*Good for them*, I guess?
+
+Yes, it can sometimes feel like everything's already been discovered. The old boys with the impressive-sounding surnames figured it all out.
+
+Fortunately for us, this is an illusion. We have much yet to discover. I'd argue the reality is that our overly left-brained corporatised popular culture has made most of us forget how to be curious or creative.
+
+But you need not look far to see through the illusion. Many YouTubers still do this (NileRed, backyard scientist etc). Maybe a YouTuber will uncover genuinely new science. Futurama published a math paper. We can learn to get curious again, it's not hard! I believe unlocking our curiosity and embracing our inner geekery forms the second part of our answer.
+
+We've covered a lot already. Here's a brief recap:
+
+* I'm arguing for us living a slower, more wholesome and local existence. 
+* I want you to embrace some form of geekery for sheer love of the game.
+
+And just to keep you on your toes, I'll address the second point first.
 
 # Part One: An Age of Discovery
 
-I believe we're overdue a new age of discovery.
+I suspect we're long overdue another new age of discovery.
 
-It's been a long time since we've discovered any genuinely new science. We've lived through a tsunami of new technologies, but very little in the way of groundbreaking new science.
+It's been a long time since we discovered any genuinely groundbreaking science. Beyond padding in gaps at the edges of our theories (e.g. Higgs Boson, gravitational waves), our generation has been notably lightweight in this regard. Hawking was probably our last great heavyweight. I'm intentionally ignoring technology—the application of science. We've lived through an absolute *deluge* of new and impressive technologies.
 
-Furthermore, humans tend to be better at the bleeding edge than machines. Large Language Models are largely introspection machines, unsuitable for pioneering extrapolation tasks. 
+Two things give me hope in this regard:
 
-Below, I've tried to list out as many loose threads, directions and potential sources of inspiration as I can muster. 
+* Humans naturally tend to be better at the bleeding edge of our knowledge than machines. Large Language Models are largely introspection machines, unsuitable for truly pioneering extrapolatory tasks.
+* Chinese social media algorithms are designed to reward personal achiement, particularly in the STEM fields. We're seeing content creators emerge from China with breathtaking levels of expertise and lofty media-grade ambitions for their pioneering projects. This may result in something of an online arms race and inspire the masses to pick up new geeky pursuits for the love of it.
+
+To this end, I've tried to assimilate as many loose threads, directions and potential sources of inspiration as I can muster.
 
 ## Discovering the fundamentals
 
-Beneath, I've tried to list out directions in which we can still make major in-roads in our understanding of our world, our universe and the deep fundamentals which seem to subtly permeate everything.
+Directions in which we can still make in-roads towards our understanding of our world, our universe and the deep fundamentals which seem to subtly permeate everything.
 
-* Unified model. An old Holy Grail.
-* Astrophysics, astronomy, astrobiology maybe. 
-* Quantum physics - room temperature superconductor LK99. 
-* New, undiscovered areas of physics, chemistry and biology.
-* Spooky new era for biology, biochemistry and biotech. What can this mean for life, longevity and disease? Beyond curing disease, extending our abilities? Superpowers?
-* Mathematics, new proofs being found every day.
+### Unified model
+
+This one is an old Holy Grail. Unifying Newtonian and quantum physics. 
+
+### Space stuff
+
+Astrophysics, astronomy, astrobiology maybe.
+
+### Material science
+
+Room temperature superconductor LK99. New, undiscovered areas of physics, chemistry and biology.
+
+### Biology and biotech
+
+Spooky new era for biology, biochemistry and biotech.
+
+What can this mean for life, longevity and disease? Beyond curing disease, extending our abilities? Superpowers?
+
+### Mathematics
+
+Mathematics, new proofs being found every day.
 
 ## Discovering our world
 
-* Deepest Siberian forests where animals have never seen a human. Where they're not even afraid.
+### The deep oceans.
 
-* The deep oceans. The Steam guy is [building an $815m research fleet](https://robbreport.com/motors/marine/gabe-newell-vard-research-vessel-1238270958/) to explore them.
-* Glacier ice. The earth's freezer drawer can give us a rich understanding of a wide slice of time that no other medium possibly can.
-* Geological history - does the Younger Dryas impact theory hold water? What other grand events can we uncover evidence for?
+Gabe Newell is [building an $815m research fleet](https://robbreport.com/motors/marine/gabe-newell-vard-research-vessel-1238270958/) to explore them.
+
+### Glacier ice.
+
+The earth's freezer drawer can give us a rich understanding of a wide slice of time that no other medium possibly can.
+
+### Geological history
+
+Does the Younger Dryas impact theory hold water? What other grand events can we uncover evidence for?
+
+### Deepest Siberian forests
+
+Where animals have never seen a human. Where they're not even afraid.
 
 ## Discovering Ourselves
 
@@ -171,6 +242,12 @@ Our internal worlds - We hardly know ourselves, let alone others. Perhaps there'
 
 Discovering our minds. Probably a level of psychedelic exploration as well.
 
+## Exploring the biggest mysteries
+
+About the mysteries and magics of the universe. There are so many bizarre things left yet to unravel. So much we cannot know just yet. But, like a kaleidoscope, we can snatch abstract glimpses of the nature of reality. There are some real clues and those are only a starting point. A thread to pull.
+
+See my other article: Mystries & Magics
+
 # Part Two: An Age of Recovery
 
 ## Reversing population decline
@@ -181,25 +258,39 @@ Having children will probably come back into fashion. Perhaps the birth rate ret
 
 ## Reversing pollution
 
-Re-wilding projects.
+### Re-wilding projects.
 
-Trees. Britain is so devoid of actual forestry.
+x
 
-De-extinction projects.
+### Trees
 
-Tackling microplastics and PFAS.
+Britain is so devoid of actual forestry.
+
+### De-extinction projects
+
+Colossal biosciences.
+
+### Tackling microplastics and PFAS
+
+x
 
 ## Reversing societal decline
 
-Perhaps a rebuilding of society — of the norms that suit everybody. Respect, a return of public behavioural norms.
+Perhaps a rebuilding of society — of the norms that suit us as a whole. Respect, a return of public behavioural norms. Restoring trust in authority.
 
 Maybe letters will come back. Real proper ones. Not generated content but that slow, considered and highly personal hobby of communicating with loved ones. Men and women of letters.
 
-A news media landscape that people can trust. 
+### A news media landscape that people can trust
 
-A competition landscape that works – return of the invisible hand.
+x
 
-About the mysteries and magics of the universe. There are so many bizarre things left yet to unravel. So much we cannot know just yet. But, like a kaleidoscope, we can snatch abstract glimpses of the nature of reality. There are some real clues and those are only a starting point. A thread to pull.
+### A scientific process that makes sense
+
+x
+
+### A commercial competition landscape that works
+
+Return of the invisible hand.
 
 # Conclusion
 
