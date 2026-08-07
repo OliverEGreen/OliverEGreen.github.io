@@ -25,11 +25,11 @@ unfinished: true
 
 Let's be fair.
 
-The ferocious speed and scale of *big-picture* change that we're currently living through can be terrifying. Frankly, it probably *should* be — like the <u>kneecap test</u> that proves we're still functioning normally.
+The ferocious speed and scale of *big-picture* change that we're currently living through can be terrifying. Frankly, it probably *should* be — like the [kneecap test](https://en.wikipedia.org/wiki/Patellar_reflex) that proves we're still functioning normally.
 
 As we barrel towards the fever dream of AI being better than us at almost everything[^1], our organic human abilities begin to look very outclassed, glacial and meagre. The magnitude of the financial incentives backing this change can make the endgame feel inevitable. It's a lot to take in.
 
-[^1]: Anything you can do, I can do better.
+[^1]: [Anything you can do, I can do better.](https://www.youtube.com/watch?v=WO23WBji_Z0)
 
 Most importantly; what becomes of us?
 
@@ -51,7 +51,7 @@ My goal with this piece is to (hopefully) inspire you, and remind you that we ha
 
 How we frame this situation matters; it's commonly observed how my exceedingly-corporatised generation (Millenials) has an unusually hard time separating their self-worth from their professional achievements[^2]. If this is true, it's a lens we've been seeing our lives through; one we'll need to learn to remove.
 
-[^2]: McKinsey & Co explicitly state that they seek 'anxious overachievers' when hiring. People whose self-worth is explicitly tied to their ability to thrive in the corporate grind.
+[^2]: McKinsey & Co [explicitly](https://anant.us/blog/team-blog/inspire/fortune-how-mckinsey-does-it/) [state](https://www.ft.com/content/ba0c9234-a2d7-11e7-9e4f-7f5e6a7c98a2) [that](https://www.efinancialcareers.com/news/2013/06/goldman-sachs-lures-insecure-overachievers-says-ex-goldman-trader) they seek ['insecure overachievers'](https://www.forefrontmag.com/2015/01/leading-the-insecure-overachiever/) when hiring. People whose self-worth is explicitly tied to their ability to thrive in the corporate grind.
 
 This framing silently manifests itself in our everyday lives. I've witnessed friends in London follow new passions or hobbies and eventually—almost reflexively—confront the familiar creeping thought, "how can I make money from this? Is there a niche business here I can grow?"
 
@@ -90,13 +90,13 @@ At least, here there is some good news.
 
 After a quick dip into history, it seems that life hasn't always been about the endless, awful grindset[^3]. Oddly, our current moment might be less daunting to someone from the 1700s. They saw life through a fundamentally-different lens, believing that their place in the universe was divinely granted, never needing to be justified through hard work.
 
-[^3]: When did life become an endless awful competition article.
+[^3]: The Atlantic: [How life became an endless, terrible competition](https://www.theatlantic.com/magazine/archive/2019/09/meritocracys-miserable-winners/594760/).
 
 Productivity as a virtue within itself was something that arose organically through the course of the Industrial Revolution and—with it—came those familiar dreams of entrepreneurial success, wealth and status. Those ideas still haunt us today but were conceived in a different age.
 
 A few years ago, in search of alternate life lenses, I read Bertrand Russell's *In Praise of Idleness*. I researched the Luddites and the *dark Satanic mills*[^4] they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost; my instinct was that I could find some useful starting points there.
 
-[^4]: Link to poem
+[^4]: William Blake's [Jerusalem](https://en.wikipedia.org/wiki/And_did_those_feet_in_ancient_time).
 
 My reading is that these people enjoyed a slower pace of life, one which we'd describe as wholesome. Peoples' on-paper lifestyles mattered less; quietly living well every day mattered much more. Social media posts and personal branding seminars were a long-distant dream.
 
@@ -236,9 +236,11 @@ Discovering our minds. Probably a level of psychedelic exploration as well.
 
 ## Exploring the biggest mysteries
 
-About the mysteries and magics of the universe. There are so many bizarre things left yet to unravel. So much we cannot know just yet. But, like a kaleidoscope, we can snatch abstract glimpses of the nature of reality. There are some real clues and those are only a starting point. A thread to pull.
+For those with the appetite, we can put the STEM to the side for the moment and consider the larger mysteries of our existence.
 
-See my other article: Mystries & Magics
+I've often had the unsatisfying sense that several of our closely-held ideas seem to be *explaining away* a mystery, rather than reaching the core of the phenomenon in question. Sometimes it feels like society's best rationalisations don't fully add up to what we experience.
+
+I've collected these together in [a separate article](/posts/2/mysteries-and-magics/)—a long list of threads to pull upon for the curious-minded.
 
 # Part Two: An Age of Recovery
 
