@@ -27,11 +27,9 @@ Let's be fair.
 
 The ferocious speed and scale of *big-picture* change that we're currently living through can be terrifying. Frankly, it probably *should* be — like the <u>kneecap test</u> that proves we're still functioning normally.
 
-As we barrel towards the fever dream of AI being better than us at almost everything
+As we barrel towards the fever dream of AI being better than us at almost everything[^1], our organic human abilities begin to look very outclassed, glacial and meagre. The magnitude of the financial incentives backing this change can make the endgame feel inevitable. It's a lot to take in.
 
 [^1]: Anything you can do, I can do better.
-
-, our organic human abilities begin to look very outclassed, glacial and meagre. The magnitude of the financial incentives backing this change can make the  endgame feel inevitable. It's a lot to take in.
 
 Most importantly; what becomes of us?
 
@@ -51,11 +49,9 @@ My goal with this piece is to (hopefully) inspire you, and remind you that we ha
 
 ## Hosing ourselves down
 
-How we frame this situation matters; it's commonly observed how my exceedingly-corporatised generation (Millenials) has an unusually hard time separating their self-worth from their professional achievements
+How we frame this situation matters; it's commonly observed how my exceedingly-corporatised generation (Millenials) has an unusually hard time separating their self-worth from their professional achievements[^2]. If this is true, it's a lens we've been seeing our lives through; one we'll need to learn to remove.
 
 [^2]: McKinsey & Co explicitly state that they seek 'anxious overachievers' when hiring. People whose self-worth is explicitly tied to their ability to thrive in the corporate grind.
-
-. If this is true, it's a lens we've been seeing our lives through; one we'll need to learn to remove.
 
 This framing silently manifests itself in our everyday lives. I've witnessed friends in London follow new passions or hobbies and eventually—almost reflexively—confront the familiar creeping thought, "how can I make money from this? Is there a niche business here I can grow?"
 
@@ -92,19 +88,15 @@ Like any relationship that becomes imbalanced, it will carry on through momentum
 
 At least, here there is some good news.
 
-After a quick dip into history, seems that life hasn't always been about the endless, awful grindset
+After a quick dip into history, it seems that life hasn't always been about the endless, awful grindset[^3]. Oddly, our current moment might be less daunting to someone from the 1700s. They saw life through a fundamentally-different lens, believing that their place in the universe was divinely granted, never needing to be justified through hard work.
 
 [^3]: When did life become an endless awful competition article.
 
-. Oddly, our current moment might be less daunting to someone from the 1700s. They saw life through a fundamentally-different lens, believing that their place in the universe was divinely granted, never needing to be justified through hard work.
-
 Productivity as a virtue within itself was something that arose organically through the course of the Industrial Revolution and—with it—came those familiar dreams of entrepreneurial success, wealth and status. Those ideas still haunt us today but were conceived in a different age.
 
-A few years ago, in search of alternate life lenses, I read Bertrand Russell's *In Praise of Idleness. I researched the Luddites and the *dark Satanic mills*
+A few years ago, in search of alternate life lenses, I read Bertrand Russell's *In Praise of Idleness*. I researched the Luddites and the *dark Satanic mills*[^4] they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost; my instinct was that I could find some useful starting points there.
 
 [^4]: Link to poem
-
- they rallied against. I wanted to get a sense of the life that these people (correctly) feared could be lost; my instinct was that I could find some useful starting points there.
 
 My reading is that these people enjoyed a slower pace of life, one which we'd describe as wholesome. Peoples' on-paper lifestyles mattered less; quietly living well every day mattered much more. Social media posts and personal branding seminars were a long-distant dream.
 
@@ -294,16 +286,18 @@ Return of the invisible hand.
 
 # Conclusion
 
-I hope I've given you many reasons to have faith that things may yet work out. Even if you're currently in full-time employment, as no doubt you are, it's probably worth sketching out your escape route now. With any luck, a couple of the loose threads above might sound slightly promising.
+I hope I've given you many reasons to have faith that things may yet work out. 
 
-Broadly speaking, I remain hopeful and optimistic for the world we're stepping into. We all have access to an unprecedented amount of information. People are understandably highly anxious right now. You can sense it as you speak with them. But we can also be heartened that so many of us are paying attention. 
+Broadly speaking, I remain hopeful and optimistic for the world we're stepping into. We all have access to an unprecedented amount of information. People are understandably highly anxious right now—you can sense it as you speak with them. But we can also be heartened that so many of us are paying attention. 
 
-Humanity is, largely, not too bad at self-correction in the long term. To me at least, despite everything, it still feels like we're heading squarely towards the good ending. We can't take it for granted, but I think it's worth taking to heart.
+Humanity is largely *not too bad* at self-correction in the long term. To me at least, despite everything, it still feels like we're heading squarely towards the good ending. We can't take it for granted, but I think that's something worth taking to heart.
 
-We have to fall in love with doing and being and becoming again. There's all this reality left to explore and encounter, we've allowed ourselves to become passive consumers of content. Which is fine in the right doses. But the proxy of anything will never match its reality. I've said it many times before, but it's worth reiterating: 
+Even if you're currently in full-time employment (as no doubt you are) it's probably worth sketching out your escape route now. With any luck, a couple of the loose threads above might sound like a promising direction, something worth exploring.
+
+We only have to fall in love with *doing* and *being* and *becoming* again. There's all this reality left to explore and encounter. I've said it many times before, but it's worth reiterating: 
 
 > AI can never climb a mountain or swim in a lake for us.
 
-It's a big old world and it's ours to squander, or to enjoy. We never had to earn our right to life or prove our value. That 200-year old spell has now lifted. The cage door is finally open. Be brave.
+It's a big old world and it's ours to squander—or to enjoy. We never had to earn our right to life or prove our value. That 200-year old spell has now lifted. The cage door is finally open. Be brave.
 
 Now put your shoes on and go outside.
