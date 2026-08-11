@@ -18,6 +18,9 @@
     var n = parseInt(hex.slice(1), 16);
     return 'rgba(' + (n >> 16) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', ' + a + ')';
   };
+  // Dracula pops, shared by the gutter blobs and paragraph dots
+  var BLOBS = ['#8be9fd', '#50fa7b', '#ffb86c', '#ff79c6', '#bd93f9', '#ff5555', '#f1fa8c'];
+
   // Consecutive picks are always different, shared across header and quotes
   var lastTint = -1;
   var pickTint = function () {
@@ -50,6 +53,15 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
+
+  // 1a) Writing pages: a random Dracula dot follows each section heading
+  var lastDot = -1;
+  document.querySelectorAll('article.writing-post > h1, article.writing-post > h2').forEach(function (h) {
+    var i;
+    do { i = Math.floor(Math.random() * BLOBS.length); } while (i === lastDot);
+    lastDot = i;
+    h.style.setProperty('--head-dot', BLOBS[i]);
+  });
 
   // 1b) Blockquotes: each quote takes its own random tint from the palette
   document.querySelectorAll('article.post blockquote').forEach(function (bq) {
@@ -260,7 +272,6 @@
       var inner = card.querySelector('.pcard-inner');
       if (inner) inner.style.borderRadius = c.map(function (v) { return (v === 0 ? 0 : Math.max(2, v - FRAME)) + 'px'; }).join(' ');
     };
-    var BLOBS = ['#8be9fd', '#50fa7b', '#ffb86c', '#ff79c6', '#bd93f9', '#ff5555', '#f1fa8c'];
     var cardIndex = 0;
     grids.forEach(function (g) {
       g.querySelectorAll('.pcard').forEach(function (card) {
