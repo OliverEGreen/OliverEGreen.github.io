@@ -146,17 +146,45 @@ Can we imbue inanimate objects with our meanings and energies using our own inte
 
 Were all the ancient people around the world just plain wrong? It seems fishy. They weren't idiots.
 
-### Black magic
+### Black magic and sacrifice
 
-Black magic appears to be real. It's been practised forever. Deals with the devil. Sacrifice, energies from lower dimensions 'feeding' on loosh. Often leading to knowledge seemingly from nowhere: impossible pyramids, rocketry, iconic music. Long history of human sacrifice. Faustian pacts. Epstein and co were deeply serious people; they wouldn't waste their time on total nonsense. 
+Black magic appears to be real. It's been practised forever. Deals with the devil. Sacrifice, energies from lower dimensions 'feeding' on loosh. Often leading to knowledge seemingly from nowhere: impossible pyramids, rocketry, iconic music. Long history of human sacrifice.
 
-### Sex and sex magic
+Faustian pacts.
 
-It's clearly much more significant than the purely physical dimension. There's a lot of nuanced energetic stuff going on, I'd wager. I think sex can cross into the astral energies sometimes. It seems to often go paired with a certain underhanded quality. Jack Parsons of the JPL was a huge believer, as were his contemporaries. Sex often plays a role in cults as well. It's a huge driver of human behaviour and power dynamics. The small death. It's hugely energetic.
+Epstein and co were deeply serious people; they wouldn't waste their time on total nonsense. 
 
 ### Pyramids
 
 Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt — South and Central America, all across Asia. We have no explanations.
+
+## Magic of the body
+
+### Holding hands
+
+Why is it that, as an adult, holding hands with someone can be such an incredibly intense and intimate behaviour? There's probably no culture on Earth where this would be considered socially insignificant. 
+
+But, curiously, for many people this simple act can be easily as, or even more intense, than engaging in sex with someone. Why is that? 
+
+Our hands are obviously incredibly important to us, we use them for just about everything, they hold some of the densest collections of nerve endings in our bodies. But, beyond that, something else—something *energetic*—does seem to be at play when we connect in this way. It's certainly more than the sum of its parts.
+
+### Eye contact
+
+This one we all know well. They're called the "window to the soul" for good reason. We could probably write entire books about eyes and eye contact; their colours, when they seem to sparkle (or, conversely, when someones eyes seem dead) and how their qualities are able to change to suddenly. How someone's eyes are able to instantly *light up* or perhaps they seem to carry the immense weight of some tragedy. We all just intuitively seem to know how to read eyes, there aren't any tutorials online. We seem to get that one for free. 
+
+### Sex and sex magic
+
+Sex is clearly so much more significant than the purely physical dimension. There's a lot of nuanced energetic stuff going on, I'd wager.
+
+I think sex can cross into the astral energies sometimes. It seems to often go paired with a certain underhanded quality.
+
+Jack Parsons, founder of the pre-NASA Jet Propupsion Laboratory was a huge and vocal proponent of sex magic, as were his contemporaries.
+
+Sex often plays a role in cults as well. It's a huge driver of human behaviour and power dynamics. "The small death". It's hugely energetic.
+
+### Pregnancy and parenthood
+
+Particularly motherhood. The bond of growing and nourishing another life inside of you. Another soul. Someone who you bond with in a way that's otherwise unimaginable. In a way, what a privilege to be able to do that.
 
 ## Astrological / cosmological
 
@@ -182,10 +210,6 @@ It's definitely there. It's not even that far away. It's almost parallel to our 
 
 Why can we be transported to another place, so moved and affected by sound in so many nuanced ways? How can two people play the same thing and one sounds wonderful while the other awful?
 "Opening the gates of magic."
-
-### Pregnancy and parenthood
-
-Particularly motherhood. The bond of growing and nourishing another life inside of you. Another soul. Someone who you bond with in a way that's otherwise unimaginable. In a way, what a privilege to be able to do that.
 
 ### Names
 

@@ -52,27 +52,33 @@ How did we become this way?
 
 As Millennials in the West, we grew up during an unusually calm and stable societal period. By the time we reached young adulthood, the path to success, wealth and glory was well-established; ours to take should we choose.
 
-The grand-picture struggles of previous generations (e.g. civil rights) didn't really apply to us; we knew of them as historical events, sure. We were thankful for them. But our reality was that we grew up surrounded, coddled, by *almost-legendary* institutions, rich with historic significance. 
+The grand-picture struggles of previous generations (e.g. civil rights) didn't really apply to us; we knew of them as historical events, sure. We were thankful that they happened. But our reality was that we grew up surrounded, coddled, by *almost-legendary* institutions, rich with historic significance. Unlike prior generations, we didn't mind this situation and so we never really learned to rebel.
 
-Our game plan was logical:
+For ourselves, the game plan was logical:
 
-* Work hard, get into and graduate from a prestigious university. 
+* Work hard, get good grades, be admitted into and graduate from a prestigious university. 
 * Find your way into one of these elite institutions and slowly grind your way up the ladder. All of the good things would surely follow.
 
-It was with this pre-packaged life path that we learned to bend our will to that of the institutions, becoming, ourselves, institutionalised. You don't need to work a job in high finance or law to have felt the impact of what I'm describing. It's more subtly pervasive than that—a shift in the Zeitgeist itself. We, our workplaces, and even our personal lives began to bend this way.
+It seemed like a good deal. But along with this almost pre-packaged life path, we slowly learned to bend our will to that of the institutions, becoming, ourselves, institutionalised.
 
-We began self-policing the thoughts and opinions we'd share during real times of real moral crisis. We'd silently poll ourselves, "how could this impact my job?". High power often expects us to stay on-brand and on-message at all times. Some organisations fell hostage to the dreaded *HR-culture*.
+You don't need to work a job in high finance or law to have felt the impact of what I'm describing. It's more subtly pervasive than that—a shift in the Zeitgeist itself, the way we understand, act upon and gauge the value of things.
 
-The other pathology manifests during our leisure time, slowly sapping away any joy or passion from our hobbies. I've witnessed friends in London follow new interests, investing their time and energy before eventually—almost reflexively—confronting the familiar creeping thought... "*how can I make money from this? Is there a business here I can grow?*"
+Our workplaces, and even our personal lives began to bend towards the immense black hole gravity of the institution. With this, we began self-policing the thoughts and opinions we'd share during times of real moral crisis.
+
+We'd silently poll ourselves before speaking up: "how could this impact my job?". We've all heard about people being cancelled for posting the wrong thing. And high power often expects us to stay on-brand and on-message at all times.
+
+Another place our commercialised nature most clearly surfaces is during our leisure time. The instinct sits in the back of one's head, slowly sapping away any joy or passion from our hobbies.
+
+I've witnessed friends in London follow new interests, investing their time and energy before eventually—almost reflexively—confronting the familiar creeping thought... "*how can I make money from this? Is there a business here I can grow?*"
 
 Who could blame them. Under big-city competitive pressures, the idea of spending our precious leftover time on a leisurely pursuit for the sheer joy of it can seem audacious, even irrational, like moving against the herd:
 
 * Should I take on a new sport? Will it make me hotter? Will it help me find a suitable partner?
-* Shall I start drawing or painting? Can I begin exhibiting and selling prints so I can afford a larger mortgage? Maybe a second home?
+* Shall I start drawing or painting? Can I begin exhibiting and selling prints so I can afford a larger mortgage? Maybe even a second home?
 
-Our generation became very value-literate, transactional and end goal focussed. We had mastered *deferred gratification*. Millennials know all of the personal finance 'hacks', learned about risk-aware stock trading strategies and achievable tax loopholes.
+Our generation became very value-literate, transactional and end goal focussed. We mastered *deferred gratification*. We know all of the personal finance 'hacks', learned about risk-aware stock trading strategies and achievable tax loopholes. To some degree—and despite knowing better—we became quite superficial and materialistic. 
 
-Sometimes, we'd be rewarded for our efforts; a new job title, a podcast interview or even winning some kind of prize. Perhaps we'd be featured as a successful alumnus in our university magazine, or host a panel discussion full of renowned industry talking heads.
+Sometimes, we'd be rewarded for our efforts with a new job title, a podcast interview or even winning some kind of prize. Perhaps we'd be featured as a successful alumnus in our university magazine, or host a panel discussion full of renowned industry talking heads.
 
 As this progressed, the once-sulfurous smell of a corporate rat race job became normalised, even aspirational. Sure, Patrick Bateman was a bad guy... but at least he could afford the monthly mortgage payments, right?
 
