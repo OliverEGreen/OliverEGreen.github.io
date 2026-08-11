@@ -212,6 +212,8 @@ article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; l
 article.post > h1 { font-size: 29px; margin: 56px 0 20px; }
 article.post header .tagline { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
 article.post header::after { content: ''; display: block; height: 1px; background: var(--rule); margin: 32px 0 36px; }
+/* Posts that open with a header image don't need the divider line */
+article.post > header:has(+ p img)::after { background: transparent; margin: 16px 0 0; }
 article.post h2 { font-family: var(--sans); font-size: 23px; font-weight: 700; letter-spacing: -0.01em; margin: 44px 0 16px; color: var(--ink); }
 article.post h3 { font-family: var(--sans); font-size: 18px; font-weight: 700; margin: 36px 0 12px; color: var(--ink); }
 article.post p { margin: 0 0 20px; }
