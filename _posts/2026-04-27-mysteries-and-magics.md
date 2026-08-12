@@ -10,67 +10,93 @@ tagline: "A long list of loose threads to pull upon"
 unfinished: true
 ---
 
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 ## What's this about?
 
-This post is my ongoing, naïve attempt to understand the nature of *this*. You know (waving my hands around). Everything, I guess.
+This post is my ongoing, naïve attempt to understand the nature of... well, everything, I guess [waving my hands around].
 
-This isn't an ultra-serious, rigorous study. It's not meant to be. And I promise I won't bring up the multiverse or whether this is all a simulation. Except just then.
+What you won't find here is an ultra-serious, rigorous study. This is an exercise in mental play; in thinking creatively. This is not about being intellectually mean or me trying to appear clever. 
 
-Below you will find a loose, open-minded collection of thoughts that are hopefully fun to pick up and toy around with. My goal is to bring us *slightly closer* to understanding all of this. Either way, I hope you enjoy.
+Below, you will find a loose and open-minded collection of thoughts that are hopefully fun to pick up and toy around with. My lofty goal is to bring us *ever so slightly closer* to understanding all of this. I promise I won't bring up the multiverse or whether this is all a simulation (except just now...)
 
-## What this isn't
+I'll probably fail—but either way I hope you enjoy!
 
-This is not an exercise in being intellectually mean or trying to appear clever. It's far too easy to explain away anything with a dull answer; hundreds of years ago you may have got 'because God wills it'. We have slightly better answers now, but they're often still surface-level deep. Like, why are rainbows formed? 'Because it's sunny while it's raining'. Sure... 
+## For the curious
 
-The real answer, it turns out, is beautiful and [remarkably complex](https://www.youtube.com/watch?v=24GfgNtnjXc).
+It's far too easy to *explain away* practically anything. Often, the answer is pretty dull. Hundreds of years ago you may have been hit with "because God wills it" when you asked about nearly anything. 
 
-Incurious rationalisation is where inspiration goes to die. It closes down doors. Instead, please be generous.  Perhaps play with these ideas—even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
+We have slightly better answers now, but they're often still a little superficial when you start scratching away at their surface. For example: why are rainbows formed?
+
+"Because it's sunny while it's raining".
+
+Sure... 
+
+The deeper answer, it turns out, is beautiful and [remarkably complex](https://www.youtube.com/watch?v=24GfgNtnjXc).
+
+My point is, surface-level and incurious rationalisation is where *inspiration goes to die*. It closes down doors and discourages us from building up the genuinely useful habits of curiosity, creativity and mental play.
+
+Instead, please be generous.  Perhaps humour a few of these ideas—even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
 
 ## There were no instructions
 
-To begin with, it's worth remembering that we all just sort of landed here. We're improvising as best we can. There's no introduction, tutorial or scoreboard. Because of this, it's worth keeping our certainty in check. Being open minded (but not so much that our brains fall out).
+To begin with, it's worth remembering that we all just sort of landed here. We're improvising as best we can. There's no introduction, tutorial or scoreboard. 
 
-I remember in the original Super Mario game for the NES, the moment you pressed 'New Game', you just sort of... *fall out of the sky*. Then an evil mushroom starts walking towards you. There's no cutscene or backstory provided. You're just expected to get on with it and figure things out as you go along.
+Because of this, it's worth keeping our certainty in check. Being open minded (just not so much that our brains fall out).
+
+It's a silly comparison, but I remember in the original Super Mario game for the NES, the moment you pressed 'New Game', you just sort of... *fall out of the sky*. Then an evil mushroom starts walking towards you.
+
+There's no cutscene or backstory provided. You're just expected to get on with it and figure things out as you go along.
 
 In some ways, this is what happened to us, too. 
 
 ## The approach
 
-My approach is phenomenological—whenever I notice that things on the surface just don't quite add up. It's as if something more is going on that we haven't yet found a watertight explanation for. While it isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
+My approach is phenomenological—whenever I notice that things on the surface just *don't quite add up*. It's as if something more is going on that we haven't yet found a watertight explanation for.
 
-Perhaps, like a donkey staring at an iPad, we just aren't intelligent enough to directly comprehend the nature of reality. We can get only so far, but the big picture may simply be too complex for our fancy monkey brains.
+While this approach isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
-Alternatively, there may be whole dimensions of scientific exploration that we're able to grasp but haven't yet opened up. Areas which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would of course be exciting and we'd love to see it.
+Perhaps, like a donkey staring at an iPad, our species just isn't intelligent enough to directly comprehend the true nature of reality; the big picture may simply be too complex for our noble monkey brains.
 
-But since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
+Alternatively, there may be whole dimensions of scientific exploration that we're able to grasp but have yet to open up. Areas, which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would of course be exciting and we'd love to see it.
+
+But since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a valuable sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
 
 In 1500s Italy, Copernicus and Galileo weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter—they pieced the picture together from a handful of clues via inference.
 
-That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one or two of them will resonate with you and send you off daydreaming down some rabbithole.
+That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one or two of them will resonate with you and send you off daydreaming down some rabbithole. In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them.
 
-In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them. And have fun. This is only a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people since time immemorial.
+And have fun. This is only a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people since time immemorial.
 
 ## Mysteries
 
 ### Sleep
 
-We spend a third of our lives sleeping. Not just us—all known animals sleep in various ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
+We spend a third of our lives asleep. Not just us—all known animals sleep in varying different ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
 
-I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully formed, like a gift. Those moments when we are half asleep, half awake seem to provide a very special kind of thought. More loose, more freely associative. 
+It seems like those moments when we are half asleep, half awake seem to provide a very special kind of thought, one which is looser, more in touch with our unconscious selves and more freely-associative. I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully-formed, like a gift. 
 
 And sleep can play havoc with our sense of time; a short nap can feel like hours, or a deep sleep like a few seconds. Even a 10-minute nap can leave us feeling completely discombobulated for the rest of the day. 
 
 Anaesthetic, our magic formula for sleep is also poorly understood. We know exactly how much to use, all of its mitigating factors and effects. And yet the core mechanism by which it actually puts us to sleep is, again, unknown. 
 
-Given the prominence of sleep and its vital importance for life, you'd think we'd have whole universities dedicated to furthering our knowledge of the phenomenon. By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist. Yet, we seem to have a plethora of dental universities, publications and conferences and practically nothing for sleep. We just don't seem all that interested.
+Given the prominence of sleep and its vital importance for life, you'd think we'd have whole universities dedicated to furthering our knowledge of the phenomenon. By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist.
+
+It's funny—we seem to have a plethora of dental universities, publications and conferences and yet practically nothing for sleep. We just don't seem all that interested.
 
 ### Dreams
 
-Dreams are the most mysterious part of sleep. Apparently we dream regularly but forget most of them. Our memory of dreams may stick around during the day, or vanish just seconds after waking up.
+Dreams are the most mysterious part of sleep. Apparently we dream regularly but forget most of them. Our memory of dreams may stick around during the day, or instantly get wiped just a few seconds after waking up.
 
-Our unconscious seems to play a role in what we see; perhaps it's something we noticed, or heard someone say during the day. There seems to be an amount of mental processing happening. Some dreams may be considered prophetic, or like we are replaying versions of waking life over in our heads.
+Our unconscious seems to play a role in what we see; perhaps it's something we noticed, or heard someone say during the day but never fully processed at the time.
 
-After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud. Given that I've travelled precisely nowhere, I find this very odd.
+Some dreams may be considered prophetic, or some like we are replaying versions of waking life over in our heads. The language of symbols and metaphor appear to be a common theme throughout peoples' dreams, whether they carry a personal meaning to the dreamer, or speak more widely-understood human themes (such as flying or encountering death).
+
+After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud. Given that I've travelled precisely nowhere, I find this very odd. Maybe sleep causes us to temporarily leave our bodies?
 
 ## Time & space
 
@@ -92,11 +118,19 @@ Like with anaesthesia, we might not fully grasp the nature of time, but we're ab
 
 There's a similar strangeness to how we feel space.
 
-As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite low. Why is that? It's plenty of space for even very tall people to exist happily. Why should we prefer 2.6m or even 3m high ceilings? We seem to have a need for spaces that are illogically larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel incredibly strange.
+As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite low. Why is that? It's plenty of space for even very tall people to exist happily. Why should we prefer 2.6m or even 3m high ceilings? 
+
+Instinctively, we seem to have a need for spaces that are illogically larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel incredibly strange.
 
 It appears as if something extends above us and we can feel it. It wants the right ceiling height and we all just seem to instinctively know this.
 
-In other kinds of spaces, different rules apply. It's very obvious when many people gather together and are running at a highly emotional state: a cathedral, an airport or stadium. The more human energy, the higher the space needs to be somehow. Again, we all just seem to know this. Designing a smaller space wouldn't happen—even to a layman it would simply be too preposterous.
+In other kinds of spaces, different rules apply; it's very obvious when many people gather together and are running at a highly emotional state:
+
+* A cathedral
+* An airport
+* A stadium
+
+The more people and the higher their collective energy, the higher the space needs to be accommodate it. Again, we all just *seem to know this*. Designing a smaller space wouldn't happen—even to a layman it would simply be too preposterous.
 
 Finally, any architect will know that, subjectively, the size of a building under construction seems to change constantly. Perhaps it's way smaller than you thought it would feel, then suddenly the spaces become normal-sized or even feel enormous. It's very hard to explain.
 
@@ -106,7 +140,11 @@ Finally, any architect will know that, subjectively, the size of a building unde
 
 There is something special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. They're intrinsically beautiful, often enhancing whatever light the sky is providing that day.
 
-They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress. Why does it feel that way? Who knows. Some animistic cultures believe that nature—every stone, river and tree—carries its own spirit. In some limited way, nature itself can be a form of company.
+They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress.
+
+Why does it feel that way? Who knows.
+
+Some animistic cultures believe that nature—every stone, river and tree—carries its own spirit. In some limited way, nature itself can be a form of company.
 
 ### Trees and plant life
 
@@ -127,10 +165,6 @@ The physical presence of others. Zoom doesn't quite cut it. It's missing somethi
 How a living body can feel empty. How a dead body feels like nothing and no one to behold. How people with dementia fade in and out like a broken modem. They're suddenly there, you feel their presence, then they're gone again.
 
 Life and death—obviously gigantic and yet we don't understand the first thing about what they are. At least officially.
-
-### Touch
-
-Physical contact is very important to us. It seems to work on an energetic level. Even animals want to cuddle. Even the weight of a tiny bird or a butterfly on your finger is somehow magical.
 
 ### Live vs recorded
 
@@ -167,6 +201,10 @@ Why is it that, as an adult, holding hands with someone can be such an incredibl
 But, curiously, for many people this simple act can be easily as, or even more intense, than engaging in sex with someone. Why is that? 
 
 Our hands are obviously incredibly important to us, we use them for just about everything, they hold some of the densest collections of nerve endings in our bodies. But, beyond that, something else—something *energetic*—does seem to be at play when we connect in this way. It's certainly more than the sum of its parts.
+
+### Touch
+
+Physical contact is very important to us. It seems to work on an energetic level. Even animals want to cuddle. Even the weight of a tiny bird or a butterfly on your finger is somehow magical.
 
 ### Eye contact
 
