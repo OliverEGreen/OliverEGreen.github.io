@@ -17,7 +17,7 @@ Trips away are almost always for a short timeframe, we've already sunk the costs
 
 ### Travel and libido
 
-It's a famous cliche that we tend to especially notice attractive people when travelling; maybe a glance on the London Underground or in line at an airport. This is surprising – these places are typically seen as pretty unromantic and to be escaped as quickly as possible. But it doesn't seem to matter. 
+It's a famous cliche that we tend to especially notice attractive people when travelling; maybe a glance on the London Underground or in line at an airport. This is surprising—these places are typically seen as pretty unromantic and to be escaped as quickly as possible. But it doesn't seem to matter. 
 
 It doesn't stop once we're at our destination, either. For a surprising number of people, hotel check-in leads to a heightened sex drive. Something just seems to come over people. Again, on the surface this makes no sense. Why should our libido spike when being presented with a new room and a mattress that has seen hundreds of other couples go at it previously? Pay no mind.
 
@@ -37,7 +37,7 @@ Of course, if we moved there, we'd surely change.
 
 Those who have turned holidays into their everyday lives will have witnessed the transition. The practical realities setting in; appointments to register at the embassy, local traffic and recycling laws. You develop detailed opinions about the local markets and maybe even start to actively avoid the tourists. Before long, you feel like you need a holiday.
 
-It's also true that the place might retain much of its magic, but it's up to us to appreciate it and keep that fire burning within ourselves. If the trick is within us, I suppose the phenomenon we're witnessing is mostly internal – that far flung and exotic places help us to re-engage with a part of ourselves we've lost.
+It's also true that the place might retain much of its magic, but it's up to us to appreciate it and keep that fire burning within ourselves. If the trick is within us, I suppose the phenomenon we're witnessing is mostly internal—that far flung and exotic places help us to re-engage with a part of ourselves we've lost.
 
 ### Bringing it home
 

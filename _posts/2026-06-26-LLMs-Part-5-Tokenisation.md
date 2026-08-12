@@ -10,7 +10,7 @@ tagline: "In this post, I explore 3 different tokenisation approaches and show y
 image: /assets/images/posts/tokenisation-header.jpg
 ---
 
-![A Scrabble board where every tile is a subword token — 'un', 'able', 'tion', 'ing' — mid-game]({{ '/assets/images/posts/tokenisation-header.jpg' | relative_url }})
+![A Scrabble board where every tile is a subword token—'un', 'able', 'tion', 'ing'—mid-game]({{ '/assets/images/posts/tokenisation-header.jpg' | relative_url }})
 
 *This is Part 5 in my series on building language models. For more, see [Part 1](https://olliegreen.info/writing/LLMs-Part-1-Building-word2vec/), [Part 2](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/), [Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/) and [Part 4](https://olliegreen.info/writing/LLMs-Part-4-Transformer-Architecture/). In this post, I explore 3 different tokenisation approaches and show you the outcome of each as they are subtly different.*
 
@@ -33,11 +33,11 @@ We often hear the word 'token' in LLM contexts, but it's worth diving into what 
 Beyond this, using words as our base unit begins to get very tricky outside of the English language, when other languages (such as German or Turkish) like to agglomerate their words together:
 
 * *Abwasserbehandlungsanlage* (an example from the paper below), which is a waste-water treatement facility.
-* *Alamadık*, from Turkish, means "we were not able to buy" — a single verb stem (*al-*, "buy") with negation, ability, tense and pronoun all stacked on as suffixes. Efficient, but a nightmare for a word-level vocabulary.
+* *Alamadık*, from Turkish, means "we were not able to buy"—a single verb stem (*al-*, "buy") with negation, ability, tense and pronoun all stacked on as suffixes. Efficient, but a nightmare for a word-level vocabulary.
 
 Your next thought may be "how about we train on unique characters then?" and, again, this makes perfect sense. The number of unique characters in a book is far lower than the number of words, and there's a definite irreducibility to letters - you cannot break them down any further. And we did this too! Our [RNN](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/) and [LSTM](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/) are next-character predictors. But a next-character predictor is short-sighted, it's not got enough oversight to grab the sense of a sentence, as our examples later in this post will demonstrate.
 
-So, what then, if not words, or characters? The answer is a sort of half-way between character-level and word-level approaches – what we call tokens. These are the most commonly-recurring mini-sequences of letters, modular chunks of words, like 'ed', 'ology', 'ility' or 'tion'. The closest linguistic analogy might be syllables.
+So, what then, if not words, or characters? The answer is a sort of half-way between character-level and word-level approaches—what we call tokens. These are the most commonly-recurring mini-sequences of letters, modular chunks of words, like 'ed', 'ology', 'ility' or 'tion'. The closest linguistic analogy might be syllables.
 
 The useful thing about tokens is that they can be flexibly reconfigured into any number of tenses, singulars, plurals, conditionals, etc, by making only minor substitutions for other tokens, giving them a much greater efficiency at covering all the text in our corpus. 
 
@@ -84,7 +84,7 @@ I generated slightly more fake Harry Potter this time:
 > “But I need to know this year at the moment, I do.”
 > “Yeah, well, you know how the Dark Mark come out, all right? You just know what you say at the Ministry of Magic to do it for me, not the best in a very well — ” “You must take the Invisibility Cloak,” said Ron. “He could be too careful to do it.” Harry glared at her. He did not know what Ron had-
 
-Wow, ok. So overall, it's *not bad*! It's certainly got the same urgent tone as the previous sample, with lots of unfinished sentences and interruptions. It seems to have very solidly got the gist of certain Harry Potter scenes, but there's a slightly jarring lack of finesse in the language used – as if someone was writing fan fiction in a second language that they're still learning. 
+Wow, ok. So overall, it's *not bad*! It's certainly got the same urgent tone as the previous sample, with lots of unfinished sentences and interruptions. It seems to have very solidly got the gist of certain Harry Potter scenes, but there's a slightly jarring lack of finesse in the language used—as if someone was writing fan fiction in a second language that they're still learning. 
 
 ## Some training oddities
 
@@ -94,7 +94,7 @@ At first, you get the usual untrained noise. This is for character-level predict
 
 ![Untrained character-level output: random character soup](/assets/images/char-untrained-noise.png)
 
-After a few iterations, it's begun to understand that the space character appears between words, and it's even learned a few *very basic* words – often the most common (ie safest) words. So you just wind up with repetitive preposition soup: 
+After a few iterations, it's begun to understand that the space character appears between words, and it's even learned a few *very basic* words—often the most common (ie safest) words. So you just wind up with repetitive preposition soup: 
 
 ![Early training: repetitive preposition soup](/assets/images/preposition-soup.png)
 

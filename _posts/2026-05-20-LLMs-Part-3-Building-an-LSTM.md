@@ -17,7 +17,7 @@ In my last post, I built an RNN that was able to begin generating something you 
 
 LSTM ([Long Short-Term Memory](https://www.bioinf.jku.at/publications/older/2604.pdf)) is an approach from 1997, first published by the academics Hochreiter and Schmidhuber. Despite this paper's age, this approach became popular much later around 2014, when Sutskever et al (Google) [demonstrated using LSTMs for machine translation](https://proceedings.neurips.cc/paper_files/paper/2014/file/5a18e133cbf9f257297f410bb7eca942-Paper.pdf#:~:text=In%20this%20paper%2C%20we%20present,assumptions%20on%20the%20sequence%20structure.&text=Sutskever%2C%20and%20G.%20E.%20Hinton.%20ImageNet,classification%20with%20deep%20convolutional%20neural) (English <> French) with decent levels of success.
 
-LSTMs were the last big popular approach in the field of NLP before transformer architecture took over the space – and pretty much every other space in ML at the same time!
+LSTMs were the last big popular approach in the field of NLP before transformer architecture took over the space—and pretty much every other space in ML at the same time!
 
 ## Method
 

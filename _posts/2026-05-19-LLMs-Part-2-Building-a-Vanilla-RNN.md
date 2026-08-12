@@ -19,11 +19,11 @@ This is different to Word2Vec, which is really a naive embedding model; it's not
 
 This changed with our RNN. Today, we're building the Elman RNN (1990), the canonical first-generation recurrent network. Its defining feature is the "hidden state" that feeds into itself at each timestep.
 
-Contextual appreciation is very important for language models; later iterations of LLMs (such as ELMo) started becoming 'bi-directional'. Later innovations such as transformers brought the idea of self-attention, meaning a word's (or token's) meaning is understood within the full context of where it sits – both before and after. This context means the most likely next word (or token) can be predicted within this context, making predictions far more accurate.
+Contextual appreciation is very important for language models; later iterations of LLMs (such as ELMo) started becoming 'bi-directional'. Later innovations such as transformers brought the idea of self-attention, meaning a word's (or token's) meaning is understood within the full context of where it sits—both before and after. This context means the most likely next word (or token) can be predicted within this context, making predictions far more accurate.
 
 Building our vanilla RNN is more complicated than Word2Vec. It's where to begin to see a much wider range of 'standard' neural network methodologies and tooling entering the fray. We saw a few techniques come up in Word2Vec, but overall it was a pretty straightforward build.
 
-I'm intentionally writing everything using standard Python primitives and using exhaustively-explicit naming wherever possible. Pythonic, this isn't. External ML libraries are not allowed – not even something reasonable like pandas or numpy, which of course would feature heavily in more standard and performant approaches. *(By the way, if you're looking for a beautiful, minimal implementation of an RNN, look no further than Andrej Karpathy's 2015 [blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/))*.
+I'm intentionally writing everything using standard Python primitives and using exhaustively-explicit naming wherever possible. Pythonic, this isn't. External ML libraries are not allowed—not even something reasonable like pandas or numpy, which of course would feature heavily in more standard and performant approaches. *(By the way, if you're looking for a beautiful, minimal implementation of an RNN, look no further than Andrej Karpathy's 2015 [blog post](https://karpathy.github.io/2015/05/21/rnn-effectiveness/))*.
 
 ## The approach
 
@@ -35,7 +35,7 @@ Another difference is that we'll be predicting next character rather than words.
 
 1. Bring in the corpus/training data, create a list of unique characters.
 2. Set up the two-way dictionaries which map words to a unique ID, and vice versa. This is standard in language modelling because using primitives will be much faster to access/read than custom objects.
-3. At its core, the RNN requires 3 matrices and 2 vectors. The matrices bridge from input weights, to hidden weights to output weights. The middle matrix here is what handles the 'memory' of the RNN. Additional to this are two vectors for bias – from which the RNN's predicted probabilities for the next character are calculated. All 3 matrices are initialised with small random noise values to begin with, while the vectors are all zeros.
+3. At its core, the RNN requires 3 matrices and 2 vectors. The matrices bridge from input weights, to hidden weights to output weights. The middle matrix here is what handles the 'memory' of the RNN. Additional to this are two vectors for bias—from which the RNN's predicted probabilities for the next character are calculated. All 3 matrices are initialised with small random noise values to begin with, while the vectors are all zeros.
 4. In order to make this RNN train properly, I had to implement the same Adagrad approach as Karpathy used in his blog posts. This allowed my training loss to steadily decrease over time, whereas it bounced around a lot using standard gradient descent. The Adagrad approach essentially involves recreating our five matrices from above but for memory purposes, which is what allows us to be a bit more picky about the learning rate for each parameter, and which prevents this bouncing around.
 
 With these matrices in place, it is possible to start writing the forward pass and backpropagation algorithms. 
@@ -49,7 +49,7 @@ When training, what happens in order is:
 3. We calculate the cross_entropy loss, i.e. how right or wrong these predictions were.
 4. Using this, we run backprop, which calculates the deltas (i.e. how much each of our matrices and vectors was wrong by). Because each of these is a multi-dimensional beast, they're a "gradient" in parameter space. This is known as BPTT (backpropagation through time) and the maths can get a little gnarly at this point.
 5. We then need to clamp our gradients. Because we're doing a lot of multiplication steps, there is a tendency for numbers to spiral towards infinity or negative infinity known as 'gradient explosion'. Either of these outcomes would be less than ideal, so we artificially check to ensure all gradients are limited to values between 5 and -5. This feels like a bit of a 'folk technique' to me.
-6. Our final key step is updating the original 3 matrices and 2 vectors – and their corresponding memory stores. This is where we carry out the actual gradient descent.
+6. Our final key step is updating the original 3 matrices and 2 vectors—and their corresponding memory stores. This is where we carry out the actual gradient descent.
 7. The final step is cleanup - moving the position pointer along our sequence to take in fresh data and updating the hidden state to be our final hidden state (i.e. our memory) for the next loop.  
 
 ## Training
@@ -91,7 +91,7 @@ The clear next evolution in language modelling is LSTMs. These are another step 
 
 ## Conclusion
 
-Another metaphor for neural networks dawned on me while reflecting on this RNN – they're a sort of smart-dumb approach.
+Another metaphor for neural networks dawned on me while reflecting on this RNN—they're a sort of smart-dumb approach.
 
 I imagined someone headbutting a piece of sheet metal thousands of times. Notwithstanding damage to their head (or the metal), with enough persistence, we'd eventually be able to make a reasonable casting of their face from the indent.
 

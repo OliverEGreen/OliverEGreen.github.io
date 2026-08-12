@@ -37,7 +37,7 @@ Similarly, this age also has its downsides which might be: an emotional coldness
 
 **How AI fits into the picture**
 
-What I wanted to write about, is that these Aquarian qualities seem to overlap very much with the utopian AI visions that our most powerful tech leaders seem keen to usher into our world. I suspect that we are heading quite rapidly towards automated, high-tech governance of ourselves as a species – with all that it brings. 
+What I wanted to write about, is that these Aquarian qualities seem to overlap very much with the utopian AI visions that our most powerful tech leaders seem keen to usher into our world. I suspect that we are heading quite rapidly towards automated, high-tech governance of ourselves as a species—with all that it brings. 
 
 The current year is 2026 and human governments have let us down more times, and in worse ways, than we could have ever imagined. Yes, power has always corrupted, but in recent years this has become more blatantly obvious.
 

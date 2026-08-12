@@ -15,7 +15,7 @@ Until now, it had always been an exciting date in my calendar, buzzing with opti
 
 Construction was largely left behind by the SaaS revolution. The daily reality is that most of us remain tied to 1990s desktop software on Windows PCs. NXT BLD is a global role-call of rebellious construction-tech upstarts and the last decade has seen these firms organically develop in both maturity and momentum.
 
-This year, that optimistic atmosphere had changed. You've already seen the punchline coming; founders are facing insecurity stemming from the unstoppable rise of AI – what it means for us and our sector. If nothing else, it certainly *feels* like an existential threat. Most of these firms are B2B (I'll get more into what that means later).
+This year, that optimistic atmosphere had changed. You've already seen the punchline coming; founders are facing insecurity stemming from the unstoppable rise of AI—what it means for us and our sector. If nothing else, it certainly *feels* like an existential threat. Most of these firms are B2B (I'll get more into what that means later).
 
 All year, I've been [thinking deeply](https://www.businessinsider.com/openai-merch-supply-co-2025-12) about the kinds of impact AI might have on different parts of the workforce. What follows is my best guess as to where all of this is going. 
 
@@ -44,9 +44,9 @@ This makes SaaS platforms vulnerable. They seem extremely uncompetitive compared
 *  Customers are locked into annual price rises over which they have little-to-no control. You're just another inhabitant of someone else's walled garden.
 * Customers need to share their valuable IP regarding products, materials, processes, patent information etc with an external company. This requires a lot of trust in a SaaS company, and faith in their data security practices.
 
-In reality, customers never really want all features of the full platform. Platforms are broad and complex beasts. It's commonly said that your customer only buys your software for 3 or 4 features – it's just that each customer wants a different set of features. 
+In reality, customers never really want all features of the full platform. Platforms are broad and complex beasts. It's commonly said that your customer only buys your software for 3 or 4 features—it's just that each customer wants a different set of features. 
 
-It's not great on the other side, either: SaaS companies spend most of their time, money and effort on the construction and maintenance of the platform itself – data security, financial regulations and internationalisation, performance, reliability, legal requirements. Very little of the effort expended is in leveraging how the firm's business domain expertise can bring value to their customers. 
+It's not great on the other side, either: SaaS companies spend most of their time, money and effort on the construction and maintenance of the platform itself—data security, financial regulations and internationalisation, performance, reliability, legal requirements. Very little of the effort expended is in leveraging how the firm's business domain expertise can bring value to their customers. 
 
 As a potential SaaS customer, your cost-benefit analysis is clear: hire your own developers and build what you need in-house. It will be cheap, probably fairly fast, exactly the way you want it, with a low ongoing maintenance cost. Not to mention, leading such a project will do wonders for your career and professional reputation! It's a rare win-win-win scenario. 
 
@@ -74,7 +74,7 @@ There's all the benefits of vibe-coding your own solution (keeps your IP in hous
 
 ### Google Disco and where tech is heading
 
-People often discredit "vibe coding" as being unfit for serious projects. I've heard the sentiment confidently declared all over – "it generates shabby software that can look great but is poorly-structured". Codex, Cursor or Claude[^2] will soon lead you [a fool] into a swamp of unmaintainable chaos that you'll come to regret. If only you'd toiled away in the mines of an Agile SDLC.
+People often discredit "vibe coding" as being unfit for serious projects. I've heard the sentiment confidently declared all over—"it generates shabby software that can look great but is poorly-structured". Codex, Cursor or Claude[^2] will soon lead you [a fool] into a swamp of unmaintainable chaos that you'll come to regret. If only you'd toiled away in the mines of an Agile SDLC.
 
 [^2]: Hmm these all begin with C's. Any theories as to why?
 
@@ -107,11 +107,11 @@ But it's not all doom and gloom. There *is* still enormous value in tech. It's j
 
 It's both good and bad news for the world of professional services, the LLPs. The bad news is that they are likely to be squeezed; AI will see their competition get more intense and their clients become more demanding, expecting more outputs, faster and for less.
 
-The good news is that there's no way to fully automate these firms away. Humans still have one irreplaceable quality that AI simply cannot – they can be sued. 
+The good news is that there's no way to fully automate these firms away. Humans still have one irreplaceable quality that AI simply cannot—they can be sued. 
 
 Humans in consultancies already act as a sponge for risk, taking ultimate responsibility for the information and sign-offs they produce. People can be insured, taken to court, fined or even presented with jail time.
 
-The legal sector is slow – lawsuits against tech/AI firms will remain niche and it will take many years for meaningful case law to really establish itself in this fast moving field. Nobody will insure an AI against its own misdeeds. For now, at least. 
+The legal sector is slow—lawsuits against tech/AI firms will remain niche and it will take many years for meaningful case law to really establish itself in this fast moving field. Nobody will insure an AI against its own misdeeds. For now, at least. 
 
 There is also opportunity in this. Since humans are required for sign-off, it might finally be the time to start taking risk incredibly seriously. The next wave of popular SaaS products could very well be risk assessment studios. Lots of pretty dashboards and red flashing lights. You get the vibe. 
 

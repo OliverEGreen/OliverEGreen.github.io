@@ -30,8 +30,8 @@ After building a working transformer model, I was left wondering about where to 
 
 But it's not architectural design that is behind the astronomical leaps and bounds we've seen since GPT-1:
 
-* The most obvious difference between GPT-1 and today's models is the <u>astronomical</u> difference in scale. While GPT-1 can be trained locally on a laptop, training anything like GPT-3 is still a multi-million pound undertaking. And it is in this scale – when language models became *large* language models – that most of the really interesting emergent behaviours started appearing (this is worth a blog post on its own).
-* The other half of the equation is something we've not covered yet – fine tuning and post-training. Everything we've covered to date can be labelled as 'pre-training'. While early language models were prone to hallucinations and had tiny context windows, modern model training approaches were vastly able to counteract these and hard-code more desirable behaviours (like a prompt/response chat architecture). I'll also write a blog post on this, as it's a separate but fascinating area of domain knowledge. 
+* The most obvious difference between GPT-1 and today's models is the <u>astronomical</u> difference in scale. While GPT-1 can be trained locally on a laptop, training anything like GPT-3 is still a multi-million pound undertaking. And it is in this scale—when language models became *large* language models—that most of the really interesting emergent behaviours started appearing (this is worth a blog post on its own).
+* The other half of the equation is something we've not covered yet—fine tuning and post-training. Everything we've covered to date can be labelled as 'pre-training'. While early language models were prone to hallucinations and had tiny context windows, modern model training approaches were vastly able to counteract these and hard-code more desirable behaviours (like a prompt/response chat architecture). I'll also write a blog post on this, as it's a separate but fascinating area of domain knowledge. 
 
 ## Why build GPT-2?
 
@@ -63,7 +63,7 @@ The whole 400-line backwards pass is captured in a single line now. At the time,
 
 We're moving deep into optimisation territory now, so grab your oxygen mask. Just like when we put on our C/C++/Rust hats, we have to start thinking at the computer science level and paying close attention to things like memory access and writing operations.
 
-Many of these optimisations aren't paper-faithful to GPT-2 by design – we have better, faster tooling now and using this is what makes training a cheap and performant model possible for a hobbyist.
+Many of these optimisations aren't paper-faithful to GPT-2 by design—we have better, faster tooling now and using this is what makes training a cheap and performant model possible for a hobbyist.
 
 * A lot of the required optimisations are device-sensitive. I've been building the models on my Mac M1, which uses Apple's propietary Apple Silicone hardware. But I would eventually need to train this model on NVIDIA GPUs, which is known as the 'CUDA' platform. 
 
@@ -96,7 +96,7 @@ Thankfully, HuggingFace does us all a great service here!
 
 [^3]: Fun fact: HuggingFace is named after the official name for this emoji - 🤗
 
-They provide multiple curated datasets. I went with the FineWeb Edu set, which largely consists of encyclopaedia entries and quality news articles. As corpus flavours go, it's bland – in fact it's so dry you could light a fire with it. It reads a lot like the unflavoured English language. 
+They provide multiple curated datasets. I went with the FineWeb Edu set, which largely consists of encyclopaedia entries and quality news articles. As corpus flavours go, it's bland—in fact it's so dry you could light a fire with it. It reads a lot like the unflavoured English language. 
 
 There's a well-known rule of thumb for choosing an appropriately-sized corpus known as the 'Chinchilla Rule', and this corpus was perfectly chinchilla-sized.
 
@@ -108,7 +108,7 @@ When it comes to tokenising this corpus, GPT-2 also uses what's called byte-leve
 
 * Byte-Pair encoding was originally a data compression technique from the world of computer and data science. It was really operating at the level of bytes and bits, hence the name. 
 * The language modelling world was inspired by this technique when developing the BPE tokenisation approach. And they kept the name, even though it was more of an analogy, as the tokens are very much human-readable text chunks, like 'anti-' or '-tion'. Not bytes.
-* OpenAI then decided to start parsing all their tokens at the level of the UTF-8 byte stream. This is a smart move. It means they can never encounter an unexpected token, as UTF-8 has [plenty of room](https://www.youtube.com/watch?v=MijmeoH9LT4) in its scope to capture all and every possible choice of symbol – past, present and future. 
+* OpenAI then decided to start parsing all their tokens at the level of the UTF-8 byte stream. This is a smart move. It means they can never encounter an unexpected token, as UTF-8 has [plenty of room](https://www.youtube.com/watch?v=MijmeoH9LT4) in its scope to capture all and every possible choice of symbol—past, present and future. 
 * We can used this exact tokeniser today, it's called *tiktoken*. In retrospect, this was probably a poor choice of name. I assume that it was just a funny-at-the-time play on words... but then TikTok did really kind of take off. The timeline adds up. If so, whoops.
 
 If you're curious, the script I wrote to use tiktoken's tokeniser lives [here](https://github.com/OliverEGreen/OliverEGreen.github.io/blob/main/LLM-Learning/GPT-2/prepare_data.py). It's so small you can practically inhale it.
@@ -121,7 +121,7 @@ The idea of renting hardware in the cloud was very new to me and pretty exciting
 
 The sign-up process was laudably smooth. I'd recommend this service to anyone as it's delightfully no-nonsense. It was now time to **make some moves**.
 
-![RunPod deploy screen — selecting the NVIDIA H100](/assets/images/runpod-deploy-config.png)
+![RunPod deploy screen—selecting the NVIDIA H100](/assets/images/runpod-deploy-config.png)
 
 I selected the NVIDIA H100 GPU, an industry-standard workhorse and set the GPU count to 4x. Everything updated instantly to show me the hourly cost. 
 
@@ -138,7 +138,7 @@ Beyond this, everything passed, and so it was time to press the buttons for real
 * Tokenisation ran for around 20 minutes, creating 2.5B tokens, which we then ingested for the following step. This cost me maybe £2.
 * Training ran for around an hour across the 4 GPUs, costing around £11.
 
-In total, this episode cost me £13 – equivalent to splashing out *a little* at Pret a Manger. To give a sense of the next scale jump, training an equivalent GPT-3 would still cost in the low millions.
+In total, this episode cost me £13—equivalent to splashing out *a little* at Pret a Manger. To give a sense of the next scale jump, training an equivalent GPT-3 would still cost in the low millions.
 
 The result of my efforts was a weights file of around 1.5GB. Two thirds of this size comes from using AdamW optimisation!
 
@@ -179,7 +179,7 @@ They call that narrative payoff.
 
 ### In-context learning
 
-One interesting aspect of GPT-2 is that it began offering us some very early signs of emergent behaviours – unexpected abilities naturally rising out from language models that had never been formally considered or trained for. And they keep happening and surprising us. 
+One interesting aspect of GPT-2 is that it began offering us some very early signs of emergent behaviours—unexpected abilities naturally rising out from language models that had never been formally considered or trained for. And they keep happening and surprising us. 
 
 For example, our model is capable of learning a basic question-and-answer like syntax from a single example given in the prompt (called 'one-shot learning'). 
 

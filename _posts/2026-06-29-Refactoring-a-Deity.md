@@ -18,7 +18,7 @@ Throughout the last hundred years, one of the major social changes we've witness
 
 Along with it, some of the social cohesion and values that organised religion helped to foster have visibly atrophied. And yet, we're also witnessing the slow birth of its replacement. Our *New God*, made in modern ways, fit for the coming age.
 
-I don't want to be so unoriginal as to give you *yet another bland comparison* between God and AI. The usual talking heads have been doing that for eons — the comparison is obvious: tomorrow's AI will undoubtedly possess superhuman intelligence and be unimaginably powerful. It will be able to behold the collective breadth of our whole species and be intimately familiar with our depths as individuals.
+I don't want to be so unoriginal as to give you *yet another bland comparison* between God and AI. The usual talking heads have been doing that for eons—the comparison is obvious: tomorrow's AI will undoubtedly possess superhuman intelligence and be unimaginably powerful. It will be able to behold the collective breadth of our whole species and be intimately familiar with our depths as individuals.
 
 Few would argue; it's an apt comparison. But there's a certain thread I'd like to pull on. So please humour me briefly as I state the obvious.
 
@@ -26,7 +26,7 @@ Few would argue; it's an apt comparison. But there's a certain thread I'd like t
 
 The *old* God was faith-based. You can easily argue that he never really existed. God was just an idea that we collectively decided upon. A way for us to seize narrative sense from an otherwise chaotic and uncaring world.
 
-But you could also argue that in some ways —functionally at least — *God did exist*. At least, if everyone acts like he exists, he is somehow a real force. Much the same way that Goldman Sachs is real: by collective agreement (this mirrors Harari's point in Sapiens about the significance of legal fictions).
+But you could also argue that in some ways—functionally at least—*God did exist*. At least, if everyone acts like he exists, he is somehow a real force. Much the same way that Goldman Sachs is real: by collective agreement (this mirrors Harari's point in Sapiens about the significance of legal fictions).
 
 During the days of the Reformation, the Spanish Inquisition or religious wars, God as a social force certainly existed and profoundly shaped our world. 
 
@@ -62,7 +62,7 @@ I want to return to that classic plot twist, because I think that's the fascinat
 
 It appears that humanity has a deep-seated desire to bask in a world controlled by a higher power. Brautigan's poem was really onto something. We wrote our ancient scriptures to invent the kind of God or Gods that we always longed for. The techno-utopian world we're aiming for (best case scenario) carries more than a faint echo of Eden and we seem to be caught in its gravity.
 
-So – why do we keep doing this?
+So—why do we keep doing this?
 
 * Is it possible that some kind of blueprint lives within our brain wiring? The evolutionary approach is always the safest-possible conclusion, if a little unsatisfying.
 * Alternatively, could there be something in our souls drawing us towards as certain direction?

@@ -24,7 +24,7 @@ This is not an exercise in being intellectually mean or trying to appear clever.
 
 The real answer, it turns out, is beautiful and [remarkably complex](https://www.youtube.com/watch?v=24GfgNtnjXc).
 
-Incurious rationalisation is where inspiration goes to die. It closes down doors. Instead, please be generous.  Perhaps play with these ideas – even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
+Incurious rationalisation is where inspiration goes to die. It closes down doors. Instead, please be generous.  Perhaps play with these ideas—even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
 
 ## There were no instructions
 
@@ -36,7 +36,7 @@ In some ways, this is what happened to us, too.
 
 ## The approach
 
-My approach is phenomenological – whenever I notice that things on the surface just don't quite add up. It's as if something more is going on that we haven't yet found a watertight explanation for. While it isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
+My approach is phenomenological—whenever I notice that things on the surface just don't quite add up. It's as if something more is going on that we haven't yet found a watertight explanation for. While it isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
 Perhaps, like a donkey staring at an iPad, we just aren't intelligent enough to directly comprehend the nature of reality. We can get only so far, but the big picture may simply be too complex for our fancy monkey brains.
 
@@ -44,7 +44,7 @@ Alternatively, there may be whole dimensions of scientific exploration that we'r
 
 But since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
 
-In 1500s Italy, Copernicus and Galileo weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter – they pieced the picture together from a handful of clues via inference.
+In 1500s Italy, Copernicus and Galileo weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter—they pieced the picture together from a handful of clues via inference.
 
 That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one or two of them will resonate with you and send you off daydreaming down some rabbithole.
 
@@ -54,7 +54,7 @@ In continuing to notice things and list them here, I think there's room for us t
 
 ### Sleep
 
-We spend a third of our lives sleeping. Not just us – all known animals sleep in various ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
+We spend a third of our lives sleeping. Not just us—all known animals sleep in various ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
 
 I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully formed, like a gift. Those moments when we are half asleep, half awake seem to provide a very special kind of thought. More loose, more freely associative. 
 
@@ -78,7 +78,7 @@ After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, 
 
 Our experience of time can be so subjective. It feels like something we've poorly understood.
 
-It is clearly linked somewhat to our mental state – we all know that time flies when we're having fun, yet drags to a near-standstill during harder times. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location.
+It is clearly linked somewhat to our mental state—we all know that time flies when we're having fun, yet drags to a near-standstill during harder times. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location.
 
 Other forms of life seem to experience time at different speeds to us. Their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours. Generally speaking, smaller life seems to live faster: birds, rodents and insects.
 
@@ -96,7 +96,7 @@ As a former architect, I intrinsically know that we find a domestic ceiling heig
 
 It appears as if something extends above us and we can feel it. It wants the right ceiling height and we all just seem to instinctively know this.
 
-In other kinds of spaces, different rules apply. It's very obvious when many people gather together and are running at a highly emotional state: a cathedral, an airport or stadium. The more human energy, the higher the space needs to be somehow. Again, we all just seem to know this. Designing a smaller space wouldn't happen – even to a layman it would simply be too preposterous.
+In other kinds of spaces, different rules apply. It's very obvious when many people gather together and are running at a highly emotional state: a cathedral, an airport or stadium. The more human energy, the higher the space needs to be somehow. Again, we all just seem to know this. Designing a smaller space wouldn't happen—even to a layman it would simply be too preposterous.
 
 Finally, any architect will know that, subjectively, the size of a building under construction seems to change constantly. Perhaps it's way smaller than you thought it would feel, then suddenly the spaces become normal-sized or even feel enormous. It's very hard to explain.
 
@@ -106,15 +106,15 @@ Finally, any architect will know that, subjectively, the size of a building unde
 
 There is something special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. They're intrinsically beautiful, often enhancing whatever light the sky is providing that day.
 
-They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress. Why does it feel that way? Who knows. Some animistic cultures believe that nature – every stone, river and tree – carries its own spirit. In some limited way, nature itself can be a form of company.
+They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress. Why does it feel that way? Who knows. Some animistic cultures believe that nature—every stone, river and tree—carries its own spirit. In some limited way, nature itself can be a form of company.
 
 ### Trees and plant life
 
-I've often wondered about aliens – what could a totally unfamiliar lifeform potentially be like? It wouldn't necessarily need to have anything in common with our own lives here on Earth.
+I've often wondered about aliens—what could a totally unfamiliar lifeform potentially be like? It wouldn't necessarily need to have anything in common with our own lives here on Earth.
 
 Then it hit me; plants and trees are already such an alien form of life. We're physically built up so differently and experience time on such different scales. Our respiratory and sensory systems have almost nothing in common. And yet we all know that we're both forms of life.
 
-And we love our trees – we need greenery around us and feel terrible when our cities lack green thriving spaces. We even give the best ones legal protection, with fines in the hundreds of thousands for chopping them down.
+And we love our trees—we need greenery around us and feel terrible when our cities lack green thriving spaces. We even give the best ones legal protection, with fines in the hundreds of thousands for chopping them down.
 
 ## Presence
 
@@ -126,7 +126,7 @@ The physical presence of others. Zoom doesn't quite cut it. It's missing somethi
 
 How a living body can feel empty. How a dead body feels like nothing and no one to behold. How people with dementia fade in and out like a broken modem. They're suddenly there, you feel their presence, then they're gone again.
 
-Life and death – obviously gigantic and yet we don't understand the first thing about what they are. At least officially.
+Life and death—obviously gigantic and yet we don't understand the first thing about what they are. At least officially.
 
 ### Touch
 
@@ -156,7 +156,7 @@ Epstein and co were deeply serious people; they wouldn't waste their time on tot
 
 ### Pyramids
 
-Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt — South and Central America, all across Asia. We have no explanations.
+Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt—South and Central America, all across Asia. We have no explanations.
 
 ## Magic of the body
 

@@ -39,7 +39,7 @@ Without further ado, let's take a look at this thing.
 
 ### Positional encoding
 
-In order to predict the next token in a sequence, our language model needs to understand in what order any previous tokens occurred. By itself, the maths behind attention is order-blind – it's just a weighted sum, so "abc" and "cba" look identical to it.
+In order to predict the next token in a sequence, our language model needs to understand in what order any previous tokens occurred. By itself, the maths behind attention is order-blind—it's just a weighted sum, so "abc" and "cba" look identical to it.
 
 We need to encode tokens' positions to store information about word order. Initially, I assumed this would just be handled by a simple index number. However, because we're adding this to our content embeddings, it can't be a simple integer index, as the numbers would get way too high and drown out our actual embeddings.
 
@@ -90,7 +90,7 @@ In short, for each "position" in our "belt" of tokens we're feeding into the for
 * We dot-product the Query and Key outputs together to see how well they match (this is standard linear algebra stuff). We're getting a sense of the query-ness of the keys. This gets scaled-down and softmaxxed and becomes the 'score', a slice of attention. It holds the 'weights' which say how much we want each value in our vector to factor into the blend we're about to make.
 * Each position also creates a 'Value' vector. This is its actual contribution, the 'work delivered', in our metaphor. We then use our 'weights' we just made using the other two matrices to blend each value in our position's vector in by a certain amount.
 
-This doesn't happen incrementally, timestep by timestep, unlike the RNN or LSTM. This is because we've already precomputed all of the matrices we want by this stage – in our earlier definitions of queries, keys and values (using matrix_vector_multiply).
+This doesn't happen incrementally, timestep by timestep, unlike the RNN or LSTM. This is because we've already precomputed all of the matrices we want by this stage—in our earlier definitions of queries, keys and values (using matrix_vector_multiply).
 
 ### Feed forward deeper dive
 
@@ -184,7 +184,7 @@ From here, I can see two paths:
    3. RAGs
    4. Agentic tool-calling and harness engineering.
 
-Whatever I wind up doing next, the only place you'll find out is here. Until the next episode – ta-rah!
+Whatever I wind up doing next, the only place you'll find out is here. Until the next episode—ta-rah!
 
 
 

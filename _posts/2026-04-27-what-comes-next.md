@@ -20,7 +20,7 @@ unfinished: true
 
 Let's be fair.
 
-The ferocious speed and scale of *big-picture* change that we're currently living through can be terrifying. Frankly, it probably *should* be — like the [kneecap test](https://en.wikipedia.org/wiki/Patellar_reflex) that proves we're still functioning normally.
+The ferocious speed and scale of *big-picture* change that we're currently living through can be terrifying. Frankly, it probably *should* be—like the [kneecap test](https://en.wikipedia.org/wiki/Patellar_reflex) that proves we're still functioning normally.
 
 As we barrel towards the fever dream of AI being better than us at almost everything[^1], our organic human abilities begin to look very outclassed, glacial and meagre. Furthermore, the sheer magnitude of the financial support backing this change can make the endgame feel inevitable. It's a lot to take in.
 
@@ -192,7 +192,7 @@ But you need not look far to see through the illusion; one example is we're curr
 
 [^7]: NileRed, Backyard Scientist, Veritasium, 3Blue1Brown.
 
-Any cursory reading of their channels will show that they're genuinely onto something good and almost all of these creators began more or less from scratch. Watch Clickspring [machine the Antikythera Mechanism](https://www.youtube.com/watch?v=ML4tw_UzqZE) using period-correct tools, [Primitive Technology](https://www.youtube.com/@primitivetechnology) building civilisation from mud in wordless silence, or Tasting History [recreating the carbonised bread of Pompeii](https://www.youtube.com/watch?v=Sw2qrt6tOKw). Meanwhile, the [Vesuvius Challenge](https://scrollprize.org/) is quietly using AI to read the ancient scrolls that Vesuvius carbonised — without ever unrolling them. And I think it's only a matter of time before a YouTuber will uncover some genuinely new area of science. It's just one example, but it shows that we can learn to get curious again — it's not even that hard.
+Any cursory reading of their channels will show that they're genuinely onto something good and almost all of these creators began more or less from scratch. Watch Clickspring [machine the Antikythera Mechanism](https://www.youtube.com/watch?v=ML4tw_UzqZE) using period-correct tools, [Primitive Technology](https://www.youtube.com/@primitivetechnology) building civilisation from mud in wordless silence, or Tasting History [recreating the carbonised bread of Pompeii](https://www.youtube.com/watch?v=Sw2qrt6tOKw). Meanwhile, the [Vesuvius Challenge](https://scrollprize.org/) is quietly using AI to read the ancient scrolls that Vesuvius carbonised—without ever unrolling them. And I think it's only a matter of time before a YouTuber will uncover some genuinely new area of science. It's just one example, but it shows that we can learn to get curious again—it's not even that hard.
 
 I believe unlocking our curiosity and embracing our inner geekery forms the second part of our answer.
 
@@ -370,7 +370,7 @@ Microplastics and PFAS.
 
 ## Reversing societal decline
 
-Perhaps a rebuilding of society — of the norms that suit us as a whole. Respect, a return of public behavioural norms. Restoring trust in authority.
+Perhaps a rebuilding of society—of the norms that suit us as a whole. Respect, a return of public behavioural norms. Restoring trust in authority.
 
 Maybe letters will come back. Real proper ones. Not generated content but that slow, considered and highly personal hobby of communicating with loved ones. Men and women of letters.
 

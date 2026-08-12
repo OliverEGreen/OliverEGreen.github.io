@@ -148,7 +148,7 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 }
 article.post a.see-all {
   background: var(--ink); background-image: none; color: var(--bg);
-  border-bottom: none; font-family: var(--sans);
+  border-bottom: none; text-decoration: none; font-family: var(--sans);
 }
 article.post a.see-all:hover { background: var(--accent-deep); background-image: none; color: var(--bg); }
 .see-all:hover { background: var(--accent-deep); color: var(--bg); background-image: none; }
@@ -236,11 +236,13 @@ article.post em { font-style: italic; }
 
 /* Links: subtle hairline + sweep on hover, flood on press */
 article.post a {
-  color: inherit; border-bottom: 1.5px solid oklch(0.8 0.07 45);
-  background: linear-gradient(var(--sweep), var(--sweep)) no-repeat left bottom / 0% 60%;
-  transition: background-size .25s ease, color .15s ease, border-bottom-color .15s ease;
+  color: oklch(0.21 0.05 45);
+  text-decoration: underline; text-decoration-color: oklch(0.89 0.035 45);
+  text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-skip-ink: auto;
+  background: linear-gradient(var(--sweep), var(--sweep)) no-repeat left bottom / 0% 45%;
+  transition: background-size .25s ease, color .15s ease, text-decoration-color .15s ease;
 }
-article.post a:hover { color: var(--ink-strong); background-size: 100% 60%; border-bottom-color: oklch(0.58 0.13 45); }
+article.post a:hover { color: #000; background-size: 100% 45%; text-decoration-color: oklch(0.7 0.09 45); }
 article.post a:active { background-image: linear-gradient(var(--sweep-press), var(--sweep-press)); background-size: 100% 100%; }
 
 /* Table of contents (kramdown {:toc}) */
@@ -256,12 +258,12 @@ article.post #markdown-toc {
 }
 article.post #markdown-toc li { margin: 3px 0; }
 article.post #markdown-toc ul { padding-left: 16px; margin: 2px 0 0; }
-article.post #markdown-toc a { border-bottom: none; background-image: none; color: var(--ink-body); }
+article.post #markdown-toc a { border-bottom: none; text-decoration: none; background-image: none; color: var(--ink-body); }
 article.post #markdown-toc a:hover { color: var(--accent-deep); }
 
 /* Footnotes (kramdown) */
 article.post sup a, article.post .footnotes a.reversefootnote {
-  color: var(--accent-link); background: none; border-bottom: none;
+  color: var(--accent-link); background: none; border-bottom: none; text-decoration: none;
   font-family: var(--sans); font-weight: 600;
 }
 article.post sup a { font-size: 12px; }
@@ -313,13 +315,13 @@ article.post hr { border: 0; height: 1px; background: var(--rule); margin: 44px 
 .cv-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; font-family: var(--sans); }
 .btn-pill {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--ink); color: var(--bg); border-bottom: none;
+  background: var(--ink); color: var(--bg); border-bottom: none; text-decoration: none;
   font-size: 14px; font-weight: 600;
   padding: 12px 22px; border-radius: 99px;
   transition: background-color .2s ease;
 }
-article.post a.btn-pill { background: var(--ink); border-bottom: none; color: var(--bg); }
-article.post a.btn-pill:hover { background: var(--accent-deep); color: var(--bg); border-bottom: none; }
+article.post a.btn-pill { background: var(--ink); border-bottom: none; text-decoration: none; color: var(--bg); }
+article.post a.btn-pill:hover { background: var(--accent-deep); color: var(--bg); border-bottom: none; text-decoration: none; }
 article.post a.btn-pill:active { background: var(--ink-strong); background-size: auto; }
 .btn-pill-alt, article.post a.btn-pill-alt { background: transparent; color: var(--ink); border: 1.5px solid var(--rule-dark); transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
 article.post a.btn-pill-alt:hover { background: var(--accent-deep); color: var(--bg); border-color: var(--accent-deep); }
@@ -379,7 +381,7 @@ article.post.project-page figcaption, article.post .project figcaption {
 .pgrid { position: relative; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin: 26px 0 12px; }
 article.post a.pcard {
   display: flex; flex-direction: column; background: #2c2c25; padding: 8px;
-  background-image: none; border-bottom: none;
+  background-image: none; border-bottom: none; text-decoration: none;
   transition: background 220ms ease, border-radius 520ms cubic-bezier(.2,.8,.2,1);
 }
 .pcard-inner {
