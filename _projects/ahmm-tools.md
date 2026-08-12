@@ -34,4 +34,4 @@ image: /assets/images/projects/ahmm-tools.jpg
     <img src="{{ '/assets/images/projects/ahmm-dialogs.jpg' | relative_url }}" alt="Three AHMM Tools dialogs: Element Aligner, Delete Design Options and Document Search">
     <figcaption>Aligner, design options and search</figcaption>
 </figure>
-<p>Beyond the plugin, I built automation bridging Revit to InDesign, Excel, SQL databases and local knowledge stores — code-signed, silently deployed, and reporting telemetry so our Digital Design Group understood how each tool was actually used.</p>
+<p>Beyond the plugin, I built automation bridging Revit to InDesign, Excel, SQL databases and local knowledge stores—code-signed, silently deployed, and reporting telemetry so our Digital Design Group understood how each tool was actually used.</p>

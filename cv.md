@@ -17,7 +17,7 @@ permalink: /cv/
 
     <h2>Profile</h2>
     <p>For the last 5 years I've led digital products from inception through to delivery as a Technical Product Manager.</p>
-    <p>Underneath that sits a double-barrelled background: I practised as an architect, then became a .NET developer specialising in computational design &mdash; data systems, design systems and complex technical workflows. I can design the thing, and I can build the thing.</p>
+    <p>Underneath that sits a double-barrelled background: I practised as an architect, then became a .NET developer specialising in computational design&mdash;data systems, design systems and complex technical workflows. I can design the thing, and I can build the thing.</p>
     <p>I own roadmap, UX and delivery, and work closely with engineers from discovery through to release. These days, nearly everything I build is made with (and around) AI.</p>
 
     <h2>Skills Stack</h2>
@@ -48,7 +48,7 @@ permalink: /cv/
         <div class="cv-when"><span class="cv-year">2021</span></div>
         <div class="cv-what">
             <h3>Autodesk (contract), <a href="https://dynamobim.org/dynamo-core-2-13-release-part-1-3/">Dynamo UI Rebuild</a></h3>
-            <p>Under contract for Autodesk, I rebuilt the core UI of Dynamo, a visual programming tool popular among architects — including its highly configurable node UI, upgraded node library and search, a rewritten package manager and a new hierarchical warning system. I then profiled and optimised the rebuilt app until it outperformed the original.</p>
+            <p>Under contract for Autodesk, I rebuilt the core UI of Dynamo, a visual programming tool popular among architects—including its highly configurable node UI, upgraded node library and search, a rewritten package manager and a new hierarchical warning system. I then profiled and optimised the rebuilt app until it outperformed the original.</p>
         </div>
     </div>
     <div class="cv-entry">
@@ -56,7 +56,7 @@ permalink: /cv/
         <div class="cv-what">
             <h3><a href="https://www.ahmm.co.uk/">AHMM</a>, Software Developer &amp; Computational Design Specialist</h3>
             <p>I developed a wide range of custom digital design and workflow automation tools to suit individual teams' needs at a large architecture firm.</p>
-            <p>I built new applications and software plugins across the full .NET stack — machine learning, applied mathematics, data analysis and visualisation, database creation and UI/UX design, using C#, IronPython, SQL, XAML and WPF. I also developed and delivered internal training on programming.</p>
+            <p>I built new applications and software plugins across the full .NET stack—machine learning, applied mathematics, data analysis and visualisation, database creation and UI/UX design, using C#, IronPython, SQL, XAML and WPF. I also developed and delivered internal training on programming.</p>
         </div>
     </div>
 

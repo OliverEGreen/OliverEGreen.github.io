@@ -15,7 +15,7 @@ link: https://market.kope.ai/
     <figcaption>KOPE Market, in five windows</figcaption>
 
 </figure>
-<p>The <a href="https://market.kope.ai/">marketplace</a> began as a research task: within a month I'd amassed an enormous database of interconnected datapoints — people, places, media, manufacturers, exemplar projects and software.</p>
+<p>The <a href="https://market.kope.ai/">marketplace</a> began as a research task: within a month I'd amassed an enormous database of interconnected datapoints—people, places, media, manufacturers, exemplar projects and software.</p>
 <p>We launched it as a standalone, open and free website, bringing transparency to construction's infamously opaque supply chains while acting as our startup's advertising engine.</p>
 <div class="project-pair">
     <figure>
@@ -27,7 +27,7 @@ link: https://market.kope.ai/
         <figcaption>Suppliers, mapped</figcaption>
     </figure>
 </div>
-<p>I led its development from day one: designing the responsive site, writing all requirements, even specifying the database tables. Today it's fully internationalised and white-labelled — including a version delivered to the NHS New Hospitals Programme — with thousands of products searchable across international certification standards.</p>
+<p>I led its development from day one: designing the responsive site, writing all requirements, even specifying the database tables. Today it's fully internationalised and white-labelled—including a version delivered to the NHS New Hospitals Programme—with thousands of products searchable across international certification standards.</p>
 <div class="project-pair">
     <figure>
         <img src="{{ '/assets/images/projects/kope-market-mobile.jpg' | relative_url }}" alt="KOPE Market's mobile case-study search">

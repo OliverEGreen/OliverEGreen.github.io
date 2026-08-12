@@ -13,8 +13,8 @@ image: /assets/images/projects/flash-games.jpg
     <figcaption>The Ultimate Gamer Challenge</figcaption>
 
 </figure>
-<p>As a teenager I built online Flash games with my brother — he wrote all the ActionScript, I handled creative vision, graphics and animation.</p>
-<p>We found an audience and ended up selling our games to several American and Canadian gaming companies — a hobby that quietly turned into a small business with full creative control.</p>
+<p>As a teenager I built online Flash games with my brother—he wrote all the ActionScript, I handled creative vision, graphics and animation.</p>
+<p>We found an audience and ended up selling our games to several American and Canadian gaming companies—a hobby that quietly turned into a small business with full creative control.</p>
 <div class="project-pair">
     <figure>
         <img src="{{ '/assets/images/projects/flash-pirates.jpg' | relative_url }}" alt="Pirates: a gold-lettered menu screen with a galleon on the high seas">
@@ -35,4 +35,4 @@ image: /assets/images/projects/flash-games.jpg
         <figcaption>Hansjürgen</figcaption>
     </figure>
 </div>
-<p>Across three years and roughly twenty games — multiplayer leaderboards, antigravity simulations, robot opponents, upgrade systems — I picked up the rudiments of graphic design, animation and UI/UX. I still see gaming as the pinnacle of UX: it exists purely for its own joy.</p>
+<p>Across three years and roughly twenty games—multiplayer leaderboards, antigravity simulations, robot opponents, upgrade systems—I picked up the rudiments of graphic design, animation and UI/UX. I still see gaming as the pinnacle of UX: it exists purely for its own joy.</p>
