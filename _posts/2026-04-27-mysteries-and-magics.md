@@ -32,9 +32,13 @@ And who knows if we'll get anywhere closer to the truth. But if you're reading a
 
 It's far too easy to *explain away* just about anything.
 
-Often, the answer you might get back is pretty dull; hundreds of years ago if you asked a question, you may have been hit with some variant of "because God wills it". Such was the Zeitgeist. The society of yesteryear had deemed that the acceptable response. Hard to fathom today, but it really was so.
+Sometimes the answers you receive might be pretty dull and unsatisfying. They seem to be lacking something you can't put your finger on. Hundreds of years ago if you'd asked a question, you may have been hit with some variant of "because God wills it".
 
-We have slightly better answers now, but they're often still a little superficial when you start scratching away at their surface. For example: why are rainbows formed?
+Such was the Zeitgeist. The society of yesteryear had deemed that the acceptable response. Hard to fathom today, but it was once really so.
+
+Happily, we have slightly better answers now, but they're often still a little superficial when you start scratching away at their surface.
+
+For example: **why are rainbows formed?**
 
 "Because it's sunny while it's raining".
 
@@ -42,9 +46,9 @@ Sure...
 
 The deeper answer, it turns out, is beautiful and [remarkably complex](https://www.youtube.com/watch?v=24GfgNtnjXc).
 
-My point is, surface-level and incurious rationalisation is where *inspiration goes to die*. It closes down doors and discourages us from building up the genuinely useful habits of curiosity, creativity and mental play.
+My point is, superficial and incurious rationalisation is where *inspiration goes to die*. It closes down doors. It discourages us from building up the genuinely useful habits of curiosity, creativity and mental play; of pulling threads just to see where they lead us.
 
-Instead, please be generous. Perhaps humour a few of these ideas—even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
+Instead, please be generous. Perhaps try and humour a few of these ideas—even if they sound like nonsense at first. Who knows, maybe you'll start agreeing along the way.
 
 ## There were no instructions
 
