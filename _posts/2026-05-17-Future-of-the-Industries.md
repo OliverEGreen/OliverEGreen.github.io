@@ -19,8 +19,6 @@ This year, that optimistic atmosphere had changed. You've already seen the punch
 
 All year, I've been [thinking deeply](https://www.businessinsider.com/openai-merch-supply-co-2025-12) about the kinds of impact AI might have on different parts of the workforce. What follows is my best guess as to where all of this is going. 
 
-Contents:
-
 * TOC
 {:toc}
 

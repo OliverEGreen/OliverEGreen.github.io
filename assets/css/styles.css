@@ -246,11 +246,6 @@ article.post a:hover { color: #000; background-size: 100% 45%; text-decoration-c
 article.post a:active { background-image: linear-gradient(var(--sweep-press), var(--sweep-press)); background-size: 100% 100%; }
 
 /* Table of contents (kramdown {:toc}) */
-article.post h2.no_toc {
-  background: var(--tint); border-radius: 10px 10px 0 0;
-  margin: 0; padding: 18px 22px 4px; font-size: 18px;
-}
-article.post h2.no_toc + #markdown-toc { border-radius: 0 0 10px 10px; padding-top: 6px; }
 article.post #markdown-toc {
   font-family: var(--sans); font-size: 13.5px; line-height: 1.45;
   background: var(--tint); border-radius: 10px;

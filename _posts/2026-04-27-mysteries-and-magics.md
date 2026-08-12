@@ -10,25 +10,29 @@ tagline: "A long list of loose threads to pull upon"
 unfinished: true
 ---
 
-## Contents
-{:.no_toc}
-
 * TOC
 {:toc}
+# Introduction
 
-## What's this about?
+## What's all this about?
 
-This post is my ongoing, naïve attempt to understand the nature of... well, everything, I guess [waving my hands around].
+These musings are my ongoing and naïve attempt to understand the nature of the *big picture* of our existence.
 
-What you won't find here is an ultra-serious, rigorous study. This is an exercise in mental play; in thinking creatively. This is not about being intellectually mean or me trying to appear clever. 
+This is an exercise in mental play; in thinking creatively. It's not about being intellectually mean or me trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
 
-Below, you will find a loose and open-minded collection of thoughts that are hopefully fun to pick up and toy around with. My lofty goal is to bring us *ever so slightly closer* to understanding all of this. I promise I won't bring up the multiverse or whether this is all a simulation (except just now...)
+Instead, you'll find a loose and open-minded collection of thoughts that are hopefully fun to **pick up and toy around with**.
 
-I'll probably fail—but either way I hope you enjoy!
+My exceedingly lofty goal is to bring us *ever so slightly closer* to some understanding of this life we're currently living. I promise I won't bring up the multiverse or whether this is all a simulation[^1].
+
+[^1]: Well, except just this once.
+
+And who knows if we'll get anywhere closer to the truth. But if you're reading along, either way I hope you enjoy!
 
 ## For the curious
 
-It's far too easy to *explain away* practically anything. Often, the answer is pretty dull. Hundreds of years ago you may have been hit with "because God wills it" when you asked about nearly anything. 
+It's far too easy to *explain away* just about anything.
+
+Often, the answer you might get back is pretty dull; hundreds of years ago if you asked a question, you may have been hit with some variant of "because God wills it". Such was the Zeitgeist. The society of yesteryear had deemed that the acceptable response. Hard to fathom today, but it really was so.
 
 We have slightly better answers now, but they're often still a little superficial when you start scratching away at their surface. For example: why are rainbows formed?
 
@@ -40,15 +44,15 @@ The deeper answer, it turns out, is beautiful and [remarkably complex](https://w
 
 My point is, surface-level and incurious rationalisation is where *inspiration goes to die*. It closes down doors and discourages us from building up the genuinely useful habits of curiosity, creativity and mental play.
 
-Instead, please be generous.  Perhaps humour a few of these ideas—even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
+Instead, please be generous. Perhaps humour a few of these ideas—even if they sound like nonsense at first. Who knows? Maybe you'll start agreeing along the way... 
 
 ## There were no instructions
 
-To begin with, it's worth remembering that we all just sort of landed here. We're improvising as best we can. There's no introduction, tutorial or scoreboard. 
+To begin with, it's worth remembering that we all just *sort of landed here*. We're improvising as best we can. There's no introduction, tutorial or scoreboard. 
 
-Because of this, it's worth keeping our certainty in check. Being open minded (just not so much that our brains fall out).
+Because of this, it's worth keeping our certainty and our hubris in check. I recommend being open minded, just not so much that our brains fall out.
 
-It's a silly comparison, but I remember in the original Super Mario game for the NES, the moment you pressed 'New Game', you just sort of... *fall out of the sky*. Then an evil mushroom starts walking towards you.
+It's a silly comparison, but I still remember something about the original Super Mario game for the NES. The very moment you pressed 'New Game', you just sort of... *fell out of the sky*. Then an evil mushroom started walking towards you.
 
 There's no cutscene or backstory provided. You're just expected to get on with it and figure things out as you go along.
 
@@ -56,29 +60,35 @@ In some ways, this is what happened to us, too.
 
 ## The approach
 
-My approach is phenomenological—whenever I notice that things on the surface just *don't quite add up*. It's as if something more is going on that we haven't yet found a watertight explanation for.
+My approach is phenomenological—whenever I notice that things on the surface just *don't quite add up*. It's as if something more is going on that we haven't yet found a wholly watertight explanation for.
 
-While this approach isn't perfect, noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
+This approach isn't perfect; it certainly has its flaws. But noticing has always been our starting point for explorations that have taken us to higher places. Newton noticed the apple.
 
-Perhaps, like a donkey staring at an iPad, our species just isn't intelligent enough to directly comprehend the true nature of reality; the big picture may simply be too complex for our noble monkey brains.
+Perhaps, like a donkey staring at an iPad, our species just isn't intelligent enough to directly comprehend the true nature of reality; the big picture may simply be too complex for our noble ape minds.
 
 Alternatively, there may be whole dimensions of scientific exploration that we're able to grasp but have yet to open up. Areas, which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would of course be exciting and we'd love to see it.
 
 But since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a valuable sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
 
-In 1500s Italy, Copernicus and Galileo weren't able to directly observe the cosmos from a clear, static vantage point. Instead, they had to observe phenomena that pointed towards heliocentrism. They'd never been to Venus or the Sun. That didn't matter—they pieced the picture together from a handful of clues via inference.
+In 1500s Italy, Copernicus and Galileo weren't able to directly observe the solar system from a clear, static vantage point. Instead, they had to observe indirect phenomena that *pointed towards* heliocentrism. They'd never been to Venus or the Sun. That didn't matter—they pieced the picture together from a handful of clues via inference.
 
-That's why I keep this semi-organised pile. Each section opens up a question, giving you thread to pull on. Perhaps one or two of them will resonate with you and send you off daydreaming down some rabbithole. In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them.
+That's why I keep this semi-organised pile. Each section opens up a question, giving you a thread to pull on. Perhaps one or two of them will resonate with you and send you off daydreaming down some rabbithole.
+
+In continuing to notice things and list them here, I think there's room for us to start exploring common themes or connections between them.
 
 And have fun. This is only a harmless, curious exercise, and one that has surely been carried out many times before by other like-minded people since time immemorial.
 
-## Mysteries
+# Mysteries
+
+## Sleep and Dreaming
 
 ### Sleep
 
 We spend a third of our lives asleep. Not just us—all known animals sleep in varying different ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
 
-It seems like those moments when we are half asleep, half awake seem to provide a very special kind of thought, one which is looser, more in touch with our unconscious selves and more freely-associative. I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully-formed, like a gift. 
+Those moments when we are half asleep, half awake seem to provide a very special kind of thought, one which is looser, more in touch with our unconscious selves and more freely-associative.
+
+I often wake up in the middle of the night with solutions to the hardest problems I've been grappling with. These come to me fully-formed, like a gift. 
 
 And sleep can play havoc with our sense of time; a short nap can feel like hours, or a deep sleep like a few seconds. Even a 10-minute nap can leave us feeling completely discombobulated for the rest of the day. 
 
@@ -94,7 +104,7 @@ Dreams are the most mysterious part of sleep. Apparently we dream regularly but 
 
 Our unconscious seems to play a role in what we see; perhaps it's something we noticed, or heard someone say during the day but never fully processed at the time.
 
-Some dreams may be considered prophetic, or some like we are replaying versions of waking life over in our heads. The language of symbols and metaphor appear to be a common theme throughout peoples' dreams, whether they carry a personal meaning to the dreamer, or speak more widely-understood human themes (such as flying or encountering death).
+Some dreams may be considered prophetic, or some feel like we are replaying versions of waking life over in our heads. The language of symbols and metaphor appears to be a common theme throughout peoples' dreams, whether they carry a personal meaning to the dreamer, or speak more widely-understood human themes (such as flying or encountering death).
 
 After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud. Given that I've travelled precisely nowhere, I find this very odd. Maybe sleep causes us to temporarily leave our bodies?
 
@@ -104,33 +114,33 @@ After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, 
 
 Our experience of time can be so subjective. It feels like something we've poorly understood.
 
-It is clearly linked somewhat to our mental state—we all know that time flies when we're having fun, yet drags to a near-standstill during harder times. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location.
+It is clearly linked somewhat to our mental state—we all know that time flies when we're having fun, yet drags to a near-standstill during difficult periods. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location. But a full year can seemingly fly by as an older adult: "where do the years go?" we may ask ourselves.
 
-Other forms of life seem to experience time at different speeds to us. Their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours. Generally speaking, smaller life seems to live faster: birds, rodents and insects.
+Other forms of life seem to experience time at different speeds to us. Their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours. Generally speaking, smaller life seems to live faster: birds, rodents and insects. Larger life, slower; elephants, blue whales, etc.
 
-We also seem to have an internal clock with surprisingly high precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know.
+We also seem to have an internal clock with *surprisingly high* levels of precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know.
 
-My gut feeling is that time might all exist at once, already predetermined. Like a record we've put on and are experiencing in real-time and forward motion. We're discovering it in real-time. It may be predetermined, yet we still don't know what's coming next.
+My gut feeling is that time might all exist at once, already predetermined. Like a record we've put on and are experiencing in real-time and forward motion. We're discovering life in real-time; it may be predetermined, yet we still don't know what's coming next.
 
-Like with anaesthesia, we might not fully grasp the nature of time, but we're able to make jolly good use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellites, despite relativistic effects. It's incredibly impressive.
+And just like with anaesthesia, we might not fully grasp the nature of time, but we're able to make jolly good use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellites moving at thousands of miles per hour, despite relativistic effects. How ridiculously impressive.
 
 ### How we feel space
 
-There's a similar strangeness to how we feel space.
+There are similar mysteries regarding our relationship to space.
 
-As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite low. Why is that? It's plenty of space for even very tall people to exist happily. Why should we prefer 2.6m or even 3m high ceilings? 
+As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite low. But why is that? It's plenty of space for even the very tallest people to exist happily. We know that people tend to prefer 2.6m or even 3m high ceilings. Illogically, a taller space just *feels nicer* to us.
 
-Instinctively, we seem to have a need for spaces that are illogically larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel incredibly strange.
+We seem to have a desire for spaces that are irrationally larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel incredibly strange.
 
 It appears as if something extends above us and we can feel it. It wants the right ceiling height and we all just seem to instinctively know this.
 
-In other kinds of spaces, different rules apply; it's very obvious when many people gather together and are running at a highly emotional state:
+In other kinds of spaces, different rules apply; this is obvious when many people gather together and are running at a highly emotional state:
 
 * A cathedral
 * An airport
 * A stadium
 
-The more people and the higher their collective energy, the higher the space needs to be accommodate it. Again, we all just *seem to know this*. Designing a smaller space wouldn't happen—even to a layman it would simply be too preposterous.
+The more people coming together and the higher their collective energy, the higher the space needs to be to accommodate it. Again, we all just *seem to know this*. Designing a smaller space wouldn't happen—even to a layman it would simply be too preposterous.
 
 Finally, any architect will know that, subjectively, the size of a building under construction seems to change constantly. Perhaps it's way smaller than you thought it would feel, then suddenly the spaces become normal-sized or even feel enormous. It's very hard to explain.
 
@@ -138,11 +148,11 @@ Finally, any architect will know that, subjectively, the size of a building unde
 
 ### Bodies of water
 
-There is something special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. They're intrinsically beautiful, often enhancing whatever light the sky is providing that day.
+There is something very special about our connection to water. Many of us feel drawn to lakes, rivers, the sea or even urban canals. People stop to take and post pictures on Instagram. 
 
-They can also provide a great source of solace; a walk alongside a river can help calm down the soul during a period of distress.
+Bodies of water are intrinsically beautiful, often enhancing the current weather, or whatever light the sky is providing that day.
 
-Why does it feel that way? Who knows.
+They can also provide a great source of solace; a walk alongside a river can help calm the soul during a period of distress. Why does it feel that way? Who knows.
 
 Some animistic cultures believe that nature—every stone, river and tree—carries its own spirit. In some limited way, nature itself can be a form of company.
 
@@ -158,19 +168,88 @@ And we love our trees—we need greenery around us and feel terrible when our ci
 
 ### The energies of others
 
-The physical presence of others. Zoom doesn't quite cut it. It's missing something. We get very lonely and isolated without others around.
+The 2020 pandemic served as a grand [natural experiment](https://en.wikipedia.org/wiki/Natural_experiment) in determining how much of our lives we could replicate online via digital proxies. Almost all of our global cultural moments, our work and our friendships were flattened and transmitted over the ubiquitous screen.
+
+The verdict? 
+
+*Eh.*
+
+Zoom... doesn't *quite cut it*. It's certainly not terrible, but it's also somehow missing something. Despite the best efforts of engineers, meetings with our coworkers just don't quite hit the same when held remotely. It's even possible to get quite lonely and isolated when working from home.
+
+We almost seem to require the presence of others physically around us. Sometimes we even go places, not to interact with people, but to just *be around others*. Other times we just want to people-watch. We are social beings.
+
+My suspicion is that there's something else, something energetic happening here that just can't be replicated online. We can reproduce the sight and the sound of people online, but it's clear to me that there's still a missing mystery ingredient. Take it away and you'll immediately notice the difference.
+
+A similar (but maybe related?) distinction for me is in watching something live and in-person vs seeing it recorded. It's obviously completely different; just look at the prices for live tickets versus buying the recording afterwards.
 
 ### Psychosis, death and felt presence
 
-How a living body can feel empty. How a dead body feels like nothing and no one to behold. How people with dementia fade in and out like a broken modem. They're suddenly there, you feel their presence, then they're gone again.
+That *feeling of presence* isn't always guaranteed in real life, either.  
 
-Life and death—obviously gigantic and yet we don't understand the first thing about what they are. At least officially.
+It's very much possible for a living body to feel entirely empty due to a condition such as psychosis or dementia. This becomes especially obvious when you know what being around that person *should* normally feel like. 
 
-### Live vs recorded
+Sometimes they will even fade in and out again, like a broken modem briefly regaining and then losing connection. Suddenly they're lucid, back in the room, you feel their presence and—only moments later—they're gone again.
 
-For some reason this makes a difference to me. Perhaps a placebo could trick me though. But I get a totally different sense of something when I know it's recorded vs watching it live. The feeling is entirely different.
+Another strange experience is seeing the dead body of someone you once knew. I was struck at how empty it was. The person I knew simply was no longer within there; what was left behind was simply their hardware. 
 
-## Magic of ritual
+# Magics
+
+## Magic of the body
+
+### Holding hands
+
+Why is it that, as an adult, holding hands with someone can be such an incredibly intense and intimate behaviour? There's probably no culture on Earth where this act would be considered socially insignificant. 
+
+But, curiously, for many people this simple gesture can easily be as intense and intimate as—or even more so than—having sex with someone. Why is that? 
+
+Our hands are obviously incredibly important to us; we use them for just about everything, they hold some of the densest collections of nerve endings in our bodies.
+
+But, beyond that, something else—something *energetic*—does seem to be at play when we connect in this way. It's certainly more than the sum of its parts.
+
+### Physical touch
+
+We are, ultimately, just sophisticated monkeys and so physical contact with others is obviously very important to us. There are highly meaningful and deeply-rooted social aspects to this; even animals like to cuddle. 
+
+But I think there's a surprisingly outsized effect here; something I suspect might work on an energetic level. Consider how magical it is when you feel the weight of a tiny bird or a butterfly on your finger. When a cat or a dog puts its paw on you and you can feel its warmth and its very slight weight. It's enough to briefly give us pause. 
+
+### Eye contact
+
+This one we all know well—they're called the "window to the soul" for good reason. We could probably write entire books about eyes and eye contact; their colours, when they seem to sparkle (or, conversely, when someone's eyes seem dead) and how their qualities are able to change so suddenly.
+
+We're all familiar with how someone's eyes are able to instantly *light up* upon hearing good news, or perhaps how they seem to carry the immense weight of some unknown tragedy. 
+
+We all just intuitively seem to know how to read eyes; how to spot the sultry "come to bed" look, or the infamous "puppy dog eyes". There aren't any tutorials online and they don't teach it in schools; we just seem to get that knowledge for free.
+
+### Sex and sex magic
+
+Writing about sex is rarely not-awkward. Perhaps that tells us something; it's clearly quite a *big deal* to us, so much so that we find it almost difficult to discuss.
+
+Well, if you're that squeamish, feel free to jump to the next section. Who's gonna stop you? It's not like I'll ever know...
+
+Getting back to it, to me, it's clear that sex is so much more significant than its purely physical dimension. I strongly suspect there's a lot of invisible and nuanced energetic stuff going on in the background. 
+
+I'm convinced that sex isn't just *one thing*. There are very clearly different types of sex that people have:
+
+* One-night stands. A more superficial, fun and spontaneous fling that seems to often go paired with a certain underhanded quality, with people sneaking off in the early hours to do something hidden. There's something lower energy, perhaps astral, to this. 
+* By contrast, there is the (now very cringe and uncool) notion of 'making love', which seems to be striking at the heart of something entirely different. Each person knows the other intimately, it's more caring, more of a dialogue and less transactional. 
+
+One way of thinking about it is the difference you feel in satiation; one is like fast food—it's quick, cheap and hits the spot when the need arises. The other is more like a wholesome home-cooked meal from someone who loves you. 
+
+As for sex magic (or 'magick' as it's sometimes spelled), Jack Parsons, founder of the pre-NASA Jet Propulsion Laboratory, was a huge and vocal proponent of sex magic, as were his contemporaries. And sex often plays a central role in cults: it's well known as a powerful driver of human behaviour and it often sits at the core of mammalian power dynamics. This all makes sense if what we're dealing with is something profoundly energetic.
+
+The French call the orgasm *la petite mort*—"the small death". Ironic that it's also the cause of all life as we know it.  
+
+### Pregnancy and parenthood
+
+There is possibly no greater magic than motherhood.
+
+Beyond the myriad of physical changes (and no doubt fear and discomfort) that come along for the ride with pregnancy, there can be perhaps nothing more profound to experience in this life than bringing another soul into the world.   
+
+The bond between mother and child; of growing and nourishing another life briefly within you is almost unimaginable from the outside.
+
+In a way, what a privilege it is to be able to go through that at least once in this life. At the end of the day, reproduction is the prime directive of any biological species.
+
+## The magic of ritual
 
 ### Imbued objects
 
@@ -190,39 +269,9 @@ Epstein and co were deeply serious people; they wouldn't waste their time on tot
 
 ### Pyramids
 
-Why do they appear all around the world? Why is their stonework so absurdly impossibly huge and perfect. Not just Egypt—South and Central America, all across Asia. We have no explanations.
+Why do they appear all around the world? Why is their stonework so absurdly, impossibly huge and perfect? Not just Egypt—South and Central America, all across Asia. We have no explanations.
 
-## Magic of the body
 
-### Holding hands
-
-Why is it that, as an adult, holding hands with someone can be such an incredibly intense and intimate behaviour? There's probably no culture on Earth where this would be considered socially insignificant. 
-
-But, curiously, for many people this simple act can be easily as, or even more intense, than engaging in sex with someone. Why is that? 
-
-Our hands are obviously incredibly important to us, we use them for just about everything, they hold some of the densest collections of nerve endings in our bodies. But, beyond that, something else—something *energetic*—does seem to be at play when we connect in this way. It's certainly more than the sum of its parts.
-
-### Touch
-
-Physical contact is very important to us. It seems to work on an energetic level. Even animals want to cuddle. Even the weight of a tiny bird or a butterfly on your finger is somehow magical.
-
-### Eye contact
-
-This one we all know well. They're called the "window to the soul" for good reason. We could probably write entire books about eyes and eye contact; their colours, when they seem to sparkle (or, conversely, when someones eyes seem dead) and how their qualities are able to change to suddenly. How someone's eyes are able to instantly *light up* or perhaps they seem to carry the immense weight of some tragedy. We all just intuitively seem to know how to read eyes, there aren't any tutorials online. We seem to get that one for free. 
-
-### Sex and sex magic
-
-Sex is clearly so much more significant than the purely physical dimension. There's a lot of nuanced energetic stuff going on, I'd wager.
-
-I think sex can cross into the astral energies sometimes. It seems to often go paired with a certain underhanded quality.
-
-Jack Parsons, founder of the pre-NASA Jet Propupsion Laboratory was a huge and vocal proponent of sex magic, as were his contemporaries.
-
-Sex often plays a role in cults as well. It's a huge driver of human behaviour and power dynamics. "The small death". It's hugely energetic.
-
-### Pregnancy and parenthood
-
-Particularly motherhood. The bond of growing and nourishing another life inside of you. Another soul. Someone who you bond with in a way that's otherwise unimaginable. In a way, what a privilege to be able to do that.
 
 ## Astrological / cosmological
 
@@ -238,19 +287,19 @@ The chances are just absurdly low.
 
 It seems odd. Space is impossibly empty. Everything is unimaginably huge and far away. Seems a bit pointlessly so. Are we really understanding it properly? It feels like we've not yet grasped what we're looking at. Is it really so empty or can we not see it (yet)?
 
-## Other
+# Other
 
-### Lower astral places and people
+## Lower astral places and people
 
 It's definitely there. It's not even that far away. It's almost parallel to our existence, and some seem much more dialled into it than others. It's a lower energy, darker, more seedy and desperate. People can become enmeshed with these: dark beings might inhabit casinos, strip clubs, gangs, fighting events, cults.
 
-### Music
+## Music
 
 Why can we be transported to another place, so moved and affected by sound in so many nuanced ways? How can two people play the same thing and one sounds wonderful while the other awful?
 "Opening the gates of magic."
 
-### Names
+## Names
 
-Our names are so powerful. Naming a child is a form of magic we try our best to embark on. Their choice of name or nickname matters too, can shape our self image, energy, perhaps even the paths of our lives.
+Our names are so powerful. Naming a child is a form of magic we try our best to embark on. Their choice of name or nickname matters too, can shape our self-image, energy, perhaps even the paths of our lives.
 This magic is well acknowledged, we even have a name for it: nominative determinism.
 
