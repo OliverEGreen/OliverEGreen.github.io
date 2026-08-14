@@ -54,14 +54,63 @@
     onScroll();
   }
 
-  // 1a) Writing pages: a random Dracula dot follows each section heading
+  // 1a) Writing pages: a random Dracula dot follows each section heading.
+  //     On scroll, each dot's lightness/chroma breathes on a sine wave
+  //     (hue never changes, so the scheme holds). Per-dot phase offsets
+  //     make the page shimmer rather than pulse in unison.
+  var BLOB_LCH = [
+    [0.883, 0.093, 212.8], // #8be9fd
+    [0.871, 0.220, 148.0], // #50fa7b
+    [0.834, 0.124, 66.6],  // #ffb86c
+    [0.755, 0.183, 346.8], // #ff79c6
+    [0.742, 0.149, 301.9], // #bd93f9
+    [0.682, 0.206, 24.4],  // #ff5555
+    [0.955, 0.134, 112.8]  // #f1fa8c
+  ];
   var lastDot = -1;
-  document.querySelectorAll('article.writing-post > h1, article.writing-post > h2').forEach(function (h) {
+  var headDots = [];
+  document.querySelectorAll('article.writing-post > h1, article.writing-post > h2').forEach(function (h, k) {
     var i;
     do { i = Math.floor(Math.random() * BLOBS.length); } while (i === lastDot);
     lastDot = i;
+    h._base = i;
+    h._lch = BLOB_LCH[i];
+    h._phase = k * 2.399; // golden-angle offsets: organic shimmer, no unison
     h.style.setProperty('--head-dot', BLOBS[i]);
+    headDots.push(h);
   });
+  if (headDots.length) {
+    // 'breathe': sine-wave lightness/chroma shimmer. 'step': dots walk the
+    // palette in lockstep, one step per DOT_PERIOD px, cross-fading between.
+    var DOT_MODE = 'step';
+    var DOT_WAVELEN = 1400; // px of scroll per full sine cycle (breathe)
+    var DOT_PERIOD = 260;   // px of scroll per palette step (step)
+    var dotRaf = 0, lastStepPhase = 0;
+    var updateDots = function () {
+      dotRaf = 0;
+      if (DOT_MODE === 'step') {
+        var phase = Math.floor(window.scrollY / DOT_PERIOD);
+        if (phase === lastStepPhase) return;
+        lastStepPhase = phase;
+        headDots.forEach(function (h) {
+          h.style.setProperty('--head-dot', BLOBS[(h._base + phase) % BLOBS.length]);
+        });
+      } else {
+        var theta = (window.scrollY / DOT_WAVELEN) * Math.PI * 2;
+        headDots.forEach(function (h) {
+          var s = Math.sin(theta + h._phase);
+          var L = Math.min(0.97, h._lch[0] * (1 + 0.10 * s));
+          var C = h._lch[1] * (1 + 0.20 * s);
+          h.style.setProperty('--head-dot', 'oklch(' + L.toFixed(4) + ' ' + C.toFixed(4) + ' ' + h._lch[2] + ')');
+        });
+      }
+    };
+    document.documentElement.style.setProperty('--dot-fade', DOT_MODE === 'step' ? '600ms' : '120ms');
+    window.addEventListener('scroll', function () {
+      if (!dotRaf) dotRaf = requestAnimationFrame(updateDots);
+    }, { passive: true });
+    updateDots();
+  }
 
   // 1b) Blockquotes: each quote takes its own random tint from the palette
   document.querySelectorAll('article.post blockquote').forEach(function (bq) {

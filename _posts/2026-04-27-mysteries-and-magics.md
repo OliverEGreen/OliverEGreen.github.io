@@ -16,17 +16,23 @@ unfinished: true
 
 ## What's all this about?
 
-These musings are my ongoing and naïve attempt to understand the nature of the *big picture* of our existence.
+This is ultimately a large and semi organised pile of *musings*. An instinctive response to those many fleeting moments in life where you ask yourself:
 
-This is an exercise in mental play; in thinking creatively. It's not about being intellectually mean or me trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
+**"Huh. I wonder if this actually adds up?"**
+
+Underlying these musings is my ongoing and naïve attempt to uncover some of  the *big-picture* nature of our existence.
+
+Everything below is really an exercise in mental play; in thinking creatively. It's not about being intellectually mean or trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
 
 Instead, you'll find a loose and open-minded collection of thoughts that are hopefully fun to **pick up and toy around with**.
 
-My exceedingly lofty goal is to bring us *ever so slightly closer* to some understanding of this life we're currently living. I promise I won't bring up the multiverse or whether this is all a simulation[^1].
+My lofty goal is to bring us *ever so slightly closer* to some understanding of this life we're currently living. I promise I won't bring up the multiverse or whether this is all a simulation[^1].
 
 [^1]: Well, except just this once.
 
 And who knows if we'll get anywhere closer to the truth. But if you're reading along, either way I hope you enjoy!
+
+Preamble over; let's dig in.
 
 ## For the curious
 
