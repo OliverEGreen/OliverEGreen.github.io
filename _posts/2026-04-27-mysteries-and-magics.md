@@ -18,11 +18,11 @@ unfinished: true
 
 Welcome to my semi-organised pile of *musings*.
 
-This is my instinctive response to those fleeting moments in life where you begin to wonder whether what you're seeing adds up to the explanations that we provide ourselves with. Beneath this is my ongoing and naïve attempt to uncover some of  the *big-picture* nature of our existence.
+This is my instinctive response to those fleeting moments in life where I wonder whether what I'm seeing actually *adds up* to our explanations. Beneath this, is my ongoing and naïve attempt to uncover some of  the *big-picture* nature of our existence.
 
-What follows below is an exercise in mental play; in thinking creatively. It's not about being intellectually mean or trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
+What follows below is mostly an exercise in mental play; in thinking creatively. It's not about being intellectually mean or trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
 
-Instead, you'll find a loose and open-minded collection of thoughts that are hopefully fun to **pick up and toy around with**.
+Instead, if you choose to, you'll find a loose and open-minded collection of thoughts that are hopefully fun to **pick up and toy around with**.
 
 My lofty goal is to bring us *ever so slightly closer* to some understanding of this life we're currently living. I promise I won't bring up the multiverse or whether this is all a simulation[^1].
 
