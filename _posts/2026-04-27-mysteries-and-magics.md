@@ -16,13 +16,11 @@ unfinished: true
 
 ## What's all this about?
 
-This is ultimately a large and semi organised pile of *musings*. An instinctive response to those many fleeting moments in life where you ask yourself:
+Welcome to my semi-organised pile of *musings*.
 
-**"Huh. I wonder if this actually adds up?"**
+This is my instinctive response to those fleeting moments in life where you begin to wonder whether what you're seeing adds up to the explanations that we provide ourselves with. Beneath this is my ongoing and naïve attempt to uncover some of  the *big-picture* nature of our existence.
 
-Underlying these musings is my ongoing and naïve attempt to uncover some of  the *big-picture* nature of our existence.
-
-Everything below is really an exercise in mental play; in thinking creatively. It's not about being intellectually mean or trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
+What follows below is an exercise in mental play; in thinking creatively. It's not about being intellectually mean or trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
 
 Instead, you'll find a loose and open-minded collection of thoughts that are hopefully fun to **pick up and toy around with**.
 
@@ -30,9 +28,7 @@ My lofty goal is to bring us *ever so slightly closer* to some understanding of 
 
 [^1]: Well, except just this once.
 
-And who knows if we'll get anywhere closer to the truth. But if you're reading along, either way I hope you enjoy!
-
-Preamble over; let's dig in.
+And who knows if we'll get anywhere closer to the truth. But if you're reading along, either way I hope you enjoy! Preamble over. Let's dig in.
 
 ## For the curious
 
@@ -94,7 +90,15 @@ And have fun. This is only a harmless, curious exercise, and one that has surely
 
 ### Sleep
 
-We spend a third of our lives asleep. Not just us—all known animals sleep in varying different ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't understand it very well at all. This strikes me as odd. 
+We spend one full third of our lives asleep.
+
+Not just us—all known animals sleep in varying different ways. It's clearly vital; we would sooner die without sleep than without food. And yet we don't seem to understand it very well at all.
+
+This strikes me as odd. Given the prominence of sleep and its vital importance for life, you could imagine we'd have whole universities dedicated to furthering our knowledge of the phenomenon.
+
+By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist. Yet we seem to have a plethora of dental universities, publications and conferences and yet practically nothing for sleep. We just don't seem all that interested.
+
+Anaesthetic, our magic formula for sleep (technically comas) is also poorly understood. We know exactly how much to use, all about its mitigating factors and effects. And yet the core mechanism by which it actually puts us to sleep is, again, unknown. 
 
 Those moments when we are half asleep, half awake seem to provide a very special kind of thought, one which is looser, more in touch with our unconscious selves and more freely-associative.
 
@@ -102,45 +106,57 @@ I often wake up in the middle of the night with solutions to the hardest problem
 
 And sleep can play havoc with our sense of time; a short nap can feel like hours, or a deep sleep like a few seconds. Even a 10-minute nap can leave us feeling completely discombobulated for the rest of the day. 
 
-Anaesthetic, our magic formula for sleep is also poorly understood. We know exactly how much to use, all of its mitigating factors and effects. And yet the core mechanism by which it actually puts us to sleep is, again, unknown. 
+After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud.
 
-Given the prominence of sleep and its vital importance for life, you'd think we'd have whole universities dedicated to furthering our knowledge of the phenomenon. By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist.
-
-It's funny—we seem to have a plethora of dental universities, publications and conferences and yet practically nothing for sleep. We just don't seem all that interested.
+Given that my body has travelled precisely nowhere, I find this very odd. Maybe sleep causes us to temporarily leave our bodies?
 
 ### Dreams
 
-Dreams are the most mysterious part of sleep. Apparently we dream regularly but forget most of them. Our memory of dreams may stick around during the day, or instantly get wiped just a few seconds after waking up.
+Dreams are surely the most mysterious part of sleep.
 
-Our unconscious seems to play a role in what we see; perhaps it's something we noticed, or heard someone say during the day but never fully processed at the time.
+Apparently we dream regularly but forget most of them. Our memory of dreams may stick around during the day, or instantly get wiped just a few seconds after waking up. Even the way that we forget our dreams (which we knew vividly only moments ago) is quite unique. 
 
-Some dreams may be considered prophetic, or some feel like we are replaying versions of waking life over in our heads. The language of symbols and metaphor appears to be a common theme throughout peoples' dreams, whether they carry a personal meaning to the dreamer, or speak more widely-understood human themes (such as flying or encountering death).
+Our unconscious seems to play a role in what we see; the language of symbols and metaphor appears to be a common theme throughout peoples' dreams, whether they carry a personal meaning to the dreamer, or speak more widely understood human themes (such as flying or encountering death).
 
-After a deep sleep, it can viscerally feel as if I've been far away. Sometimes, I get the sensation of rushing instantly across vast amounts of space to crash land back into my body, almost with a thud. Given that I've travelled precisely nowhere, I find this very odd. Maybe sleep causes us to temporarily leave our bodies?
+This makes an amount of sense. I've heard it said that symbolism is the language of the unconscious. And that the unconscious is the much larger, hidden part of our psyche—the part of the iceberg that sits below the waterline.
+
+Other dreams can be much lower stakes. While some might seem prophetic, others feel like we're just replaying versions of waking life over in our heads: perhaps it's something we noticed, or heard someone say during the day but never fully processed at the time.
+
+Nightmares are their own special case. I'm fortunate enough to have had very few of these throughout my life. Some people I've known suffer through several every night. It's possible that these are effectively eruptions from the unconscious, when pressure builds our worst suppressed fears and traumas might rise up to the surface to haunt us?
+
+Sometimes these even seem to break through the mental/physical barrier. Many of us have been known to sleepwalk or sleep talk on occasion.
+
+Either way, there is something fascinating about the calm, dark, quiet part of the middle of the night. We seem to enter a very different state, somewhat wilder and less controlled than you'd find us in during the daytime.
 
 ## Time & space
 
 ### How we experience time
 
-Our experience of time can be so subjective. It feels like something we've poorly understood.
+Our experience of time can be so subjective; to me it feels like something we've poorly understood. It is clearly linked somewhat to our mental state—we all know that time flies when we're having fun, yet drags to a near-standstill during difficult periods.
 
-It is clearly linked somewhat to our mental state—we all know that time flies when we're having fun, yet drags to a near-standstill during difficult periods. The phase of life we are in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic location. But a full year can seemingly fly by as an older adult: "where do the years go?" we may ask ourselves.
+The phase of life we're in also seems to play a role, as does novelty. A year as a child lasts forever, as does a full day in an exotic new location. But huge swathes of time can seemingly fly by as an older adult: "where do the years go?" we may ask ourselves.
 
-Other forms of life seem to experience time at different speeds to us. Their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours. Generally speaking, smaller life seems to live faster: birds, rodents and insects. Larger life, slower; elephants, blue whales, etc.
+I suspect that our experience of time is linked to the way our memory works. If you watch someone recalling an event on the day, they'll be able to discuss its fine details with ease (e.g. how was the traffic?). But ask them a month or a year later and their recollection will very often have softened; only the key details remaining.
 
-We also seem to have an internal clock with *surprisingly high* levels of precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know.
+We seem to delete most of our lives—at least the boring parts. There seems to be a compression and caching mechanism at work, not unlike the way we manage memory and data in computers.
 
-My gut feeling is that time might all exist at once, already predetermined. Like a record we've put on and are experiencing in real-time and forward motion. We're discovering life in real-time; it may be predetermined, yet we still don't know what's coming next.
+The speed at which we pass through time also seems to vary. Different forms of life seem to experience time at different tempos; their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours.
 
-And just like with anaesthesia, we might not fully grasp the nature of time, but we're able to make jolly good use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellites moving at thousands of miles per hour, despite relativistic effects. How ridiculously impressive.
+As a rule of thumb, smaller life seems to live faster: birds, rodents and insects. Their lives can be as short as an afternoon. Conversely, larger life seem to pass through time much slower; elephants, blue whales, and so on.
+
+Another time-based mystery is that many of us seem to have an internal clock with *surprisingly high* levels of precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know. You could easily argue that this is evolutionary, perhaps we've evolved to feel the rhythm of the day (the year, the seasons) on some low and unconscious level.
+
+My personal gut feeling is that time might all exist at once. Like a record we've put on and are experiencing in real-time and in a forward direction. We could be discovering life in real-time; already predetermined, yet we still don't know what's coming next. How could we possibly know that this isn't the case?
+
+And just like with anaesthesia, we might not fully grasp the nature of time, but we're able to make *jolly-good* use of it. Our atomic clocks are accurate enough to let us calculate the synchronisation of satellites moving at thousands of miles per hour, even compensating for relativistic effects (how impressive is that!)
 
 ### How we feel space
 
 There are similar mysteries regarding our relationship to space.
 
-As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite low. But why is that? It's plenty of space for even the very tallest people to exist happily. We know that people tend to prefer 2.6m or even 3m high ceilings. Illogically, a taller space just *feels nicer* to us.
+As a former architect, I intrinsically know that we find a domestic ceiling height of 2.4m to be quite *low*. But why is that? It's plenty of space for even the very tallest people to happily exist. We know that people tend to prefer 2.6m or even 3m high ceilings. Illogically, a taller space just *feels nicer* to us.
 
-We seem to have a desire for spaces that are irrationally larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel incredibly strange.
+We seem to have a desire for spaces that are irrationally larger than us. Yet if we go too tall, we feel an odd discomfort again. A 3m by 4m bedroom but with a 40m high ceiling? That would be ridiculous and feel pretty disturbing.
 
 It appears as if something extends above us and we can feel it. It wants the right ceiling height and we all just seem to instinctively know this.
 
@@ -182,15 +198,17 @@ The 2020 pandemic served as a grand [natural experiment](https://en.wikipedia.or
 
 The verdict? 
 
-*Eh.*
+*Meh.*
 
-Zoom... doesn't *quite cut it*. It's certainly not terrible, but it's also somehow missing something. Despite the best efforts of engineers, meetings with our coworkers just don't quite hit the same when held remotely. It's even possible to get quite lonely and isolated when working from home.
+Zoom... doesn't *quite cut it*. It's certainly not terrible, but it's also somehow missing something.
+
+Despite the best efforts of hoards of well-paid software engineers, meetings with our coworkers just don't quite hit the same when held remotely. It's even possible to get quite lonely and isolated when working from home despite, theoretically, having endless online social contact.
 
 We almost seem to require the presence of others physically around us. Sometimes we even go places, not to interact with people, but to just *be around others*. Other times we just want to people-watch. We are social beings.
 
 My suspicion is that there's something else, something energetic happening here that just can't be replicated online. We can reproduce the sight and the sound of people online, but it's clear to me that there's still a missing mystery ingredient. Take it away and you'll immediately notice the difference.
 
-A similar (but maybe related?) distinction for me is in watching something live and in-person vs seeing it recorded. It's obviously completely different; just look at the prices for live tickets versus buying the recording afterwards.
+A similar (but maybe related?) distinction for me is in watching something live and in-person vs seeing it recorded. It's obviously completely different; just look at the prices for live tickets versus buying the recording afterwards. We clearly value in-person experience much more highly than a digital facsimile.
 
 ### Psychosis, death and felt presence
 
@@ -232,22 +250,24 @@ We all just intuitively seem to know how to read eyes; how to spot the sultry "c
 
 ### Sex and sex magic
 
-Writing about sex is rarely not-awkward. Perhaps that tells us something; it's clearly quite a *big deal* to us, so much so that we find it almost difficult to discuss.
+Writing about sex is rarely not-awkward. Perhaps that tells us something; it's clearly quite a *big deal* to us, so much so that we can even find it almost difficult to discuss.
 
-Well, if you're that squeamish, feel free to jump to the next section. Who's gonna stop you? It's not like I'll ever know...
+Well, if you're that squeamish, feel free to jump to the next section. Who's gonna stop you?
 
 Getting back to it, to me, it's clear that sex is so much more significant than its purely physical dimension. I strongly suspect there's a lot of invisible and nuanced energetic stuff going on in the background. 
 
-I'm convinced that sex isn't just *one thing*. There are very clearly different types of sex that people have:
+I'm convinced that sex isn't just *one thing*. There are very clearly different types of sex that people are having. Let's take the two most obvious cases:
 
 * One-night stands. A more superficial, fun and spontaneous fling that seems to often go paired with a certain underhanded quality, with people sneaking off in the early hours to do something hidden. There's something lower energy, perhaps astral, to this. 
 * By contrast, there is the (now very cringe and uncool) notion of 'making love', which seems to be striking at the heart of something entirely different. Each person knows the other intimately, it's more caring, more of a dialogue and less transactional. 
 
 One way of thinking about it is the difference you feel in satiation; one is like fast food—it's quick, cheap and hits the spot when the need arises. The other is more like a wholesome home-cooked meal from someone who loves you. 
 
-As for sex magic (or 'magick' as it's sometimes spelled), Jack Parsons, founder of the pre-NASA Jet Propulsion Laboratory, was a huge and vocal proponent of sex magic, as were his contemporaries. And sex often plays a central role in cults: it's well known as a powerful driver of human behaviour and it often sits at the core of mammalian power dynamics. This all makes sense if what we're dealing with is something profoundly energetic.
+As for sex magic (or 'magick' as it's sometimes spelled), Jack Parsons, founder of the pre-NASA Jet Propulsion Laboratory, was a huge and vocal proponent of sex magic, as were his contemporaries.
 
-The French call the orgasm *la petite mort*—"the small death". Ironic that it's also the cause of all life as we know it.  
+Sex often plays a central role in cults: it's well known as a powerful driver of human behaviour and it often sits at the core of mammalian power dynamics. This all makes sense if what we're dealing with is something profoundly energetic.
+
+Finally, the French call the orgasm *la petite mort*—"the small death". Isn't it ironic that it's also the cause of all life as we know it. 
 
 ### Pregnancy and parenthood
 
