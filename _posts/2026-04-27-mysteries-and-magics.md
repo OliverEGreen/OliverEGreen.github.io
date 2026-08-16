@@ -275,31 +275,78 @@ There is possibly no greater magic than motherhood.
 
 Beyond the myriad of physical changes (and no doubt fear and discomfort) that come along for the ride with pregnancy, there can be perhaps nothing more profound to experience in this life than bringing another soul into the world.   
 
-The bond between mother and child; of growing and nourishing another life briefly within you is almost unimaginable from the outside.
+The bond between mother and child; of growing and nourishing another life briefly within you is almost unimaginable from the outside. In a way, what a privilege it is to be able to go through that at least once in this life.
 
-In a way, what a privilege it is to be able to go through that at least once in this life. At the end of the day, reproduction is the prime directive of any biological species.
+It's cheating a little to shoehorn this last one in here. It's not a magic of the body, but it relates to parenthood—the magic of naming a baby.
+
+This is one of the magics I regularly see people engaging with, whether they're aware of this or not. You can see expectant parents sort of fishing around in the either, trying out new names, pairing them with a surname and perhaps a middle name or two. Energetically they all need to sort of *hang together nicely*. 
+
+And names are powerful; not just the namem our initials or nicknames  matter too. They can shape our self-image, the energy we give off, perhaps even the paths of our lives. This magic is well acknowledged, we even have a name for it: nominative determinism.
 
 ## The magic of ritual
 
 ### Imbued objects
 
-Can we imbue inanimate objects with our meanings and energies using our own intention? I feel we can. Teddy bears. Religious relics. Spaces too.
+One magic people seem to engage with since forever, the world around, is in making certain *objects special*. Whether part of a tribal, religious or secular structure, we seem to instinctively imbue certain objects with an incredible amount of meaning. In a circular manner, this can grow the level of attention (or energy) placed upon them. 
+
+In the Middle Ages, European pilgrims would regularly travel long distances to see or touch important religious relics. But it can be something much more mundane than this; a child's beloved teddy bear or a silly fridge magnet from a holiday that is now a cherished memory.    
+
+Some objects are made specifically and only to be special—a trophy or a medal comes to mind—while some have this status placed upon them. 
+
+Over time, a relic might naturally develop its own mythology. Eventually, a special way of handling the relic is developed to ensure proper care and deference. We imbue these objects with energy and attention. And so, in some ways, they begin to develop a life of their own.
 
 ### Ancient worship
 
-Were all the ancient people around the world just plain wrong? It seems fishy. They weren't idiots.
+It has always irked me, the speed with which we're so flippantly able to dismiss the vast majority of ancient beliefs simply because *they're too weird to be true*. I don't think we've ever really been able to justify such a position.
+
+Around the world, practically everywhere, people have worshipped supernatural deities, often related to animals or natural phenomena. They built their lives around this worship, constructed temples and performed sacrifices in the names of their gods.
+
+It's only recently that we've entertained a more secular, scientific and rational viewpoints. So were all the different peoples who came before just plain wrong?
+
+Our modern, more sensitive and inclusive approach towards history *still* seems to sort of assume these people were ignorant and easily fooled into believing such nonsense: *"Aren't we so lucky that we know better now?"*
+
+On their behalf, I take issue with position. It seems lazy and intellectually cowardly to throw it all in the trash. 
 
 ### Black magic and sacrifice
 
-Black magic appears to be real. It's been practised forever. Deals with the devil. Sacrifice, energies from lower dimensions 'feeding' on loosh. Often leading to knowledge seemingly from nowhere: impossible pyramids, rocketry, iconic music. Long history of human sacrifice.
+Speaking of sacrifice, we're hearing into the darker stuff. 
 
-Faustian pacts.
+Another common motif we find in cultures across the world is some kind of thematic sacrifice; perhaps of food, animals or even human. It all takes the pattern of some supernatural deity, able to exercise their power in exchange for a terrible price: 
 
-Epstein and co were deeply serious people; they wouldn't waste their time on total nonsense. 
+* An offering of grain and a calf to a river goddess in exchange for a rich and timely flooding season.
+* A virgin sacrificed and buried beneath the new temple building to ensure its longevity as a sacred place.
+* A blues guitarist who sells his soul to the devil for his talent, fame and success. The classic Faustian pact.
+
+I find it significant and slightly worrying how often this pattern seems to naturally emerge across global cultures. I have no doubt that if humanity were to be reset, we'd stumble upon it again in no time. Is this proof that, perhaps, we're really onto something?
+
+One aspect I find especially troublesome is the revelations that emerged of Epstein and his lot very seriously engaged in demon worship. There's substantive evidence that they sacrificed children to the Ox? god Baal. Similarly, there have long been rumours of sacrifices to a woodland owl god at Bohemian Grove. One of the most powerful secret associations in the world is called the Skull and Bones, counting several Bush family members among its alumni. 
+
+What bothers me most is that these are some very deeply serious people we're talking about. Epstein and his like weren't in the habit of wasting their time with frivolous rituals for fun and games.
+
+They were engaged with geopolitics, financial engineering, war profiteering and radical human genetic editing projects. A casual side interest in amateur dramatics just doesn't fit the profile; they were clearly committed to their beliefs and found powerful benefits from them.
 
 ### Pyramids
 
 Why do they appear all around the world? Why is their stonework so absurdly, impossibly huge and perfect? Not just Egypt—South and Central America, all across Asia. We have no explanations.
+
+### The lower astral
+
+An interesting idea, a plane, like a parallel layer of existence to ours. Something energetic. One that I've always been able to feel. 
+
+It's definitely there. It's not even that far away. It's almost parallel to our existence, and some seem much more dialled into it than others.
+
+It's a lower energy, darker, more seedy and desperate. People can become enmeshed with these: dark beings might inhabit casinos, strip clubs, gangs, fighting events, cults.
+
+## Magic of the arts
+
+### Music
+
+Why can we be transported to another place, so moved and affected by sound in so many nuanced ways? How can two people play the same thing and one sounds wonderful while the other awful?
+"Opening the gates of magic."
+
+### Architecture
+
+x
 
 
 
@@ -309,27 +356,19 @@ Why do they appear all around the world? Why is their stonework so absurdly, imp
 
 How Mum is able to just tune in. Seeing and knowing impossible things. From seemingly anything: the Romans used animal entrails and birds in the sky, others use tea leaves or palmistry. It's just tuning in.
 
-### Why the eclipse is even possible
+### Total solar eclipses
 
-The chances are just absurdly low.
+It's long been observed that it's just *remarkable* how we're able to regularly witness a total solar eclipse here on earth. The chances of our moon being so perfectly placed as to exactly obscure the sun verge on the impossible. No such other plantes we've ever observed have such a phenomenon. 
+
+Our eyes perceive light logarithmically; even a 90% drop in external light levels is fairly subtle to us. It's only until we experience a 99% drop or higher that we really see darkness from an eclipse. A slightly smaller moon or one of irregular shape could totally disrupt the phenomenon.
+
+I find it too great a coincidence to naïvely accept that this is unremarkable and *just the way things are*.   
 
 ### The emptiness of the cosmos
 
 It seems odd. Space is impossibly empty. Everything is unimaginably huge and far away. Seems a bit pointlessly so. Are we really understanding it properly? It feels like we've not yet grasped what we're looking at. Is it really so empty or can we not see it (yet)?
 
-# Other
 
-## Lower astral places and people
 
-It's definitely there. It's not even that far away. It's almost parallel to our existence, and some seem much more dialled into it than others. It's a lower energy, darker, more seedy and desperate. People can become enmeshed with these: dark beings might inhabit casinos, strip clubs, gangs, fighting events, cults.
 
-## Music
-
-Why can we be transported to another place, so moved and affected by sound in so many nuanced ways? How can two people play the same thing and one sounds wonderful while the other awful?
-"Opening the gates of magic."
-
-## Names
-
-Our names are so powerful. Naming a child is a form of magic we try our best to embark on. Their choice of name or nickname matters too, can shape our self-image, energy, perhaps even the paths of our lives.
-This magic is well acknowledged, we even have a name for it: nominative determinism.
 
