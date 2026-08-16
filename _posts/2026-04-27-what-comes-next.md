@@ -8,7 +8,10 @@ kind: non-technical
 temperature: 0.7
 tagline: "Navigating the unthinkably wide-open"
 unfinished: true
+image: /assets/images/posts/what-comes-next-header.jpg
 ---
+
+![Masts and rigging of sailing barges reaching up into a starry night sky]({{ '/assets/images/posts/what-comes-next-header.jpg' | relative_url }})
 
 ## Contents
 {:.no_toc}
