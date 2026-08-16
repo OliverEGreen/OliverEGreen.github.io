@@ -66,8 +66,8 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
   background-color: rgba(250, 249, 247, 0.97);
   /* pearl wash: same nacre as the footer, riding every tint state */
   background-image: linear-gradient(100deg,
-    rgba(244,184,217,.10), rgba(201,181,242,.08) 30%, rgba(168,220,232,.10) 55%,
-    rgba(243,228,165,.12) 80%, rgba(242,193,160,.10));
+    rgba(244,184,217,.06), rgba(201,181,242,.05) 30%, rgba(168,220,232,.06) 55%,
+    rgba(243,228,165,.07) 80%, rgba(242,193,160,.06));
   -webkit-backdrop-filter: blur(1.5px); backdrop-filter: blur(1.5px);
   border-bottom: 1px solid var(--rule);
   transition: background-color .3s ease, border-color .3s ease;
@@ -496,8 +496,8 @@ article.post .forbidden-map img { max-width: none; border: 0; border-radius: 0; 
   background-color: var(--footer-live, var(--footer-bg));
   /* pearl wash: faint low-angle nacre over whichever tint the footer wears */
   background-image: linear-gradient(100deg,
-    rgba(244,184,217,.10), rgba(201,181,242,.08) 30%, rgba(168,220,232,.10) 55%,
-    rgba(243,228,165,.12) 80%, rgba(242,193,160,.10));
+    rgba(244,184,217,.06), rgba(201,181,242,.05) 30%, rgba(168,220,232,.06) 55%,
+    rgba(243,228,165,.07) 80%, rgba(242,193,160,.06));
   font-family: var(--sans); transition: background-color .4s ease;
 }
 .footer-inner { max-width: 1040px; margin: 0 auto; padding: 48px 24px; }

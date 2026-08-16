@@ -18,7 +18,7 @@ unfinished: true
 
 Welcome to my semi-organised pile of *musings*.
 
-This is my instinctive response to those fleeting moments in life where I wonder whether what I'm seeing actually *adds up* to our explanations. Beneath this, is my ongoing and naïve attempt to uncover some of  the *big-picture* nature of our existence.
+This is my instinctive response to those fleeting moments in life where I wonder whether what I'm seeing actually *adds up* to our explanations. Beneath this is my ongoing and naïve attempt to uncover some of the *big-picture* nature of our existence.
 
 What follows below is mostly an exercise in mental play; in thinking creatively. It's not about being intellectually mean or trying to appear clever. You won't find an ultra-serious, rigorous study in the paragraphs that ensue.
 
@@ -74,7 +74,7 @@ Perhaps, like a donkey staring at an iPad, our species just isn't intelligent en
 
 Alternatively, there may be whole dimensions of scientific exploration that we're able to grasp but have yet to open up. Areas, which would help put to rest such enormous questions about the true nature of life and death, whether the soul exists, and so on. That would of course be exciting and we'd love to see it.
 
-But since we're lacking this groundbreaking discovery, I still feel like there *still* may be sufficient clues that can give us a valuable sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
+But since we're lacking this groundbreaking discovery, I feel like there *still* may be sufficient clues that can give us a valuable sense of what's really going on. If we just gather them all together in a pile and stare at them really hard. Maybe. 
 
 In 1500s Italy, Copernicus and Galileo weren't able to directly observe the solar system from a clear, static vantage point. Instead, they had to observe indirect phenomena that *pointed towards* heliocentrism. They'd never been to Venus or the Sun. That didn't matter—they pieced the picture together from a handful of clues via inference.
 
@@ -96,7 +96,7 @@ Not just us—all known animals sleep in varying different ways. It's clearly vi
 
 This strikes me as odd. Given the prominence of sleep and its vital importance for life, you could imagine we'd have whole universities dedicated to furthering our knowledge of the phenomenon.
 
-By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist. Yet we seem to have a plethora of dental universities, publications and conferences and yet practically nothing for sleep. We just don't seem all that interested.
+By comparison: the average human spends 33% of their life asleep, and less than 0.1% of their life at the dentist. Yet we seem to have a plethora of dental universities, publications and conferences, and practically nothing for sleep. We just don't seem all that interested.
 
 Anaesthetic, our magic formula for sleep (technically comas) is also poorly understood. We know exactly how much to use, all about its mitigating factors and effects. And yet the core mechanism by which it actually puts us to sleep is, again, unknown. 
 
@@ -122,7 +122,7 @@ This makes an amount of sense. I've heard it said that symbolism is the language
 
 Other dreams can be much lower stakes. While some might seem prophetic, others feel like we're just replaying versions of waking life over in our heads: perhaps it's something we noticed, or heard someone say during the day but never fully processed at the time.
 
-Nightmares are their own special case. I'm fortunate enough to have had very few of these throughout my life. Some people I've known suffer through several every night. It's possible that these are effectively eruptions from the unconscious, when pressure builds our worst suppressed fears and traumas might rise up to the surface to haunt us?
+Nightmares are their own special case. I'm fortunate enough to have had very few of these throughout my life. Some people I've known suffer through several every night. It's possible that these are effectively eruptions from the unconscious; when pressure builds, our worst suppressed fears and traumas might rise up to the surface to haunt us.
 
 Sometimes these even seem to break through the mental/physical barrier. Many of us have been known to sleepwalk or sleep talk on occasion.
 
@@ -142,7 +142,7 @@ We seem to delete most of our lives—at least the boring parts. There seems to 
 
 The speed at which we pass through time also seems to vary. Different forms of life seem to experience time at different tempos; their respiration, heartbeats and reaction speed all seem to be noticeably faster or slower than ours.
 
-As a rule of thumb, smaller life seems to live faster: birds, rodents and insects. Their lives can be as short as an afternoon. Conversely, larger life seem to pass through time much slower; elephants, blue whales, and so on.
+As a rule of thumb, smaller life seems to live faster: birds, rodents and insects. Their lives can be as short as an afternoon. Conversely, larger life seems to pass through time much slower; elephants, blue whales, and so on.
 
 Another time-based mystery is that many of us seem to have an internal clock with *surprisingly high* levels of precision. Most of us know what it's like to regularly wake up just moments before an alarm we've set. It's as if we know. You could easily argue that this is evolutionary, perhaps we've evolved to feel the rhythm of the day (the year, the seasons) on some low and unconscious level.
 
@@ -202,7 +202,7 @@ The verdict?
 
 Zoom... doesn't *quite cut it*. It's certainly not terrible, but it's also somehow missing something.
 
-Despite the best efforts of hoards of well-paid software engineers, meetings with our coworkers just don't quite hit the same when held remotely. It's even possible to get quite lonely and isolated when working from home despite, theoretically, having endless online social contact.
+Despite the best efforts of hordes of well-paid software engineers, meetings with our coworkers just don't quite hit the same when held remotely. It's even possible to get quite lonely and isolated when working from home despite, theoretically, having endless online social contact.
 
 We almost seem to require the presence of others physically around us. Sometimes we even go places, not to interact with people, but to just *be around others*. Other times we just want to people-watch. We are social beings.
 
@@ -263,7 +263,7 @@ I'm convinced that sex isn't just *one thing*. There are very clearly different 
 
 One way of thinking about it is the difference you feel in satiation; one is like fast food—it's quick, cheap and hits the spot when the need arises. The other is more like a wholesome home-cooked meal from someone who loves you. 
 
-As for sex magic (or 'magick' as it's sometimes spelled), Jack Parsons, founder of the pre-NASA Jet Propulsion Laboratory, was a huge and vocal proponent of sex magic, as were his contemporaries.
+As for sex magic (or 'magick' as it's sometimes spelled), Jack Parsons, co-founder of the pre-NASA Jet Propulsion Laboratory, was a huge and vocal proponent of sex magic, as were his contemporaries.
 
 Sex often plays a central role in cults: it's well known as a powerful driver of human behaviour and it often sits at the core of mammalian power dynamics. This all makes sense if what we're dealing with is something profoundly energetic.
 
@@ -279,15 +279,15 @@ The bond between mother and child; of growing and nourishing another life briefl
 
 It's cheating a little to shoehorn this last one in here. It's not a magic of the body, but it relates to parenthood—the magic of naming a baby.
 
-This is one of the magics I regularly see people engaging with, whether they're aware of this or not. You can see expectant parents sort of fishing around in the either, trying out new names, pairing them with a surname and perhaps a middle name or two. Energetically they all need to sort of *hang together nicely*. 
+This is one of the magics I regularly see people engaging with, whether they're aware of this or not. You can see expectant parents sort of fishing around in the ether, trying out new names, pairing them with a surname and perhaps a middle name or two. Energetically they all need to sort of *hang together nicely*. 
 
-And names are powerful; not just the namem our initials or nicknames  matter too. They can shape our self-image, the energy we give off, perhaps even the paths of our lives. This magic is well acknowledged, we even have a name for it: nominative determinism.
+And names are powerful; not just the name; our initials or nicknames matter too. They can shape our self-image, the energy we give off, perhaps even the paths of our lives. This magic is well acknowledged, we even have a name for it: nominative determinism.
 
 ## The magic of ritual
 
 ### Imbued objects
 
-One magic people seem to engage with since forever, the world around, is in making certain *objects special*. Whether part of a tribal, religious or secular structure, we seem to instinctively imbue certain objects with an incredible amount of meaning. In a circular manner, this can grow the level of attention (or energy) placed upon them. 
+One magic people seem to have engaged with since forever, the world around, is in making certain *objects special*. Whether part of a tribal, religious or secular structure, we seem to instinctively imbue certain objects with an incredible amount of meaning. In a circular manner, this can grow the level of attention (or energy) placed upon them. 
 
 In the Middle Ages, European pilgrims would regularly travel long distances to see or touch important religious relics. But it can be something much more mundane than this; a child's beloved teddy bear or a silly fridge magnet from a holiday that is now a cherished memory.    
 
@@ -301,17 +301,17 @@ It has always irked me, the speed with which we're so flippantly able to dismiss
 
 Around the world, practically everywhere, people have worshipped supernatural deities, often related to animals or natural phenomena. They built their lives around this worship, constructed temples and performed sacrifices in the names of their gods.
 
-It's only recently that we've entertained a more secular, scientific and rational viewpoints. So were all the different peoples who came before just plain wrong?
+It's only recently that we've entertained more secular, scientific and rational viewpoints. So were all the different peoples who came before just plain wrong?
 
 Our modern, more sensitive and inclusive approach towards history *still* seems to sort of assume these people were ignorant and easily fooled into believing such nonsense: *"Aren't we so lucky that we know better now?"*
 
-On their behalf, I take issue with position. It seems lazy and intellectually cowardly to throw it all in the trash. 
+On their behalf, I take issue with this position. It seems lazy and intellectually cowardly to throw it all in the trash. 
 
 ### Black magic and sacrifice
 
-Speaking of sacrifice, we're hearing into the darker stuff. 
+Speaking of sacrifice, we're heading into the darker stuff. 
 
-Another common motif we find in cultures across the world is some kind of thematic sacrifice; perhaps of food, animals or even human. It all takes the pattern of some supernatural deity, able to exercise their power in exchange for a terrible price: 
+Another common motif we find in cultures across the world is some kind of thematic sacrifice; perhaps of food, animals or even humans. It all takes the pattern of some supernatural deity, able to exercise their power in exchange for a terrible price: 
 
 * An offering of grain and a calf to a river goddess in exchange for a rich and timely flooding season.
 * A virgin sacrificed and buried beneath the new temple building to ensure its longevity as a sacred place.
@@ -319,7 +319,7 @@ Another common motif we find in cultures across the world is some kind of themat
 
 I find it significant and slightly worrying how often this pattern seems to naturally emerge across global cultures. I have no doubt that if humanity were to be reset, we'd stumble upon it again in no time. Is this proof that, perhaps, we're really onto something?
 
-One aspect I find especially troublesome is the revelations that emerged of Epstein and his lot very seriously engaged in demon worship. There's substantive evidence that they sacrificed children to the Ox? god Baal. Similarly, there have long been rumours of sacrifices to a woodland owl god at Bohemian Grove. One of the most powerful secret associations in the world is called the Skull and Bones, counting several Bush family members among its alumni. 
+One aspect I find especially troublesome is the revelations that emerged of Epstein and his lot very seriously engaged in demon worship. There's substantive evidence that they sacrificed children to the bull god Baal. Similarly, there have long been rumours of sacrifices to a woodland owl god at Bohemian Grove. One of the most powerful secret associations in the world is called the Skull and Bones, counting several Bush family members among its alumni. 
 
 What bothers me most is that these are some very deeply serious people we're talking about. Epstein and his like weren't in the habit of wasting their time with frivolous rituals for fun and games.
 
@@ -358,9 +358,9 @@ How Mum is able to just tune in. Seeing and knowing impossible things. From seem
 
 ### Total solar eclipses
 
-It's long been observed that it's just *remarkable* how we're able to regularly witness a total solar eclipse here on earth. The chances of our moon being so perfectly placed as to exactly obscure the sun verge on the impossible. No such other plantes we've ever observed have such a phenomenon. 
+It's long been observed that it's just *remarkable* how we're able to regularly witness a total solar eclipse here on earth. The chances of our moon being so perfectly placed as to exactly obscure the sun verge on the impossible. No other planet we've observed enjoys such a phenomenon. 
 
-Our eyes perceive light logarithmically; even a 90% drop in external light levels is fairly subtle to us. It's only until we experience a 99% drop or higher that we really see darkness from an eclipse. A slightly smaller moon or one of irregular shape could totally disrupt the phenomenon.
+Our eyes perceive light logarithmically; even a 90% drop in external light levels is fairly subtle to us. It's not until we experience a 99% drop or higher that we really see darkness from an eclipse. A slightly smaller moon or one of irregular shape could totally disrupt the phenomenon.
 
 I find it too great a coincidence to naïvely accept that this is unremarkable and *just the way things are*.   
 
