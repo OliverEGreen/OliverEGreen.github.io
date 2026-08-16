@@ -8,7 +8,10 @@ kind: non-technical
 temperature: 0.9
 tagline: "A long list of loose threads to pull upon"
 unfinished: true
+image: /assets/images/posts/mysteries-and-magics-header.jpg
 ---
+
+![Wooden pigeonholes stacked with balls of yarn in every colour—a wall of threads to pull upon]({{ '/assets/images/posts/mysteries-and-magics-header.jpg' | relative_url }})
 
 * TOC
 {:toc}
