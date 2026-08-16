@@ -276,7 +276,22 @@ article.post #markdown-toc {
     var(--tint);
   border-radius: 10px;
   padding: 16px 22px 16px 34px; margin: 0 0 12px;
+  position: relative; overflow: hidden; max-height: 1200px;
+  transition: max-height .45s ease;
 }
+article.post #markdown-toc.toc-collapsible { padding-bottom: 58px; }
+article.post #markdown-toc.toc-collapsed { max-height: 200px; }
+article.post #markdown-toc.toc-collapsed::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 72px;
+  background: linear-gradient(rgba(240,239,231,0), var(--tint));
+}
+.toc-toggle {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 1;
+  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  background: var(--ink); color: var(--bg); border: 0; border-radius: 99px;
+  padding: 8px 16px; cursor: pointer; transition: background-color .2s ease;
+}
+.toc-toggle:hover { background: var(--accent-deep); }
 article.post #markdown-toc li { margin: 3px 0; }
 article.post #markdown-toc ul { padding-left: 16px; margin: 2px 0 0; }
 article.post #markdown-toc a { border-bottom: none; text-decoration: none; background-image: none; color: var(--ink-body); }

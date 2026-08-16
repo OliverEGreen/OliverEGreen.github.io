@@ -112,6 +112,21 @@
     updateDots();
   }
 
+  // 1a2) Collapsible contents: tall TOC cards start cut off with a fade
+  var toc = document.getElementById('markdown-toc');
+  if (toc && toc.scrollHeight > 320) {
+    toc.classList.add('toc-collapsible', 'toc-collapsed');
+    var tocBtn = document.createElement('button');
+    tocBtn.type = 'button';
+    tocBtn.className = 'toc-toggle';
+    tocBtn.textContent = 'Show more';
+    toc.appendChild(tocBtn);
+    tocBtn.addEventListener('click', function () {
+      var collapsed = toc.classList.toggle('toc-collapsed');
+      tocBtn.textContent = collapsed ? 'Show more' : 'Show less';
+    });
+  }
+
   // 1b) Blockquotes: each quote takes its own random tint from the palette
   document.querySelectorAll('article.post blockquote').forEach(function (bq) {
     var pick = pickTint();

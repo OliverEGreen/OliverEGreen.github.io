@@ -13,6 +13,9 @@ image: /assets/images/posts/mysteries-and-magics-header.jpg
 
 ![Wooden pigeonholes stacked with balls of yarn in every colour—a wall of threads to pull upon]({{ '/assets/images/posts/mysteries-and-magics-header.jpg' | relative_url }})
 
+## Contents
+{:.no_toc}
+
 * TOC
 {:toc}
 # Introduction

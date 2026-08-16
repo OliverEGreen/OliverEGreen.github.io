@@ -9,6 +9,12 @@ temperature: 0.7
 tagline: "Dispatches from a construction-tech conference"
 ---
 
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 I was recently at the [NXT BLD+DEV](https://nxtbld.com/) conference in Westminster for construction tech startups. I've attended this conference annually for the last 4 years and this was its 10th anniversary year.
 
 Until now, it had always been an exciting date in my calendar, buzzing with optimism for the future of our space.
@@ -19,8 +25,6 @@ This year, that optimistic atmosphere had changed. You've already seen the punch
 
 All year, I've been [thinking deeply](https://www.businessinsider.com/openai-merch-supply-co-2025-12) about the kinds of impact AI might have on different parts of the workforce. What follows is my best guess as to where all of this is going. 
 
-* TOC
-{:toc}
 
 
 ## Tech sector business models
