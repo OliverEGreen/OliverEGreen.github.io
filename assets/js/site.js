@@ -35,12 +35,15 @@
   if (header) {
     // Each time the header enters its scrolled state, pick a fresh tint
     // from the palette; the footer follows the same pick.
+    var themeMeta = document.querySelector('meta[name="theme-color"]');
+    var currentSolid = '#FAF9F7';
     var applyTint = function () {
       var pick = pickTint();
       var rootStyle = document.documentElement.style;
       rootStyle.setProperty('--scroll-tint', alphaOf(pick.solid, 0.96));
       rootStyle.setProperty('--scroll-line', alphaOf(pick.line, 0.5));
       rootStyle.setProperty('--footer-live', pick.solid);
+      currentSolid = pick.solid;
     };
     applyTint();
     var wasScrolled = false;
@@ -49,6 +52,8 @@
       if (sc && !wasScrolled) applyTint();
       wasScrolled = sc;
       header.classList.toggle('scrolled', sc);
+      // Safari tints its own chrome from theme-color; follow the header
+      if (themeMeta) themeMeta.setAttribute('content', sc ? currentSolid : '#FAF9F7');
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
