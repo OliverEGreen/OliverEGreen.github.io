@@ -67,22 +67,6 @@
     onScroll();
   }
 
-  // 1a0) Posts that open on a header image: the tagline leaves the header
-  //      and rides beneath the image as a centred caption instead. The date
-  //      stays opposite the title either way.
-  (function () {
-    var art = document.querySelector('article.writing-post');
-    if (!art) return;
-    var header = art.querySelector(':scope > header');
-    var tagline = header && header.querySelector('.tagline');
-    var lead = header && header.nextElementSibling;
-    if (tagline && lead && lead.tagName === 'P' && lead.children.length === 1 &&
-        lead.firstElementChild.tagName === 'IMG') {
-      lead.insertAdjacentElement('afterend', tagline);
-      tagline.classList.add('img-caption');
-    }
-  })();
-
   // 1a) Writing pages: a random Dracula dot follows each section heading.
   //     On scroll, each dot's lightness/chroma breathes on a sine wave
   //     (hue never changes, so the scheme holds). Per-dot phase offsets

@@ -260,8 +260,6 @@ article.post > header:has(+ p img)::after { background: transparent; height: 0; 
 /* Header image hugs the title: strip the lead image's own margins */
 article.post > header + p:has(> img:only-child) { margin: 0; }
 article.post > header + p:has(> img:only-child) > img { margin: 0 auto; }
-/* When JS moves the tagline beneath a header image, it becomes a centred caption */
-article.post .tagline.img-caption { text-align: center; margin: 12px 0 40px; font-size: 15.5px; color: var(--ink-faint); }
 article.post h2 { font-family: var(--sans); font-size: 23px; font-weight: 700; letter-spacing: -0.01em; margin: 44px 0 16px; color: var(--ink); }
 article.post h3 { font-family: var(--sans); font-size: 18px; font-weight: 700; margin: 36px 0 12px; color: var(--ink); }
 article.post p { margin: 0 0 20px; }
