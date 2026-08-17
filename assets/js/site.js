@@ -37,6 +37,7 @@
     // from the palette; the footer follows the same pick.
     var themeMeta = document.querySelector('meta[name="theme-color"]');
     var currentSolid = '#FAF9F7';
+    var lastChrome = '';
     var applyTint = function () {
       var pick = pickTint();
       var rootStyle = document.documentElement.style;
@@ -52,8 +53,15 @@
       if (sc && !wasScrolled) applyTint();
       wasScrolled = sc;
       header.classList.toggle('scrolled', sc);
-      // Safari tints its own chrome from theme-color; follow the header
-      if (themeMeta) themeMeta.setAttribute('content', sc ? currentSolid : '#FAF9F7');
+      // iOS 26 Safari ignores theme-color and samples body's background-color
+      // instead; older browsers still honour the meta. Feed both, once per
+      // state change.
+      var chromeColor = sc ? currentSolid : '#FAF9F7';
+      if (chromeColor !== lastChrome) {
+        lastChrome = chromeColor;
+        document.body.style.backgroundColor = chromeColor;
+        if (themeMeta) themeMeta.setAttribute('content', chromeColor);
+      }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
