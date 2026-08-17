@@ -155,6 +155,22 @@
       }).catch(function () {});
     });
   });
+  // 1a1) Tear-off separators: a subtle dashed line before each section
+  //      heading — but strictly between big blocks of text. Never before
+  //      the Contents block or the first real section, never after a
+  //      heading, never trailing the article.
+  var tearFirstSkipped = false;
+  headDots.forEach(function (h) {
+    if (h.id === 'contents') return;
+    if (!tearFirstSkipped) { tearFirstSkipped = true; return; }
+    var prev = h.previousElementSibling;
+    if (!prev || /^H[1-6]$/.test(prev.tagName)) return;
+    var tear = document.createElement('div');
+    tear.className = 'tear-line';
+    tear.setAttribute('aria-hidden', 'true');
+    h.parentNode.insertBefore(tear, h);
+  });
+
   // Polite live region so screen readers hear the copy succeed
   var srLive = null;
   if (headDots.length) {

@@ -245,6 +245,11 @@ article.post .meta .cal { width: 13px; height: 13px; flex: none; }
    even when a long title forces it onto its own wrapped line */
 article.post .title-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 18px; }
 article.post .title-row .meta { white-space: nowrap; margin-left: auto; }
+/* Mobile: date drops under the title, left-aligned */
+@media (max-width: 600px) {
+  article.post .title-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+  article.post .title-row .meta { margin-left: 0; }
+}
 article.post header .unfinished-tag { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: var(--bg); background: var(--accent); border-radius: 99px; padding: 4px 12px; margin: 0 0 16px; }
 article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; margin: 16px 0 0; color: var(--ink); }
 article.post > h1 { font-size: 29px; margin: 56px 0 20px; }
@@ -311,6 +316,22 @@ article.post mark { background: var(--sweep); color: inherit; padding: 1px 6px; 
 }
 /* Anchor jumps (TOC links, copied permalinks) land clear of the sticky header */
 article.post :is(h1, h2, h3, h4)[id] { scroll-margin-top: 76px; }
+
+/* Tear-off separator between big sections. Recipe: 7px dash, 7px gap,
+   1.5px thick, 40%, 26px breathing room each side. Padding-based spacing
+   so sibling margins can't collapse into it; the top pad subtracts the
+   preceding paragraph's 20px bottom margin and the following heading's
+   top margin is zeroed, keeping the visual gap symmetric. */
+article.post .tear-line {
+  margin: 0;
+  box-sizing: content-box;
+  height: 1.5px;
+  padding: 6px 0 26px;
+  background-image: repeating-linear-gradient(90deg, #D9CDBA 0 7px, transparent 7px 14px);
+  background-clip: content-box;
+  opacity: 0.4;
+}
+article.post .tear-line + h1, article.post .tear-line + h2 { margin-top: 0; }
 article.post img.about-portrait { float: right; width: 220px; height: 220px; object-fit: cover; border-radius: 12px; margin: 6px 0 18px 26px; }
 @media (max-width: 600px) { article.post img.about-portrait { width: 150px; height: 150px; margin: 4px 0 12px 16px; } }
 article.post u { text-decoration-color: var(--ink-soft); text-underline-offset: 3px; }
@@ -386,7 +407,9 @@ article.post .post-nav.article-end-nav a {
 .post-nav svg { width: 15px; height: 15px; }
 .btn-pill svg { width: 15px; height: 15px; }
 .see-all svg { width: 14px; height: 14px; }
-.fn-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink-mute); letter-spacing: .02em; margin: 48px 0 10px; }
+/* article.post scope so the margin beats the generic article.post p rule */
+article.post .fn-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink-mute); letter-spacing: .02em; margin: 48px 0 10px; }
+@media (max-width: 600px) { article.post .fn-title { margin-top: 64px; } }
 article.post .footnotes {
   margin-top: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-mute);
   background:
