@@ -263,6 +263,11 @@ article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; l
 article.post > h1 { font-size: 29px; margin: 56px 0 20px; }
 article.post header .tagline { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
 article.post header::after { content: ''; display: block; height: 1px; background: var(--rule); margin: 32px 0 36px; }
+/* JS swaps the header rule for a perforation; the solid line above is
+   the no-JS fallback */
+article.post header.has-tear::after { content: none; }
+article.post .tear-line.head-tear { padding: 32px 0 36px; }
+article.post .tear-line.head-tear::before, article.post .tear-line.head-tear::after { top: 32px; }
 /* Posts that open with a header image don't need the divider line */
 article.post > header:has(+ p img)::after { background: transparent; height: 0; margin: 14px 0 0; }
 /* Header image hugs the title: strip the lead image's own margins, but
@@ -334,14 +339,31 @@ article.post :is(h1, h2, h3, h4)[id] { scroll-margin-top: 76px; }
    preceding paragraph's 20px bottom margin and the following heading's
    top margin is zeroed, keeping the visual gap symmetric. */
 article.post .tear-line {
+  /* full-bleed: JS sets width to the exact visible viewport (100vw
+     overshoots by the scrollbar) and pulls it left of the column */
   margin: 0;
   box-sizing: content-box;
-  height: 1.5px;
+  height: 6px;
   padding: 6px 0 26px;
-  background-image: repeating-linear-gradient(90deg, #D9CDBA 0 7px, transparent 7px 14px);
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #D9CDBA 1.75px, transparent 2.25px);
+  /* background-size/position set by JS: the dot pitch divides the width
+     exactly, so every gap is equal right up to the edge semicircles */
+  background-size: 10px 6px;
+  background-origin: content-box;
   background-clip: content-box;
+  background-repeat: repeat-x;
   opacity: 0.4;
 }
+/* Each end finishes in a slightly larger semicircle, flat side at the
+   column edge — the half-punched holes of a real perforation strip */
+article.post .tear-line::before, article.post .tear-line::after {
+  content: ''; position: absolute; top: 6px; width: 6px; height: 6px;
+  border-radius: 50%; background: #D9CDBA;
+}
+article.post .tear-line::before { left: -3px; }
+article.post .tear-line::after { right: -3px; }
 article.post .tear-line + h1, article.post .tear-line + h2 { margin-top: 0; }
 article.post img.about-portrait { float: right; width: 220px; height: 220px; object-fit: cover; border-radius: 12px; margin: 6px 0 18px 26px; }
 @media (max-width: 600px) { article.post img.about-portrait { width: 150px; height: 150px; margin: 4px 0 12px 16px; } }
@@ -392,7 +414,8 @@ article.post #markdown-toc li { margin: 3px 0; }
 article.post #markdown-toc ul { padding-left: 20px; margin: 2px 0 0; }
 /* Top-level entries: a touch bolder, no bullet; nested levels lighter
    with filled bullets */
-article.post #markdown-toc > li { list-style: none; font-weight: 600; }
+article.post #markdown-toc > li { list-style: none; font-weight: 600; margin-bottom: 8px; }
+article.post #markdown-toc > li > ul { margin-top: 4px; }
 article.post #markdown-toc > li li { font-weight: 400; list-style: disc; }
 article.post #markdown-toc a { border-bottom: none; text-decoration: none; background-image: none; color: var(--ink-body); }
 article.post #markdown-toc a:hover { color: var(--accent-deep); }
@@ -508,7 +531,12 @@ article.post a.btn-pill-alt:hover { background: var(--accent-deep); color: var(-
 .cv-when { flex: 0 0 148px; font-family: var(--sans); font-size: 13px; color: var(--ink-faint); font-variant-numeric: tabular-nums; padding-top: 4px; }
 .cv-when:has(.cv-year) { padding-top: 0; }
 .cv-year {
-  display: inline-block; background: var(--ink); color: var(--bg);
+  display: inline-block; color: var(--bg);
+  /* lifted a touch from --ink, with a whisper of nacre over the dark */
+  background-color: #2E2A22;
+  background-image: linear-gradient(100deg,
+    rgba(244,184,217,.10), rgba(201,181,242,.08) 30%, rgba(168,220,232,.10) 55%,
+    rgba(243,228,165,.12) 80%, rgba(242,193,160,.10));
   font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
   padding: 4px 12px; border-radius: 99px; white-space: nowrap;
 }
@@ -578,7 +606,15 @@ article.post .pcard-title {
   display: flex; gap: 8px; align-items: center; flex-wrap: nowrap;
   margin: 0; font-family: var(--sans); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #f2eee2;
 }
-article.post .pcard-title .cv-year { flex-shrink: 0; font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 999px; color: #12120f; background: #cfc9b6; letter-spacing: 0; }
+article.post .pcard-title .cv-year {
+  flex-shrink: 0; font-size: 11px; font-weight: 600; padding: 4px 9px;
+  border-radius: 999px; color: #12120f; letter-spacing: 0;
+  /* brighter ground with a whisper of nacre */
+  background-color: #DCD6C2;
+  background-image: linear-gradient(100deg,
+    rgba(244,184,217,.14), rgba(201,181,242,.11) 30%, rgba(168,220,232,.14) 55%,
+    rgba(243,228,165,.16) 80%, rgba(242,193,160,.14));
+}
 article.post .pcard-kicker {
   font-family: var(--serif); font-size: 13px; line-height: 1.45; color: #a8a294; margin: 8px 0 0;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;

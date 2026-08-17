@@ -101,7 +101,16 @@
     }
     return copyFallback(t);
   };
-  document.querySelectorAll('article.writing-post > h1, article.writing-post > h2').forEach(function (h, k) {
+  // All article pages get the dots: writing posts, CV, About, projects.
+  // Raw-HTML pages lack kramdown ids, so headings are slugged on the fly
+  // to make their section permalinks real.
+  document.querySelectorAll('article.post > h1, article.post > h2').forEach(function (h, k) {
+    if (!h.id) {
+      var slug = h.textContent.trim().toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+      while (slug && document.getElementById(slug)) slug += '-2';
+      if (slug) h.id = slug;
+    }
     var i;
     do { i = Math.floor(Math.random() * BLOBS.length); } while (i === lastDot);
     lastDot = i;
@@ -144,6 +153,7 @@
   //      the Contents block or the first real section, never after a
   //      heading, never trailing the article.
   var tearFirstSkipped = false;
+  var tearLines = [];
   headDots.forEach(function (h) {
     if (h.id === 'contents') return;
     if (!tearFirstSkipped) { tearFirstSkipped = true; return; }
@@ -153,7 +163,47 @@
     tear.className = 'tear-line';
     tear.setAttribute('aria-hidden', 'true');
     h.parentNode.insertBefore(tear, h);
+    tearLines.push(tear);
   });
+  // The rule line under each page header becomes a perforation too —
+  // except when a header image directly follows (the image is the divider)
+  document.querySelectorAll('article.post > header').forEach(function (hd) {
+    var next = hd.nextElementSibling;
+    if (next && next.tagName === 'P' && next.children.length === 1 &&
+        next.firstElementChild && next.firstElementChild.tagName === 'IMG') return;
+    var tear = document.createElement('div');
+    tear.className = 'tear-line head-tear';
+    tear.setAttribute('aria-hidden', 'true');
+    hd.classList.add('has-tear');
+    hd.insertAdjacentElement('afterend', tear);
+    tearLines.push(tear);
+  });
+  if (tearLines.length) {
+    // Equal perforation pitch: pick the dot period nearest 10px that
+    // divides the full-bleed width exactly, and phase the pattern so dot
+    // centres land on multiples of it — the end dots coincide with (and
+    // hide under) the larger edge semicircles, so every visible gap
+    // matches, edge to edge.
+    var sizeTears = function () {
+      // True visible width — 100vw would overshoot by the scrollbar and
+      // push the edge semicircles off screen
+      var W = document.documentElement.clientWidth;
+      var artLeft = tearLines[0].parentNode.getBoundingClientRect().left;
+      if (!W) return;
+      var p = W / Math.max(4, Math.round(W / 10));
+      tearLines.forEach(function (t) {
+        t.style.width = W + 'px';
+        t.style.marginLeft = (-artLeft) + 'px';
+        t.style.backgroundSize = p + 'px 6px';
+        t.style.backgroundPositionX = (p / 2) + 'px';
+      });
+    };
+    sizeTears();
+    var tearRaf = 0;
+    window.addEventListener('resize', function () {
+      if (!tearRaf) tearRaf = requestAnimationFrame(function () { tearRaf = 0; sizeTears(); });
+    }, { passive: true });
+  }
 
   // Polite live region so screen readers hear the copy succeed
   var srLive = null;
