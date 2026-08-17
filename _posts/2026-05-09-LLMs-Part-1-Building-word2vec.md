@@ -22,6 +22,12 @@ My goal for this series is twofold:
 * Firstly, I want to better-understand the world of language models, since they've become such a large part of our day-to-day lives.
 * Secondly, if anyone should ever read this, to make the theory and practice behind them a tiny bit less difficult and opaque.
 
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 ## Word2Vec
 
 After much research, I landed on the [2013 Google Word2Vec](https://arxiv.org/pdf/1301.3781) paper. This marked a seminal moment when the NLP community shifted to NNs, and it covered the embedding subject that is still core to RAGs today. I was familiar with previous [Markov](https://www.youtube.com/watch?v=KZeIEiBrT_w)-like / HMM approaches to language ML, but this seemed like a reasonable place to pick up my learning. 

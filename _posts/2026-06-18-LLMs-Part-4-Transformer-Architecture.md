@@ -13,6 +13,12 @@ tagline: "This post is Part 4 in this series, where I try to teach myself the ve
 
 *I have also recently discovered the Stanford online course [Language Modeling From Scratch](https://cs336.stanford.edu/), which I look forward to checking out soon. For any visual learners, I'd highly recommend the [series on neural networks by 3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk).*
 
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 ## Introduction
 
 Ok, it sounds grandiose, but Google's 2017 paper '[Attention is All You Need](https://arxiv.org/abs/1706.03762)' has influenced practically every AI achievement of the past 9 years. It was a seriously big deal and the world simply wouldn't be the same without transformer architecture. In a way, it's incredible that the paper's authors aren't household names by now, like Crick and Watson.

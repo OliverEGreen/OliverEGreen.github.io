@@ -19,6 +19,12 @@ tagline: "Refactoring our hand-written GPT-1 into GPT-2, exploring the optimisat
 * *[Part 4](https://olliegreen.info/writing/LLMs-Part-4-Transformer-Architecture/)* - Building transformer architecture
 * *[Part 5](https://olliegreen.info/writing/LLMs-Part-5-Tokenisation/)* - Tokenisation
 
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 ## Introduction
 
 After building a working transformer model, I was left wondering about where to take this project next. I'd been semi-chronologically building out some of the most influential language modelling approaches but, despite its release almost a decade ago, transformer architecture still absolutely dominates the field. What we've seen since is an explosion of [variants](https://sebastianraschka.com/llm-architecture-gallery/) of this architecture. Refining those variants is still very much an active area of research today: 
