@@ -310,7 +310,39 @@ article.post sup a, article.post .footnotes a.reversefootnote {
 }
 article.post sup a { font-size: 12px; }
 article.post sup a:hover, article.post .footnotes a.reversefootnote:hover { color: var(--accent); background: none; }
-article.post .footnotes { border-top: 1px solid var(--rule); margin-top: 44px; padding-top: 24px; font-size: 15px; color: var(--ink-mute); }
+/* Article end: asterism full-stop + centred escape hatch */
+.article-end { display: flex; justify-content: center; gap: 14px; margin: 64px 0 0; }
+.article-end i { width: 8px; height: 8px; border-radius: 50%; }
+.post-nav.article-end-nav { margin: 36px 0 8px; text-align: center; }
+article.post .post-nav.article-end-nav a {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  background: var(--ink); color: var(--bg);
+  text-decoration: none; border-bottom: none;
+  padding: 9px 18px; border-radius: 99px; transition: background-color .2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  article.post .post-nav.article-end-nav a:hover { background: var(--accent-deep); color: var(--bg); }
+}
+.post-nav.article-end-nav svg { width: 15px; height: 15px; }
+.fn-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink-mute); letter-spacing: .02em; margin: 48px 0 10px; }
+article.post .footnotes {
+  margin-top: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-mute);
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(244,184,217,.10), transparent 55%),
+    radial-gradient(110% 80% at 85% 20%, rgba(168,220,232,.12), transparent 50%),
+    radial-gradient(120% 110% at 50% 100%, rgba(243,228,165,.14), transparent 55%),
+    var(--tint);
+  border-radius: 10px; padding: 16px 22px;
+  position: relative; overflow: hidden; max-height: 2000px;
+  transition: max-height .45s ease;
+}
+article.post .footnotes.fn-collapsible { padding-bottom: 58px; }
+article.post .footnotes.fn-collapsed { max-height: 150px; }
+article.post .footnotes.fn-collapsed::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 64px;
+  background: linear-gradient(rgba(240,239,231,0), var(--tint));
+}
 article.post .footnotes ol { padding-left: 20px; margin: 0; }
 
 article.post blockquote {

@@ -140,6 +140,56 @@
     });
   }
 
+  // 1a3) Article end: asterism full stop, centred escape hatch, boxed footnotes
+  var endArt = document.querySelector('article.writing-post');
+  var endNav = document.querySelector('.post-nav');
+  if (endArt && endNav) {
+    var fns = endArt.querySelector('.footnotes');
+    var endMark = document.createElement('div');
+    endMark.className = 'article-end';
+    var endCols = [];
+    for (var e = 0; e < 3; e++) {
+      var ci;
+      do { ci = Math.floor(Math.random() * BLOBS.length); } while (endCols.indexOf(ci) !== -1);
+      endCols.push(ci);
+      var endDot = document.createElement('i');
+      endDot.style.background = BLOBS[ci];
+      endMark.appendChild(endDot);
+    }
+    if (fns) endArt.insertBefore(endMark, fns); else endArt.appendChild(endMark);
+    endNav.classList.add('article-end-nav');
+    if (fns) endArt.insertBefore(endNav, fns); else endArt.appendChild(endNav);
+    var endA = endNav.querySelector('a');
+    if (endA) {
+      var endTxt = endA.textContent.replace(/^\u2190\s*/, '');
+      endA.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg><span></span>';
+      endA.querySelector('span').textContent = endTxt;
+    }
+    if (fns) {
+      var fnTitle = document.createElement('p');
+      fnTitle.className = 'fn-title';
+      fnTitle.textContent = 'Footnotes';
+      endArt.insertBefore(fnTitle, fns);
+      if (fns.scrollHeight > 220) {
+        fns.classList.add('fn-collapsible', 'fn-collapsed');
+        var fnBtn = document.createElement('button');
+        fnBtn.type = 'button';
+        fnBtn.className = 'toc-toggle';
+        fnBtn.textContent = 'Show all';
+        fns.appendChild(fnBtn);
+        fnBtn.addEventListener('click', function () {
+          var c = fns.classList.toggle('fn-collapsed');
+          fnBtn.textContent = c ? 'Show all' : 'Show less';
+        });
+        document.querySelectorAll('sup a.footnote').forEach(function (m) {
+          m.addEventListener('click', function () {
+            if (fns.classList.contains('fn-collapsed')) fnBtn.click();
+          });
+        });
+      }
+    }
+  }
+
   // 1b) Blockquotes: each quote takes its own random tint from the palette
   document.querySelectorAll('article.post blockquote').forEach(function (bq) {
     var pick = pickTint();
@@ -235,7 +285,10 @@
       'You can leave, now',
       'Exit through the gift shop'
     ];
-    backLink.textContent = '← ' + EXITS[Math.floor(Math.random() * EXITS.length)];
+    var exitPhrase = EXITS[Math.floor(Math.random() * EXITS.length)];
+    var exitSpan = backLink.querySelector('span');
+    if (exitSpan) exitSpan.textContent = exitPhrase;
+    else backLink.textContent = '← ' + exitPhrase;
   }
 
   // 6) Contact form: validates, then POSTs to the form backend so the
