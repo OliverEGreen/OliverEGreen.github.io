@@ -245,10 +245,18 @@ article.post .meta .cal { width: 13px; height: 13px; flex: none; }
    even when a long title forces it onto its own wrapped line */
 article.post .title-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 18px; }
 article.post .title-row .meta { white-space: nowrap; margin-left: auto; }
-/* Mobile: date drops under the title, left-aligned */
+/* Mobile: the date drops below the subtitle, left-aligned — stacking
+   order becomes title, tagline, date. display:contents lifts the
+   title-row's children into the header's flex flow so they can reorder
+   around the tagline. */
 @media (max-width: 600px) {
-  article.post .title-row { flex-direction: column; align-items: flex-start; gap: 10px; }
-  article.post .title-row .meta { margin-left: 0; }
+  article.post > header { display: flex; flex-direction: column; }
+  article.post .title-row { display: contents; }
+  article.post header .unfinished-tag { order: 0; align-self: flex-start; }
+  article.post header h1 { order: 1; }
+  article.post header .tagline { order: 2; }
+  article.post .title-row .meta { order: 3; margin: 12px 0 0; }
+  article.post > header::after { order: 4; }
 }
 article.post header .unfinished-tag { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: var(--bg); background: var(--accent); border-radius: 99px; padding: 4px 12px; margin: 0 0 16px; }
 article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; margin: 16px 0 0; color: var(--ink); }
@@ -260,6 +268,11 @@ article.post > header:has(+ p img)::after { background: transparent; height: 0; 
 /* Header image hugs the title: strip the lead image's own margins */
 article.post > header + p:has(> img:only-child) { margin: 0; }
 article.post > header + p:has(> img:only-child) > img { margin: 0 auto; }
+/* Mobile: air between the header image and the start of the text (collapses
+   away when a heading with a larger margin follows) */
+@media (max-width: 600px) {
+  article.post > header + p:has(> img:only-child) { margin-bottom: 24px; }
+}
 article.post h2 { font-family: var(--sans); font-size: 23px; font-weight: 700; letter-spacing: -0.01em; margin: 44px 0 16px; color: var(--ink); }
 article.post h3 { font-family: var(--sans); font-size: 18px; font-weight: 700; margin: 36px 0 12px; color: var(--ink); }
 article.post p { margin: 0 0 20px; }
