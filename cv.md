@@ -16,9 +16,10 @@ permalink: /cv/
     </header>
 
     <h2>Profile</h2>
-    <p>For the last 5 years I've led digital products from inception through to delivery as a Technical Product Manager.</p>
-    <p>Underneath that sits a double-barrelled background: I practised as an architect, then became a .NET developer specialising in computational design&mdash;data systems, design systems and complex technical workflows. I can design the thing, and I can build the thing.</p>
+    <p>For the last 5 years I've led digital products from inception through to delivery. You can call me a technical product manager or a software developer.</p>
+    <p>Underneath that sits a double-barrelled background: I practised as an ARB-registered architect, then became a .NET developer specialising in computational design&mdash;data systems, design systems and complex technical workflows. I can design the thing, and I can build the thing.</p>
     <p>I own roadmap, UX and delivery, and work closely with engineers from discovery through to release. These days, nearly everything I build is made with (and around) AI.</p>
+    <p>Where possible, I like to skip the jargon and talk to real people in plain English. For me, the value lands when I see your eyes light up.</p>
 
     <h2>Skills Stack</h2>
     <div class="cv-entry">
@@ -64,7 +65,7 @@ permalink: /cv/
     <div class="cv-entry">
         <div class="cv-when"><span class="cv-year">2019</span></div>
         <div class="cv-what">
-            <h3>Applied Machine Learning, Emeritus Institute &amp; Columbia Engineering (97.1%)</h3>
+            <h3><a href="https://certificates.emeritus.org/wmfa6ndn#acc.sWtwQfn2">Applied Machine Learning, Emeritus Institute &amp; Columbia Engineering</a> (97.1%)</h3>
             <p>I was awarded a certificate in Applied Machine Learning, a course taught by the mathematics department of Columbia University, in which students coded implementations of classic ML algorithms in Python. I passed with a score of 97.1%.</p>
         </div>
     </div>
