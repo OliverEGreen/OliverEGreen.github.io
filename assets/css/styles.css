@@ -369,7 +369,7 @@ article.post #markdown-toc {
     radial-gradient(120% 110% at 50% 100%, rgba(243,228,165,.14), transparent 55%),
     var(--tint);
   border-radius: 10px;
-  padding: 16px 22px 16px 34px; margin: 0 0 36px;
+  padding: 16px 18px 16px 28px; margin: 0 0 36px;
   position: relative; overflow: hidden; max-height: 1200px;
   transition: max-height .45s ease;
 }
@@ -389,7 +389,11 @@ article.post #markdown-toc.toc-collapsed::after {
 .toc-toggle svg { width: 15px; height: 15px; }
 @media (hover: hover) and (pointer: fine) { .toc-toggle:hover { background: var(--accent-deep); } }
 article.post #markdown-toc li { margin: 3px 0; }
-article.post #markdown-toc ul { padding-left: 16px; margin: 2px 0 0; }
+article.post #markdown-toc ul { padding-left: 20px; margin: 2px 0 0; }
+/* Top-level entries: a touch bolder, no bullet; nested levels lighter
+   with filled bullets */
+article.post #markdown-toc > li { list-style: none; font-weight: 600; }
+article.post #markdown-toc > li li { font-weight: 400; list-style: disc; }
 article.post #markdown-toc a { border-bottom: none; text-decoration: none; background-image: none; color: var(--ink-body); }
 article.post #markdown-toc a:hover { color: var(--accent-deep); }
 

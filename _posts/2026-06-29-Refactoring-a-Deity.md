@@ -12,6 +12,13 @@ image: /assets/images/posts/refactoring-a-deity-header.jpg
 
 ![A classical ink-wash landscape of robed pilgrims processing through misty mountains towards data centres]({{ '/assets/images/posts/refactoring-a-deity-header.jpg' | relative_url }})
 
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
+
 ## Introduction
 
 Throughout the last hundred years, one of the major social changes we've witnessed is the rapid fading of traditional theistic religion. You know, "[God is dead](https://en.wikipedia.org/wiki/God_is_dead)" and all that. 
