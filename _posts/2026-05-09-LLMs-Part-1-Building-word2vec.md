@@ -9,6 +9,13 @@ temperature: 0.15
 tagline: "This is Part 1 of a series I'm writing about LLMs and natural language models."
 ---
 
+
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 I was recently asked in an interview how much I knew about [RAGs](https://en.wikipedia.org/wiki/Retrieval-augmented_generation). 
 
 I replied honestly; I've read about them and gone back and forth with LLMs so that I grasp the basic ideas. But this question stayed with me. I wasn't satisfied with my surface-level knowledge. Given how much LLMs have reshaped our world in the last few years, I started longing for a deeper knowledge—the kind you can only achieve through building, testing, failing and fixing. 
@@ -21,12 +28,6 @@ My goal for this series is twofold:
 
 * Firstly, I want to better-understand the world of language models, since they've become such a large part of our day-to-day lives.
 * Secondly, if anyone should ever read this, to make the theory and practice behind them a tiny bit less difficult and opaque.
-
-## Contents
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Word2Vec
 

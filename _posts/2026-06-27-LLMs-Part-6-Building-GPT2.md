@@ -9,6 +9,13 @@ temperature: 0.15
 tagline: "Refactoring our hand-written GPT-1 into GPT-2, exploring the optimisations needed to train at this scale on rented GPU hardware."
 ---
 
+
+## Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
 *This is Part 6 in my series on building language models. In this post, I refactor our hand-written GPT-1 model into GPT-2, exploring a wide range of optimisations necessary to train a model of this scale on rented GPU hardware.*
 
 *For more, see:*
@@ -18,12 +25,6 @@ tagline: "Refactoring our hand-written GPT-1 into GPT-2, exploring the optimisat
 * *[Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/)* - Building an LSTM
 * *[Part 4](https://olliegreen.info/writing/LLMs-Part-4-Transformer-Architecture/)* - Building transformer architecture
 * *[Part 5](https://olliegreen.info/writing/LLMs-Part-5-Tokenisation/)* - Tokenisation
-
-## Contents
-{:.no_toc}
-
-* TOC
-{:toc}
 
 ## Introduction
 

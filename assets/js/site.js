@@ -261,11 +261,12 @@
       });
     };
     var sqAbove = makeSquiggle(1);
-    var sqBelow = makeSquiggle(-1);
     if (fns) endArt.insertBefore(sqAbove, fns); else endArt.appendChild(sqAbove);
     endNav.classList.add('article-end-nav');
     if (fns) endArt.insertBefore(endNav, fns); else endArt.appendChild(endNav);
-    if (fns) endArt.insertBefore(sqBelow, fns); else endArt.appendChild(sqBelow);
+    // Bottom squiggle only when something follows it (the footnotes card);
+    // with nothing beneath, the back button is the full stop
+    if (fns) endArt.insertBefore(makeSquiggle(-1), fns);
     drawSquiggles();
     var sqRaf = 0;
     window.addEventListener('resize', function () {

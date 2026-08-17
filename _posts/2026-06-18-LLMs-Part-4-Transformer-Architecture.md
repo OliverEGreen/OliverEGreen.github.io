@@ -9,15 +9,16 @@ temperature: 0.1
 tagline: "This post is Part 4 in this series, where I try to teach myself the very basics of language modelling."
 ---
 
-*This post is Part 4 in this series, where I try to teach myself the very basics of language modelling. For my earlier posts, see: [Part 1](https://olliegreen.info/writing/LLMs-Part-1-Building-word2vec/), [Part 2](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/) and [Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/).*
-
-*I have also recently discovered the Stanford online course [Language Modeling From Scratch](https://cs336.stanford.edu/), which I look forward to checking out soon. For any visual learners, I'd highly recommend the [series on neural networks by 3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk).*
 
 ## Contents
 {:.no_toc}
 
 * TOC
 {:toc}
+
+*This post is Part 4 in this series, where I try to teach myself the very basics of language modelling. For my earlier posts, see: [Part 1](https://olliegreen.info/writing/LLMs-Part-1-Building-word2vec/), [Part 2](https://olliegreen.info/writing/LLMs-Part-2-Building-a-Vanilla-RNN/) and [Part 3](https://olliegreen.info/writing/LLMs-Part-3-Building-an-LSTM/).*
+
+*I have also recently discovered the Stanford online course [Language Modeling From Scratch](https://cs336.stanford.edu/), which I look forward to checking out soon. For any visual learners, I'd highly recommend the [series on neural networks by 3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk).*
 
 ## Introduction
 
