@@ -382,11 +382,11 @@ article.post #markdown-toc.toc-collapsed::after {
 .toc-toggle {
   position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 1;
   display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
   background: var(--ink); color: var(--bg); border: 0; border-radius: 99px;
-  padding: 8px 16px; cursor: pointer; transition: background-color .2s ease;
+  padding: 11px 20px; cursor: pointer; transition: background-color .2s ease;
 }
-.toc-toggle svg { width: 14px; height: 14px; }
+.toc-toggle svg { width: 15px; height: 15px; }
 @media (hover: hover) and (pointer: fine) { .toc-toggle:hover { background: var(--accent-deep); } }
 article.post #markdown-toc li { margin: 3px 0; }
 article.post #markdown-toc ul { padding-left: 16px; margin: 2px 0 0; }
@@ -404,12 +404,15 @@ article.post sup a:hover, article.post .footnotes a.reversefootnote:hover { colo
 .article-end { display: block; width: 100%; margin: 56px 0 0; }
 .article-end.below { margin: 0 0 8px; }
 .post-nav.article-end-nav { margin: 34px 0; text-align: center; }
+/* No footnotes below: centre the button between squiggle and footer.
+   64px above; below, -32px borrows from main's 96px padding = 64px. */
+.post-nav.article-end-nav.article-end-solo { margin: 64px 0 -32px; }
 article.post .post-nav.article-end-nav a {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--sans); font-size: 14px; font-weight: 600; line-height: 1.3;
   background: var(--ink); color: var(--bg);
   text-decoration: none; border-bottom: none;
-  padding: 9px 18px; border-radius: 99px; transition: background-color .2s ease;
+  padding: 11px 20px; border-radius: 99px; transition: background-color .2s ease;
 }
 @media (hover: hover) and (pointer: fine) {
   article.post .post-nav.article-end-nav a:hover { background: var(--accent-deep); color: var(--bg); }
@@ -486,10 +489,10 @@ article.post hr { border: 0; height: 1px; background: var(--rule); margin: 44px 
 /* ---------- CV ---------- */
 .cv-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; font-family: var(--sans); }
 .btn-pill {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 7px;
   background: var(--ink); color: var(--bg); border-bottom: none; text-decoration: none;
-  font-size: 14px; font-weight: 600;
-  padding: 12px 22px; border-radius: 99px;
+  font-size: 14px; font-weight: 600; line-height: 1.3;
+  padding: 11px 20px; border-radius: 99px;
   transition: background-color .2s ease;
 }
 article.post a.btn-pill { background: var(--ink); border-bottom: none; text-decoration: none; color: var(--bg); }

@@ -265,8 +265,10 @@
     endNav.classList.add('article-end-nav');
     if (fns) endArt.insertBefore(endNav, fns); else endArt.appendChild(endNav);
     // Bottom squiggle only when something follows it (the footnotes card);
-    // with nothing beneath, the back button is the full stop
+    // with nothing beneath, the back button is the full stop, centred in
+    // the space between the squiggle and the footer
     if (fns) endArt.insertBefore(makeSquiggle(-1), fns);
+    else endNav.classList.add('article-end-solo');
     drawSquiggles();
     var sqRaf = 0;
     window.addEventListener('resize', function () {
