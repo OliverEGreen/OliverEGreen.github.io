@@ -125,6 +125,13 @@
     updateDots();
   }
 
+  // Shared toggle-pill label: text plus a drawn up/down arrow
+  var setToggle = function (btn, label, dir) {
+    btn.innerHTML = '<span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      (dir === 'down' ? '<path d="M12 5v14"/><path d="M6 13l6 6 6-6"/>' : '<path d="M12 19V5"/><path d="M6 11l6-6 6 6"/>') + '</svg>';
+    btn.querySelector('span').textContent = label;
+  };
+
   // 1a2) Collapsible contents: tall TOC cards start cut off with a fade
   var toc = document.getElementById('markdown-toc');
   if (toc && toc.scrollHeight > 320) {
@@ -132,11 +139,12 @@
     var tocBtn = document.createElement('button');
     tocBtn.type = 'button';
     tocBtn.className = 'toc-toggle';
-    tocBtn.textContent = 'Show more';
+    setToggle(tocBtn, 'Show more', 'down');
     toc.appendChild(tocBtn);
     tocBtn.addEventListener('click', function () {
       var collapsed = toc.classList.toggle('toc-collapsed');
-      tocBtn.textContent = collapsed ? 'Show more' : 'Show less';
+      if (collapsed) setToggle(tocBtn, 'Show more', 'down');
+      else setToggle(tocBtn, 'Show less', 'up');
     });
   }
 
@@ -145,24 +153,48 @@
   var endNav = document.querySelector('.post-nav');
   if (endArt && endNav) {
     var fns = endArt.querySelector('.footnotes');
-    var endMark = document.createElement('div');
-    endMark.className = 'article-end';
-    var endCols = [];
-    for (var e = 0; e < 3; e++) {
-      var ci;
-      do { ci = Math.floor(Math.random() * BLOBS.length); } while (endCols.indexOf(ci) !== -1);
-      endCols.push(ci);
-      var endDot = document.createElement('i');
-      endDot._base = ci;
-      endDot._lch = BLOB_LCH[ci];
-      endDot._phase = (headDots.length + e) * 2.399;
-      endDot.style.setProperty('--head-dot', BLOBS[ci]);
-      endMark.appendChild(endDot);
-      headDots.push(endDot);
-    }
-    if (fns) endArt.insertBefore(endMark, fns); else endArt.appendChild(endMark);
+    // Squiggle recipe: freq 22, amp 6.5, pure sine, 2.5px, nacre 45%
+    var SQ_FREQ = 22, SQ_AMP = 6.5, SQ_THICK = 2.5, SQ_NACRE = 0.45;
+    var SQ_STOPS = [['0%','#F2D9C8'],['20%','#F4D8E3'],['40%','#E3DCF4'],['60%','#CFE7EF'],['78%','#D8ECD9'],['100%','#F3EBC9']];
+    var SVG_NS = 'http://www.w3.org/2000/svg';
+    var squiggles = [];
+    var makeSquiggle = function (flip) {
+      var svg = document.createElementNS(SVG_NS, 'svg');
+      svg.setAttribute('class', 'article-end' + (flip === -1 ? ' below' : ''));
+      svg.setAttribute('aria-hidden', 'true');
+      svg._flip = flip;
+      squiggles.push(svg);
+      return svg;
+    };
+    var drawSquiggles = function () {
+      var W = endArt.clientWidth;
+      if (!W) return;
+      var H = 2 * SQ_AMP + SQ_THICK + 4, mid = H / 2;
+      squiggles.forEach(function (svg, si) {
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+        svg.style.height = H + 'px';
+        var d = '';
+        for (var x = 0; x <= W; x += 1.5) {
+          var y = mid + svg._flip * SQ_AMP * Math.cos(((x - W / 2) / W) * Math.PI * 2 * SQ_FREQ);
+          d += (x === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(2);
+        }
+        var stops = SQ_STOPS.map(function (st) { return '<stop offset="' + st[0] + '" stop-color="' + st[1] + '"/>'; }).join('');
+        svg.innerHTML = '<defs><linearGradient id="sqnac' + si + '" x1="0" y1="0" x2="1" y2="0">' + stops + '</linearGradient></defs>' +
+          '<path d="' + d + '" fill="none" stroke="#D5CEBD" stroke-width="' + SQ_THICK + '" stroke-linecap="round"/>' +
+          '<path d="' + d + '" fill="none" stroke="url(#sqnac' + si + ')" stroke-width="' + SQ_THICK + '" stroke-linecap="round" opacity="' + SQ_NACRE + '"/>';
+      });
+    };
+    var sqAbove = makeSquiggle(1);
+    var sqBelow = makeSquiggle(-1);
+    if (fns) endArt.insertBefore(sqAbove, fns); else endArt.appendChild(sqAbove);
     endNav.classList.add('article-end-nav');
     if (fns) endArt.insertBefore(endNav, fns); else endArt.appendChild(endNav);
+    if (fns) endArt.insertBefore(sqBelow, fns); else endArt.appendChild(sqBelow);
+    drawSquiggles();
+    var sqRaf = 0;
+    window.addEventListener('resize', function () {
+      if (!sqRaf) sqRaf = requestAnimationFrame(function () { sqRaf = 0; drawSquiggles(); });
+    }, { passive: true });
     var endA = endNav.querySelector('a');
     if (endA) {
       var endTxt = endA.textContent.replace(/^\u2190\s*/, '');
@@ -179,11 +211,12 @@
         var fnBtn = document.createElement('button');
         fnBtn.type = 'button';
         fnBtn.className = 'toc-toggle';
-        fnBtn.textContent = 'Show all';
+        setToggle(fnBtn, 'Show all', 'down');
         fns.appendChild(fnBtn);
         fnBtn.addEventListener('click', function () {
           var c = fns.classList.toggle('fn-collapsed');
-          fnBtn.textContent = c ? 'Show all' : 'Show less';
+          if (c) setToggle(fnBtn, 'Show all', 'down');
+          else setToggle(fnBtn, 'Show less', 'up');
         });
         document.querySelectorAll('sup a.footnote').forEach(function (m) {
           m.addEventListener('click', function () {

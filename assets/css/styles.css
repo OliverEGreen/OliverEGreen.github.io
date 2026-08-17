@@ -293,10 +293,12 @@ article.post #markdown-toc.toc-collapsed::after {
 }
 .toc-toggle {
   position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 1;
+  display: inline-flex; align-items: center; gap: 7px;
   font-family: var(--sans); font-size: 13px; font-weight: 700;
   background: var(--ink); color: var(--bg); border: 0; border-radius: 99px;
   padding: 8px 16px; cursor: pointer; transition: background-color .2s ease;
 }
+.toc-toggle svg { width: 14px; height: 14px; }
 @media (hover: hover) and (pointer: fine) { .toc-toggle:hover { background: var(--accent-deep); } }
 article.post #markdown-toc li { margin: 3px 0; }
 article.post #markdown-toc ul { padding-left: 16px; margin: 2px 0 0; }
@@ -311,13 +313,9 @@ article.post sup a, article.post .footnotes a.reversefootnote {
 article.post sup a { font-size: 12px; }
 article.post sup a:hover, article.post .footnotes a.reversefootnote:hover { color: var(--accent); background: none; }
 /* Article end: asterism full-stop + centred escape hatch */
-.article-end { display: flex; justify-content: center; gap: 14px; margin: 64px 0 0; }
-.article-end i {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--head-dot, transparent);
-  transition: background-color var(--dot-fade, 300ms) ease;
-}
-.post-nav.article-end-nav { margin: 36px 0 8px; text-align: center; }
+.article-end { display: block; width: 100%; margin: 56px 0 0; }
+.article-end.below { margin: 0 0 8px; }
+.post-nav.article-end-nav { margin: 34px 0; text-align: center; }
 article.post .post-nav.article-end-nav a {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--sans); font-size: 13px; font-weight: 700;
@@ -328,7 +326,10 @@ article.post .post-nav.article-end-nav a {
 @media (hover: hover) and (pointer: fine) {
   article.post .post-nav.article-end-nav a:hover { background: var(--accent-deep); color: var(--bg); }
 }
-.post-nav.article-end-nav svg { width: 15px; height: 15px; }
+.post-nav a { display: inline-flex; align-items: center; gap: 7px; }
+.post-nav svg { width: 15px; height: 15px; }
+.btn-pill svg { width: 15px; height: 15px; }
+.see-all svg { width: 14px; height: 14px; }
 .fn-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink-mute); letter-spacing: .02em; margin: 48px 0 10px; }
 article.post .footnotes {
   margin-top: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink-mute);
@@ -581,6 +582,7 @@ article.post .forbidden-map img { max-width: none; border: 0; border-radius: 0; 
   font-size: 14px; font-weight: 600; font-family: var(--sans);
   padding: 11px 20px; border-radius: 99px; transition: background-color .2s ease;
 }
+.sub-form button svg { width: 15px; height: 15px; }
 .sub-form button:hover { background: var(--accent-deep); }
 .sub-error { font-size: 12.5px; color: oklch(0.5 0.14 30); margin-top: 8px; }
 .sub-done { font-size: 14.5px; font-weight: 500; color: var(--accent-link); }

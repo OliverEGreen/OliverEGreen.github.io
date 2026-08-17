@@ -29,7 +29,7 @@ permalink: /about/
         <label for="cf-message">Message</label>
         <div class="message-box">
             <textarea id="cf-message" name="message" rows="6" placeholder="Let it all out." required></textarea>
-            <button class="btn-pill" type="submit">Send it <span>&rarr;</span></button>
+            <button class="btn-pill" type="submit">Send it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
         </div>
         <div class="contact-error sub-error" hidden></div>
     </form>

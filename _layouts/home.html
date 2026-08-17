@@ -11,7 +11,7 @@ layout: default
             <button data-filter="non-technical">Non-technical</button>
         </div>
         {% endif %}
-        {% unless page.show_all %}<a class="see-all" href="{{ '/writing/' | relative_url }}">See all &rarr;</a>{% endunless %}
+        {% unless page.show_all %}<a class="see-all" href="{{ '/writing/' | relative_url }}">See all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>{% endunless %}
     </div>
 
     {% assign writing_posts = site.posts | where_exp: "post", "post.fun != true" %}
@@ -38,7 +38,7 @@ layout: default
 <article class="post section-projects" id="projects">
     <div class="section-head">
         <h2>Projects</h2>
-        <a class="see-all" href="{{ '/projects/' | relative_url }}">See all &rarr;</a>
+        <a class="see-all" href="{{ '/projects/' | relative_url }}">See all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="pgrid">
         {% assign latest = site.projects | where: "section", "work" | where_exp: "pr", "pr.title != 'KOPE Market'" | sort: "order" %}

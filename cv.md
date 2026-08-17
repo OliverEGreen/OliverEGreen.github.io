@@ -9,9 +9,9 @@ permalink: /cv/
         <h1>Curriculum Vitae</h1>
         <p class="tagline">Agentic Developer / Technical Product Manager / Architect &amp; Designer based in Rochester, Kent</p>
         <div class="cv-actions">
-            <a class="btn-pill" href="{{ '/assets/Oliver-Green-CV.pdf' | relative_url }}" download>Download PDF CV <span>&darr;</span></a>
-            <a class="btn-pill btn-pill-alt" href="{{ '/assets/Oliver-Green-Portfolio.pdf' | relative_url }}" download>Download PDF Portfolio <span>&darr;</span></a>
-            <a class="btn-pill btn-pill-alt" href="https://www.linkedin.com/in/oliver-green/">Find me on LinkedIn <span>&rarr;</span></a>
+            <a class="btn-pill" href="{{ '/assets/Oliver-Green-CV.pdf' | relative_url }}" download>Download PDF CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg></a>
+            <a class="btn-pill btn-pill-alt" href="{{ '/assets/Oliver-Green-Portfolio.pdf' | relative_url }}" download>Download PDF Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg></a>
+            <a class="btn-pill btn-pill-alt" href="https://www.linkedin.com/in/oliver-green/">Find me on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
         </div>
     </header>
 
