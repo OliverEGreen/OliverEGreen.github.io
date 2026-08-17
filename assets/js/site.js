@@ -153,8 +153,12 @@
       do { ci = Math.floor(Math.random() * BLOBS.length); } while (endCols.indexOf(ci) !== -1);
       endCols.push(ci);
       var endDot = document.createElement('i');
-      endDot.style.background = BLOBS[ci];
+      endDot._base = ci;
+      endDot._lch = BLOB_LCH[ci];
+      endDot._phase = (headDots.length + e) * 2.399;
+      endDot.style.setProperty('--head-dot', BLOBS[ci]);
       endMark.appendChild(endDot);
+      headDots.push(endDot);
     }
     if (fns) endArt.insertBefore(endMark, fns); else endArt.appendChild(endMark);
     endNav.classList.add('article-end-nav');

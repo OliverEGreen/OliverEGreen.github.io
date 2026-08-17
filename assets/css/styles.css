@@ -312,7 +312,11 @@ article.post sup a { font-size: 12px; }
 article.post sup a:hover, article.post .footnotes a.reversefootnote:hover { color: var(--accent); background: none; }
 /* Article end: asterism full-stop + centred escape hatch */
 .article-end { display: flex; justify-content: center; gap: 14px; margin: 64px 0 0; }
-.article-end i { width: 8px; height: 8px; border-radius: 50%; }
+.article-end i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--head-dot, transparent);
+  transition: background-color var(--dot-fade, 300ms) ease;
+}
 .post-nav.article-end-nav { margin: 36px 0 8px; text-align: center; }
 article.post .post-nav.article-end-nav a {
   display: inline-flex; align-items: center; gap: 8px;
