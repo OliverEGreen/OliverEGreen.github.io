@@ -22,8 +22,8 @@
   --sweep: oklch(0.93 0.04 45);
   --sweep-press: oklch(0.85 0.09 45);
   /* Dracula (dark-mode header) */
-  --dk-bg: #282A36;
-  --dk-line: #44475A;
+  --dk-bg: #1E1B15;
+  --dk-line: #3A352A;
   --dk-fg: #F8F8F2;
   --sans: 'Hanken Grotesk', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
   --serif: 'Source Serif 4', Georgia, serif;
@@ -143,7 +143,7 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 }
 .nav-drop:hover .nav-menu { visibility: visible; opacity: 1; }
 .nav-menu > div {
-  background: #343746; border: 1px solid var(--dk-line); border-radius: 10px;
+  background: #262219; border: 1px solid var(--dk-line); border-radius: 10px;
   box-shadow: 0 8px 24px rgba(30,26,18,0.35); padding: 6px;
   display: flex; flex-direction: column; min-width: 170px;
 }
@@ -253,7 +253,7 @@ article.post .title-row .meta { white-space: nowrap; margin-left: auto; }
 article.post header .unfinished-tag { display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: var(--bg); background: var(--accent); border-radius: 99px; padding: 4px 12px; margin: 0 0 16px; }
 article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; margin: 16px 0 0; color: var(--ink); }
 article.post > h1 { font-size: 29px; margin: 56px 0 20px; }
-article.post header .tagline { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
+article.post header .tagline { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
 article.post header::after { content: ''; display: block; height: 1px; background: var(--rule); margin: 32px 0 36px; }
 /* Posts that open with a header image don't need the divider line */
 article.post > header:has(+ p img)::after { background: transparent; height: 0; margin: 14px 0 0; }
