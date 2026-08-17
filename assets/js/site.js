@@ -67,6 +67,22 @@
     onScroll();
   }
 
+  // 1a0) Posts that open on a header image: the tagline leaves the header
+  //      and rides beneath the image as a centred caption instead. The date
+  //      stays opposite the title either way.
+  (function () {
+    var art = document.querySelector('article.writing-post');
+    if (!art) return;
+    var header = art.querySelector(':scope > header');
+    var tagline = header && header.querySelector('.tagline');
+    var lead = header && header.nextElementSibling;
+    if (tagline && lead && lead.tagName === 'P' && lead.children.length === 1 &&
+        lead.firstElementChild.tagName === 'IMG') {
+      lead.insertAdjacentElement('afterend', tagline);
+      tagline.classList.add('img-caption');
+    }
+  })();
+
   // 1a) Writing pages: a random Dracula dot follows each section heading.
   //     On scroll, each dot's lightness/chroma breathes on a sine wave
   //     (hue never changes, so the scheme holds). Per-dot phase offsets
@@ -82,6 +98,25 @@
   ];
   var lastDot = -1;
   var headDots = [];
+  // Copy via the async clipboard API, falling back to a hidden textarea
+  // if the API is missing or refuses (permissions, odd embedders)
+  var copyFallback = function (t) {
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = t;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(new Error('copy refused')); } finally { ta.remove(); }
+    });
+  };
+  var copyText = function (t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(t).catch(function () { return copyFallback(t); });
+    }
+    return copyFallback(t);
+  };
   document.querySelectorAll('article.writing-post > h1, article.writing-post > h2').forEach(function (h, k) {
     var i;
     do { i = Math.floor(Math.random() * BLOBS.length); } while (i === lastDot);
@@ -91,7 +126,43 @@
     h._phase = k * 2.399; // golden-angle offsets: organic shimmer, no unison
     h.style.setProperty('--head-dot', BLOBS[i]);
     headDots.push(h);
+    // The dot itself is a secret section-permalink button. It inherits
+    // --head-dot from the heading, so the scroll animation drives it too.
+    var url = location.origin + location.pathname + (h.id ? '#' + h.id : '');
+    var tip = h.id ? 'Link to this section' : 'Link to this post';
+    // Freeze the heading's accessible name before the button joins it,
+    // so heading navigation doesn't announce the button label 16 times
+    var name = h.textContent.trim();
+    h.setAttribute('aria-label', name);
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'head-dot';
+    btn.setAttribute('aria-label', h.id ? 'Copy link to section: ' + name : 'Copy link to this post');
+    btn.dataset.tip = tip;
+    h.appendChild(btn);
+    btn.addEventListener('click', function () {
+      copyText(url).then(function () {
+        btn.dataset.tip = 'Copied';
+        btn.classList.add('copied');
+        if (srLive) srLive.textContent = 'Link copied';
+        clearTimeout(btn._tipT);
+        btn._tipT = setTimeout(function () {
+          btn.classList.remove('copied');
+          if (srLive) srLive.textContent = '';
+          // restore the label once the tooltip has faded out
+          btn._tipT = setTimeout(function () { btn.dataset.tip = tip; }, 250);
+        }, 1300);
+      }).catch(function () {});
+    });
   });
+  // Polite live region so screen readers hear the copy succeed
+  var srLive = null;
+  if (headDots.length) {
+    srLive = document.createElement('div');
+    srLive.className = 'sr-live';
+    srLive.setAttribute('role', 'status');
+    document.body.appendChild(srLive);
+  }
   if (headDots.length) {
     // 'breathe': sine-wave lightness/chroma shimmer. 'step': dots walk the
     // palette in lockstep, one step per DOT_PERIOD px, cross-fading between.
@@ -153,8 +224,13 @@
   var endNav = document.querySelector('.post-nav');
   if (endArt && endNav) {
     var fns = endArt.querySelector('.footnotes');
-    // Squiggle recipe: freq 22, amp 6.5, pure sine, 2.5px, nacre 45%
-    var SQ_FREQ = 22, SQ_AMP = 6.5, SQ_THICK = 2.5, SQ_NACRE = 0.45;
+    // Squiggle recipe: amp 6.5, pure sine, 2.5px, nacre 45%. The wave count
+    // is responsive: the recipe's 22 waves were tuned on the 672px desktop
+    // column (~30.5px per wave), so narrower screens fit fewer whole waves
+    // at the same wavelength. Rounding keeps the count integer, which keeps
+    // the centred cosine ending crest-to-crest symmetric.
+    var SQ_WAVELEN = 672 / 22, SQ_AMP = 6.5, SQ_THICK = 2.5, SQ_NACRE = 0.45;
+    var sqFreq = function (W) { return Math.max(4, Math.round(W / SQ_WAVELEN)); };
     var SQ_STOPS = [['0%','#F2D9C8'],['20%','#F4D8E3'],['40%','#E3DCF4'],['60%','#CFE7EF'],['78%','#D8ECD9'],['100%','#F3EBC9']];
     var SVG_NS = 'http://www.w3.org/2000/svg';
     var squiggles = [];
@@ -175,7 +251,7 @@
         svg.style.height = H + 'px';
         var d = '';
         for (var x = 0; x <= W; x += 1.5) {
-          var y = mid + svg._flip * SQ_AMP * Math.cos(((x - W / 2) / W) * Math.PI * 2 * SQ_FREQ);
+          var y = mid + svg._flip * SQ_AMP * Math.cos(((x - W / 2) / W) * Math.PI * 2 * sqFreq(W));
           d += (x === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(2);
         }
         var stops = SQ_STOPS.map(function (st) { return '<stop offset="' + st[0] + '" stop-color="' + st[1] + '"/>'; }).join('');
