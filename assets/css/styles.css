@@ -263,11 +263,6 @@ article.post h1 { font-family: var(--sans); font-size: 36px; font-weight: 700; l
 article.post > h1 { font-size: 29px; margin: 56px 0 20px; }
 article.post header .tagline { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink-mute); margin: 14px 0 0; }
 article.post header::after { content: ''; display: block; height: 1px; background: var(--rule); margin: 32px 0 36px; }
-/* JS swaps the header rule for a perforation; the solid line above is
-   the no-JS fallback */
-article.post header.has-tear::after { content: none; }
-article.post .tear-line.head-tear { padding: 32px 0 36px; }
-article.post .tear-line.head-tear::before, article.post .tear-line.head-tear::after { top: 32px; }
 /* Posts that open with a header image don't need the divider line */
 article.post > header:has(+ p img)::after { background: transparent; height: 0; margin: 14px 0 0; }
 /* Header image hugs the title: strip the lead image's own margins, but

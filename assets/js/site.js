@@ -165,19 +165,6 @@
     h.parentNode.insertBefore(tear, h);
     tearLines.push(tear);
   });
-  // The rule line under each page header becomes a perforation too —
-  // except when a header image directly follows (the image is the divider)
-  document.querySelectorAll('article.post > header').forEach(function (hd) {
-    var next = hd.nextElementSibling;
-    if (next && next.tagName === 'P' && next.children.length === 1 &&
-        next.firstElementChild && next.firstElementChild.tagName === 'IMG') return;
-    var tear = document.createElement('div');
-    tear.className = 'tear-line head-tear';
-    tear.setAttribute('aria-hidden', 'true');
-    hd.classList.add('has-tear');
-    hd.insertAdjacentElement('afterend', tear);
-    tearLines.push(tear);
-  });
   if (tearLines.length) {
     // Equal perforation pitch: pick the dot period nearest 10px that
     // divides the full-bleed width exactly, and phase the pattern so dot
