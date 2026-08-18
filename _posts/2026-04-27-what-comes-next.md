@@ -263,9 +263,8 @@ Leaps forward in material science can cause a chain reaction; enabling us to bui
 
 One huge potential excitement from a few years ago was the (sadly, false) alarm that university researchers had discovered a room-temperature superconductor material, called [LK-99](https://www.nature.com/articles/d41586-023-02585-7). This is the kind of discovery which, if replicable, could potentially pave the way for absolutely sci-fi level technology. 
 
-Another area of research that's seen a lot of current interest is in manufacturing artificial spider silk[^7]. Expensive and time-consuming to extract from live spiders, this material has an unmatched strength-to-lightness ratio which, again, if harnessed properly could find its way into our skyscrapers, bridges or beyond.
+Another area of research that's seen a lot of current interest is in manufacturing [artificial spider silk](https://www.youtube.com/watch?v=wt4p2oalmRY). Expensive and time-consuming to extract from live spiders, this material has an unmatched strength-to-lightness ratio which, again, if harnessed properly could find its way into our skyscrapers, bridges or beyond.
 
-[^7]: [Veritasium video on spider silk](https://www.youtube.com/watch?v=wt4p2oalmRY)
 
 ### Biology and biotech
 
@@ -291,13 +290,13 @@ Our planet is overwhelmingly covered in water, and yet our largest expanse is st
 
 I've been enjoying watching Gabe Newell (yes—the founder of Steam) [building out his $815m research fleet](https://robbreport.com/motors/marine/gabe-newell-vard-research-vessel-1238270958/) to explore them. You can follow along on YouTube. I'd like to see others with similar means get in on the action as well.
 
-We barely even have decent maps of the sea floor. The lower we seem to dive into the oceans, the more extreme the life becomes. Creatures that exist in underwater volcanoes. Jellyfish species that resemble a mobile disco.
+We barely even have decent maps of the sea floor. The lower we seem to dive into the oceans, the more extreme the life becomes. Creatures that exist in underwater volcanoes. [Jellyfish species that resemble a mobile disco](https://www.youtube.com/watch?v=9D0eyl7-XQA).
 
 ### Glacier ice
 
 The earth's freezer drawer is continent-sized and full of historical riches. Arctic and Antarctic drill samples act like time capsules, giving us a rich understanding of a wide slice of time that no other medium possibly can.
 
-Furthermore, historic ice ages mixed with our contemporary deep glacial melts mean that artifacts, plants and bodies (human or animal) that have been frozen in time for thousands of years are resurfacing—before quickly degrading. We have a rare opportunity to capture and study these specimens before they are lost to science forever.
+Furthermore, historic ice ages mixed with our contemporary deep glacial melts mean that artifacts, plants and bodies ([human](https://en.wikipedia.org/wiki/%C3%96tzi) or [animal](https://www.cnn.com/2024/12/23/europe/baby-mammoth-russian-crater-preserved-intl-latam)) that have been frozen in time for thousands of years are resurfacing—before quickly degrading. We have a rare opportunity to capture and study these specimens before they are lost to science forever.
 
 ### Geological history
 
@@ -309,7 +308,7 @@ Besides this, what other grand geological events could we uncover evidence for?
 
 ### The deepest forests
 
-Even now, there remain a few remote forests and jungles where animals have no memory of ever seeing a human. In these deep wildernesses, several species are reported as having no fear of people, often not afraid so much as curious about us.
+Even now, there remain a few remote forests and jungles where animals have no memory of ever seeing a human. In these deep wildernesses, [several species are reported as having no fear of people](https://news.mongabay.com/2007/12/photos-two-unknown-mammal-species-discovered-in-lost-world/), often not afraid so much as curious about us.
 
 It sounds too magical to be true. But perhaps it's a reminder that it's not just our oceans which could use some deeper exploration, but our jungles as well.
 
@@ -317,9 +316,9 @@ It sounds too magical to be true. But perhaps it's a reminder that it's not just
 
 ### Paleoanthropology
 
-The story of humanity is still being written. Our ancestry is becoming clearer by the decade, but it's not the simple picture we once knew. Discoveries in recent years have extended the dawn of Homo Sapiens to several hundred thousand, if not a million years ago. 
+The story of humanity is still being written. Our ancestry is becoming clearer by the decade, but it's not the simple picture we once knew. Discoveries in recent years have [extended the dawn of Homo Sapiens to several hundred thousand](https://www.science.org/content/article/world-s-oldest-homo-sapiens-fossils-found-morocco), if not a million years ago. 
 
-Recent decades have helped us uncover new branches of our evolutionary tree, while newer techniques in DNA analysis indicate that our sub-species often interbred or faced evolutionary dead ends.
+Recent decades have helped us uncover [new branches of our evolutionary tree](https://en.wikipedia.org/wiki/Homo_floresiensis), while newer techniques in DNA analysis indicate that [our sub-species often interbred](https://www.nhm.ac.uk/discover/denisovans.html) or faced evolutionary dead ends.
 
 The greatest mystery here that I can't wrap my head around is that of the Peruvian cave mummies. Their white bodies are clearly hominid, but seem to belong to a wildly different branch of our species.
 
@@ -363,7 +362,7 @@ Many of us barely have time, let alone the mental headspace, to take true stock 
 
 Perhaps there's now finally time for some real healing and therapy to take place. Maybe it's time to challenge ourselves, step outside of our comfort zones and confront the many things that scare us or hold us back.
 
-Beyond this, we could see a level of psychedelic exploration as well. If it's possible to safely dose on hallucinogenic substances, we might all enjoy a brief stint as psychonauts.
+Beyond this, we could see a level of psychedelic exploration as well. If it's possible to safely dose on hallucinogenic substances, we might all enjoy a brief stint as [psychonauts](https://en.wikipedia.org/wiki/Psychonautics). After all, we've just finally identified [the Chinese mushroom that makes you see tiny people everywhere](https://phys.org/news/2026-08-qa-mushroom-tiny-people-hallucinations.html). Sounds fun.
 
 ## Exploring the biggest mysteries
 
