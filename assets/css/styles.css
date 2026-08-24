@@ -497,6 +497,11 @@ article.post pre code { background: transparent; padding: 0; border-radius: 0; }
 /* Images */
 article.post img { max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; display: block; margin: 32px auto; background: var(--tint); }
 article.post video { display: block; width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; margin: 32px auto; background: #000; }
+/* A video as the first content acts like a header image: hug the title,
+   drop the header divider */
+article.post > header:has(+ video)::after { background: transparent; height: 0; margin: 14px 0 0; }
+article.post > header + video { margin: 0 0 32px; }
+@media (max-width: 600px) { article.post > header + video { margin-bottom: 24px; } }
 main table { font-family: var(--sans); font-size: 15px; line-height: 1.5; border-collapse: separate; border-spacing: 0; margin: 28px 0; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
 main th { background: var(--tint); font-size: 13.5px; font-weight: 600; color: var(--ink); text-align: left; padding: 10px 20px; border-bottom: 1px solid var(--rule); }
 main td { padding: 9px 20px; border-bottom: 1px solid var(--rule); color: var(--ink-body); font-variant-numeric: tabular-nums; }
