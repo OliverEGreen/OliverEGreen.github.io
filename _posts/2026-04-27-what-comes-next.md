@@ -374,17 +374,89 @@ I've collected these together in a separate article—a long list of threads to 
 
 # Part Two: An Age of Recovery
 
-Beyond discovery, there are problems in our midst that we already know the solutions to. What I'd like to see is something of an age of recovery.
+Beyond exploring the great unknown, there remain legions problems in our midst to which we already know the solutions. In tandem with discovery, what I'd like to see is some kind of Age of Recovery.
 
-The 20th century was a wild ride for Western culture. Our species has a nasty habit of burning our fingers on every possible hot stove before course-correcting; we overdo things, we go to extremes. Common sense often does prevail, eventually, but it's rarely been our first approach.
+What do I mean by this? 
 
-## Reversing population decline
+The 20th century and decades thereafter have been, it's fair to say, a pretty wild ride for Western culture. Perhaps that's understating it. These are, of course, grand narratives that you could spend many lifetimes exploring and still never do them sufficient justice.
 
-How we relate to one another. For us to **learn how to communicate again**, if not better than ever before. A telepathy at the feeling and soul or energy level.
+I'll spare you the history lesson. But let's just say we've been rocked; our institutions, our values, our identities and nearly all of our once closely-held traditional wisdom. It's been tried, tested and largely disposed of.
 
-Having children will probably come back into fashion. Perhaps the birth rate returns to normal. It gives us purpose, meaning, an identity, and we don't want robots to raise our children. It's a beautiful, profound thing and it's automation-proof!
 
-## Reversing pollution
+
+Our species has a nasty habit of burning our fingers on every possible hot stove before course-correcting; we overdo things, we go to extremes. Some form of common sense often does prevail.  Eventually. But it's rarely been the first lever we reach for.
+
+## Reversing societal decline
+
+Perhaps a rebuilding of society—of the norms that suit us as a whole. Respect, a return of public behavioural norms. Restoring trust in authority.
+
+Maybe letters will come back. Real proper ones. Not generated content but that slow, considered and highly personal hobby of communicating with loved ones. Men and women of letters.
+
+### How we relate to one another
+
+Do you ever get a sense that in the old days, people were calmer? They were less anxious to butt-in during a conversation, more eager to listen and thoughtfully reflect on what the other person was saying? 
+
+Our brains are scambled and we know it. We all claim to have ADHD now. That's not untrue, in some sense it's hitting on some real and measurable phenomenon. 
+
+It may be worth taking some time for us to **learn how to communicate again**. It was remarked that people forgot their social skills during the pandemic. I think it happened beforehand; we normalised a lot of antisocial behaviours. We highlighted the abnormal, the extreme among us. We'd regularly descend into histronics. We'd engage in deeply destructive behaviour that would seem to divide our communities, put up barriers, sow distrust and jealousy.
+
+Some kind of return of public shame, public standards of behaviour. Consideration for others. In any democratic society, the needs of the masses still matter. 
+
+Many conversations I overhear aren't as they seem; debates about race or class are often debates about culture or civilisation at their heart. Real concerns are regularly mislabelled and the conversations are almost always deeply unproductive. 
+
+We see people tribally, as a collection of labels. Not as people, not as the content of their character. We need to return to a level of public trust, engaging with each other generously and based upon shared values, not tribal identity labels.  
+
+### Reversing population decline
+
+Almost every country in the world is experiencing population decline, with fertitilty rates well below the replacement rate of 2.1 per couple. The problem grows exponentially; while it's a fear now, it can quickly become an inescapable and grim reality unless we experience a seachange in public opinion. 
+
+It's not hard to understand. Of course, it has been framed as a political matter rather than what it truly is; a symptom of a financial system that places us under extraordinary pressures. People taking on second jobs to pay for nursery, whereas previous generations could get by perfectly well on a single income.
+
+But when AI starts eating many of the traditionally female-led office jobs, such as HR, PR and communications, I suspect that having children will probably come back into fashion. Perhaps the birth rate returns to something approaching normal.
+
+Raising children gives us a profound sense of purpose, meaning, an identity. We absolutely don't want robots to raise our children. It's a beautiful, profound thing and it's automation-proof.
+
+### A news media landscape that people can trust
+
+Faith in media institutions has declined, and harshly. We're stuck between hyper-controlled legacy outlets and chaotic wildcard journalists whose providence is open to question. Fake AI slop think tanks are now a thing, just was predicted by OpenAI with GPT-2. Everything is bait, everything is an ad.
+
+Even before this, it was always sex, violence and men in suits. The news has never been perfect. But the news is also a manifestation of our inherent human need for gossip. We'll never be rid of it, so best we learn to live with it—and productively so. 
+
+What would the dream of a proper news outlet look like? Would it be more local? Would it contain more of the mundane, but locally important? Would it only explore the local issues that its readers could meaningfully engage with?
+
+Perhaps it's a slower news landscape. Slow news is a thing. Perhaps it's about using tech to statistically remove bias—Ground Truth might be a meaningful step in a novel direction here. Perhaps there might be a way to fund news that allows it to have a more stable income, as it once did, and rely less on ragebait, clickbait and addictive patterns of anxiety. 
+
+### A scientific process that makes sense
+
+I really feel for scientists; from the outside looking in, it seems like they've had a hard few decades. The Scientific Method is a precious but delicate thing, and there have been more than a few challenges faced by those looking to practice genuinely 'good science' in recent times.
+
+Firstly, the central tension that has existed for science, is its source of funding. It's an art that necessitates patronage. Working at the cutting-edge is, more often than not, exorbitantly expensive. You'll require access to some of the most rareified substances, machinery and brainpower in all of existence. This costs money, and no small sum of it.
+
+Therefore, aspiring scientists are left with a choice; to join a well-funded, but narrow commercial operation, or to compete against almost impossible odds for limited private patronage or public funding. You've already paid for an completed the obligatory PhD (thanks to degree inflation). You've self-selected and bought into this. The only way left is forwards, I guess.
+
+And, regardless of which you choose to pursue, your entire endeavour will exist only at their mercy. Few people are in the habit of giving away large sums of money for free. There's almost always some kind of bargain attached. 
+
+Perhaps this means you get wrapped up in institutional politics, wars of prestige and power games between old and wealthy rivals. We all have some capacity to sell our souls, and it's here that many will gradually discover their limits. 
+
+Beyond this first hurdle, more are lying in wait. 
+
+* Many studies suffer from the infamous Replication Crisis; what value does a paper hold if its results cannot be reliably reproduced? In many fields, the proportion of papers that meet even this basic test is more than 50%. 
+* There's an ever greater number of operations looking to publish their works in the few prestigious journals, such as Nature. These institutions are drowning in a sea of submissions, unable to thoroughly peer-review the incoming slew of work. And of course half of it's AI slop these days.
+* Finally, many "null outcomes" never get published. Everyone is trying to produce the signals which lead to professional fame, glory, patents and riches. An expensive experiment that resulted in a null (or negative) outcome can be embarrassing. Sure, it's great science, but that's not meeting our human needs.    
+
+Public faith in science is lowest it has been in a while, an incredible shame. It's a set of principles that are solid, whose valour has been repeatedly stolen by those less virtued, used as a protective cloak they wrap themselves in.
+
+The problem has never been the method. As is often the case, the problem is that all-too-familiar, icky human side corrupting and rotting everything it touches. As it stands, our process for discovery, selection and publication feel like an antiquated and outclassed system that's no longer fit for purpose.
+
+Good science often can still get done, but it might be locked down within the IP vaults of a large institution, or only ever partially published (leaving the unflattering parts of negative side-effects out of any PR material). Often, the good science leads to new technology, new products. But the science itself is hidden behind patents, NDAs and other restrictive practices. 
+
+Perhaps new science will be practised out in open, as I mentioned in Part 1: The Age of Discovery. Perhaps YouTubers will unlock genuinely new areas of science; mathematical hypotheses, new material potentials, new chemical synthesis processes. The incentives seem to line up. 
+
+### A commercial competition landscape that works
+
+Capitalism is a good idea "I think we should try it". The invisible hand can only work when there is strong enough natural (and genuine) competition within a space. 
+
+## Reversing our environmental impact
 
 ### Re-wilding projects.
 
@@ -404,27 +476,30 @@ Trees - Britain is so devoid of actual forestry. Incentives to re-wild parts of 
 
 Microplastics and PFAS.
 
-## Reversing societal decline
 
-Perhaps a rebuilding of society—of the norms that suit us as a whole. Respect, a return of public behavioural norms. Restoring trust in authority.
 
-Maybe letters will come back. Real proper ones. Not generated content but that slow, considered and highly personal hobby of communicating with loved ones. Men and women of letters.
+# Part Three: An age of Grief for What Once Was
 
-### A news media landscape that people can trust
+## Mourning the Old World
 
-x
+It's not unreasonable or unfair to take a moment to grieve the passing of the world we once knew. Like I said at the start of this mammoth post: *it's a lot to take in*.
 
-### A scientific process that makes sense
+We will see the gradual evaporation of a few jobs. At first, slowly, then rapidly. Work as an idea will be replaced. But that's not all. A lot of things tied to work will also begin to look hopelessly trivialised: 
 
-x
+* Our job titles and our professional achievements. Already, much of the output of my career now looks deeply average at best. 
+* Money. What happens in a world in which the production of most of our goods and services can be delivered almost for free? Does having a large salary (or any at all) even matter anymore? What becomes of those practical relationships of which wealth and riches were the central convincing aspect? 
 
-### A commercial competition landscape that works
+It will take a long time to adjust; some may never quite manage it.
 
-Return of the invisible hand.
+The Brave New World is still taking shape, fresh, confusing and uncertain. Nobody knows where our chips will land once everything settles, nor how far away such a settling may still be. Nostalgia for the world we once knew—imperfect but at least we could understand it—will probably become widespread. 
+
+At least there's some solace in the sense that this is happening to all of us together at once. Nobody is really, truly ahead. Our brighest minds at the center of all of the action also seem confused, worried and bothered by our inevitable trajectory. 
+
+If anything, I would suggest reading science fiction. We've had close to a hundred years of sci-fi at this point. Many of the most brilliant minds have dedicated their lives' work to anticipating technocratic worlds that may yet come to pass. At the very least, they may sow a few novel ideas of ways of framing that could serve useful as our species comprehends the unknowable together.
 
 # Conclusion
 
-I hope I've given you many reasons to have faith that things may yet work out. 
+I hope I've given you many reasons to have faith that things may yet work out. What is written above can only ever be an incomplete list, written only as a thematic guide and hopefully as a source of inspiration.
 
 Broadly speaking, I remain hopeful and optimistic for the world we're stepping into. We all have access to an unprecedented amount of information. People are understandably highly anxious right now—you can sense it as you speak with them. But we can also be heartened that so many of us are paying attention. 
 
