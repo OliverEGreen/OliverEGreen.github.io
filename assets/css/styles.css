@@ -64,8 +64,8 @@ body { margin: 0; background-color: var(--chrome-bg, var(--bg)); transition: bac
   opacity: .3;
 }
 @supports (min-height: 100svh) { .page { min-height: 100svh; } }
-main { flex: 1; width: 100%; max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
-/* One width (880) for the whole site — header, content and footer, on
+main { flex: 1; width: 100%; max-width: 840px; margin: 0 auto; padding: 64px 24px 96px; }
+/* One width (840) for the whole site — header, content and footer, on
    every page including posts — so edges align top to bottom and nothing
    shifts between pages on large screens. */
 a { color: inherit; text-decoration: none; }
@@ -92,7 +92,7 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 }
 .site-header.scrolled .site-nav { color: #322C1D; }
 .header-inner {
-  max-width: 880px; margin: 0 auto; padding: 0 24px; height: 60px;
+  max-width: 840px; margin: 0 auto; padding: 0 24px; height: 60px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 /* Dark mode on hover — hover-capable devices only, so taps on touch
@@ -700,7 +700,7 @@ article.post .forbidden-map img { max-width: none; border: 0; border-radius: 0; 
     rgba(243,228,165,.07) 80%, rgba(242,193,160,.06));
   font-family: var(--sans); transition: background-color .4s ease;
 }
-.footer-inner { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+.footer-inner { max-width: 840px; margin: 0 auto; padding: 48px 24px; }
 .footer-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .footer-cta > div { min-width: 0; max-width: 100%; }
 .footer-cta h3 { margin: 0; font-size: 19px; font-weight: 700; color: var(--ink); }
