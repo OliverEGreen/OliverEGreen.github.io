@@ -5,7 +5,7 @@
             <span class="logo-o"></span>
             <span class="logo-g"></span>
         </a>
-        <span class="olive-wrap"><span class="logo-olive"></span></span>
+        <button class="olive-wrap" type="button" aria-controls="mobile-nav" aria-expanded="false"><span class="logo-olive"></span></button>
         </div>
         <nav class="site-nav" aria-label="Primary">
             <div class="nav-drop">
@@ -26,9 +26,8 @@
             <a href="{{ '/cv/' | relative_url }}">CV</a>
             <a href="{{ '/about/' | relative_url }}">About</a>
         </nav>
-        <button class="menu-btn" aria-label="Menu"><span></span><span></span></button>
     </div>
-    <div class="mobile-panel">
+    <div class="mobile-panel" id="mobile-nav">
         <a href="{{ '/writing/' | relative_url }}">Writing</a>
         <a class="sub" href="{{ '/writing/#technical' | relative_url }}">Technical</a>
         <a class="sub" href="{{ '/writing/#non-technical' | relative_url }}">Non-Technical</a>

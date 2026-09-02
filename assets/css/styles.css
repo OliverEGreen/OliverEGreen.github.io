@@ -64,9 +64,9 @@ body { margin: 0; background-color: var(--chrome-bg, var(--bg)); transition: bac
   opacity: .3;
 }
 @supports (min-height: 100svh) { .page { min-height: 100svh; } }
-main { flex: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 64px 24px 96px; }
+main { flex: 1; width: 100%; max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
 .layout-post main { max-width: 720px; }
-/* Header and footer keep one width on every page (1040) so the logo and
+/* Header and footer keep one width on every page (880) so the logo and
    nav never jump between pages; the article's narrower 720 reading measure
    simply sits centred within it on post pages. */
 a { color: inherit; text-decoration: none; }
@@ -93,7 +93,7 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 }
 .site-header.scrolled .site-nav { color: #322C1D; }
 .header-inner {
-  max-width: 1040px; margin: 0 auto; padding: 0 24px; height: 60px;
+  max-width: 880px; margin: 0 auto; padding: 0 24px; height: 60px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 /* Dark mode on hover — hover-capable devices only, so taps on touch
@@ -102,7 +102,6 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
   .site-header:hover { background-color: var(--dk-bg); border-bottom-color: var(--dk-line); }
   .site-header:hover .site-nav, .site-header:hover .nav-menu a { color: var(--dk-fg); }
   .site-header:hover .site-logo { color: var(--og-dark, var(--dk-fg)); }
-  .site-header:hover .menu-btn span { background: var(--dk-fg); }
 }
 
 /* Logo (pure CSS OG + pixel olive) */
@@ -118,7 +117,8 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 }
 .site-logo:hover .logo-g { transform: rotate(360deg); }
 .brand-group { display: flex; align-items: center; }
-.olive-wrap { display: flex; margin-left: 4px; cursor: pointer; }
+.olive-wrap { display: flex; margin-left: 4px; cursor: pointer; background: none; border: 0; padding: 0; -webkit-appearance: none; appearance: none; color: inherit; }
+.olive-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 .logo-olive { width: 34px; height: 34px; background: url('../images/olive-spin-3d.png') no-repeat 0% 0%; background-size: 1200% 100%; image-rendering: pixelated; }
 @keyframes oliveSpin { from { background-position-x: 0%; } to { background-position-x: 109.0909%; } }
 .logo-olive.spinning { animation: oliveSpin 1s steps(12, end) 1; }
@@ -150,9 +150,7 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 .nav-menu a { padding: 8px 12px; border-radius: 6px; color: var(--dk-fg); }
 .nav-menu a:hover { background: var(--dk-line); }
 
-/* Mobile */
-.menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
-.menu-btn span { width: 20px; height: 1.5px; background: var(--ink-soft); display: block; transition: background-color .3s ease; }
+/* Mobile — the pixel olive doubles as the menu toggle (see .olive-wrap) */
 .mobile-panel { display: none; max-height: calc(100svh - 60px); overflow-y: auto; border-top: 1px solid var(--dk-line); background: var(--dk-bg); color: var(--dk-fg); padding: 12px 24px 20px; flex-direction: column; font-size: 16px; }
 .mobile-panel a { padding: 10px 0; border-bottom: 1px solid var(--dk-line); transition: color .15s ease, padding-left .15s ease; }
 .mobile-panel a.sub { padding-left: 16px; color: #BFC3D9; }
@@ -160,8 +158,9 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 .mobile-panel a.sub:hover { padding-left: 22px; }
 @media (max-width: 470px) {
   .site-nav { display: none; }
-  .menu-btn { display: flex; }
   .mobile-panel.open { display: flex; }
+  /* bigger tap target for the olive-as-toggle */
+  .olive-wrap { padding: 5px; }
 }
 
 /* ---------- Home ---------- */
@@ -425,19 +424,22 @@ article.post sup a:hover, article.post .footnotes a.reversefootnote:hover { colo
 /* Article end: asterism full-stop + centred escape hatch */
 .article-end { display: block; width: 100%; margin: 56px 0 0; }
 .article-end.below { margin: 0 0 8px; }
-.post-nav.article-end-nav { margin: 34px 0; text-align: center; }
-/* No footnotes below: centre the button between squiggle and footer.
+/* Back + back-to-top sit in one centred row with a small gap */
+.post-nav.article-end-nav { margin: 34px 0; display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+/* No footnotes below: centre the row between squiggle and footer.
    64px above; below, -32px borrows from main's 96px padding = 64px. */
 .post-nav.article-end-nav.article-end-solo { margin: 64px 0 -32px; }
-article.post .post-nav.article-end-nav a {
+article.post .post-nav.article-end-nav a,
+article.post .post-nav.article-end-nav .to-top {
   display: inline-flex; align-items: center; gap: 7px;
   font-family: var(--sans); font-size: 14px; font-weight: 600; line-height: 1.3;
   background: var(--ink); color: var(--bg);
-  text-decoration: none; border-bottom: none;
+  text-decoration: none; border: 0; border-bottom: none; cursor: pointer;
   padding: 11px 20px; border-radius: 99px; transition: background-color .2s ease;
 }
 @media (hover: hover) and (pointer: fine) {
-  article.post .post-nav.article-end-nav a:hover { background: var(--accent-deep); color: var(--bg); }
+  article.post .post-nav.article-end-nav a:hover,
+  article.post .post-nav.article-end-nav .to-top:hover { background: var(--accent-deep); color: var(--bg); }
 }
 .post-nav a { display: inline-flex; align-items: center; gap: 7px; }
 .post-nav svg { width: 15px; height: 15px; }
@@ -699,7 +701,7 @@ article.post .forbidden-map img { max-width: none; border: 0; border-radius: 0; 
     rgba(243,228,165,.07) 80%, rgba(242,193,160,.06));
   font-family: var(--sans); transition: background-color .4s ease;
 }
-.footer-inner { max-width: 1040px; margin: 0 auto; padding: 48px 24px; }
+.footer-inner { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
 .footer-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .footer-cta > div { min-width: 0; max-width: 100%; }
 .footer-cta h3 { margin: 0; font-size: 19px; font-weight: 700; color: var(--ink); }

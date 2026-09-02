@@ -317,6 +317,20 @@
       endA.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg><span></span>';
       endA.querySelector('span').textContent = endTxt;
     }
+    // Back-to-top button, sharing the row with the back button (label random,
+    // up arrow after the text to match the site's pill convention)
+    var TOP_LABELS = ['Head up', 'Up top', 'Rewind', 'Again!'];
+    var toTop = document.createElement('button');
+    toTop.type = 'button';
+    toTop.className = 'to-top';
+    var topLabel = TOP_LABELS[Math.floor(Math.random() * TOP_LABELS.length)];
+    toTop.setAttribute('aria-label', topLabel + ' \u2014 back to top');
+    toTop.innerHTML = '<span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>';
+    toTop.querySelector('span').textContent = topLabel;
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    endNav.appendChild(toTop);
     if (fns) {
       var fnTitle = document.createElement('p');
       fnTitle.className = 'fn-title';
@@ -382,20 +396,39 @@
   }
 
   // 2c) Olive spins once on click, 2s cooldown
+  // 2/3) The pixel olive spins on click; on mobile it doubles as the menu
+  //      toggle (the hamburger is retired — the olive IS the button).
+  var oliveWrap = document.querySelector('.olive-wrap');
   var olive = document.querySelector('.logo-olive');
+  var panel = document.querySelector('.mobile-panel');
+  var mobileNav = window.matchMedia('(max-width: 470px)');
   var oliveBusy = false;
-  if (olive) olive.addEventListener('click', function () {
-    if (oliveBusy) return;
+  var spinOlive = function () {
+    if (oliveBusy || !olive) return;
     oliveBusy = true;
     olive.classList.add('spinning');
     setTimeout(function () { olive.classList.remove('spinning'); }, 1100);
     setTimeout(function () { oliveBusy = false; }, 2000);
+  };
+  var setOliveLabel = function () {
+    if (oliveWrap) oliveWrap.setAttribute('aria-label', mobileNav.matches ? 'Menu' : 'Spin the olive');
+  };
+  setOliveLabel();
+  if (oliveWrap) oliveWrap.addEventListener('click', function () {
+    if (mobileNav.matches && panel) {
+      var open = panel.classList.toggle('open');
+      oliveWrap.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    spinOlive();
   });
-
-  // 3) Mobile menu
-  var btn = document.querySelector('.menu-btn');
-  var panel = document.querySelector('.mobile-panel');
-  if (btn && panel) btn.addEventListener('click', function () { panel.classList.toggle('open'); });
+  // returning to desktop width closes the panel and resets state
+  mobileNav.addEventListener('change', function (e) {
+    setOliveLabel();
+    if (!e.matches && panel) {
+      panel.classList.remove('open');
+      if (oliveWrap) oliveWrap.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // 4) Writing filter toggle (All / Technical / Non-technical).
   //    A data-limit on the list (homepage) caps it at the N most recent matches.
