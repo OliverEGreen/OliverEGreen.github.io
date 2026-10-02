@@ -36,7 +36,7 @@ Organisations run by humans are *profoundly inefficient* things; case in point, 
 
 Our organisations suffer from internal politics, inertia, ideas of legacy and ego and who's really in charge. Much of their time, money and labour goes into running an organisation itself. Annual reviews, performative HR minefields, legalistic procedural bloat and nepotism. To a large degree, garden-variety corruption.
 
-And in recent years, with movements encouraging people to "bring their whole selves" to work, they've been getting even worse. Just a glance at the staggering inefficiencies of projects like HS2 in the UK, which spent [over £100 million on a bat tunnel](https://en.wikipedia.org/wiki/Sheephouse_Wood_Bat_Protection_Structure). 
+And in recent years, with movements encouraging people to "bring their whole selves" to work, they've been getting even worse. Just a glance at the staggering inefficiencies of projects like HS2 in the UK, whose [bat tunnel and its supporting works cost £216 million](https://www.bdonline.co.uk/news/full-cost-of-hs2-work-around-moxons-bat-tunnel-will-be-216m-says-dft/5136801.article). 
 
 Simultaneously, we're witnessing the rapid and systematic hollowing-out of any value from our organisations. It used to be that we were some of the very few who could handle our specialist areas of expertise; it took years to graduate and learn the ropes, whether that was in solar farm permitting, software development, illustration or genetic therapy design. 
 
