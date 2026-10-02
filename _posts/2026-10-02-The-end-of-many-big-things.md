@@ -17,6 +17,7 @@ image: /assets/images/posts/the-end-of-many-big-things-crowns.jpg
 
 * TOC
 {:toc}
+
 I'm about to tell you a lot of things you would rather not hear.
 
 I know this, because I'm writing about an unavoidable and unsettling truth, the ultimate elephant in the room. And, at some level, you already know everything I'm about to say.
@@ -73,7 +74,8 @@ But just one thing. *It's just a bit too easy*, isn't it?
 
 Cue a gigaflood of noise now entering the market. GitHub has already been falling apart with upload volumes this year, as everyone desperately tries to launch their own visionary app, to grab attention with automated marketing, market research, outreach bots.
 
-> "Please, whatever it takes, just help me escape the permanent underclass. Make no mistakes." 
+> "Please, whatever it takes, just help me escape the permanent underclass. Make no mistakes."
+>
 > — you, probably.
 
 It's ok, they can have their fun. They'll soon find that there's just not enough traction or demand in this world to keep their fledgling commercial business afloat.
@@ -94,13 +96,13 @@ Here's a few examples of why:
 
 * In London, it now takes around five years to argue your case before an employment tribunal. Why the sudden jump? Of course, AI has been used to flood the court system with every possible minor grievance.
 * The job search is fundamentally broken. Anyone who's been job hunting in 2026 knows this, hearing stories or reading viral posts about applicants secretly adding hidden 1pt white prompt injection text to their resumes. One modern solution, [Jack and Jill](https://www.jackandjill.ai/), has been turning the whole two-sided marketplace into an AI vs AI adversarial battle for employment. 
-* Online dating, famously another kind of marketplace, has also been showing signs of degradation. Some users are deploying AI to game the system and the signal to noise ratio is lost in a world of AI-generated profile pictures and automated messaging. Perhaps positively, this is sending people heading back offline and into the real world. 
+* Online dating, famously another kind of marketplace, has also been showing signs of degradation. Some users are deploying AI to game the system and the signal-to-noise ratio is lost in a world of AI-generated profile pictures and automated messaging. Perhaps positively, this is sending people heading back offline and into the real world. 
 
 The big picture behind all of these is that these are major tensions, surfacing today, which AI has either created or exacerbated. To the point where the only solution remaining is to use even more AI, i.e. *to fight fire with fire.* 
 
 My own remortgage took 2 and a half years to complete. There were never any snags and nothing was contested. It should have been completed in milliseconds. But the Land Registry was suffering a large backlog of cases due to Covid-19, and so *officially* the apartment I'd been living in *for years* didn't exist yet. There are many such cases.
 
-Therefore, the AI will insists upon itself. And as it redesigns some of these systems, incredible pressures will begin to mount on others. The LLMs' inexhaustible supply of knowledge labour has met some very high historically pent-up demand. So the pressure has moved further down the chain and it's now infeasible that this will ever be resolved without using more AI to fix the issue. In this way, it seems that everything will cascadingly collapse into the valley of full automation.
+Therefore, the AI will insist upon itself. And as it redesigns some of these systems, incredible pressures will begin to mount on others. The LLMs' inexhaustible supply of knowledge labour has met some very high historically pent-up demand. So the pressure has moved further down the chain and it's now infeasible that this will ever be resolved without using more AI to fix the issue. In this way, it seems that everything will cascadingly collapse into the valley of full automation.
 
 The next side effect I want to write about is going to be even stranger. I suspect it may be even harder to handle than the end of work.
 
@@ -140,19 +142,17 @@ Indeed, money could still be incredibly useful for many cases where robotics and
 
 * Rare materials and mineral rights. AI and robots cannot increase the amount of gold, titanium or other such resources in the Earth's crust.
 * Perhaps, land ownership. Although I could potentially see that becoming nationalised by popular demand. Why, realistically, would anyone want to own enormous tracts of land if it's no longer turning them a handsome profit?
-* Rare, high-value genetics, i.e. hot people. These will still have inherent social value, at least until the sexbots and commercial genetic editing arrives. Then we're in that awful Bruce Willis movie, [*Surrogates*](https://en.wikipedia.org/wiki/Surrogates), I guess.
-* Social skills. Being a genuinely nice, likeable person who is well-embedding within their community. If anything, the value of this will probably rise, and it's meant to help increase your lifespan, too. 
+* Rare, high-value genetics, i.e. hot people. These will still have inherent social value, at least until the sexbots and commercial genetic editing arrive. Then we're in that awful Bruce Willis movie, [*Surrogates*](https://en.wikipedia.org/wiki/Surrogates), I guess.
+* Social skills. Being a genuinely nice, likeable person who is well-embedded within their community. If anything, the value of this will probably rise, and it's meant to help increase your lifespan, too. 
 
-## Outro
+# Outro
 
 The above is not meant to be a complete list or vision. What I've posited here is a very hand-wavy hot take, based on a rapidly developing situation.
 
 Reality rarely unfolds according to a complete vision; normally some version of every scenario tends to co-exist at any moment in time. Even if I'm perfectly right, we can quote William Gibson: 
 
-> The future is already here – it's just not evenly distributed
+> The future is already here—it's just not evenly distributed.
 
-In a world without jobs, organisations or money, it may be hard for us to figure out what to do with ourselves. Please see my other post for some ideas:
-
-https://olliegreen.info/posts/3/what-comes-next/
+In a world without jobs, organisations or money, it may be hard for us to figure out what to do with ourselves. Please see my other post for some ideas: [What Comes Next?](/posts/3/what-comes-next/)
 
 As for me, I've taken up rowing and bought a puppy. Because the pursuit of a meaningful and fulfilling existence must go on, even if the rules have changed.
