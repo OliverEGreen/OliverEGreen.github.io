@@ -7,10 +7,10 @@ kind: non-technical
 temperature: 0.7
 tagline: "Ring the bells—it's coming."
 unfinished: true
-image: /assets/images/posts/the-end-of-many-big-things-header.jpg
+image: /assets/images/posts/the-end-of-many-big-things-crowns.jpg
 ---
 
-![A wall of stacked gold Burger King paper crowns]({{ '/assets/images/posts/the-end-of-many-big-things-header.jpg' | relative_url }})
+![A wall of gold Burger King paper crowns]({{ '/assets/images/posts/the-end-of-many-big-things-crowns.jpg' | relative_url }})
 
 ## Contents
 {:.no_toc}
@@ -36,13 +36,13 @@ Organisations run by humans are *profoundly inefficient* things; case in point, 
 
 Our organisations suffer from internal politics, inertia, ideas of legacy and ego and who's really in charge. Much of their time, money and labour goes into running an organisation itself. Annual reviews, performative HR minefields, legalistic procedural bloat and nepotism. To a large degree, garden-variety corruption.
 
-And in recent years, with movements encouraging people to "bring their whole selves" to work, they've been getting even worse. Just a glance at the staggering inefficiencies of projects like HS2 in the UK, or California's High Speed Rail that spends 200bn and hasn't laid a single piece of track. 
+And in recent years, with movements encouraging people to "bring their whole selves" to work, they've been getting even worse. Just a glance at the staggering inefficiencies of projects like HS2 in the UK, which spent [over £100 million on a bat tunnel](https://en.wikipedia.org/wiki/Sheephouse_Wood_Bat_Protection_Structure). 
 
 Simultaneously, we're witnessing the rapid and systematic hollowing-out of any value from our organisations. It used to be that we were some of the very few who could handle our specialist areas of expertise; it took years to graduate and learn the ropes, whether that was in solar farm permitting, software development, illustration or genetic therapy design. 
 
 And then we let the AI in. Our productivity tool was also our Trojan Horse. And in a marketplace economy, using AI also became the necessary cost of staying competitive within our field. But, clearly, the AIs have been quietly absorbing all of our knowledge, our tricks and our idiosyncrasies.
 
-Accountants are cooked. Even designers are being replaced by highly skilled, nuanced and tasteful design (See Mo video). It's only going to get better. It turns out the AI can do literally everything. 
+Accountants are cooked. Even designers are being replaced by [highly skilled, nuanced and tasteful design](https://www.youtube.com/watch?v=dyEpDobnkmA). It's only going to get better. It turns out the AI can do literally everything. 
 
 Organisations often bring out a dark side to people. There's a saying "[science advances one funeral at a time](https://en.wikipedia.org/wiki/Planck%27s_principle)". The pride, hubris, ego, petty workplace politics, scrambling over resources. It gets worse as it scales; the larger an organisation becomes, the more places there are to hide our corruption, the more opportunities there are to hire your useless niece/nephew into a well-paid role. 
 
@@ -73,7 +73,7 @@ But watching how it's already impacting the world, I now think the days of AI ru
 Here's a few examples of why:
 
 * In London, it now takes around five years to argue your case before an employment tribunal. Did you know it now takes around five years to see an employment tribunal in London? Why the sudden jump? Of course, AI has been used to flood the court system with every possible minor grievance.
-* The job search is fundamentally broken. Hidden 1pt white text. Prompt injection attempts. Jack and Jill where it's AI vs AI. 
+* The job search is fundamentally broken. Hidden 1pt white text. Prompt injection attempts. [Jack and Jill](https://www.jackandjill.ai/) where it's AI vs AI. 
 * Online dating. Famously another marketplace, of sorts. Also showing signs of degradation. Some users using AI to game the system. Sending people heading back offline into the real world. 
 
 These are major tensions, surfacing today, which AI has either created or accelerated. To the point where the only solution remaining is to use even more AI, i.e. *to fight fire with fire.* 
