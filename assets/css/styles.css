@@ -158,8 +158,12 @@ input::placeholder, textarea::placeholder { color: #C4BCA8; }
 @media (max-width: 470px) {
   .site-nav { display: none; }
   .mobile-panel.open { display: flex; }
-  /* bigger tap target for the olive-as-toggle */
-  .olive-wrap { padding: 5px; }
+  /* Olive-as-toggle sits at the right edge, where a hamburger would be:
+     dissolving the brand group makes logo + olive direct children of the
+     space-between header row. Bigger tap target, with the padding cancelled
+     on the right so the olive itself lines up with the 24px page gutter. */
+  .brand-group { display: contents; }
+  .olive-wrap { padding: 5px; margin: 0 -5px 0 0; }
 }
 
 /* ---------- Home ---------- */
