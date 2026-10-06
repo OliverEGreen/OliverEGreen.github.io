@@ -6,7 +6,6 @@ permalink: /posts/17/the-end-of-many-big-things/
 kind: non-technical
 temperature: 0.7
 tagline: "Ring the bells—it's coming."
-unfinished: true
 image: /assets/images/posts/the-end-of-many-big-things-crowns.jpg
 ---
 
