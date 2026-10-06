@@ -261,7 +261,9 @@ Learning how to recognise the constellations and navigate using sextants. Learni
 
 Leaps forward in material science can cause a chain reaction; enabling us to build better technologies with which to carry out our experiments and plough forward into the unknown reaches of physics, chemistry, biology and so on.
 
-One huge potential excitement from a few years ago was the (sadly, false) alarm that university researchers had discovered a room-temperature superconductor material, called [LK-99](https://www.nature.com/articles/d41586-023-02585-7). This is the kind of discovery which, if replicable, could potentially pave the way for absolutely sci-fi level technology. 
+One huge potential excitement from a few years ago was the (sadly, false) alarm that university researchers had discovered a room-temperature superconductor material, called [LK-99](https://www.nature.com/articles/d41586-023-02585-7). This is the kind of discovery which, if replicable, could potentially pave the way for absolutely sci-fi level technology.
+
+More recently, in October, a team of AI agents [identified two candidate room-temperature magnetic semiconductors](https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors)—a long-sought kind of material that could underpin the next generation of computer memory.
 
 Another area of research that's seen a lot of current interest is in manufacturing [artificial spider silk](https://www.youtube.com/watch?v=wt4p2oalmRY). Expensive and time-consuming to extract from live spiders, this material has an unmatched strength-to-lightness ratio which, again, if harnessed properly could find its way into our skyscrapers, bridges or beyond.
 
@@ -355,6 +357,8 @@ How about all the writing and wisdom in our museum archives? It seems like we're
 The truth is, these underfunded institutions have far more on their hands than they can handle. Couldn't we digitise them all, put them online and have AI find the patterns, make the connections?
 
 With the near-infinite patience and depth of AI, could we not create an intricately-interconnected web of all ancient knowledge?
+
+We're already seeing glimpses of this. In September, AI models [cracked two wartime Enigma messages](https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test/) that had resisted codebreakers for decades.
 
 ### Our minds
 
