@@ -358,7 +358,7 @@ The truth is, these underfunded institutions have far more on their hands than t
 
 With the near-infinite patience and depth of AI, could we not create an intricately-interconnected web of all ancient knowledge?
 
-We're already seeing glimpses of this. In September, AI models [cracked two wartime Enigma messages](https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test/) that had resisted codebreakers for decades.
+We're already seeing glimpses of this. In September, AI models [cracked two wartime Enigma messages](https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test/) that had resisted codebreakers for decades—and [a cipher that had held out for 370 years](https://www.vals.ai/blogs/fable-solves-cyphral-distich).
 
 ### Our minds
 
