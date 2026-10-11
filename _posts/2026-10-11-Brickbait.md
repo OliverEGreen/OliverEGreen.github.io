@@ -6,7 +6,10 @@ permalink: /posts/18/brickbait/
 kind: non-technical
 temperature: 0.7
 tagline: "Thinking..."
+image: /assets/images/posts/brickbait-header.jpg
 ---
+
+![An arched red-brick building on a rainy City of London street, the Gherkin in the distance]({{ '/assets/images/posts/brickbait-header.jpg' | relative_url }})
 
 I originally wanted to write a piece about the future of my professional space—construction software. But, extrapolating ahead, I don't know if that's really going to work.
 
