@@ -22,7 +22,7 @@ Even worse, it was discovered that AI companies had been [buying up millions of 
 
 ## The Reverse Reverse Robin Hood
 
-IP used to be safeguarded within an organisation. The world outside couldn't access its hard-won treasures. And over the years, we were forced to pay an increasingly hefty price for the access we'd come to rely upon. Cory Doctorow's term "[enshittification](https://en.wikipedia.org/wiki/Enshittification)" caught the public imagination as this pattern writ large, and consumer resentment began to foment.
+IP used to be safeguarded within an organisation. The world outside couldn't access its hard-won treasures. And over the years, we were forced to pay an increasingly hefty price for the access we'd come to rely upon. [Cory Doctorow](https://pluralistic.net/)'s term "[enshittification](https://en.wikipedia.org/wiki/Enshittification)" caught the public imagination as this pattern writ large, and consumer resentment began to foment.
 
 But now, with AI, the value of all prior knowledge work is rapidly plummeting to zero. Today's models are fully capable of decompiling, understanding and recomposing software. You can now generate new proposals, whether for drug trials, legal contracts or product designs.
 
@@ -30,7 +30,7 @@ Hell, OpenAI just released [722 new maths papers](https://www.quantamagazine.org
 
 Already, one developer has [rebuilt the bloated and overpriced Adobe suite](https://www.creativebloq.com/design/design-software/someone-just-rebuilt-adobe-creative-cloud-with-ai-then-gave-it-away-for-free) and given it away for free. Others have [decompiled classic console games](https://kotaku.com/we-might-be-cooked-as-these-vibe-coded-web-browser-ports-of-halo-the-simpsons-hit-and-run-and-gta-vice-city-seem-to-work-perfectly-2000743300) to run in a web browser, and are now recombining them into custom mash-ups, for the sheer fun of it.
 
-Perhaps it's time for revenge of the nerds: "They enjoyed screwing us over—now it's our turn to do the same."
+Perhaps it's time for [Revenge of the Nerds](https://en.wikipedia.org/wiki/Revenge_of_the_Nerds): "They enjoyed screwing us over—now it's our turn to do the same."
 
 With the walls of IP (slowly and quietly) collapsing all around us, it seems we may all be headed back to square one.
 
