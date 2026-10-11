@@ -34,7 +34,7 @@ In the short space of a few months, this workflow (now available in Codex, among
 
 I suspect 2026-27 will see many of the tech startups in my space gradually begin to wither and fail. Looking back, it's possible that most of them simply started too late to make a huge difference to the AEC sector. Many of these will die quietly, and a handful will not. But SaaS economics is what it is and the prognosis looks bleak.
 
-What's coming to replace them could well be software, geared to whatever the user wants to be doing, generated on-demand. This isn't theoretical: Google already previewed their experimental Google Disco feature back in May. It's powerful, and its single-use disposable software may well be the harbinger of things to come. There are already libraries of open-source and ready-made components (like That Open Company) just waiting to be assembled into apps.
+What's coming to replace them could well be software, geared to whatever the user wants to be doing, generated on-demand. This isn't theoretical: Google has already previewed its experimental [Disco browser](https://blog.google/innovation-and-ai/models-and-research/google-labs/gentabs-gemini-3/). It's powerful, and its single-use disposable software may well be the harbinger of things to come. There are already libraries of open-source and ready-made components (like That Open Company) just waiting to be assembled into apps.
 
 Eventually, the AIs might just skip most of the functionality and just ask the user to review/sign off on designs, akin to the viewer-only subscription tiers we currently reserve for clients. Looking at OpenAI's latest work on Intelligent UIs, this type of workflow may be all we really need to resolve our designs.
 
