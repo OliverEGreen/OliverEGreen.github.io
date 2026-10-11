@@ -44,7 +44,7 @@ These apps will come built with only the essential functionality you'll need to 
 * If you're applying for planning permission, it will know the local and national planning law down to every detail, analyse recent approvals and highlight any notable exceptions to the rules.
 * I'll assume that most manual CAD and BIM work is a foregone conclusion at this point.
 
-Eventually, the AIs might just skip most of this; they will simply make proposals and ask the user to review/sign off on them, akin to the viewer-only/commenting subscription tiers we currently reserve for clients. Looking at OpenAI's latest work on [Intelligent UIs](https://openai.com/index/gpt-6-for-everyone/), this type of workflow may be all we really need to resolve our designs.
+Before long, the AIs might just skip most of this; they will simply make proposals and ask the user to review/sign off on them, akin to the viewer-only/commenting subscription tiers we currently reserve for clients. Looking at OpenAI's latest work on [Intelligent UIs](https://openai.com/index/gpt-6-for-everyone/), this type of workflow may be all we really need to resolve our designs.
 
 Initially, we may see a brief spike in work and custom software development, as historically low supply meets decades of pent-up demand. We all know firms that are using embarrassingly antiquated tech stacks and still following process like it's the 1990s. But in the wider timeframe, I see the frontier labs viewing 99% of us as middlemen carrying out work that exists in the moment between now and the stable end state. And nobody likes a middleman.
 
@@ -54,6 +54,6 @@ Eventually, it seems that AI will learn how to do the reviewer's job, too. [Rein
 
 Will it be able to make beautiful buildings that everyday people like? 
 
-Possibly, yes—it's possible to interpret public engagement and expressed sentiment from social media posts as another form of RLHF. We could start seeing the built equivalent of clickbait slowly emerging over the next five or so years.
+Possibly, yes—you could interpret public engagement and expressed sentiment from social media posts as another form of RLHF. We could start seeing the built equivalent of clickbait slowly emerging over the next five or so years.
 
 Shall we call it 'brickbait'?
