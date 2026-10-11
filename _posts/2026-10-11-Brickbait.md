@@ -34,7 +34,7 @@ Back to construction. I suspect 2026-27 will see many of the tech startups in my
 
 What's coming to replace them could well be software, geared to whatever the user wants to be doing, generated on-demand. This isn't theoretical: Google has already previewed exactly this with its experimental [Disco browser](https://blog.google/innovation-and-ai/models-and-research/google-labs/gentabs-gemini-3/). It's powerful, and its single-use disposable software may well be the harbinger of things to come. There are already libraries of open-source and ready-made components (like [That Open Company](https://thatopen.com/)) just waiting to be assembled into apps.
 
-Eventually, the AIs might just skip most of the functionality and just ask the user to review/sign off on designs, akin to the viewer-only subscription tiers we currently reserve for clients. Looking at OpenAI's latest work on [Intelligent UIs](https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/), this type of workflow may be all we really need to resolve our designs.
+Eventually, the AIs might just skip most of the functionality and just ask the user to review/sign off on designs, akin to the viewer-only subscription tiers we currently reserve for clients. Looking at OpenAI's latest work on [Intelligent UIs](https://openai.com/index/gpt-6-for-everyone/), this type of workflow may be all we really need to resolve our designs.
 
 ## Endgame?
 
