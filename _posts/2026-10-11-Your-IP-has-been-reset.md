@@ -6,7 +6,10 @@ permalink: /posts/19/your-ip-has-been-reset/
 kind: non-technical
 temperature: 0.75
 tagline: "Back to square one"
+image: /assets/images/posts/your-ip-has-been-reset-header.jpg
 ---
+
+![A snakes and ladders board with one long snake running from 100 back down to square 1]({{ '/assets/images/posts/your-ip-has-been-reset-header.jpg' | relative_url }})
 
 Much of the Western world's economy is founded on the idea that knowledge work carries incredible value. This could be in the form of our designs, our rare knowledge, time-tested processes, or the novel materials that we develop.
 
