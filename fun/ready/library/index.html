@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Photo library · Ready</title>
-<meta name="description" content="A photo library on Ready: a tree of a design catalogue's photos under folder tabs, a details panel, and a checkbox tree for choosing what to sync.">
 <meta property="og:title" content="Photo library · Ready">
-<meta property="og:description" content="A tree of a design catalogue's photos under Ready's folder tabs, with details and a checkbox tree for choosing what to sync.">
 <link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fun/ready/assets/ready.css">
@@ -16,17 +14,11 @@
   <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
   <header>
     <h1>Photo library</h1>
-    <p class="lead">A catalogue's photos as a tree under folder tabs, with the chosen item's details beside it. The arrow keys walk the tree; Choose what to sync opens a tree of checkboxes.</p>
   </header>
   <main class="view">
     <section class="tpanel s2" id="fx" aria-label="Library"></section>
     <section class="panel col" id="fdetail" aria-live="polite" aria-label="Details"></section>
   </main>
-  <section class="notes" aria-label="Design notes">
-    <div><h2>Chosen, not hovered</h2><p>The chosen row rises as a light key with an orange dot at its left, as the chosen tab rises in its track. Rows under the pointer only take the band's tone, so the two never look alike.</p></div>
-    <div><h2>Folders open in place</h2><p>A folder's chevron turns, its icon opens and its rows settle in from 4 px above, without the tree redrawing. Faint guides mark the depth; they are the only lines in the panel.</p></div>
-    <div><h2>A dash means some</h2><p>In the sync picker, a folder's box shows a dash when only some of what it holds is ticked. Ticking it takes everything, and ticking again clears it.</p></div>
-  </section>
 </div>
 <div class="toasts" id="toasts" aria-live="polite"></div>
 <script src="/fun/ready/assets/ready.js"></script>

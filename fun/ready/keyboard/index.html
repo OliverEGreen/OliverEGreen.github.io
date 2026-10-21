@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Keyboard · Ready</title>
-<meta name="description" content="A keyboard built from Ready's keys: they lift as you hover and push in as you click, tap or type.">
 <meta property="og:title" content="Keyboard · Ready">
-<meta property="og:description" content="A keyboard built from Ready's keys: they lift as you hover and push in as you click or type.">
 <link rel="preload" href="../assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/keyboard.css">
 <style>
@@ -28,13 +26,8 @@ body { color: var(--ink); font-family: 'Ready', sans-serif; font-weight: 350; fo
 .back:hover { background: #DDD2BE; color: var(--ink); }
 .back:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(90,70,50,.14); }
 h1 { margin: 0; font-weight: 350; font-size: 40px; line-height: 1.1; text-wrap: balance; }
-.lead { margin: 8px 0 0; color: var(--ink-2); max-width: 60ch; }
 
 .stage { padding-top: 8px; }
-.notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.notes h2 { margin: 0 0 4px; font-weight: 350; font-size: 15px; color: var(--ink-2); }
-.notes p { margin: 0; color: var(--ink-2); font-size: 15px; }
-@media (max-width: 760px) { .notes { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -42,18 +35,12 @@ h1 { margin: 0; font-weight: 350; font-size: 40px; line-height: 1.1; text-wrap: 
   <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
   <header>
     <h1>Keyboard</h1>
-    <p class="lead">Ready's keys, set out as a keyboard. They lift as you pass over them and push in when you click, tap or type.</p>
   </header>
 
   <section class="stage" aria-label="Keyboard">
     <div class="kbwrap" id="kbwrap"></div>
   </section>
 
-  <section class="notes" aria-label="Design notes">
-    <div><h2>Sculpted keys</h2><p>Each key stands on sloped sides with a dished top set in from the edge. It rises a pixel under the pointer and drops 6 px into its hole when pressed.</p></div>
-    <div><h2>Upper case legends</h2><p>Legends are upper case and white, in Ready Book; the word keys are big and wide-set. On number and symbol keys the shifted character sits above and takes over while shift is held.</p></div>
-    <div><h2>One key in colour</h2><p>Dark keys in a beige case, and only return in orange. Caps lock and shift light a small orange lamp.</p></div>
-  </section>
 </div>
 
 <script src="../assets/keyboard.js"></script>

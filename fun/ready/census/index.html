@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Collector census · Ready</title>
-<meta name="description" content="An invented five-step census for Braun collectors, made of Ready's form controls: a step bar, an editable designs table, a combobox, a date picker, a checkbox tree, sliders, radio tiles and toggles. Nothing is sent anywhere.">
 <meta property="og:title" content="Collector census · Ready">
-<meta property="og:description" content="An invented five-step census for Braun collectors, made of Ready's form controls. Nothing is sent anywhere.">
 <link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fun/ready/assets/ready.css">
@@ -141,18 +139,12 @@ button.chip:focus-visible { outline: none; box-shadow: var(--halo), var(--sh-gre
   <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
   <header>
     <h1>Collector census</h1>
-    <p class="lead">An invented census for Braun collectors, in five steps made only of Ready’s form controls: an editable table, dropdowns, a combobox, a date picker, a checkbox tree, sliders, radio tiles and toggles. Nothing you enter is sent anywhere.</p>
   </header>
   <main class="view" id="census">
     <section class="panel s3" id="head" aria-label="Census steps"></section>
     <section class="panel s2 col" id="form" aria-labelledby="step-title"></section>
     <section class="tpanel" id="side" aria-label="Your census"></section>
   </main>
-  <section class="notes" aria-label="Design notes">
-    <div><h2>Steps you can always see</h2><p>All five steps stay in view above the form. Done steps fade back with a tick, the current one is dark and the rest wait in stone, and any step you have reached is one click away.</p></div>
-    <div><h2>Hints, not red errors</h2><p>Nothing on the page turns red. When something is missing, one plain sentence beside Continue says what to add, and Continue waits until it is there.</p></div>
-    <div><h2>A review that reads like the form</h2><p>Check your answers repeats the form’s own labels, in its order and its two columns, so every answer sits where you gave it. Edit takes you straight back to that step.</p></div>
-  </section>
 </div>
 <div class="toasts" id="toasts" aria-live="polite"></div>
 <script src="/fun/ready/assets/ready.js"></script>

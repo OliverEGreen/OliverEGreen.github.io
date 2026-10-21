@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Control panel · Ready</title>
-<meta name="description" content="The Braun SK 4's sync schedule as one working Ready control surface: toggles, a sliding segment, a slider, a stepper, radio tiles and checkboxes, read back as plain sentences.">
 <meta property="og:title" content="Control panel · Ready">
-<meta property="og:description" content="The SK 4's sync schedule as one working Ready control surface, read back as plain sentences.">
 <link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fun/ready/assets/ready.css">
@@ -85,14 +83,8 @@
   <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
   <header>
     <h1>Control panel</h1>
-    <p class="lead">The sync schedule for a Braun SK 4's photos, as one working surface: a sliding segment, toggles, a time field, a menu, a slider, a stepper, radio tiles and checkboxes. Change anything and the summary rewrites itself in plain sentences.</p>
   </header>
   <main class="view" id="view"></main>
-  <section class="notes" aria-label="Design notes">
-    <div><h2>The dot lights as the knob lands</h2><p>A toggle's knob slides 18 px with a slight overshoot, and the small dot in it turns orange only as it arrives, 80 ms behind, so the light follows the movement. Going off, the dot greys at once.</p></div>
-    <div><h2>One choice, a key that slides</h2><p>The segmented control is a stone well holding a single light key. Choosing slides that key to the new option with a little bounce, rather than lighting one and dimming another, so there is only ever one thing to look at.</p></div>
-    <div><h2>Controls you can read back</h2><p>Every control has a sentence of its own. The summary is rebuilt from them as you go, and the words that changed show in orange for a moment, so you check the schedule by reading it, not by scanning the controls again.</p></div>
-  </section>
 </div>
 <div class="toasts" id="toasts" aria-live="polite"></div>
 <script src="/fun/ready/assets/ready.js"></script>
