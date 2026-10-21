@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Control panel · Ready</title>
+<meta name="description" content="The Braun SK 4's sync schedule as one working Ready control surface: toggles, a sliding segment, a slider, a stepper, radio tiles and checkboxes, read back as plain sentences.">
+<meta property="og:title" content="Control panel · Ready">
+<meta property="og:description" content="The SK 4's sync schedule as one working Ready control surface, read back as plain sentences.">
+<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fun/ready/assets/ready.css">
+<style>
+/* the controls in two panels on the left, the summary beside them */
+.stack { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.panel.cp { display: flex; flex-direction: column; }
+.cp .fgrid { align-items: start; }
+.cp .ff > .hint { margin-top: 8px; }
+.hint.bad { color: var(--danger); }
+.toggles { display: flex; flex-direction: column; gap: 16px; }
+.setting .text { cursor: pointer; }
+.setting .name { color: var(--ink); }
+
+/* checkboxes: one parent, its sets indented beneath so their boxes line up with its label */
+.sets { display: flex; flex-direction: column; }
+.sets .crow { display: flex; }
+.sets .cnt { margin-left: auto; padding-left: 16px; font-size: 15px; color: var(--note); }   /* counts in the menu voice: Book, note grey */
+.sets .kids { display: flex; flex-direction: column; padding-left: 24px; }
+
+/* slider: a sunk track, a dark fill, a raised thumb with an orange dot (from the Inputs board) */
+.slider { display: flex; align-items: center; gap: 16px; }
+.rail { position: relative; flex: 1 1 auto; min-width: 0; height: 26px; display: flex; align-items: center; padding: 0 12px; cursor: pointer; touch-action: none; }
+.track { position: relative; flex: 1 1 auto; height: 6px; border-radius: 3px; background: var(--stone); box-shadow: inset 0 1px 1px rgba(60,45,30,.18); }
+.track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--dark); transition: width var(--move); }
+.track .thumb { position: absolute; top: 50%; width: 24px; height: 24px; margin: -12px 0 0 -12px; border-radius: 50%; background: var(--sheet); display: flex; align-items: center; justify-content: center; cursor: grab;
+  box-shadow: inset 0 1px 0 #FFFEFB, inset 0 -1px 0 rgba(90,70,50,.14), 1px 1px 1px rgba(60,45,30,.2), 1px 2px 3px -2px rgba(60,45,30,.24); transition: left var(--move), background var(--fast), box-shadow var(--fast); }
+.track .thumb:hover { background: #F2EFEA; }
+.track .thumb:focus-visible { outline: none; box-shadow: inset 0 -1px 0 rgba(90,70,50,.14), 1px 1px 1px rgba(60,45,30,.2), var(--halo); }
+.tdot { width: 6px; height: 6px; border-radius: 3px; background: var(--orange); }
+.slider.drag .thumb { background: #EEEAE3; box-shadow: inset 0 1px 2px rgba(60,45,30,.18); cursor: grabbing; }
+.slider.drag .thumb, .slider.drag .fill { transition: none; }
+.field.w96 { flex: none; width: 96px; }
+
+/* stepper: the number rolls in from the side it moved towards */
+.stepper .field { cursor: default; }
+.stepper .field:focus-visible { outline: none; }
+.stepper .n { display: inline-block; }
+.stepper .n.up { animation: nUp var(--move); }
+.stepper .n.down { animation: nDown var(--move); }
+@keyframes nUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes nDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* radio tiles keep to one 40 px row while they fit */
+.rtile .rl { min-width: 0; }
+
+/* the summary: sticky beside the controls; the words that just changed show in orange for a moment */
+.sum { position: sticky; top: 24px; align-self: start; display: flex; flex-direction: column; }
+.sumfacts { margin: 24px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.sumfacts > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.sumfacts dd { margin: 0; color: var(--ink); text-align: right; }
+.said-text { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.said-text p { font-size: 18px; line-height: 1.5; color: var(--ink); }
+.said { animation: said 1.6s ease-in; }
+@keyframes said { 0%, 45% { color: #D2500F; } 100% { color: var(--ink); } }
+.savedline { margin-top: 24px; }
+
+@media (max-width: 960px) {
+  .sum { position: static; }
+}
+@media (max-width: 520px) {
+  .cp .seg.slide { display: flex; width: 100%; align-self: stretch; }
+  .cp .seg.slide .sg { flex: 1 1 0; min-width: 0; padding: 0 8px; }
+  .rtile { flex-wrap: wrap; height: auto; min-height: 40px; padding: 8px 16px; row-gap: 0; }
+  .rtile .rnote { flex-basis: calc(100% - 24px); margin-left: 24px; }
+  .sum .actions .k { flex: 1 1 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stepper .n.up, .stepper .n.down { animation: fadeIn 120ms linear; }
+  .said { animation: said 1.2s steps(1, end); }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
+  <header>
+    <h1>Control panel</h1>
+    <p class="lead">The sync schedule for a Braun SK 4's photos, as one working surface: a sliding segment, toggles, a time field, a menu, a slider, a stepper, radio tiles and checkboxes. Change anything and the summary rewrites itself in plain sentences.</p>
+  </header>
+  <main class="view" id="view"></main>
+  <section class="notes" aria-label="Design notes">
+    <div><h2>The dot lights as the knob lands</h2><p>A toggle's knob slides 18 px with a slight overshoot, and the small dot in it turns orange only as it arrives, 80 ms behind, so the light follows the movement. Going off, the dot greys at once.</p></div>
+    <div><h2>One choice, a key that slides</h2><p>The segmented control is a stone well holding a single light key. Choosing slides that key to the new option with a little bounce, rather than lighting one and dimming another, so there is only ever one thing to look at.</p></div>
+    <div><h2>Controls you can read back</h2><p>Every control has a sentence of its own. The summary is rebuilt from them as you go, and the words that changed show in orange for a moment, so you check the schedule by reading it, not by scanning the controls again.</p></div>
+  </section>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/fun/ready/assets/ready.js"></script>
+<script>
+'use strict';
+(function () {
+const { $, $$, I, toast, openMenu, setCbox, setToggle, setChoice, syncTabs, pad, NOW, DAYNAMES, MON, on } = Ready;
+
+/* ---------- the SK 4's photos and the schedule's choices ---------- */
+const SETS = [['front', 'Front', 52], ['detail', 'Detail', 41], ['back', 'Back', 27], ['scans', 'Scans', 28]];
+const TOTAL = SETS.reduce((n, s) => n + s[2], 0);   // 148
+const FREQS = ['Hourly', 'Daily', 'Weekly'];
+const KEEPS = ['30 days', '60 days', '90 days', '1 year', 'Forever'];
+const PLACES = [
+  ['both', 'Library and Studio Mac', 'Two copies', 'in the library and on the Studio Mac'],
+  ['lib', 'Library only', 'Frees 6.2 GB', 'in the library only'],
+  ['drive', 'Library and Archive drive', 'When it’s plugged in', 'in the library and on the Archive drive'],
+];
+const SPEED = { min: 10, max: 100, step: 5 };
+const TRIES = { min: 0, max: 5 };
+const DEFAULTS = { freq: 'Daily', time: '09:00', keep: '90 days', verify: true, battery: false, speed: 60, retries: 3, place: 'both', sets: { front: true, detail: true, back: true, scans: false } };
+const clone = (s) => JSON.parse(JSON.stringify(s));
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+let S = clone(DEFAULTS), SAVED = clone(DEFAULTS), savedAt = `Saved today at ${pad(NOW.getHours())}:${pad(NOW.getMinutes())}.`;
+
+/* ---------- markup, rendered once; from here on every control changes in place ---------- */
+const toggleRow = (k, name, note) => `<div class="setting"><div class="text" data-for="${k}"><div class="name" id="l-${k}">${name}</div><div class="hint">${note}</div></div>
+  <span class="tgrow"><button class="tg${S[k] ? ' on' : ''}" type="button" role="switch" aria-checked="${S[k]}" aria-labelledby="l-${k}" data-act="cpToggle" data-k="${k}"><span class="knob"><span class="kdot"></span></span></button><span class="tgtext${S[k] ? ' on' : ''}" aria-hidden="true">${S[k] ? 'On' : 'Off'}</span></span></div>`;
+const crow = (attrs, label, count, state) => `<label class="crow"><input type="checkbox" ${attrs}><span class="cbox ${state}" aria-hidden="true">${I.ctick}<i></i></span><span>${label}</span><span class="cnt">${count}</span></label>`;
+
+$('#view').innerHTML = `
+<div class="stack s2">
+  <section class="panel cp" aria-labelledby="t-sched">
+    <h2 class="ptitle" id="t-sched">Schedule</h2>
+    <p class="sub">When Catalogue syncs the SK 4’s photos.</p>
+    <div class="fgrid">
+      <div class="ff span2"><span class="flabel" id="l-freq">Frequency</span>
+        <div class="seg slide" role="radiogroup" aria-labelledby="l-freq" id="freq"><span class="segind" aria-hidden="true"></span>${FREQS.map((f) => `<button class="sg${S.freq === f ? ' on' : ''}" type="button" role="radio" aria-checked="${S.freq === f}" tabindex="${S.freq === f ? 0 : -1}" data-act="cpFreq" data-v="${f}">${f}</button>`).join('')}</div></div>
+      <div class="ff"><label class="flabel" for="f-time">Time</label>
+        <span class="field"><input type="text" id="f-time" value="${S.time}" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="5" aria-describedby="h-time"></span>
+        <p class="hint" id="h-time"></p></div>
+      <div class="ff"><span class="flabel" id="l-keep">Keep edits for</span>
+        <button class="field" type="button" id="f-keep" aria-haspopup="menu" aria-expanded="false" aria-labelledby="l-keep f-keep" aria-describedby="h-keep" data-act="cpKeep"><span class="val">${S.keep}</span><span class="ico">${I.chev}</span></button>
+        <p class="hint" id="h-keep"></p></div>
+      <div class="toggles span2">
+        ${toggleRow('verify', 'Verify after each sync', 'Reads every photo back and compares checksums.')}
+        ${toggleRow('battery', 'Sync on battery', 'Skips syncs when the charge is below 20%.')}
+      </div>
+    </div>
+  </section>
+  <section class="panel cp" aria-labelledby="t-photos">
+    <h2 class="ptitle" id="t-photos">Photos</h2>
+    <p class="sub">Which photos sync, how they upload and where they’re kept.</p>
+    <div class="fgrid">
+      <div class="ff"><span class="flabel" id="l-sets">Photo sets</span>
+        <div class="sets" role="group" aria-labelledby="l-sets">
+          ${crow('id="set-all" aria-describedby="c-all"', 'All sets', `<span id="c-all"></span>`, '')}
+          <div class="kids">${SETS.map(([k, name, n]) => crow(`data-set="${k}"${S.sets[k] ? ' checked' : ''}`, name, n, S.sets[k] ? 'on' : '')).join('')}</div>
+        </div></div>
+      <div class="col" style="gap: 24px">
+        <div class="ff"><span class="flabel" id="l-speed">Upload speed</span>
+          <div class="slider" id="speed"><div class="rail"><div class="track"><i class="fill"></i><span class="thumb" role="slider" tabindex="0" aria-labelledby="l-speed" aria-describedby="h-speed" aria-valuemin="${SPEED.min}" aria-valuemax="${SPEED.max}"><i class="tdot"></i></span></div></div>
+            <label class="field num w96"><span class="sr">Upload speed, per cent</span><input type="text" id="f-speed" inputmode="numeric" autocomplete="off" maxlength="3"><span class="unit">%</span></label></div>
+          <p class="hint" id="h-speed">How much of the connection a sync may use.</p></div>
+        <div class="ff"><span class="flabel" id="l-tries">Retries</span>
+          <div class="stepper" id="tries"><button class="k grey icon" type="button" aria-label="Fewer retries" data-tip="Fewer retries" data-act="cpTries" data-d="-1">${I.minus}</button>
+            <div class="field" role="spinbutton" tabindex="0" aria-labelledby="l-tries" aria-describedby="h-tries" aria-valuemin="${TRIES.min}" aria-valuemax="${TRIES.max}"><span class="n"></span><span class="unit"></span></div>
+            <button class="k grey icon" type="button" aria-label="More retries" data-tip="More retries" data-act="cpTries" data-d="1">${I.plus}</button></div>
+          <p class="hint" id="h-tries">Five minutes apart, after a sync fails.</p></div>
+      </div>
+      <div class="ff span2"><span class="flabel" id="l-place">Where photos are kept</span>
+        <div class="rtiles" role="radiogroup" aria-labelledby="l-place" id="place">${PLACES.map(([k, label, note]) => `<button class="rtile${S.place === k ? ' on' : ''}" type="button" role="radio" aria-checked="${S.place === k}" tabindex="${S.place === k ? 0 : -1}" data-act="cpPlace" data-v="${k}"><span class="rbox${S.place === k ? ' on' : ''}"><i></i></span><span class="rl">${label}</span><span class="rnote hint">${note}</span></button>`).join('')}</div></div>
+    </div>
+  </section>
+</div>
+<aside class="panel sum" aria-labelledby="t-sum">
+  <h2 class="ptitle" id="t-sum">In plain words</h2>
+  <p class="sub">The schedule, read back as you set it.</p>
+  <dl class="sumfacts">
+    <div><dt class="lbl">Next sync</dt><dd data-k="next"></dd></div>
+    <div><dt class="lbl">Each sync takes</dt><dd data-k="photos"></dd></div>
+  </dl>
+  <div class="said-text">
+    <p><span data-k="when"></span>, <span data-k="keep"></span> and <span data-k="verify"></span>.</p>
+    <p><span data-k="sets"></span><span data-k="c-them"></span><span data-k="place"></span>.</p>
+    <p>Each sync <span data-k="speed"></span>, <span data-k="battery"></span> and <span data-k="retry"></span>.</p>
+  </div>
+  <p class="hint savedline" id="saved" aria-live="polite"></p>
+  <div class="actions"><button class="k grey" type="button" data-act="cpReset">Reset</button><button class="k dark" type="button" data-act="cpSave">Save schedule</button></div>
+</aside>`;
+
+const tIn = $('#f-time'), tHint = $('#h-time'), keepBtn = $('#f-keep'), keepHint = $('#h-keep');
+const sp = $('#speed'), spTrack = $('.track', sp), spThumb = $('.thumb', sp), spFill = $('.fill', sp), spIn = $('#f-speed');
+const tr = $('#tries'), trField = $('.field', tr), trN = $('.n', tr), trUnit = $('.unit', tr), [trMinus, trPlus] = $$('.k', tr);
+const setAll = $('#set-all'), setKids = $$('input[data-set]');
+const FR = {}; $$('[data-k]', $('.sum')).forEach((el) => { FR[el.dataset.k] = el; });
+
+/* ---------- the sentences each control contributes ---------- */
+const list = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
+const chosenSets = (s) => SETS.filter(([k]) => s.sets[k]);
+const photoCount = (s) => chosenSets(s).reduce((n, x) => n + x[2], 0);
+function nextSync(s) {
+  const [h, m] = s.time.split(':').map(Number), d = new Date(NOW);
+  d.setHours(h, m, 0, 0);
+  if (s.freq === 'Daily') { if (d <= NOW) d.setDate(d.getDate() + 1); }
+  if (s.freq === 'Weekly') { d.setDate(d.getDate() + ((8 - d.getDay()) % 7)); if (d <= NOW) d.setDate(d.getDate() + 7); }   // Mondays
+  if (s.freq === 'Hourly' && d <= NOW) {
+    const c = new Date(NOW); c.setMinutes(m, 0, 0); if (c <= NOW) c.setHours(c.getHours() + 1);
+    if (c.getDate() === NOW.getDate()) return c;
+    d.setDate(d.getDate() + 1);
+  }
+  return d;
+}
+function dayTime(d) {
+  const a = new Date(d), b = new Date(NOW); a.setHours(0, 0, 0, 0); b.setHours(0, 0, 0, 0);
+  const diff = Math.round((a - b) / 864e5);
+  return `${diff === 0 ? 'Today' : diff === 1 ? 'Tomorrow' : `${DAYNAMES[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}`}, ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+function phrases(s) {
+  const sets = chosenSets(s), n = photoCount(s);
+  return {
+    next: n ? dayTime(nextSync(s)) : 'Nothing to sync',
+    photos: n ? `${n} of ${TOTAL} photos` : 'No photos',
+    when: s.freq === 'Hourly' ? `Syncs every hour from ${s.time}` : s.freq === 'Daily' ? `Syncs daily at ${s.time}` : `Syncs weekly, on Mondays at ${s.time}`,
+    keep: s.keep === 'Forever' ? 'keeps every edit' : `keeps edits for ${s.keep === '1 year' ? 'a year' : s.keep}`,
+    verify: s.verify ? 'verifies every photo' : 'skips the read-back check',
+    sets: sets.length === SETS.length ? `Takes all ${TOTAL} photos` : !sets.length ? 'Takes no photos yet'
+      : `Takes the ${list(sets.map((x) => x[1].toLowerCase()))} set${sets.length > 1 ? 's' : ''} (${n} photos)`,
+    'c-them': sets.length ? ' and keeps them ' : ', but would keep them ',
+    place: PLACES.find((p) => p[0] === s.place)[3],
+    speed: s.speed >= SPEED.max ? 'uses the whole connection' : `uses up to ${s.speed}% of the connection`,
+    battery: s.battery ? 'runs on battery above 20%' : 'waits for the charger',
+    retry: s.retries === 0 ? 'gives up after one failed try' : s.retries === 1 ? 'tries once more if it fails' : `tries ${s.retries} more times if it fails`,
+  };
+}
+const TIME_HINT = { Hourly: 'The day’s first sync, then one every hour, in London time.', Daily: 'Uses your computer’s time zone (London).', Weekly: 'Every Monday, in your computer’s time zone (London).' };
+const keepNote = (k) => (k === 'Forever' ? 'Every edit stays, however old.' : `After ${k === '1 year' ? 'a year' : k}, edits thin to one a week.`);
+
+/* rewrite only the words that changed, and show them in orange for a moment */
+let first = true;
+function update() {
+  const p = phrases(S);
+  Object.keys(p).forEach((k) => {
+    const el = FR[k]; if (!el || el.textContent === p[k]) return;
+    el.textContent = p[k];
+    if (!first && !k.startsWith('c-')) { el.classList.remove('said'); void el.offsetWidth; el.classList.add('said'); }
+  });
+  if (!tHint.classList.contains('bad')) tHint.textContent = TIME_HINT[S.freq];
+  keepHint.textContent = keepNote(S.keep);
+  const keys = ['freq', 'time', 'keep', 'verify', 'battery', 'speed', 'retries', 'place', 'sets'];
+  const n = keys.filter((k) => !same(S[k], SAVED[k])).length;
+  const line = n ? `${n} change${n > 1 ? 's' : ''} not saved yet.` : savedAt;
+  if ($('#saved').textContent !== line) $('#saved').textContent = line;
+  first = false;
+}
+
+/* ---------- each control, changed in place ---------- */
+function choose(btn) {
+  setChoice(btn);
+  $$(':scope > button', btn.parentNode).forEach((b) => { b.tabIndex = b === btn ? 0 : -1; });
+}
+const parseTime = (v) => {
+  const m = String(v).trim().match(/^(\d{1,2})(?:[:.h ]?(\d{2}))?$/);
+  if (!m || +m[1] > 23 || +(m[2] || 0) > 59) return null;
+  return `${pad(+m[1])}:${pad(+(m[2] || 0))}`;
+};
+const timeBad = (bad) => { tHint.classList.toggle('bad', bad); tHint.textContent = bad ? `That isn’t a time, so it stays at ${S.time}.` : TIME_HINT[S.freq]; };
+tIn.addEventListener('input', () => { const t = parseTime(tIn.value); if (tHint.classList.contains('bad')) timeBad(false); if (t && t !== S.time) { S.time = t; update(); } });
+const settleTime = () => { const ok = !tIn.value.trim() || parseTime(tIn.value); tIn.value = S.time; timeBad(!ok); };
+tIn.addEventListener('blur', settleTime);
+tIn.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') { e.preventDefault(); settleTime(); return; }
+  if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+  e.preventDefault();
+  const [h, m] = S.time.split(':').map(Number), by = (e.shiftKey ? 60 : 15) * (e.key === 'ArrowUp' ? 1 : -1);
+  const t = ((Math.round((h * 60 + m) / 15) * 15 + by) % 1440 + 1440) % 1440;
+  S.time = `${pad(Math.floor(t / 60))}:${pad(t % 60)}`; tIn.value = S.time; timeBad(false); update();
+});
+
+function renderKeep() { $('.val', keepBtn).textContent = S.keep; }
+keepBtn.addEventListener('keydown', (e) => { if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); keepBtn.click(); } });
+
+function renderSpeed() {
+  const pct = ((S.speed - SPEED.min) / (SPEED.max - SPEED.min)) * 100;
+  spThumb.style.left = pct + '%'; spFill.style.width = pct + '%';
+  spThumb.setAttribute('aria-valuenow', S.speed); spThumb.setAttribute('aria-valuetext', `${S.speed}% of the connection`);
+  if (document.activeElement !== spIn) spIn.value = S.speed;
+}
+function setSpeed(v) {
+  v = Math.max(SPEED.min, Math.min(SPEED.max, Math.round(v / SPEED.step) * SPEED.step));
+  if (v === S.speed) return;
+  S.speed = v; renderSpeed(); update();
+}
+const speedAt = (x) => { const r = spTrack.getBoundingClientRect(); return SPEED.min + Math.max(0, Math.min(1, (x - r.left) / r.width)) * (SPEED.max - SPEED.min); };
+$('.rail', sp).addEventListener('pointerdown', (e) => {
+  if (e.button !== 0) return;
+  e.preventDefault(); spThumb.focus({ preventScroll: true });
+  const rail = e.currentTarget; try { rail.setPointerCapture(e.pointerId); } catch (err) {}
+  setSpeed(speedAt(e.clientX));   // a click glides the thumb to the spot; a drag follows the pointer exactly
+  const mv = (ev) => { sp.classList.add('drag'); setSpeed(speedAt(ev.clientX)); };
+  const up = () => { sp.classList.remove('drag'); rail.removeEventListener('pointermove', mv); rail.removeEventListener('pointerup', up); rail.removeEventListener('pointercancel', up); };
+  rail.addEventListener('pointermove', mv); rail.addEventListener('pointerup', up); rail.addEventListener('pointercancel', up);
+});
+spThumb.addEventListener('keydown', (e) => {
+  const d = { ArrowRight: SPEED.step, ArrowUp: SPEED.step, ArrowLeft: -SPEED.step, ArrowDown: -SPEED.step, PageUp: 20, PageDown: -20 }[e.key];
+  if (d !== undefined) { e.preventDefault(); setSpeed(S.speed + d); }
+  else if (e.key === 'Home' || e.key === 'End') { e.preventDefault(); setSpeed(e.key === 'Home' ? SPEED.min : SPEED.max); }
+});
+spIn.addEventListener('input', () => { spIn.value = spIn.value.replace(/\D/g, ''); const v = +spIn.value; if (spIn.value && v >= SPEED.min && v <= SPEED.max) setSpeed(v); });
+spIn.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { e.preventDefault(); setSpeed(S.speed + (e.key === 'ArrowUp' ? SPEED.step : -SPEED.step)); spIn.value = S.speed; }
+  if (e.key === 'Enter') { e.preventDefault(); spIn.blur(); }
+});
+spIn.addEventListener('blur', () => { if (spIn.value) setSpeed(+spIn.value); spIn.value = S.speed; });
+
+function renderTries(dir) {
+  const v = S.retries;
+  trN.textContent = v; trUnit.textContent = v === 1 ? 'time' : 'times';
+  trField.setAttribute('aria-valuenow', v); trField.setAttribute('aria-valuetext', `${v} ${v === 1 ? 'time' : 'times'}`);
+  const f = document.activeElement;
+  trMinus.disabled = v <= TRIES.min; trPlus.disabled = v >= TRIES.max;
+  if ((f === trMinus && trMinus.disabled) || (f === trPlus && trPlus.disabled)) trField.focus();
+  if (dir) { trN.classList.remove('up', 'down'); void trN.offsetWidth; trN.classList.add(dir > 0 ? 'up' : 'down'); }
+}
+function setTries(v) {
+  v = Math.max(TRIES.min, Math.min(TRIES.max, v));
+  if (v === S.retries) return;
+  const dir = v - S.retries; S.retries = v; renderTries(dir); update();
+}
+trField.addEventListener('keydown', (e) => {
+  const d = { ArrowUp: 1, ArrowRight: 1, ArrowDown: -1, ArrowLeft: -1 }[e.key];
+  if (d) { e.preventDefault(); setTries(S.retries + d); }
+  else if (e.key === 'Home' || e.key === 'End') { e.preventDefault(); setTries(e.key === 'Home' ? TRIES.min : TRIES.max); }
+});
+
+/* checkboxes: the parent is on when every set is, off when none is, and mixed in between */
+function renderSets() {
+  setKids.forEach((inp) => { const v = !!S.sets[inp.dataset.set]; inp.checked = v; setCbox(inp.nextElementSibling, v ? 'on' : 'off'); });
+  const n = chosenSets(S).length, st = n === SETS.length ? 'on' : n ? 'mixed' : 'off';
+  setAll.checked = st === 'on'; setAll.indeterminate = st === 'mixed'; setCbox(setAll.nextElementSibling, st);
+  $('#c-all').textContent = `${photoCount(S)} of ${TOTAL}`;
+}
+setKids.forEach((inp) => inp.addEventListener('change', () => { S.sets[inp.dataset.set] = inp.checked; renderSets(); update(); }));
+setAll.addEventListener('change', () => { const all = chosenSets(S).length === SETS.length; SETS.forEach(([k]) => { S.sets[k] = !all; }); renderSets(); update(); });
+
+/* radio groups (the segment and the tiles): arrow keys move the choice, as native radios do */
+document.addEventListener('keydown', (e) => {
+  const b = e.target.closest && e.target.closest('[role="radiogroup"] > button[role="radio"]');
+  if (!b || !['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown', 'Home', 'End'].includes(e.key)) return;
+  e.preventDefault();
+  const all = $$(':scope > button[role="radio"]', b.parentNode), i = all.indexOf(b), fwd = e.key === 'ArrowRight' || e.key === 'ArrowDown';
+  const n = e.key === 'Home' ? all[0] : e.key === 'End' ? all[all.length - 1] : all[(i + (fwd ? 1 : -1) + all.length) % all.length];
+  n.focus(); if (n !== b) n.click();
+});
+/* a toggle's name and note are part of it */
+$$('.setting .text').forEach((t) => t.addEventListener('click', () => $(`[data-k="${t.dataset.for}"]`, t.parentNode).click()));
+
+/* put a whole schedule back into the controls, each in place so its motion runs */
+function apply(s) {
+  const prev = S.retries;
+  S = clone(s);
+  choose($(`#freq [data-v="${S.freq}"]`));
+  tIn.value = S.time; timeBad(false);
+  renderKeep();
+  ['verify', 'battery'].forEach((k) => setToggle($(`.tg[data-k="${k}"]`), S[k]));
+  renderSpeed(); renderTries(S.retries - prev);
+  choose($(`#place [data-v="${S.place}"]`));
+  renderSets(); update();
+}
+
+on({
+  cpFreq(el) { if (S.freq === el.dataset.v) return; S.freq = el.dataset.v; choose(el); update(); },
+  cpPlace(el) { if (S.place === el.dataset.v) return; S.place = el.dataset.v; choose(el); update(); },
+  cpToggle(el) { const k = el.dataset.k; S[k] = !S[k]; setToggle(el, S[k]); update(); },
+  cpTries(el) { setTries(S.retries + +el.dataset.d); },
+  cpKeep(el) {
+    const m = openMenu(el, KEEPS.map((k) => ({ label: k, tick: S.keep === k, run: () => { if (S.keep !== k) { S.keep = k; renderKeep(); update(); } } })), { width: el.offsetWidth });
+    const t = $('.mrow[aria-checked="true"]', m); t && t.focus();
+  },
+  cpSave() { SAVED = clone(S); savedAt = 'Saved just now.'; update(); toast('Schedule saved'); },
+  cpReset() {
+    if (same(S, DEFAULTS)) { toast('Already the defaults'); return; }
+    const before = clone(S); apply(DEFAULTS);
+    toast('Back to the defaults', { label: 'Undo', run: () => apply(before) });
+  },
+});
+
+renderSpeed(); renderTries(0); renderSets(); update();
+syncTabs($('#freq'));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Command palette · Ready</title>
+<meta name="description" content="A command palette on Ready over a Dieter Rams catalogue: press ⌘K or / and type to reach designs, photos and actions from one sunk field, with matches in orange.">
+<meta property="og:title" content="Command palette · Ready">
+<meta property="og:description" content="One field over a Rams catalogue: designs, photos and actions, grouped, with matches in orange.">
+<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fun/ready/assets/ready.css">
+<style>
+/* ---------- the stand-in screen behind the palette ---------- */
+.prompt { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 4px 0 8px; }
+.prompt .k { min-width: 240px; justify-content: flex-start; color: var(--ink2); }
+.pline { color: var(--ink2); }
+.btitle { font-size: 40px; line-height: 1.1; color: var(--ink); }
+@media (max-width: 960px) { .btitle { font-size: 32px; } }
+/* keycaps: small grey keys, raised like the rest */
+.kc { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 6px; margin: 0 2px; border-radius: 3px; background: var(--grey); color: var(--ink2);
+  font-family: 'Ready', sans-serif; font-size: 13px; font-weight: 350; line-height: 1; vertical-align: 1px;
+  box-shadow: inset 0 1px 0 rgba(255,253,248,.78), inset 0 -1px 0 rgba(90,70,50,.16), 0 1px 0 rgba(90,70,50,.08), 1px 1px 1px rgba(60,45,30,.18); }
+.kc.sm { min-width: 20px; height: 20px; padding: 0 5px; font-size: 12px; }
+
+/* ---------- the palette: a soft scrim, one lifted panel near the top ---------- */
+.pscrim { position: fixed; inset: 0; z-index: 70; background: rgba(46,42,38,.24); animation: fadeIn var(--reveal); }
+.pal { position: fixed; z-index: 71; left: 0; right: 0; top: max(24px, 12vh); width: min(640px, calc(100vw - 48px)); max-height: calc(100vh - max(24px, 12vh) - 48px); margin: 0 auto;
+  display: flex; flex-direction: column; border-radius: 4px; overflow: hidden; background: var(--panel); outline: none;
+  box-shadow: 1px 1px 1px rgba(60,45,30,.12), 4px 12px 32px -8px rgba(40,30,20,.35); animation: palIn var(--reveal); }
+.pscrim[hidden], .pal[hidden] { display: none; }
+@keyframes palIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.ptop { flex: none; display: flex; align-items: center; gap: 8px; padding: 12px; }
+/* the search well: large and sunk; the magnifier gives way to the clear key once there is text */
+.pwell.field { height: 56px; padding: 0 16px; background: var(--band); box-shadow: var(--sh-well); font-size: 20px; }
+.pwell.field:hover { background: var(--band); }
+.pwell.field:focus-within { box-shadow: var(--sh-well), var(--halo); }
+.pwell input { color: var(--ink); }
+.pwell .ico svg { width: 20px; height: 20px; }
+.pwell .fclear { right: 12px; }
+.pcancel { display: none; flex: none; height: 40px; padding: 0 8px; border: 0; border-radius: 3px; background: transparent; color: var(--ink2); cursor: pointer; transition: background var(--fast), color var(--fast); }
+.pcancel:hover { background: var(--band); color: var(--ink); }
+.pcancel:focus-visible { outline: none; box-shadow: var(--halo); }
+
+/* results: groups under sentence-case headings; rows 40 high */
+.plist { position: relative; flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 12px 8px; }
+.pgroup + .pgroup { margin-top: 4px; }
+.pghead { padding: 8px 12px 4px; font-size: 15px; color: var(--ink2); }
+.prow { position: relative; display: flex; align-items: center; gap: 12px; min-height: 40px; padding: 4px 12px 4px 28px; border-radius: 3px; color: var(--ink); cursor: pointer; user-select: none; -webkit-user-select: none; }
+.prow + .prow { margin-top: 2px; }
+/* the chosen row rises as a light key with the orange dot, as the tree's chosen row does */
+.prow.on { background: var(--sheet); box-shadow: var(--sh-light); }
+.prow.on::before { content: ''; position: absolute; left: 12px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: 50%; background: var(--orange); }
+.pslot { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 25px; color: var(--icon); }
+.pslot img.ph { width: 40px; height: 25px; border-radius: 3px; object-fit: cover; }
+.pslot .tile { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 25px; border-radius: 3px; background: var(--stone); color: #8A837B; }
+.pslot .tile svg { width: 14px; height: 14px; }
+.prow.on .pslot { color: var(--ink2); }
+.ptext { flex: 1 1 auto; min-width: 0; display: flex; align-items: baseline; gap: 12px; }
+.plabel { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pnote { flex: none; font-family: 'Ready Condensed', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: .01em; color: var(--note); white-space: nowrap; }
+.pnote .hit { color: var(--ink); }
+
+/* nothing found */
+.pempty { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 32px 24px 40px; text-align: center; color: var(--icon); }
+.pempty svg { margin-bottom: 8px; }
+.pempty .ptitle2 { font-size: 16px; color: var(--ink); overflow-wrap: anywhere; }
+.pempty .hint { max-width: 40ch; }
+
+/* key hints along the foot */
+.pfoot { flex: none; display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 10px 24px 12px; background: var(--band); }
+.pfoot > span { display: inline-flex; align-items: center; gap: 4px; }
+.pfoot .kc { margin: 0; }
+.pfoot .kc svg { width: 12px; height: 12px; }
+
+/* phone width: the palette runs full width from the top edge and opens from the key */
+@media (max-width: 560px) {
+  .pline { display: none; }
+  .prompt .k { flex: 1 1 auto; }
+  .pal { top: 0; width: 100%; max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px); border-radius: 0 0 4px 4px; }
+  .ptop { padding: 8px 8px 8px 12px; padding-top: max(8px, env(safe-area-inset-top, 0px)); }
+  .pcancel { display: inline-flex; align-items: center; }
+  .plist { padding: 0 8px 8px; }
+  .prow { padding-top: 6px; padding-bottom: 6px; min-height: 52px; }
+  .ptext { flex-direction: column; align-items: stretch; gap: 0; }
+  .pnote { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pfoot { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pal { animation: fadeIn 120ms linear; }
+  .pscrim { animation-duration: 120ms; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
+  <header>
+    <h1>Command palette</h1>
+    <p class="lead">One field over a Dieter Rams catalogue. Press <span data-mod>⌘K</span> or / and type: designs, photos and actions come back in groups, with what matched in orange. The arrow keys choose and Enter opens.</p>
+  </header>
+  <main class="view" id="board">
+    <div class="prompt s3">
+      <button class="k" type="button" id="opener" aria-haspopup="dialog" aria-expanded="false" aria-controls="pal"><span aria-hidden="true" id="opener-ico"></span>Search the catalogue</button>
+      <p class="pline">Press <kbd class="kc" data-mod>⌘K</kbd> or <kbd class="kc">/</kbd> to search</p>
+    </div>
+    <header class="panel s3">
+      <div class="phead">
+        <div><div class="lbl">Designs / Audio</div>
+          <div class="tline"><h2 class="btitle">SK 4</h2><span class="tag">CAT-0156</span></div>
+          <p class="hint">Braun, 1956. Designed with Hans Gugelot. Synced 12 minutes ago.</p>
+        </div>
+        <div class="tools" role="group" aria-label="Design actions">
+          <button class="k grey" type="button" data-act="toastMsg" data-msg="Sharing SK 4">Share</button>
+          <button class="k grey" type="button" data-act="toastMsg" data-msg="Opening the SK 4 record">Edit record…</button>
+          <button class="k dark" type="button" data-act="toastMsg" data-msg="Choosing photos to add to SK 4" id="addk">Add photos</button>
+        </div>
+      </div>
+    </header>
+    <section class="panel stat"><div class="lbl">Photos</div><div class="fig">148</div><div class="hint">+12 this week</div></section>
+    <section class="panel stat"><div class="lbl">Size</div><div class="fig">7.1<small> GB</small></div><div class="hint">1% of your 1 TB plan</div></section>
+    <section class="panel stat"><div class="lbl">Last check</div><div class="fig">10:47</div><div class="hint">All 148 photos verified</div></section>
+  </main>
+  <section class="notes" aria-label="Design notes">
+    <div><h2>One field, everything reachable</h2><p>Designs, photos and actions sit behind one sunk field. A few letters are enough, and so are a name's initials: “et” finds the ET 66, “pr” the portable radios.</p></div>
+    <div><h2>Matches in orange</h2><p>The letters that matched sit on solid orange, and the chosen row rises as a light key with an orange dot. Orange is the one colour for found and chosen.</p></div>
+    <div><h2>Groups by what you're looking for</h2><p>Results fall under Designs, Photos and Actions. The group with the best match comes first, so Enter usually opens what you meant.</p></div>
+  </section>
+  <div id="credits"></div>
+</div>
+
+<div class="pscrim" id="pal-scrim" hidden></div>
+<div class="pal" id="pal" role="dialog" aria-modal="true" aria-label="Search the catalogue" hidden>
+  <div class="ptop">
+    <label class="field search pwell"><span class="sr">Search designs, photos and actions</span><input type="text" id="pal-q" placeholder="Search designs, photos and actions" spellcheck="false" autocomplete="off" autocapitalize="off" role="combobox" aria-expanded="true" aria-controls="pal-list" aria-autocomplete="list"><button class="fclear" type="button" aria-label="Clear search" data-act="clearSearch" id="pal-clear"></button><span class="ico" id="pal-ico"></span></label>
+    <button class="pcancel" type="button" id="pal-cancel">Cancel</button>
+  </div>
+  <div class="plist" id="pal-list" role="listbox" aria-label="Results"></div>
+  <div class="pfoot hint" aria-hidden="true"><span><kbd class="kc sm" id="kc-up"></kbd><kbd class="kc sm" id="kc-down"></kbd> to choose</span><span><kbd class="kc sm">Enter</kbd> to open</span><span><kbd class="kc sm">Esc</kbd> to clear, then close</span></div>
+  <p class="sr" id="pal-status" aria-live="polite"></p>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/fun/ready/assets/ready.js"></script>
+<script>
+'use strict';
+(function () {
+  const { $, $$, esc, I, toast, photo, creditsHtml } = Ready;
+
+  /* ⌘K on Apple keyboards, Ctrl K elsewhere; both work everywhere */
+  const MAC = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent || '');
+  if (!MAC) $$('[data-mod]').forEach((el) => { el.textContent = 'Ctrl K'; });
+  $('#opener-ico').innerHTML = I.search;
+  $('#addk').insertAdjacentHTML('beforeend', I.up);
+  $('#pal-clear').innerHTML = I.x;
+  $('#pal-ico').innerHTML = I.search;
+  $('#kc-up').innerHTML = I.sortUp; $('#kc-down').innerHTML = I.arrow;
+
+  /* ---------- data: the catalogue's 14 designs, oldest first ---------- */
+  const DESIGNS = [
+    ['sk4', 'SK 4', 'radio-phonograph', 'Braun', 1956],
+    ['', 'atelier 1', 'radio-phonograph', 'Braun', 1957],
+    ['', 'T 3', 'pocket radio', 'Braun', 1958],
+    ['tp1', 'TP 1', 'portable radio-phonograph', 'Braun', 1959],
+    ['', 'studio 2', 'hi-fi system', 'Braun', 1959],
+    ['606', '606', 'universal shelving system', 'Vitsœ', 1960],
+    ['', 'RT 20', 'table radio', 'Braun', 1961],
+    ['t52', 'T 52', 'portable radio', 'Braun', 1961],
+    ['', 'T 41', 'portable radio', 'Braun', 1962],
+    ['', '620', 'chair programme', 'Vitsœ', 1962],
+    ['t1000', 'T 1000', 'world receiver', 'Braun', 1963],
+    ['', 'PS 1000', 'record player', 'Braun', 1965],
+    ['', 'HLD 4', 'hair dryer', 'Braun', 1970],
+    ['et66', 'ET 66', 'calculator', 'Braun', 1987],
+  ].map(([img, name, kind, maker, year]) => ({ g: 'd', img, name, label: `${name} ${kind}`, note: `${maker} · ${year}`, msg: `Opening ${name}` }));
+
+  /* the SK 4's newest photos, as the photo table has them, and a few from the other designs */
+  const CAMERAS = ['Studio camera', 'Studio camera', 'Phone', 'Studio camera', 'Phone', 'Studio camera', 'Scanner'];
+  const mbFor = (cam, i) => Math.round((cam === 'Phone' ? 11.4 + ((i * 7) % 15) / 10 : cam === 'Scanner' ? 31.2 + ((i * 5) % 20) / 10 : 46.8 + ((i * 3) % 22) / 10) * 10) / 10;
+  const PHOTOS = [];
+  for (let i = 0; i < 14; i++) PHOTOS.push(['SK4-' + (148 - i), 'SK 4', mbFor(CAMERAS[i % 7], i)]);
+  PHOTOS.push(['ET66-001', 'ET 66', 17.9], ['T3-004', 'T 3', 21.6], ['T3-005', 'T 3', 22.3], ['TP1-001', 'TP 1', 22.8], ['606-001', '606', 26.4], ['606-002', '606', 25.8]);
+  const PHOTO_ITEMS = PHOTOS.map(([id, d, mb]) => ({ g: 'p', label: id, note: `${d} · ${mb.toFixed(1)} MB`, msg: `Opening ${id}` }));
+
+  const ACTIONS = [
+    ['up', 'Add photos', 'To SK 4', 'Choosing photos to add to SK 4'],
+    ['rename', 'Edit record…', 'SK 4', 'Opening the SK 4 record'],
+    ['dl', 'Export', '148 photos · 7.1 GB', 'Exporting 148 photos'],
+    ['share', 'Share', 'A link to SK 4', 'Sharing SK 4'],
+    ['plus', 'New design', 'In Designs', 'Starting a new design'],
+    ['history', 'Show history', 'Changes to SK 4', 'Opening the SK 4 history'],
+  ].map(([ico, label, note, msg]) => ({ g: 'a', ico, label, note, msg }));
+
+  const GROUPS = [['d', 'Designs', DESIGNS], ['p', 'Photos', PHOTO_ITEMS], ['a', 'Actions', ACTIONS]];
+  /* with nothing typed: the recent designs, the newest photos and every action */
+  const RECENT = { d: ['SK 4', 'T 3', '606', 'ET 66'].map((n) => DESIGNS.find((x) => x.name === n)), p: PHOTO_ITEMS.slice(0, 3), a: ACTIONS };
+
+  /* ---------- matching: substrings first, then initials ----------
+     text is folded to lower case without spaces or punctuation (so "et66" finds "ET 66" and "vitsoe" finds "Vitsœ"),
+     each folded character remembering where it came from and whether it starts a word */
+  function fold(s) {
+    const t = [], map = [], ws = []; let sep = true, prev = '';
+    for (let i = 0; i < s.length; i++) {
+      const c = s[i];
+      if (/[\s\-·–—\/.,…'’()]/.test(c)) { sep = true; continue; }
+      const type = /\d/.test(c) ? 'n' : 'a';
+      let lc = c.toLowerCase();
+      lc = lc === 'œ' ? 'oe' : lc === 'æ' ? 'ae' : lc.normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const start = sep || (prev && prev !== type);
+      [...lc].forEach((ch, j) => { t.push(ch); map.push(i); ws.push(start && j === 0); });
+      sep = false; prev = type;
+    }
+    return { t: t.join(''), map, ws };
+  }
+  const foldQ = (s) => fold(s).t;
+  for (const [, , list] of GROUPS) list.forEach((it) => { it.fl = fold(it.label); it.fn = fold(it.note); });
+
+  /* one token against one folded text: start of the text 100, initials of two or more words 85, start of a word 80, inside a word 50 */
+  function matchToken(F, tok) {
+    if (!tok) return null;
+    let best = null;
+    for (let j = F.t.indexOf(tok); j >= 0; j = F.t.indexOf(tok, j + 1)) {
+      const s = j === 0 ? 100 : F.ws[j] ? 80 : tok.length > 1 ? 50 : 0;
+      if (s && (!best || s > best.s)) best = { s, idx: F.map.slice(j, j + tok.length) };
+      if (s === 100) return best;
+    }
+    if (tok.length > 1) {
+      const pos = []; F.ws.forEach((w, k) => { if (w) pos.push(k); });
+      const ini = pos.map((k) => F.t[k]).join(''), j = ini.indexOf(tok);
+      if (j >= 0 && (!best || best.s < 85)) return { s: 85, idx: pos.slice(j, j + tok.length).map((k) => F.map[k]) };
+    }
+    return best;
+  }
+  /* every word of the query has to match the label or, at half weight, the note; the query run together is tried too */
+  function score(it, toks, whole) {
+    let sum = 0; const L = [], N = [];
+    for (const tok of toks) {
+      const m = matchToken(it.fl, tok);
+      if (m) { sum += m.s; L.push(...m.idx); continue; }
+      const n = matchToken(it.fn, tok);
+      if (n) { sum += n.s / 2; N.push(...n.idx); continue; }
+      sum = -1; break;
+    }
+    let res = sum < 0 ? null : { s: sum / toks.length, L, N };
+    if (toks.length > 1) {
+      const w = matchToken(it.fl, whole);
+      if (w && (!res || w.s + 5 > res.s)) res = { s: w.s + 5, L: w.idx, N: [] };
+    }
+    return res;
+  }
+  function search(q) {
+    const toks = q.trim().split(/\s+/).map(foldQ).filter(Boolean), whole = foldQ(q);
+    if (!toks.length) return GROUPS.map(([g, title]) => ({ g, title, rows: RECENT[g].map((it) => ({ it, L: [], N: [] })), best: 0 }));
+    const out = GROUPS.map(([g, title, list], gi) => {
+      const rows = [];
+      list.forEach((it, k) => { const r = score(it, toks, whole); if (r) rows.push({ it, k, ...r }); });
+      rows.sort((a, b) => b.s - a.s || a.k - b.k);
+      return { g, title, gi, rows, best: rows.length ? rows[0].s : -1 };
+    }).filter((x) => x.rows.length);
+    return out.sort((a, b) => b.best - a.best || a.gi - b.gi);
+  }
+  /* wrap the matched characters in solid orange */
+  function mark(text, idx) {
+    if (!idx.length) return esc(text);
+    const on = new Set(idx); let out = '', run = '', inHit = false;
+    const flush = () => { if (run) out += inHit ? `<span class="hit">${esc(run)}</span>` : esc(run); run = ''; };
+    for (let i = 0; i < text.length; i++) { const h = on.has(i); if (h !== inHit) { flush(); inHit = h; } run += text[i]; }
+    flush(); return out;
+  }
+
+  /* ---------- the palette ---------- */
+  const pal = $('#pal'), scrim = $('#pal-scrim'), q = $('#pal-q'), list = $('#pal-list'), status = $('#pal-status'), opener = $('#opener'), page = $('.page');
+  let isOpen = false, prev = null, flat = [], ci = -1;
+
+  function slot(it) {
+    if (it.g === 'd') return it.img ? photo(it.img, it.name, '') : `<span class="tile">${I.folder}</span>`;
+    if (it.g === 'p') return I.file;
+    return I[it.ico];
+  }
+  function render() {
+    const qv = q.value, groups = search(qv);
+    flat = []; let html = '';
+    groups.forEach(({ g, title, rows }) => {
+      html += `<div class="pgroup" role="group" aria-labelledby="pg-${g}"><div class="pghead" id="pg-${g}">${title}</div>`;
+      rows.forEach(({ it, L, N }) => {
+        const i = flat.length; flat.push(it);
+        html += `<div class="prow${i === 0 ? ' on' : ''}" role="option" id="po-${i}" data-i="${i}" aria-selected="${i === 0}">` +
+          `<span class="pslot" aria-hidden="true">${slot(it)}</span>` +
+          `<span class="ptext"><span class="plabel">${mark(it.label, L)}</span><span class="pnote">${mark(it.note, N)}</span></span></div>`;
+      });
+      html += '</div>';
+    });
+    if (!flat.length) {
+      html = `<div class="pempty" role="presentation">${I.nosearch}<p class="ptitle2">Nothing matches “${esc(qv.trim())}”</p>` +
+        `<p class="hint">Try a model such as T 1000, a photo number such as SK4-142, or an action such as Export.</p></div>`;
+    }
+    list.innerHTML = html; list.scrollTop = 0;
+    ci = flat.length ? 0 : -1;
+    if (ci >= 0) q.setAttribute('aria-activedescendant', 'po-0'); else q.removeAttribute('aria-activedescendant');
+    status.textContent = flat.length ? `${flat.length} result${flat.length === 1 ? '' : 's'}` : `Nothing matches “${qv.trim()}”`;
+  }
+  /* keep the chosen row in view, with its group's heading when it is the first in the group */
+  function reveal(row) {
+    const head = row.previousElementSibling && row.previousElementSibling.classList.contains('pghead') ? row.previousElementSibling : null;
+    const top = (ci === 0 ? 0 : (head || row).offsetTop - 4), bottom = row.offsetTop + row.offsetHeight + 4;
+    if (top < list.scrollTop) list.scrollTop = top;
+    else if (bottom > list.scrollTop + list.clientHeight) list.scrollTop = bottom - list.clientHeight;
+  }
+  function choose(i, scroll = true) {
+    if (!flat.length) return;
+    i = Math.max(0, Math.min(flat.length - 1, i));
+    const was = $('#po-' + ci, list); if (was) { was.classList.remove('on'); was.setAttribute('aria-selected', 'false'); }
+    ci = i; const row = $('#po-' + i, list);
+    row.classList.add('on'); row.setAttribute('aria-selected', 'true');
+    q.setAttribute('aria-activedescendant', row.id);
+    if (scroll) reveal(row);
+  }
+  function runRow(i) {
+    const it = flat[i]; if (!it) return;
+    closePal(); toast(it.msg);
+  }
+  function clearQ() { q.value = ''; q.closest('.field').classList.remove('has'); render(); q.focus(); }
+
+  function openPal() {
+    if (isOpen) return; isOpen = true;
+    prev = document.activeElement;
+    q.value = ''; q.closest('.field').classList.remove('has'); render();
+    scrim.hidden = false; pal.hidden = false;
+    page.inert = true; opener.setAttribute('aria-expanded', 'true');
+    q.focus();
+  }
+  function closePal() {
+    if (!isOpen) return; isOpen = false;
+    pal.hidden = true; scrim.hidden = true;
+    page.inert = false; opener.setAttribute('aria-expanded', 'false');
+    if (prev && prev !== document.body && document.contains(prev)) prev.focus();
+    prev = null;
+  }
+
+  opener.addEventListener('click', openPal);
+  scrim.addEventListener('click', closePal);
+  $('#pal-cancel').addEventListener('click', closePal);
+  q.addEventListener('input', render);
+  /* the pointer chooses as it moves; a click opens; pressing a row keeps the caret in the field */
+  list.addEventListener('mousemove', (e) => { const r = e.target.closest('.prow'); if (r && +r.dataset.i !== ci) choose(+r.dataset.i, false); });
+  list.addEventListener('mousedown', (e) => { if (e.target.closest('.prow')) e.preventDefault(); });
+  list.addEventListener('click', (e) => { const r = e.target.closest('.prow'); if (r) runRow(+r.dataset.i); });
+
+  pal.addEventListener('keydown', (e) => {
+    const k = e.key;
+    if (k === 'Escape') { e.preventDefault(); e.stopPropagation(); if (q.value) clearQ(); else closePal(); return; }
+    if (k === 'Tab') {
+      /* focus stays in the palette: the field, and the clear key or Cancel when they show */
+      const f = [q, $('#pal-clear'), $('#pal-cancel')].filter((x) => x.offsetParent !== null && getComputedStyle(x).visibility !== 'hidden');
+      const i = f.indexOf(document.activeElement), n = f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length];
+      e.preventDefault(); (n || q).focus(); return;
+    }
+    if (e.target !== q || e.isComposing) return;
+    if (k === 'ArrowDown' || k === 'ArrowUp') {
+      e.preventDefault(); if (!flat.length) return;
+      choose((ci + (k === 'ArrowDown' ? 1 : -1) + flat.length) % flat.length);
+    } else if ((k === 'Home' || k === 'End') && !e.shiftKey && flat.length) {
+      e.preventDefault(); choose(k === 'Home' ? 0 : flat.length - 1);
+    } else if (k === 'Enter') {
+      e.preventDefault(); if (ci >= 0) runRow(ci);
+    }
+  });
+  /* ⌘K (or Ctrl K) opens and closes it; / opens it when you are not typing somewhere */
+  const typing = (t) => t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); if (isOpen) closePal(); else openPal(); return; }
+    if (!isOpen && e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !typing(e.target)) { e.preventDefault(); openPal(); }
+  });
+
+  $('#credits').outerHTML = creditsHtml(['sk4', 'tp1', '606', 't52', 't1000', 'et66']);
+})();
+</script>
+</body>
+</html>

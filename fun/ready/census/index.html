@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Collector census · Ready</title>
+<meta name="description" content="An invented five-step census for Braun collectors, made of Ready's form controls: a step bar, an editable designs table, a combobox, a date picker, a checkbox tree, sliders, radio tiles and toggles. Nothing is sent anywhere.">
+<meta property="og:title" content="Collector census · Ready">
+<meta property="og:description" content="An invented five-step census for Braun collectors, made of Ready's form controls. Nothing is sent anywhere.">
+<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fun/ready/assets/ready.css">
+<style>
+/* the census: a head with the step bar, the form (two columns of the grid) and a tabbed side panel that stacks under it below 960 px */
+[hidden] { display: none !important; }
+.chead { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.chead .ptl { font-size: 32px; line-height: 1.15; }
+#head .steplist { margin-top: 24px; }
+#form { min-height: 752px; }
+#step-title:focus, #done-title:focus { outline: none; }
+.sbody { margin-top: 24px; }
+.sbody > .fgrid:first-child { margin-top: 0; }
+.fstack { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.tgwrap { display: flex; align-items: center; height: 40px; }
+.rstack { display: flex; flex-direction: column; align-items: flex-start; }
+.stepper .field { justify-content: flex-end; }
+.field .val.ph { color: var(--placeholder); }
+.field .more { flex: none; color: var(--quiet); }
+.field.num .unit { flex: none; margin-left: 0; color: var(--quiet); }
+.field.w112 { flex: none; width: 112px; }
+
+/* the designs table: every cell an input, on the raised table's sheet */
+.etable { --ecols: minmax(0, 1fr) 88px 152px 96px 48px; overflow: visible; }
+.etable .bar { border-radius: 4px 4px 0 0; }
+.etable h3 { font-size: 24px; line-height: 40px; color: var(--ink); white-space: nowrap; }
+.ehead, .erow { display: grid; grid-template-columns: var(--ecols); align-items: center; padding-left: 8px; }
+.ehead { height: 40px; font-size: 15px; color: var(--quiet); }
+.ehead span { padding: 0 20px; white-space: nowrap; }
+.ehead .r { text-align: right; }
+.ebody { display: flex; flex-direction: column; padding: 4px 0; background: var(--sheet); }
+.ec { min-width: 0; padding: 4px; }
+.ec-x { display: flex; justify-content: center; padding: 0; }
+.elab { display: none; }
+.eempty { padding: 12px 24px; color: var(--quiet); }
+.etable .foot { border-radius: 0 0 4px 4px; }
+@container tbl (max-width: 560px) {
+  .ehead { display: none; }
+  .ebody { gap: 4px; padding: 0; background: var(--band); }
+  .erow { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px; grid-template-areas: "d d d" "c c c" "y q x"; padding: 8px 8px 12px; background: var(--sheet); }
+  .ec-d { grid-area: d; } .ec-c { grid-area: c; } .ec-y { grid-area: y; } .ec-q { grid-area: q; }
+  .ec-x { grid-area: x; align-self: end; padding-bottom: 4px; }
+  .elab { display: block; margin-bottom: 4px; }
+  .eempty { background: var(--sheet); }
+}
+
+/* sliders: a sunk track, a dark fill, a light knob with an orange dot */
+.slider { display: flex; align-items: center; gap: 16px; }
+.rail { position: relative; flex: 1 1 auto; height: 40px; display: flex; align-items: center; padding: 0 12px; cursor: pointer; touch-action: none; }
+.track { position: relative; flex: 1 1 auto; height: 6px; border-radius: 3px; background: var(--stone); box-shadow: inset 0 1px 1px rgba(60,45,30,.18); }
+.track .fill { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 3px; background: var(--dark); transition: left 120ms ease-out, width 120ms ease-out; }
+.thumb { position: absolute; top: 50%; width: 24px; height: 24px; margin: -12px 0 0 -12px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--sheet); cursor: grab; outline: none;
+  box-shadow: inset 0 1px 0 #FFFEFB, inset 0 -1px 0 rgba(90,70,50,.16), 1px 1px 1px rgba(60,45,30,.24), 1px 2px 3px -1px rgba(60,45,30,.24); transition: left 120ms ease-out, background var(--fast), box-shadow var(--fast); }
+.thumb:hover { background: #F1EEE8; }
+.thumb.is-drag { cursor: grabbing; background: #E7E2DA; box-shadow: inset 0 1px 2px rgba(60,45,30,.2); }
+.thumb:focus-visible { box-shadow: inset 0 1px 0 #FFFEFB, inset 0 -1px 0 rgba(90,70,50,.16), 1px 1px 1px rgba(60,45,30,.24), var(--halo); }
+.rail.dragging .thumb, .rail.dragging .fill { transition-property: background, box-shadow; }
+.tdot { width: 6px; height: 6px; border-radius: 3px; background: var(--orange); }
+.rtile:disabled, .rtile:disabled:hover { cursor: default; background: transparent; color: var(--note); }
+.rtile:disabled .rbox { opacity: .5; }
+.range2 { display: flex; justify-content: space-between; gap: 16px; margin-top: 8px; }
+
+/* the checkbox tree: one parent that can be partly ticked, its areas below a faint guide */
+.ctree { display: flex; flex-direction: column; margin: 0 -8px; }
+.ctree .crow { display: flex; height: 40px; padding: 0 8px; border-radius: 3px; transition: background var(--fast); }
+.ctree .crow:hover { background: var(--band); }
+.ckids { position: relative; padding-left: 24px; }
+.ckids::before { content: ''; position: absolute; left: 15.5px; top: 0; bottom: 20px; width: 1px; background: rgba(60,45,30,.11); }
+
+/* the combobox and the chosen designs */
+.combo { position: relative; }
+.combo .cmenu { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 30; max-height: 240px; }
+.cmenu .mrow { cursor: pointer; }
+.cmenu .mrow.active { background: var(--band); }
+.mnone { padding: 8px 12px; color: var(--quiet); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; height: 40px; padding: 0 4px 0 16px; border: 0; border-radius: 20px; white-space: nowrap; color: var(--ink); background: var(--grey); box-shadow: var(--sh-grey); transition: background var(--fast), box-shadow var(--fast); }
+button.chip { cursor: pointer; }
+button.chip:hover { background: #DDD7CC; }
+button.chip:active { background: #D2CBBF; box-shadow: var(--sh-press); }
+button.chip:focus-visible { outline: none; box-shadow: var(--halo), var(--sh-grey); }
+.chip.on { color: var(--sheet); background: var(--key-dark); box-shadow: var(--sh-dark); }
+.chip .cx { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 16px; background: transparent; color: inherit; }
+.chip.on .cx { cursor: pointer; transition: background var(--fast); }
+.chip.on .cx:hover { background: rgba(253,252,250,.16); }
+.chip.on .cx:active { background: rgba(253,252,250,.26); }
+.chip.on .cx:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(253,252,250,.3); }
+.chip .fico { flex: none; display: inline-flex; margin-right: 4px; opacity: .7; }
+.dropzone .chip { flex: 0 1 auto; min-width: 0; }
+
+/* review: the form's own labels, in its order and its two columns */
+.rv { display: flex; flex-direction: column; gap: 32px; }
+.rhead { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.rhead h3 { font-size: 18px; line-height: 1.3; color: var(--ink); }
+.rgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin: 8px 0 0; }
+.rgrid dt { font-size: 15px; color: var(--ink2); }
+.rgrid dd { margin: 4px 0 0; color: var(--ink); overflow-wrap: anywhere; }
+.rgrid .span2 { grid-column: span 2; }
+#form .finish { margin: auto 0; }
+
+/* the dialog */
+.dialog .bar h2 { font-size: 24px; line-height: 40px; color: var(--ink); }
+.dtext { display: flex; flex-direction: column; gap: 8px; padding: 16px 16px 8px; color: var(--ink2); }
+.dfoot { display: flex; justify-content: flex-end; gap: 12px; padding: 16px 12px 12px; }
+
+/* the side panel */
+#side .tsheet { padding: 24px; }
+.sval.wrap { white-space: normal; }
+.sidefoot { margin-top: auto; padding-top: 24px; }
+
+@media (max-width: 960px) {
+  #form { min-height: 0; }
+  .rgrid { grid-template-columns: minmax(0, 1fr); }
+  .rgrid .span2 { grid-column: auto; }
+}
+@media (max-width: 560px) {
+  .chead .ptl { font-size: 24px; }
+  .sbody .seg { display: flex; width: 100%; align-self: stretch; }
+  .sbody .seg .sg { flex: 1 1 auto; min-width: 0; padding: 0 8px; }
+  .formfoot { flex-wrap: wrap; }
+  .formfoot .hint { flex: 1 1 100%; }
+  .formfoot .hint:empty { display: none; }
+  .formfoot .tools { margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thumb, .track .fill { transition-property: background, box-shadow !important; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
+  <header>
+    <h1>Collector census</h1>
+    <p class="lead">An invented census for Braun collectors, in five steps made only of Ready’s form controls: an editable table, dropdowns, a combobox, a date picker, a checkbox tree, sliders, radio tiles and toggles. Nothing you enter is sent anywhere.</p>
+  </header>
+  <main class="view" id="census">
+    <section class="panel s3" id="head" aria-label="Census steps"></section>
+    <section class="panel s2 col" id="form" aria-labelledby="step-title"></section>
+    <section class="tpanel" id="side" aria-label="Your census"></section>
+  </main>
+  <section class="notes" aria-label="Design notes">
+    <div><h2>Steps you can always see</h2><p>All five steps stay in view above the form. Done steps fade back with a tick, the current one is dark and the rest wait in stone, and any step you have reached is one click away.</p></div>
+    <div><h2>Hints, not red errors</h2><p>Nothing on the page turns red. When something is missing, one plain sentence beside Continue says what to add, and Continue waits until it is there.</p></div>
+    <div><h2>A review that reads like the form</h2><p>Check your answers repeats the form’s own labels, in its order and its two columns, so every answer sits where you gave it. Edit takes you straight back to that step.</p></div>
+  </section>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/fun/ready/assets/ready.js"></script>
+<script>
+'use strict';
+(function () {
+const { $, $$, esc, svg, I, hl, cboxHtml, setCbox, setToggle, setChoice, toggleHtml, toast, openMenu, closeMenu, openPopover, openDialog, closeDialog, tabsHtml, syncTabs, swap, reducedMotion, DAYNAMES, MONTHS, MON, NOW } = Ready;
+const HELP = svg('<circle cx="8" cy="8" r="6"></circle><path d="M6.3 6.3a1.8 1.8 0 1 1 2.5 1.7c-.5.2-.8.6-.8 1.1v.4"></path><circle cx="8" cy="11.6" r=".5" fill="currentColor"></circle>');
+
+/* ---------- the census: what it asks, and the designs it knows (years as Braun dates them) ---------- */
+const STEPS = [['Collector', 'Who keeps the designs', 'Tell us about you. It helps us map collections across the country.'],
+  ['Designs', 'What you have', 'One row for each model. Count identical pieces in Quantity.'],
+  ['Interests', 'What you collect', 'Pick what you actually look for, not everything on the shelf.'],
+  ['Use', 'How you use them', 'A rough idea is fine.'],
+  ['Review', 'Check your answers', 'You can change anything until you submit.']];
+const REGIONS = ['North East', 'North West', 'Yorkshire', 'Midlands', 'London', 'South East', 'South West', 'Wales', 'Scotland', 'Northern Ireland'];
+const WHO = [['me', 'I own the pieces'], ['proxy', 'Someone else, on their behalf']];
+const MODELS = ['SK 4 radio-phonograph', 'atelier 1 radio-phonograph', 'T 3 pocket radio', 'TP 1 radio-phonograph', 'RT 20 table radio', 'T 1000 world receiver', 'ET 66 calculator'];
+const CONDS = ['Works', 'Needs repair', 'For parts'];
+const ROOMS = ['Living room', 'Bedroom', 'Study'];
+const AREAS = [['audio', 'Audio'], ['radio', 'Radios'], ['house', 'Household'], ['office', 'Office']];
+const FOUND = ['Auctions', 'Fairs', 'Online'];
+const DECADES = ['1950s', '1960s', '1970s', '1980s'];
+const WANTS = [['T 1000', '1963'], ['atelier 1', '1957'], ['PS 1000', '1965'], ['studio 2', '1959'], ['RT 20', '1961'], ['T 52', '1961'], ['T 41', '1962'],
+  ['SK 4', '1956'], ['T 3', '1958'], ['TP 1', '1959'], ['HLD 4', '1970'], ['ET 66', '1987']];
+const USES = ['Daily use', 'On display', 'In storage', 'Restoring', 'Lending'];
+const HELPQ = [['What counts as a design?', 'Every Braun piece you own, working or not.'], ['Colours and spares', 'Count each as its own row.'], ['Not sure of the year?', 'A rough guess is fine.']];
+const PRIVACY = [['Nothing is sent', 'This census is a demonstration. No answer leaves this page.'], ['Nothing is kept', 'Close or reload the page and your answers go with it.'], ['Your name and postcode', 'Only ever shown back to you, here.']];
+const SL = { hours: { min: 0, max: 40, step: 1, page: 5, unit: 'hours' }, lo: { min: 0, max: 240, step: 5, page: 30, unit: 'minutes' }, hi: { min: 0, max: 240, step: 5, page: 30, unit: 'minutes' } };
+
+const fresh = () => ({
+  step: 2, max: 2, done: false,
+  name: 'Ada Okafor', post: 'LS6 2QT', people: 2, region: 'Yorkshire', date: new Date(2026, 9, 20), calY: 2026, calM: 9, who: 'me', visitors: true,
+  designs: [{ id: 1, model: 'SK 4 radio-phonograph', year: '1998', cond: 'Works', qty: '1' }, { id: 2, model: 'T 3 pocket radio', year: '2004', cond: 'Needs repair', qty: '2' }, { id: 3, model: 'TP 1 radio-phonograph', year: '2011', cond: 'Works', qty: '1' }],
+  nextId: 4, room: 'Study', storage: false, photo: null, photoNote: '',
+  areas: { audio: true, radio: true, house: false, office: false }, found: 'Fairs', decades: { '1950s': true, '1960s': true }, wanted: ['T 1000', 'atelier 1', 'PS 1000'], q: '', active: -1,
+  hours: 12, lo: 30, hi: 120, use: 'On display', insured: true,
+  notes: 'One T 3 needs a new case. Happy to lend the TP 1 to the society for the spring show.',
+  consent: false,
+});
+let S = Object.assign(fresh(), { side: 0 });
+
+/* ---------- small helpers ---------- */
+const sameDay = (a, b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+const fmtDate = (d) => `${DAYNAMES[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]} ${d.getFullYear()}`;
+const peopleText = () => S.people + (S.people === 1 ? ' person' : ' people');
+const pieces = () => S.designs.reduce((a, d) => a + (parseInt(d.qty, 10) || 0), 0);
+const piecesText = (n) => (n === 1 ? '1 piece' : n + ' pieces');
+const yes = (b) => (b ? 'Yes' : 'No');
+const areaState = () => { const n = AREAS.filter(([k]) => S.areas[k]).length; return n === AREAS.length ? 'on' : n ? 'mixed' : ''; };
+const chosenDecades = () => DECADES.filter((d) => S.decades[d]);
+const smooth = () => (reducedMotion() ? 'auto' : 'smooth');
+const rove = (el) => $$(':scope > button', el.parentNode).forEach((b) => { b.tabIndex = b === el ? 0 : -1; });
+const byRow = (row) => S.designs.find((d) => d.id === +row.dataset.id);
+
+/* a step is blocked by a plain sentence saying what is missing */
+function blocked(n) {
+  if (n === 1) { if (!S.name.trim()) return 'Add your name to continue.'; if (!S.post.trim()) return 'Add a postcode to continue.'; }
+  if (n === 2 && !S.designs.length) return 'Add at least one design to continue.';
+  if (n === 5 && !S.consent) return 'Tick the box above to submit.';
+  return '';
+}
+/* any step you have reached is open, as long as every step before it is complete */
+function reachable(n) {
+  if (S.done || n > S.max) return false;
+  for (let k = 1; k < n; k++) if (blocked(k)) return false;
+  return true;
+}
+function stepState(n) {
+  const cur = !S.done && n === S.step;
+  const done = S.done || (n !== S.step && n < S.max && !blocked(n));
+  return { cur, done: done && !cur, todo: !S.done && n > S.max, disabled: !cur && !reachable(n) };
+}
+const doneCount = () => (S.done ? 5 : [1, 2, 3, 4].filter((n) => n < S.max && !blocked(n)).length);
+
+/* ---------- the head: built once, then each step changes where it stands, so ticks draw and the bar grows ---------- */
+function renderHead() {
+  const el = $('#head');
+  let first = false;
+  if (!$('.steplist', el)) {
+    first = true;
+    el.innerHTML = `<div class="chead"><div><div class="lbl">Braun Collectors’ Society</div><h2 class="ptl">Braun Collector Census 2026</h2></div>
+      <button class="k quiet icon tip-below tip-right" type="button" aria-label="Help with the census" data-tip="Help with the census" data-act="help">${HELP}</button></div>
+      <ol class="steplist">${STEPS.map((st, i) => `<li><button class="step" type="button" data-act="go" data-n="${i + 1}"><span class="sdot"></span><span class="slabel">${st[0]}</span></button></li>`).join('')}</ol>
+      <div class="progress"><div class="pbar" role="progressbar" aria-label="Census progress" aria-valuemin="0" aria-valuemax="5"><i></i></div><span class="hint" id="ptext"></span></div>`;
+  }
+  $$('.step', el).forEach((b) => {
+    const n = +b.dataset.n, s = stepState(n), dot = $('.sdot', b), was = b.classList.contains('done');
+    b.classList.toggle('current', s.cur); b.classList.toggle('done', s.done); b.classList.toggle('todo', s.todo);
+    b.disabled = s.disabled;
+    if (s.cur) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+    b.setAttribute('aria-label', `${STEPS[n - 1][0]}, step ${n} of 5${s.done ? ', done' : ''}`);
+    if (s.done && (first || !was)) { dot.innerHTML = I.tick; dot.classList.remove('draw'); if (!first) { void dot.offsetWidth; dot.classList.add('draw'); } }
+    if (!s.done && (first || was)) { dot.textContent = n; dot.classList.remove('draw'); }
+  });
+  const dc = doneCount(), bar = $('.pbar', el);
+  bar.setAttribute('aria-valuenow', dc); $('i', bar).style.width = dc / 5 * 100 + '%';
+  $('#ptext').textContent = `${dc} of 5 done`;
+}
+
+/* ---------- the steps ---------- */
+const segHtml = (k, opts, cur, lab) => `<div class="seg slide" role="radiogroup" aria-labelledby="${lab}"><i class="segind" aria-hidden="true"></i>${opts.map((o) =>
+  `<button class="sg${o === cur ? ' on' : ''}" type="button" role="radio" aria-checked="${o === cur}" tabindex="${o === cur ? 0 : -1}" data-act="choice" data-k="${k}" data-v="${esc(o)}">${esc(o)}</button>`).join('')}</div>`;
+
+const step1 = () => `<div class="fgrid">
+  <label class="ff"><span class="flabel">Your name</span><span class="field"><input type="text" id="c-name" data-k="name" value="${esc(S.name)}" placeholder="For example, Jo Smith" autocomplete="name" spellcheck="false" aria-describedby="h-name"></span><span class="hint" id="h-name">Only used on this census.</span></label>
+  <label class="ff"><span class="flabel">Postcode</span><span class="field"><input type="text" id="c-post" data-k="post" value="${esc(S.post)}" placeholder="LS6 2QT" autocomplete="postal-code" spellcheck="false"></span></label>
+  <div class="ff"><span class="flabel" id="l-people">Collectors at home</span><div class="stepper" role="group" aria-labelledby="l-people">
+    <button class="k grey icon" type="button" aria-label="One fewer" data-tip="One fewer" data-act="people" data-d="-1"${S.people <= 1 ? ' disabled' : ''}>${I.minus}</button>
+    <div class="field" aria-live="polite"><span id="people-n">${S.people}</span><span class="unit" id="people-u">${S.people === 1 ? 'person' : 'people'}</span></div>
+    <button class="k grey icon" type="button" aria-label="One more" data-tip="One more" data-act="people" data-d="1"${S.people >= 12 ? ' disabled' : ''}>${I.plus}</button></div></div>
+  <div class="ff"><span class="flabel" id="l-region">Region</span><button class="field" type="button" id="region" aria-haspopup="menu" aria-expanded="false" aria-labelledby="l-region region-v" data-act="region"><span class="val" id="region-v">${esc(S.region)}</span><span class="ico">${I.chev}</span></button></div>
+  <div class="ff"><span class="flabel" id="l-date">Date of the count</span><button class="field" type="button" id="date" aria-haspopup="dialog" aria-labelledby="l-date date-v" data-act="cal"><span class="val" id="date-v">${fmtDate(S.date)}</span><span class="ico">${I.cal}</span></button></div>
+  <div class="ff"><span class="flabel" id="l-who">Who is answering</span><div class="rstack" role="radiogroup" aria-labelledby="l-who">${WHO.map(([v, l]) =>
+    `<label class="crow"><input type="radio" name="who" value="${v}"${S.who === v ? ' checked' : ''}><span class="rbox${S.who === v ? ' on' : ''}" aria-hidden="true"><i></i></span>${l}</label>`).join('')}</div></div>
+  <div class="ff"><span class="flabel" id="l-vis">Open to visitors</span><div class="tgwrap">${toggleHtml(S.visitors, 'data-act="tg" data-k="visitors" aria-labelledby="l-vis"')}</div></div>
+</div>`;
+
+const rowHtml = (d, isNew) => `<div class="erow${isNew ? ' reveal' : ''}" data-id="${d.id}" role="group" aria-label="${esc(d.model)}">
+  <div class="ec ec-d"><span class="elab hint" aria-hidden="true">Design</span><button class="field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Design, ${esc(d.model)}" data-act="model"><span class="val">${esc(d.model)}</span><span class="ico">${I.chev}</span></button></div>
+  <div class="ec ec-y"><span class="elab hint" aria-hidden="true">Bought</span><label class="field num"><input type="text" inputmode="numeric" maxlength="4" aria-label="Year bought" data-f="year" value="${esc(d.year)}" autocomplete="off"></label></div>
+  <div class="ec ec-c"><span class="elab hint" aria-hidden="true">Condition</span><button class="field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Condition, ${esc(d.cond)}" data-act="cond"><span class="val">${esc(d.cond)}</span><span class="ico">${I.chev}</span></button></div>
+  <div class="ec ec-q"><span class="elab hint" aria-hidden="true">Quantity</span><label class="field num"><input type="text" inputmode="numeric" maxlength="2" aria-label="Quantity" data-f="qty" value="${esc(d.qty)}" autocomplete="off"></label></div>
+  <div class="ec ec-x"><button class="kb tip-right" type="button" aria-label="Remove ${esc(d.model)}" data-tip="Remove" data-act="removeDesign">${I.x}</button></div>
+</div>`;
+const countText = () => `${S.designs.length === 1 ? '1 design' : S.designs.length + ' designs'} · ${piecesText(pieces())}`;
+function dropHtml() {
+  const p = S.photo;
+  const note = S.photoNote || (p ? `${p.mb < 0.1 ? 'Under 0.1' : p.mb.toFixed(1)} MB. It stays on this page.` : 'A JPEG or PNG up to 10 MB.');
+  return `<div><div class="dtitle">Add a photo</div><p class="hint" id="drop-hint">${esc(note)}</p></div>
+    ${p ? `<span class="chip on"><span class="fico">${I.file}</span><span class="ell">${esc(p.name)}</span><button class="cx tip-right" type="button" aria-label="Remove ${esc(p.name)}" data-tip="Remove" data-act="removePhoto">${I.x}</button></span>`
+      : `<button class="k grey" type="button" data-act="pickPhoto" aria-describedby="drop-hint">Choose photo${I.up}</button>`}
+    <input type="file" id="photo-in" accept="image/jpeg,image/png" hidden>`;
+}
+const step2 = () => `<div class="frame etable">
+  <div class="bar stone"><div class="btitle"><h3>Designs</h3></div><button class="k dark" type="button" data-act="addDesign">Add design${I.plus}</button></div>
+  <div class="ehead" aria-hidden="true"><span>Design</span><span class="r">Bought</span><span>Condition</span><span class="r">Quantity</span><span></span></div>
+  <div class="ebody" id="ebody">${S.designs.map((d) => rowHtml(d)).join('')}<p class="eempty"${S.designs.length ? ' hidden' : ''}>No designs yet. Add the first one to continue.</p></div>
+  <div class="foot"><span id="ecount">${countText()}</span></div>
+</div>
+<div class="fgrid">
+  <div class="ff"><span class="flabel" id="l-room">Mostly kept in</span>${segHtml('room', ROOMS, S.room, 'l-room')}</div>
+  <div class="ff"><span class="flabel" id="l-store">Some pieces are in storage</span><div class="tgwrap">${toggleHtml(S.storage, 'data-act="tg" data-k="storage" aria-labelledby="l-store"')}</div></div>
+  <div class="ff span2"><span class="flabel" id="l-photo">Photo of your collection</span><div class="dropzone" id="drop" role="group" aria-labelledby="l-photo">${dropHtml()}</div></div>
+</div>`;
+
+const chipOn = (t, isNew) => `<span class="chip on${isNew ? ' reveal' : ''}" data-v="${esc(t)}"><span class="ell">${esc(t)}</span><button class="cx" type="button" aria-label="Remove ${esc(t)}" data-tip="Remove" data-act="unwant">${I.xs}</button></span>`;
+const suggestions = () => WANTS.filter(([t]) => !S.wanted.includes(t)).slice(0, 3).map(([t]) => t);
+const chipAdd = (t) => `<button class="chip add" type="button" data-act="want" data-v="${esc(t)}" aria-label="Add ${esc(t)}">${esc(t)}<span class="cx" aria-hidden="true">${I.plus}</span></button>`;
+const step3 = () => {
+  const st = areaState();
+  return `<div class="fgrid">
+  <div class="ff"><span class="flabel" id="l-areas">Areas you collect</span>
+    <div class="ctree" role="group" aria-labelledby="l-areas">
+      <label class="crow"><input type="checkbox" id="area-all" data-area="all"${st === 'on' ? ' checked' : ''}>${cboxHtml(st, 'aria-hidden="true"')}All areas</label>
+      <div class="ckids">${AREAS.map(([k, l]) => `<label class="crow"><input type="checkbox" data-area="${k}"${S.areas[k] ? ' checked' : ''}>${cboxHtml(S.areas[k] ? 'on' : '', 'aria-hidden="true"')}${l}</label>`).join('')}</div>
+    </div></div>
+  <div class="fstack">
+    <div class="ff"><span class="flabel" id="l-found">Mostly found at</span>${segHtml('found', FOUND, S.found, 'l-found')}</div>
+    <div class="ff"><span class="flabel" id="l-dec">Decades you collect</span><button class="field" type="button" id="decades" aria-haspopup="menu" aria-expanded="false" aria-labelledby="l-dec decades-v" data-act="decades"><span class="val" id="decades-v"></span><span class="more" id="decades-m"></span><span class="ico">${I.chev}</span></button></div>
+  </div>
+  <div class="ff span2"><label class="flabel" for="c-want">Designs you are looking for</label>
+    <div class="combo">
+      <label class="field search"><input type="text" id="c-want" role="combobox" aria-expanded="false" aria-controls="want-list" aria-autocomplete="list" placeholder="Search designs" spellcheck="false" autocomplete="off"><button class="fclear" type="button" aria-label="Clear search" data-tip="Clear search" data-act="clearSearch">${I.x}</button><span class="ico">${I.search}</span></label>
+      <div class="menu cmenu" id="want-list" role="listbox" aria-label="Designs" hidden></div>
+    </div>
+    <div class="chips" id="chips">${S.wanted.map((t) => chipOn(t)).join('')}${suggestions().map(chipAdd).join('')}</div>
+  </div>
+</div>`;
+};
+
+const step4 = () => `<div class="fgrid">
+  <div class="ff span2"><span class="flabel" id="l-hours">Hours a week using them</span>
+    <div class="slider"><div class="rail" data-sl="hours"><div class="track"><i class="fill"></i><span class="thumb" role="slider" tabindex="0" aria-labelledby="l-hours" aria-valuemin="0" aria-valuemax="40" data-th="hours"><i class="tdot"></i></span></div></div>
+      <label class="field num w112"><input type="text" inputmode="numeric" maxlength="2" aria-label="Hours a week" data-num="hours" autocomplete="off"><span class="unit">h</span></label></div></div>
+  <div class="ff span2"><span class="flabel" id="l-sess">A typical listening session</span>
+    <div class="rail" data-sl="sess"><div class="track"><i class="fill"></i>
+      <span class="thumb" role="slider" tabindex="0" aria-label="Shortest session" aria-valuemin="0" data-th="lo"><i class="tdot"></i></span>
+      <span class="thumb" role="slider" tabindex="0" aria-label="Longest session" aria-valuemax="240" data-th="hi"><i class="tdot"></i></span></div></div>
+    <div class="range2"><label class="field num w112"><input type="text" inputmode="numeric" maxlength="3" aria-label="Shortest session in minutes" data-num="lo" autocomplete="off"><span class="unit">min</span></label>
+      <label class="field num w112"><input type="text" inputmode="numeric" maxlength="3" aria-label="Longest session in minutes" data-num="hi" autocomplete="off"><span class="unit">min</span></label></div></div>
+  <div class="ff"><span class="flabel" id="l-use">Main use</span><div class="rtiles" role="radiogroup" aria-labelledby="l-use">${USES.map((u) =>
+    `<button class="rtile${S.use === u ? ' on' : ''}" type="button" role="radio" aria-checked="${S.use === u}" tabindex="${S.use === u ? 0 : -1}" data-act="choice" data-k="use" data-v="${u}"${u === 'Lending' ? ' disabled' : ''}><span class="rbox${S.use === u ? ' on' : ''}" aria-hidden="true"><i></i></span>${u}${u === 'Lending' ? '<span class="hint rnote">Not open this year</span>' : ''}</button>`).join('')}</div></div>
+  <div class="fstack">
+    <div class="ff"><span class="flabel" id="l-ins">The collection is insured</span><div class="tgwrap">${toggleHtml(S.insured, 'data-act="tg" data-k="insured" aria-labelledby="l-ins"')}</div></div>
+    <label class="ff"><span class="flabel">Anything else we should know</span><span class="field area"><textarea id="c-notes" data-k="notes" maxlength="400" rows="4" aria-describedby="h-notes">${esc(S.notes)}</textarea></span><span class="hint" id="h-notes">${400 - S.notes.length} characters left</span></label>
+  </div>
+</div>`;
+
+function reviewSecs() {
+  const areas = AREAS.filter(([k]) => S.areas[k]).map(([, l]) => l).join(', ');
+  return [
+    ['Collector', 1, [['Your name', S.name], ['Postcode', S.post], ['Collectors at home', peopleText()], ['Region', S.region], ['Date of the count', fmtDate(S.date)], ['Who is answering', WHO.find((w) => w[0] === S.who)[1]], ['Open to visitors', yes(S.visitors)]]],
+    ['Designs', 2, S.designs.map((d) => [d.model, `${d.year || 'Year not given'} · ${d.cond}${d.qty !== '1' ? ' · ×' + (d.qty || '0') : ''}`])
+      .concat([['Mostly kept in', S.room], ['Some pieces are in storage', yes(S.storage)], ['Photo of your collection', S.photo ? S.photo.name : 'None']])],
+    ['Interests', 3, [['Areas you collect', areas || 'None'], ['Mostly found at', S.found], ['Decades you collect', chosenDecades().join(', ') || 'None'], ['Designs you are looking for', S.wanted.join(', ') || 'None', true]]],
+    ['Use', 4, [['Hours a week using them', S.hours + ' h'], ['A typical listening session', `${S.lo}–${S.hi} min`], ['Main use', S.use], ['The collection is insured', yes(S.insured)], ['Anything else we should know', S.notes.trim() || 'Nothing', true]]],
+  ];
+}
+const step5 = () => `<div class="rv">${reviewSecs().map(([t, n, items]) => `<section aria-labelledby="rv-${n}"><div class="rhead"><h3 id="rv-${n}">${t}</h3><button class="k quiet" type="button" data-act="edit" data-n="${n}" aria-label="Edit ${t.toLowerCase()}">Edit</button></div>
+  <dl class="rgrid">${items.map(([k, v, wide]) => `<div${wide ? ' class="span2"' : ''}><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></section>`).join('')}
+  <label class="crow"><input type="checkbox" id="consent"${S.consent ? ' checked' : ''}>${cboxHtml(S.consent ? 'on' : '', 'aria-hidden="true"')}These answers are right, as far as I know</label></div>`;
+
+/* ---------- the form panel ---------- */
+function renderForm() {
+  const el = $('#form');
+  el.setAttribute('aria-labelledby', S.done ? 'done-title' : 'step-title');
+  if (S.done) {
+    el.innerHTML = `<div class="finish swap"><span class="donemark">${I.bigTick}</span><h2 class="ptitle" id="done-title" tabindex="-1">Thank you, your census is complete</h2>
+      <p class="sub">Nothing has been sent anywhere: this census is a demonstration, and your answers stay on this page until you leave it.</p>
+      <div class="tools" style="margin-top: 16px"><button class="k grey" type="button" data-act="restart">Start a new census</button></div></div>`;
+    return;
+  }
+  if (!$('#body', el)) el.innerHTML = `<div id="body"></div><div class="formfoot"><span class="hint" id="block" aria-live="polite"></span><div class="tools"><button class="k grey" type="button" id="back" data-act="back">Back</button><button class="k dark" type="button" id="next" data-act="next">Continue</button></div></div>`;
+  const st = STEPS[S.step - 1], body = $('#body');
+  body.innerHTML = `<h2 class="ptitle" id="step-title" tabindex="-1">${st[1]}</h2><p class="sub">${st[2]}</p><div class="sbody">${[step1, step2, step3, step4, step5][S.step - 1]()}</div>`;
+  swap(body);
+  $('#back').hidden = S.step === 1;
+  const next = $('#next'); next.textContent = S.step === 5 ? 'Submit census' : 'Continue'; next.dataset.act = S.step === 5 ? 'submit' : 'next';
+  syncTabs(body);
+  if (S.step === 3) { patchAreas(); patchDecades(); }
+  if (S.step === 4) placeSliders();
+  refreshBlock();
+}
+function refreshBlock() {
+  if (S.done) return;
+  const b = blocked(S.step), h = $('#block'), n = $('#next');
+  if (h && h.textContent !== b) h.textContent = b;
+  if (n) n.disabled = !!b;
+}
+
+/* ---------- the side panel: Summary, Help and Privacy, the full-width tabs sliding between them ---------- */
+function sideBody() {
+  if (S.side === 0) return `<h2 class="ptitle">Your census</h2><p class="sub" id="side-sub"></p><div class="slist">${STEPS.map((st, i) => `<div class="srow" data-n="${i + 1}"><div class="sname">${st[0]}</div><div class="sval"></div><div class="sstate"></div></div>`).join('')}</div>`;
+  const [title, sub, rows] = S.side === 1 ? ['Help', 'A few things people ask.', HELPQ] : ['Privacy', 'What happens to your answers.', PRIVACY];
+  return `<h2 class="ptitle">${title}</h2><p class="sub">${sub}</p><div class="slist">${rows.map(([q, a]) => `<div class="srow"><div class="sname">${q}</div><div class="sval wrap">${a}</div></div>`).join('')}</div>`;
+}
+function renderSide(fade) {
+  const el = $('#side');
+  if (!$('.fxbar', el)) {
+    el.innerHTML = tabsHtml('Your census', ['Summary', 'Help', 'Privacy'], S.side, true, 'side-sheet') + '<div class="tsheet" id="side-sheet" role="tabpanel"><div id="side-body"></div><p class="hint sidefoot">Nothing you enter here is sent or stored.</p></div>';
+    syncTabs(el);
+  }
+  $('#side-sheet').setAttribute('aria-labelledby', 'your-census-tab-' + S.side);
+  const b = $('#side-body'); b.innerHTML = sideBody(); if (fade) swap(b);
+  patchSide();
+}
+function patchSide() {
+  if (S.side !== 0) return;
+  const sub = $('#side-sub'); if (!sub) return;
+  sub.textContent = (S.name.trim() || 'Your collection') + (S.post.trim() ? ' · ' + S.post.trim() : '');
+  const vals = [`${peopleText()} · ${S.region}`, piecesText(pieces()), `${S.wanted.length} wanted`, `${S.hours} h a week · ${S.use}`, S.done ? 'Submitted' : S.consent ? 'Confirmed' : 'Not yet'];
+  $$('#side-body .srow').forEach((r) => {
+    const n = +r.dataset.n, st = S.done ? 'Done' : n === S.step ? 'Now' : stepState(n).done ? 'Done' : 'To do';
+    $('.sval', r).textContent = vals[n - 1]; $('.sstate', r).textContent = st;
+    r.classList.toggle('now', st === 'Now'); r.classList.toggle('todo', st === 'To do');
+  });
+}
+function refresh() { renderHead(); refreshBlock(); patchSide(); }
+function renderAll() { renderHead(); renderForm(); patchSide(); }
+
+/* ---------- moving between steps ---------- */
+function goStep(n, focusTitle) {
+  closeMenu();
+  S.step = n;
+  renderForm(); renderHead(); patchSide();
+  const t = $('#step-title');
+  if (focusTitle && t) t.focus({ preventScroll: true });
+  const f = $('#form'); if (f.getBoundingClientRect().top < 0) f.scrollIntoView({ block: 'start', behavior: smooth() });
+}
+
+/* ---------- step 3, patched in place ---------- */
+function patchAreas() {
+  const all = $('#area-all'); if (!all) return;
+  $$('.ckids input', $('#form')).forEach((i) => { const on = !!S.areas[i.dataset.area]; i.checked = on; setCbox(i.nextElementSibling, on ? 'on' : ''); });
+  const st = areaState(); all.checked = st === 'on'; all.indeterminate = st === 'mixed'; setCbox(all.nextElementSibling, st);
+}
+function patchDecades() {
+  const v = $('#decades-v'); if (!v) return;
+  const c = chosenDecades();
+  v.textContent = c.length ? c.slice(0, 2).join(', ') : 'None'; v.classList.toggle('ph', !c.length);
+  const m = $('#decades-m'); m.textContent = c.length > 2 ? '+' + (c.length - 2) : ''; m.hidden = c.length <= 2;
+}
+const wantMatches = () => { const q = S.q.trim().toLowerCase(); return WANTS.filter(([t]) => !S.wanted.includes(t) && (!q || t.toLowerCase().includes(q))).slice(0, 5); };
+function renderList(open) {
+  const list = $('#want-list'), inp = $('#c-want'); if (!list) return;
+  if (!open) { list.hidden = true; inp.setAttribute('aria-expanded', 'false'); inp.removeAttribute('aria-activedescendant'); S.active = -1; return; }
+  const m = wantMatches();
+  if (S.active >= m.length) S.active = m.length - 1;
+  list.innerHTML = m.length ? m.map(([t, y], i) => `<div class="mrow${i === S.active ? ' active' : ''}" role="option" id="want-o${i}" aria-selected="${i === S.active}" data-v="${esc(t)}"><span class="ell">${hl(t, S.q)}</span><span class="mcount">${y}</span></div>`).join('')
+    : `<p class="mnone">${S.q.trim() ? `No designs match “${esc(S.q.trim())}”.` : 'Every design is already on your list.'}</p>`;
+  list.hidden = false; inp.setAttribute('aria-expanded', 'true');
+  if (S.active >= 0) { inp.setAttribute('aria-activedescendant', 'want-o' + S.active); const a = $('#want-o' + S.active); a && a.scrollIntoView({ block: 'nearest' }); } else inp.removeAttribute('aria-activedescendant');
+}
+function patchSuggestions() {
+  const box = $('#chips'); if (!box) return;
+  $$('.chip.add', box).forEach((c) => c.remove());
+  box.insertAdjacentHTML('beforeend', suggestions().map(chipAdd).join(''));
+}
+function addWant(t, from) {
+  if (!t || S.wanted.includes(t)) return;
+  const i = from && from.classList.contains('add') ? $$('#chips .chip.add').indexOf(from) : -1;
+  S.wanted.push(t); S.q = '';
+  const inp = $('#c-want'); inp.value = ''; inp.closest('.field').classList.remove('has');
+  const box = $('#chips'), firstAdd = $('.chip.add', box);
+  if (firstAdd) firstAdd.insertAdjacentHTML('beforebegin', chipOn(t, true)); else box.insertAdjacentHTML('beforeend', chipOn(t, true));
+  patchSuggestions();
+  if (i >= 0) { const adds = $$('#chips .chip.add'); (adds[i] || adds[adds.length - 1] || inp).focus(); }
+  refresh();
+}
+
+/* ---------- step 4: sliders and their fields ---------- */
+function placeSliders() {
+  const f = $('#form'), h = $('[data-sl="hours"]', f);
+  const setIn = (k) => { const i = $(`[data-num="${k}"]`, f); if (i && document.activeElement !== i) i.value = S[k]; };
+  if (h) {
+    const p = S.hours / 40 * 100, th = $('.thumb', h);
+    th.style.left = p + '%'; $('.fill', h).style.width = p + '%';
+    th.setAttribute('aria-valuenow', S.hours); th.setAttribute('aria-valuetext', S.hours + (S.hours === 1 ? ' hour' : ' hours'));
+    setIn('hours');
+  }
+  const s = $('[data-sl="sess"]', f);
+  if (s) {
+    const lo = S.lo / 240 * 100, hi = S.hi / 240 * 100, a = $('[data-th="lo"]', s), b = $('[data-th="hi"]', s), fill = $('.fill', s);
+    a.style.left = lo + '%'; b.style.left = hi + '%'; fill.style.left = lo + '%'; fill.style.width = (hi - lo) + '%';
+    a.setAttribute('aria-valuenow', S.lo); a.setAttribute('aria-valuemax', S.hi); a.setAttribute('aria-valuetext', S.lo + ' minutes');
+    b.setAttribute('aria-valuenow', S.hi); b.setAttribute('aria-valuemin', S.lo); b.setAttribute('aria-valuetext', S.hi + ' minutes');
+    setIn('lo'); setIn('hi');
+  }
+}
+function setVal(k, v) {
+  const c = SL[k];
+  v = Math.round(v / c.step) * c.step;
+  v = k === 'lo' ? Math.max(c.min, Math.min(v, S.hi)) : k === 'hi' ? Math.min(c.max, Math.max(v, S.lo)) : Math.max(c.min, Math.min(c.max, v));
+  if (S[k] === v) return; S[k] = v; placeSliders(); refresh();
+}
+function valFrom(e, rail, k) {
+  const r = $('.track', rail).getBoundingClientRect(), c = SL[k], f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+  return c.min + f * (c.max - c.min);
+}
+let drag = null;
+
+/* ---------- step 2: the photo stays in the page ---------- */
+function takeFile(file) {
+  if (!file) return;
+  const mb = file.size / 1048576;
+  if (!/^image\/(jpeg|png)$/.test(file.type)) S.photoNote = 'That file isn’t a JPEG or PNG. Choose a photo in one of those.';
+  else if (mb > 10) S.photoNote = `That photo is ${mb.toFixed(1)} MB. Choose one up to 10 MB.`;
+  else { S.photo = { name: file.name, mb }; S.photoNote = ''; }
+  $('#drop').innerHTML = dropHtml();
+  const x = $('#drop .cx') || $('#drop .k'); x && x.focus({ preventScroll: true });
+  refresh();
+}
+
+/* ---------- the date picker ---------- */
+function calHtml(focusDate) {
+  const y = S.calY, m = S.calM, off = (new Date(y, m, 1).getDay() + 6) % 7, today = new Date(NOW);
+  const fd = focusDate && focusDate.getMonth() === m && focusDate.getFullYear() === y ? focusDate : (S.date.getMonth() === m && S.date.getFullYear() === y ? S.date : new Date(y, m, 1));
+  let days = '';
+  for (let i = 0; i < 42; i++) {
+    const d = new Date(y, m, 1 - off + i), out = d.getMonth() !== m, chosen = sameDay(d, S.date), isT = sameDay(d, today);
+    days += `<button class="day${out ? ' out' : ''}${chosen ? ' chosen' : ''}${isT ? ' today' : ''}" type="button" data-cal="${d.getFullYear()}-${d.getMonth()}-${d.getDate()}" aria-label="${fmtDate(d)}${isT ? ', today' : ''}" aria-pressed="${chosen}" tabindex="${sameDay(d, fd) ? 0 : -1}">${d.getDate()}</button>`;
+  }
+  return `<div class="cal" role="dialog" aria-label="Choose a date"><div class="calhead"><button class="k quiet icon" type="button" aria-label="Previous month" data-calnav="-1">${I.left}</button><span aria-live="polite">${MONTHS[m]} ${y}</span><button class="k quiet icon" type="button" aria-label="Next month" data-calnav="1">${I.right}</button></div>
+    <div class="calgrid">${['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((x) => `<span class="wd" aria-hidden="true">${x}</span>`).join('')}${days}</div></div>`;
+}
+function openCal(anchor) {
+  const draw = (el, fd) => { el.innerHTML = calHtml(fd); };
+  const bind = (el) => {
+    el.addEventListener('click', (e) => {
+      const nav = e.target.closest('[data-calnav]'), day = e.target.closest('[data-cal]');
+      if (nav) { S.calM += +nav.dataset.calnav; if (S.calM < 0) { S.calM = 11; S.calY--; } if (S.calM > 11) { S.calM = 0; S.calY++; } draw(el); $(`[data-calnav="${nav.dataset.calnav}"]`, el).focus(); }
+      if (day) { const [y, m, d] = day.dataset.cal.split('-').map(Number); S.date = new Date(y, m, d); S.calY = y; S.calM = m; closeMenu(true); $('#date-v').textContent = fmtDate(S.date); refresh(); }
+    });
+    el.addEventListener('keydown', (e) => {
+      const day = e.target.closest('[data-cal]');
+      if (e.key === 'Tab') {
+        const f = $$('[data-calnav], .day[tabindex="0"]', el), i = f.indexOf(document.activeElement);
+        e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus(); return;
+      }
+      if (!day) return;
+      const step = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key];
+      const months = { PageUp: -1, PageDown: 1 }[e.key];
+      if (step === undefined && months === undefined) return;
+      e.preventDefault();
+      const [y, m, d] = day.dataset.cal.split('-').map(Number);
+      const nd = step !== undefined ? new Date(y, m, d + step) : new Date(y, m + months, Math.min(d, new Date(y, m + months + 1, 0).getDate()));
+      if (nd.getMonth() !== S.calM || nd.getFullYear() !== S.calY) { S.calY = nd.getFullYear(); S.calM = nd.getMonth(); draw(el, nd); }
+      else { $$('.day', el).forEach((b) => { b.tabIndex = -1; }); }
+      const b = $(`[data-cal="${nd.getFullYear()}-${nd.getMonth()}-${nd.getDate()}"]`, el); if (b) { b.tabIndex = 0; b.focus(); }
+    });
+    setTimeout(() => { const c = $('.day[tabindex="0"]', el); c && c.focus(); }, 0);
+  };
+  S.calY = S.date.getFullYear(); S.calM = S.date.getMonth();
+  openPopover(anchor, calHtml(), bind);
+  anchor.setAttribute('aria-expanded', 'true');
+}
+
+/* ---------- submitting: nothing leaves the page ---------- */
+function openSubmit() {
+  const n = pieces();
+  const dlg = openDialog({ id: 'submit-dlg', labelledby: 'dlg-title', width: 480 });
+  dlg.innerHTML = `<div class="bar stone"><h2 id="dlg-title">Submit your census?</h2><button class="k quiet icon tip-below tip-right" type="button" aria-label="Close" data-tip="Close" data-act="closeDialog">${I.x}</button></div>
+    <div class="dtext"><p>Your census lists ${piecesText(n)} for ${esc(S.name.trim() || 'your collection')}.</p><p>This is a demonstration, so nothing is sent anywhere. Your answers stay on this page until you leave it.</p></div>
+    <div class="dfoot"><button class="k grey" type="button" data-act="closeDialog">Cancel</button><button class="k dark" type="button" data-act="confirmSubmit">Submit census</button></div>`;
+  $('[data-act="confirmSubmit"]', dlg).focus();
+}
+
+/* ---------- actions ---------- */
+Ready.on({
+  go(el) { const n = +el.dataset.n; if (S.done || n === S.step || !reachable(n)) return; goStep(n, false); },
+  next() { if (blocked(S.step)) return; S.max = Math.max(S.max, S.step + 1); goStep(S.step + 1, true); },
+  back() { goStep(Math.max(1, S.step - 1), true); },
+  edit(el) { goStep(+el.dataset.n, true); },
+  submit() { if (blocked(5)) return; openSubmit(); },
+  confirmSubmit() {
+    closeDialog(); S.done = true; S.consent = true; renderAll();
+    const t = $('#done-title'); t && t.focus({ preventScroll: true });
+    const f = $('#form'); if (f.getBoundingClientRect().top < 0) f.scrollIntoView({ block: 'start', behavior: smooth() });
+    toast('Census complete. Nothing was sent anywhere.');
+  },
+  restart() { S = Object.assign(fresh(), { side: S.side }); renderAll(); const t = $('#step-title'); t && t.focus({ preventScroll: true }); },
+  help() {
+    const t = $('#your-census-tab-1'); if (!t.classList.contains('on')) t.click();
+    const side = $('#side'); if (side.getBoundingClientRect().top > innerHeight - 160) side.scrollIntoView({ block: 'start', behavior: smooth() });
+    t.focus({ preventScroll: true });
+  },
+  people(el) {
+    S.people = Math.max(1, Math.min(12, S.people + +el.dataset.d));
+    $('#people-n').textContent = S.people; $('#people-u').textContent = S.people === 1 ? 'person' : 'people';
+    const [less, more] = $$('[data-act="people"]'); less.disabled = S.people <= 1; more.disabled = S.people >= 12;
+    if (el.disabled) (el === less ? more : less).focus();
+    refresh();
+  },
+  region(el) { openMenu(el, REGIONS.map((r) => ({ label: r, tick: r === S.region, run: () => { S.region = r; $('#region-v').textContent = r; refresh(); } })), { width: el.offsetWidth }); },
+  cal(el) { openCal(el); },
+  tg(el) { const k = el.dataset.k, on = !el.classList.contains('on'); S[k] = on; setToggle(el, on); refresh(); },
+  choice(el) { if (el.classList.contains('on')) return; S[el.dataset.k] = el.dataset.v; setChoice(el); rove(el); refresh(); },
+  addDesign() {
+    const d = { id: S.nextId++, model: 'RT 20 table radio', year: '2012', cond: 'Works', qty: '1' };
+    S.designs.push(d);
+    const empty = $('#ebody .eempty'); empty.insertAdjacentHTML('beforebegin', rowHtml(d, true)); empty.hidden = true;
+    $('#ecount').textContent = countText(); refresh();
+  },
+  removeDesign(el) {
+    const row = el.closest('.erow'), rows = $$('#ebody .erow'), i = rows.indexOf(row);
+    S.designs = S.designs.filter((d) => d.id !== +row.dataset.id);
+    const next = rows[i + 1] || rows[i - 1];
+    row.remove();
+    $('#ebody .eempty').hidden = S.designs.length > 0; $('#ecount').textContent = countText();
+    (next ? $('[data-act="removeDesign"]', next) : $('[data-act="addDesign"]')).focus();
+    refresh();
+  },
+  model(el) { menuFor(el, MODELS, 'model', 'Design'); },
+  cond(el) { menuFor(el, CONDS, 'cond', 'Condition'); },
+  decades(el) {
+    const items = () => DECADES.map((d) => ({ label: d, check: S.decades[d] ? 'on' : '', keep: true, run: () => { S.decades[d] = !S.decades[d]; patchDecades(); refresh(); } }));
+    openMenu(el, items(), { width: el.offsetWidth, refresh: items });
+  },
+  want(el) { addWant(el.dataset.v, el); },
+  unwant(el) {
+    const chip = el.closest('.chip'), t = chip.dataset.v, ons = $$('#chips .chip.on'), i = ons.indexOf(chip);
+    S.wanted = S.wanted.filter((x) => x !== t);
+    chip.remove(); patchSuggestions();
+    const left = $$('#chips .chip.on'); ((left[i] || left[i - 1]) ? $('.cx', left[i] || left[i - 1]) : $('#c-want')).focus();
+    refresh();
+  },
+  pickPhoto() { $('#photo-in').click(); },
+  removePhoto() { S.photo = null; S.photoNote = ''; $('#drop').innerHTML = dropHtml(); $('#drop .k').focus(); refresh(); },
+});
+function menuFor(el, opts, key, label) {
+  const row = el.closest('.erow'), d = byRow(row);
+  openMenu(el, opts.map((o) => ({ label: o, tick: o === d[key], run: () => {
+    d[key] = o; $('.val', el).textContent = o; el.setAttribute('aria-label', `${label}, ${o}`);
+    if (key === 'model') { row.setAttribute('aria-label', o); $('[data-act="removeDesign"]', row).setAttribute('aria-label', 'Remove ' + o); }
+    refresh();
+  } })), { width: Math.max(el.offsetWidth, key === 'model' ? 248 : 160) });
+}
+
+/* ---------- typing, ticking and choosing in the form ---------- */
+const form = $('#form');
+form.addEventListener('input', (e) => {
+  const t = e.target, k = t.dataset.k;
+  if (k === 'name' || k === 'post' || k === 'notes') {
+    if (k === 'post') { const up = t.value.toUpperCase(); if (up !== t.value) { const p = t.selectionStart; t.value = up; t.setSelectionRange(p, p); } }
+    S[k] = t.value;
+    if (k === 'notes') $('#h-notes').textContent = `${400 - t.value.length} characters left`;
+    refresh();
+  }
+  if (t.dataset.f) {
+    const v = t.value.replace(/\D/g, '').slice(0, t.dataset.f === 'year' ? 4 : 2);
+    if (v !== t.value) t.value = v;
+    byRow(t.closest('.erow'))[t.dataset.f] = v; $('#ecount').textContent = countText(); refresh();
+  }
+  if (t.dataset.num) { const v = t.value.replace(/\D/g, ''); if (v !== t.value) t.value = v; }
+  if (t.id === 'c-want') { S.q = t.value; S.active = S.q.trim() ? 0 : -1; renderList(true); }
+});
+form.addEventListener('change', (e) => {
+  const t = e.target;
+  if (t.name === 'who') { S.who = t.value; $$('input[name="who"]', form).forEach((r) => r.nextElementSibling.classList.toggle('on', r.checked)); refresh(); }
+  if (t.dataset.area) { if (t.dataset.area === 'all') AREAS.forEach(([k]) => { S.areas[k] = t.checked; }); else S.areas[t.dataset.area] = t.checked; patchAreas(); refresh(); }
+  if (t.id === 'consent') { S.consent = t.checked; setCbox(t.nextElementSibling, t.checked ? 'on' : ''); refresh(); }
+  if (t.dataset.num) { const k = t.dataset.num, v = parseInt(t.value, 10); if (isNaN(v)) t.value = S[k]; else { setVal(k, v); t.value = S[k]; } }
+  if (t.id === 'photo-in') { takeFile(t.files && t.files[0]); }
+});
+form.addEventListener('keydown', (e) => {
+  const t = e.target;
+  // the combobox: arrows move through the matches, Enter adds one, Escape closes the list first
+  if (t.id === 'c-want') {
+    const m = wantMatches(), open = !$('#want-list').hidden;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault(); if (!m.length) { renderList(true); return; }
+      S.active = !open || S.active < 0 ? (e.key === 'ArrowDown' ? 0 : m.length - 1) : (S.active + (e.key === 'ArrowDown' ? 1 : -1) + m.length) % m.length;
+      renderList(true);
+    } else if (e.key === 'Enter') {
+      if (open && m.length) { e.preventDefault(); addWant(m[Math.max(0, S.active)][0]); renderList(false); }
+    } else if (e.key === 'Escape' && (open || t.value)) {
+      e.preventDefault(); e.stopPropagation();
+      if (!open) { t.value = ''; S.q = ''; t.closest('.field').classList.remove('has'); }
+      renderList(false);
+    } else if (e.key === 'Tab') renderList(false);
+    return;
+  }
+  // radio tiles and segments: arrow keys move the choice
+  if (t.getAttribute('role') === 'radio' && t.tagName === 'BUTTON' && ['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].includes(e.key)) {
+    e.preventDefault();
+    const opts = $$(':scope > button:not([disabled])', t.parentNode), i = opts.indexOf(t), fwd = e.key === 'ArrowRight' || e.key === 'ArrowDown';
+    const n = e.key === 'Home' ? opts[0] : e.key === 'End' ? opts[opts.length - 1] : opts[(i + (fwd ? 1 : -1) + opts.length) % opts.length];
+    n.focus(); n.click(); return;
+  }
+  // slider knobs
+  if (t.getAttribute('role') === 'slider') {
+    const k = t.dataset.th, c = SL[k];
+    const d = { ArrowRight: c.step, ArrowUp: c.step, ArrowLeft: -c.step, ArrowDown: -c.step, PageUp: c.page, PageDown: -c.page }[e.key];
+    if (d !== undefined) { e.preventDefault(); setVal(k, S[k] + d); }
+    else if (e.key === 'Home') { e.preventDefault(); setVal(k, k === 'hi' ? S.lo : c.min); }
+    else if (e.key === 'End') { e.preventDefault(); setVal(k, k === 'lo' ? S.hi : c.max); }
+  }
+});
+form.addEventListener('focusin', (e) => { if (e.target.id === 'c-want') renderList(true); });
+form.addEventListener('focusout', (e) => { if (e.target.id === 'c-want') renderList(false); });
+form.addEventListener('mousedown', (e) => { if (e.target.closest('#want-list')) e.preventDefault(); });
+form.addEventListener('click', (e) => { const o = e.target.closest('#want-list .mrow'); if (o) { addWant(o.dataset.v); renderList(false); } });
+
+/* dragging a slider: a click jumps (briefly animated), a drag follows the pointer */
+form.addEventListener('pointerdown', (e) => {
+  const rail = e.target.closest('.rail'); if (!rail || e.button !== 0) return;
+  e.preventDefault();
+  let k = 'hours';
+  if (rail.dataset.sl === 'sess') { const v = valFrom(e, rail, 'lo'); k = S.lo === S.hi ? (v > S.hi ? 'hi' : 'lo') : (Math.abs(v - S.lo) <= Math.abs(v - S.hi) ? 'lo' : 'hi'); }
+  const th = $(`[data-th="${k}"]`, rail);
+  drag = { rail, k, id: e.pointerId, th, moved: false };
+  rail.setPointerCapture(e.pointerId); th.classList.add('is-drag'); th.focus({ preventScroll: true });
+  setVal(k, valFrom(e, rail, k));
+});
+form.addEventListener('pointermove', (e) => {
+  if (!drag || e.pointerId !== drag.id) return;
+  if (!drag.moved) { drag.moved = true; drag.rail.classList.add('dragging'); }
+  setVal(drag.k, valFrom(e, drag.rail, drag.k));
+});
+const endDrag = (e) => { if (!drag || e.pointerId !== drag.id) return; drag.th.classList.remove('is-drag'); drag.rail.classList.remove('dragging'); drag = null; };
+form.addEventListener('pointerup', endDrag);
+form.addEventListener('pointercancel', endDrag);
+
+/* a photo dragged over the drop target lights its orange ring */
+form.addEventListener('dragover', (e) => { const d = e.target.closest && e.target.closest('#drop'); if (!d) return; e.preventDefault(); d.classList.add('is-over'); });
+form.addEventListener('dragleave', (e) => { const d = e.target.closest && e.target.closest('#drop'); if (d && !d.contains(e.relatedTarget)) d.classList.remove('is-over'); });
+form.addEventListener('drop', (e) => { const d = e.target.closest && e.target.closest('#drop'); if (!d) return; e.preventDefault(); d.classList.remove('is-over'); takeFile(e.dataTransfer.files && e.dataTransfer.files[0]); });
+
+document.addEventListener('ready:tab', (e) => { if (e.detail.tabs !== 'Your census') return; S.side = e.detail.i; renderSide(true); });
+
+renderHead(); renderForm(); renderSide(false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+---
+title: Ready
+year: 2026
+order: 1
+kicker: A design system after Dieter Rams, with a keyboard you can play
+image: /fun/ready/assets/card.jpg
+layout: null
+---
+{% raw %}<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ready · Ollie Green</title>
+<meta name="description" content="How Ready came about: a home computer's keyboard, a free font, Dieter Rams, and a keyboard you can play.">
+<meta name="theme-color" content="#F2F0EB">
+<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fun/ready/story/story.css">
+<link rel="stylesheet" href="/fun/ready/assets/keyboard.css">
+</head>
+<body>
+<div class="page">
+  <a class="back" href="/fun/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Fun</a>
+
+  <header class="intro">
+    <h1>Ready</h1>
+    <p>Ready is a design system after Dieter Rams. It began with the lettering on an old computer’s keys. It has its own typeface, and a keyboard you can play.</p>
+    <ul class="toc" aria-label="Chapters">
+      <li><a href="#start"><span class="n">1</span>Where it starts</a></li>
+      <li><a href="#font"><span class="n">2</span>The font</a></li>
+      <li><a href="#keyboard"><span class="n">3</span>Our keyboard</a></li>
+      <li><a href="#system"><span class="n">4</span>The design system</a></li>
+    </ul>
+  </header>
+
+  <section class="chapter" id="start" aria-labelledby="start-h">
+    <div class="chead">
+      <span class="clabel">1 · Where it starts</span>
+      <h2 id="start-h">A home computer’s keys</h2>
+      <p>Ready grew out of the lettering on a keyboard, and a way of designing that asks for less.</p>
+    </div>
+    <div class="panel origin">
+      <div class="prose">
+        <p>The Commodore 64 was a home computer from 1982. The lettering on its keycaps was plain and square, and easy to read.</p>
+        <p>C64 Keyboard is a free font by Levente Szabadkai, drawn from that lettering. It is released under CC0, so anyone can build on it.</p>
+        <ol class="steps">
+          <li><span class="sn">1</span><span class="st">Ready Condensed keeps the keycap capitals and adds a new lowercase.</span></li>
+          <li><span class="sn">2</span><span class="st">Ready is Ready Condensed widened to 124 per cent. The stems stay the same and the spacing opens to 108 per cent.</span></li>
+          <li><span class="sn">3</span><span class="st">The rest of the system follows Dieter Rams, who designed for Braun from 1955.</span></li>
+        </ol>
+        <div class="quote"><q>Less, but better.</q><span class="hint">Dieter Rams</span></div>
+        <p>On the ET 66 calculator, one key is yellow: the equals. Ready keeps the same habit with one colour, orange.</p>
+      </div>
+      <div class="photos">
+        <figure>
+          <div class="ph sk4"><img src="/fun/ready/assets/photos/sk4.jpg" width="800" height="600" alt="A Braun SK 4 radio-phonograph with its clear lid open, on a white cabinet" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <span class="cap">SK 4 radio-phonograph, Braun, 1956. Dieter Rams with Hans Gugelot.</span>
+            <span class="hint">Photo by With Associates, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, from <a href="https://commons.wikimedia.org/wiki/File:Braun_SK_4.1.jpg">Wikimedia Commons</a>, cropped and resized.</span>
+          </figcaption>
+        </figure>
+        <figure class="sidecap">
+          <div class="ph et66"><img src="/fun/ready/assets/photos/et66.jpg" width="609" height="900" alt="A dark Braun ET 66 calculator with round keys and one yellow equals key" loading="lazy" decoding="async"></div>
+          <figcaption>
+            <span class="cap">ET 66 calculator, Braun, 1987. Dieter Rams with Dietrich Lubs.</span>
+            <span class="hint">Photo by Pinot Dita, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, from <a href="https://commons.wikimedia.org/wiki/File:1987_Braun_calculator_ET66_by_Dieter_Rams_(13964223413).jpg">Wikimedia Commons</a>, cropped and resized.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="font" aria-labelledby="font-h">
+    <div class="chead">
+      <span class="clabel">2 · The font</span>
+      <h2 id="font-h">Ready and Ready Condensed</h2>
+      <p>Ready sets everything: titles, body, keys, values and menus. Ready Condensed is kept for helper text and the small labels above inputs.</p>
+    </div>
+    <div class="panel spec" id="spec">
+      <div class="controls">
+        <label class="ff"><span class="flabel">Your text</span>
+          <span class="field"><input id="spec-in" type="text" value="Less, but better." placeholder="Type something" spellcheck="false" autocomplete="off" maxlength="80"></span>
+        </label>
+        <div class="ff"><span class="flabel" id="seg-l">Typeface</span>
+          <div class="seg" id="spec-seg" role="group" aria-labelledby="seg-l">
+            <span class="segind" aria-hidden="true"></span>
+            <button class="sg on" type="button" data-face="ready" aria-pressed="true">Ready</button>
+            <button class="sg" type="button" data-face="cond" aria-pressed="false">Ready Condensed</button>
+          </div>
+        </div>
+        <div class="ff"><span class="flabel" id="size-l">Size</span>
+          <div class="slider">
+            <div class="track" id="spec-track"><i class="fill"></i><span class="thumb" role="slider" tabindex="0" aria-labelledby="size-l" aria-valuemin="24" aria-valuemax="120" aria-valuenow="72"></span></div>
+            <span class="sval" id="spec-val">72 px</span>
+          </div>
+        </div>
+      </div>
+      <div class="show" id="spec-show" aria-live="polite">Less, but better.</div>
+      <div class="weights" aria-label="Weights">
+        <div><span class="hint">Light 300</span><span class="wv" style="font-weight: 300">Less, but better.</span></div>
+        <div><span class="hint">Book 350</span><span class="wv" style="font-weight: 350">Less, but better.</span></div>
+        <div><span class="hint">Regular 400</span><span class="wv" style="font-weight: 400">Less, but better.</span></div>
+        <div><span class="hint">Medium 500</span><span class="wv" style="font-weight: 500">Less, but better.</span></div>
+      </div>
+      <div class="chars" aria-label="Character set"><span>ABCDEFGHIJKLM</span><span>NOPQRSTUVWXYZ</span><i class="br"></i><span>abcdefghijklm</span><span>nopqrstuvwxyz</span><i class="br"></i><span>0123456789</span><span>&amp; @ # % ? !</span><span>. , : ; ’ “ ”</span><span>( ) / + = £</span></div>
+      <div class="facts">
+        <div><span class="hint">Drawn from</span><span class="fv" data-ready="Ready Condensed, widened to 124 per cent" data-cond="The keycap capitals, with a new lowercase">Ready Condensed, widened to 124 per cent</span></div>
+        <div><span class="hint">Proportions</span><span class="fv">Cap 700 and x-height 520, on a 1,000 unit em</span></div>
+        <div><span class="hint">Figures</span><span class="fv" data-ready="Proportional, with tabular for columns" data-cond="Tabular, with proportional for running text">Proportional, with tabular for columns</span></div>
+        <div><span class="hint">Zero and seven</span><span class="fv">A dotted 0, and a 7 with a short stroke</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="keyboard" aria-labelledby="kb-h">
+    <div class="chead">
+      <span class="clabel">3 · Our keyboard</span>
+      <h2 id="kb-h">A keyboard you can play</h2>
+      <p>Ready’s keys, set out as a keyboard: dark, sculpted keys in a beige case. They lift as you pass over them and push in when you click or tap. Click the keyboard and your own keys press them too.</p>
+    </div>
+    <div class="panel kbpanel" id="kbpanel">
+      <div class="kbwrap" id="kbwrap"></div>
+      <div class="kblink"><a class="hint" href="/fun/ready/keyboard/">Open the keyboard on its own page</a></div>
+    </div>
+  </section>
+
+  <section class="chapter" id="system" aria-labelledby="sys-h">
+    <div class="chead">
+      <span class="clabel">4 · The design system</span>
+      <h2 id="sys-h">The design system</h2>
+      <p>Ready is a set of parts: keys, fields, switches, sliders, menus, tables and cards. These pieces put them to work.</p>
+    </div>
+    <div class="pieces">
+      <a class="piece" href="/fun/ready/table/"><span class="pt">Photo table<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">Sort, filter and group a raised table of photos.</span></a>
+      <a class="piece" href="/fun/ready/library/"><span class="pt">Photo library<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">A tree of photos under folder tabs, with details beside it.</span></a>
+      <a class="piece" href="/fun/ready/gallery/"><span class="pt">Design gallery<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">Braun and Vitsoe designs in Ready’s cards.</span></a>
+      <a class="piece" href="/fun/ready/keyboard/"><span class="pt">Keyboard<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">The keyboard above, on a page of its own.</span></a>
+      <a class="piece" href="/fun/ready/controls/"><span class="pt">Control panel<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">Toggles, sliders and steppers that read back as plain words.</span></a>
+      <a class="piece" href="/fun/ready/census/"><span class="pt">Collector census<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">A five-step form with hints instead of red errors.</span></a>
+      <a class="piece" href="/fun/ready/palette/"><span class="pt">Command palette<svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"></path></svg></span><span class="pd">Press ⌘K and search the catalogue.</span></a>
+    </div>
+    <div class="notes" aria-label="Design notes">
+      <div><h3>Out and in</h3><p>Buttons come out of the page and inputs go in. You can tell what to press and where to type before you read a word.</p></div>
+      <div><h3>One colour</h3><p>Orange means on, chosen or live. Nothing else in the interface is coloured, so it is easy to find.</p></div>
+      <div><h3>Small labels</h3><p>Labels are small and in sentence case. They sit above what they name and stay quiet.</p></div>
+    </div>
+  </section>
+</div>
+<script src="/fun/ready/assets/keyboard.js"></script>
+<script src="/fun/ready/story/story.js"></script>
+</body>
+</html>
+{% endraw %}

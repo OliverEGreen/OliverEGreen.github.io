@@ -1,0 +1,100 @@
+/* Ready keyboard: dark sculpted keys in a beige case.
+   Shared by the keyboard page and the story page; keyboard.js builds the keys.
+   Each key is drawn as a block seen from just in front: a dished top that sits in from the edge,
+   sloped sides, and a front face you can see. Pressing it drops the whole key 6 px into its hole:
+   the top keeps its size, the front face gets shorter and the well shows above it. */
+@property --sink { syntax: '<length>'; inherits: true; initial-value: 0px; }
+@property --fr { syntax: '<length>'; inherits: true; initial-value: 14px; }
+
+.kbwrap { --u: 56px; --gap: 4px; --sd: 6px; --bk: 2px; position: relative; width: 100%; overflow: hidden; }
+.kbwrap.unfit { visibility: hidden; }
+
+/* the case: beige plastic with a soft sheen; it stands on the page */
+.kcase { position: absolute; left: 0; top: 0; transform-origin: 0 0; padding: 22px; border-radius: 22px;
+  background:
+    radial-gradient(90% 120% at 18% 0%, rgba(255, 252, 244, .55), rgba(255, 252, 244, 0) 60%),
+    linear-gradient(180deg, #EFE7D8 0%, #E4D9C5 50%, #D9CCB5 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 -1px 0 rgba(120, 96, 60, .22),
+    inset 1px 0 0 rgba(255, 255, 255, .35), inset -1px 0 0 rgba(120, 96, 60, .12),
+    0 2px 0 #CBBDA4, 0 5px 0 #BCAD92, 0 6px 2px rgba(80, 58, 28, .26),
+    0 14px 16px -8px rgba(80, 58, 28, .3), 0 30px 34px -16px rgba(80, 58, 28, .4); }
+/* the keys sit in a deeper well cut into the case, so their shadows land on it */
+.kplate { padding: 5px; border-radius: 10px; background: linear-gradient(180deg, #BBAD95, #C9BCA5);
+  box-shadow: inset 0 2px 5px rgba(70, 50, 24, .45), inset 0 0 0 1px rgba(90, 68, 36, .3), 0 1px 0 rgba(255, 255, 255, .7); }
+.kb { width: calc(var(--u) * 15 + var(--gap) * 14); display: flex; flex-direction: column; gap: var(--gap); border-radius: 6px;
+  user-select: none; -webkit-user-select: none; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
+.kb:focus { outline: none; }
+.kb:focus-visible { outline: 2px solid #FF6A2A; outline-offset: 3px; }
+.krow { display: flex; gap: var(--gap); }
+
+/* a key: the button holds its place; the body inside drops by --sink, and --fr is how much of its front shows */
+.k { --kw: 1; --sink: 0px; --fr: 14px;
+  --cap-a: #3A302A; --cap-b: #4B403A; --cap-c: #433830;
+  --back-a: #2C241F; --back-b: #574B43;
+  --left-a: #52463F; --left-b: #3C322C; --right-a: #302823; --right-b: #241D19;
+  --front-a: #3A302A; --front-b: #271F1B; --legend: #F3EEE5; --legend-2: #A69C90;
+  position: relative; flex: none; width: calc(var(--u) * var(--kw) + var(--gap) * (var(--kw) - 1)); height: var(--u);
+  margin: 0; padding: 0; border: 0; background: none; cursor: pointer; color: var(--legend); font: inherit;
+  transition: --sink 220ms cubic-bezier(.3, 1.35, .55, 1), --fr 220ms cubic-bezier(.3, 1.35, .55, 1); }
+.k .kbody { position: absolute; left: 0; right: 0; top: var(--sink); bottom: 0; border-radius: 6px; overflow: hidden; pointer-events: none;
+  background: linear-gradient(180deg, var(--back-a) 0, var(--back-b) var(--bk), var(--back-b) 50%,
+    var(--front-a) 50%, var(--front-a) calc(100% - var(--fr)), var(--front-b) 100%);
+  box-shadow: 0 1px 0 rgba(40, 26, 12, .55), 0 3px 4px rgba(50, 32, 14, .4), 0 9px 12px -4px rgba(50, 32, 14, .5);
+  transition: box-shadow 220ms cubic-bezier(.3, 1.35, .55, 1); }
+/* the two sloped sides: lit on the left, in shade on the right */
+.k .kbody::before, .k .kbody::after { content: ''; position: absolute; inset: 0; }
+.k .kbody::before { background: linear-gradient(180deg, var(--left-a), var(--left-b));
+  clip-path: polygon(0 0, var(--sd) var(--bk), var(--sd) calc(100% - var(--fr)), 0 100%); }
+.k .kbody::after { background: linear-gradient(180deg, var(--right-a), var(--right-b));
+  clip-path: polygon(100% 0, calc(100% - var(--sd)) var(--bk), calc(100% - var(--sd)) calc(100% - var(--fr)), 100% 100%); }
+/* the top: a shallow dish, shaded under its back rim, with a faint lit front lip */
+.k .kt { position: absolute; z-index: 1; left: var(--sd); right: var(--sd); top: var(--bk); bottom: var(--fr); border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    linear-gradient(90deg, rgba(255, 240, 225, .07), rgba(255, 240, 225, 0) 28%, rgba(255, 240, 225, 0) 72%, rgba(0, 0, 0, .08)),
+    linear-gradient(180deg, var(--cap-a) 0%, var(--cap-b) 30%, var(--cap-b) 66%, var(--cap-c) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 238, 220, .16), inset 0 5px 6px -4px rgba(0, 0, 0, .4), inset 0 -4px 6px -4px rgba(0, 0, 0, .3),
+    0 1px 0 rgba(255, 236, 216, .1), 0 2px 2px -1px rgba(0, 0, 0, .35); }
+
+/* legends: upper case and white, printed on the top */
+.k .lg, .k .two { line-height: 1; text-shadow: 0 -1px 0 rgba(0, 0, 0, .35); }
+.k .lg { font-size: 20px; letter-spacing: .02em; padding-bottom: 1px; }
+.k .two { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.k .two .up { font-size: 13px; color: var(--legend-2); transition: color 120ms ease; }
+.k .two .dn { font-size: 17px; transition: color 120ms ease; }
+.kb.shifted .k .two .up { color: var(--legend); }
+.kb.shifted .k .two .dn { color: var(--legend-2); }
+/* the word keys: big, wide-set and a little heavy, as printed caps are */
+.k.mod .lg, .k.go .lg { font-size: 16px; letter-spacing: .16em; padding-left: .16em; white-space: nowrap; -webkit-text-stroke: .35px currentColor; }
+.k .lg.stack { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 14px; }
+
+/* modifier keys: a shade darker */
+.k.mod { --cap-a: #2F2722; --cap-b: #3D342E; --cap-c: #362D27;
+  --back-a: #231C18; --back-b: #483E37; --left-a: #443A33; --left-b: #312823; --right-a: #28211C; --right-b: #1D1714;
+  --front-a: #2F2722; --front-b: #201915; }
+/* return: the one key in colour */
+.k.go { --cap-a: #F0601F; --cap-b: #FF6E31; --cap-c: #F7672A;
+  --back-a: #C24814; --back-b: #FF8A55; --left-a: #F56A2F; --left-b: #E2581D; --right-a: #D04D17; --right-b: #B84210;
+  --front-a: #D9551A; --front-b: #B94410; --legend: #2E2A26; }
+.k.go .kt { box-shadow: inset 0 1px 0 rgba(255, 214, 190, .75), inset 0 5px 6px -4px rgba(140, 40, 0, .28), inset 0 -4px 6px -4px rgba(140, 40, 0, .22),
+    0 1px 0 rgba(255, 196, 160, .55), 0 2px 2px -1px rgba(120, 40, 0, .3); }
+.k.go .lg { text-shadow: 0 1px 0 rgba(255, 200, 170, .35); -webkit-text-stroke: .35px currentColor; }
+
+/* caps lock and a latched or held shift light a small orange lamp */
+.k .dot { position: absolute; top: 6px; left: 7px; width: 6px; height: 6px; border-radius: 3px; background: #241D19;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .6), 0 1px 0 rgba(255, 236, 216, .12); transition: background 120ms ease, box-shadow 120ms ease; }
+.k.lit .dot { background: #FF6A2A; box-shadow: 0 0 0 1px rgba(255, 106, 42, .3), 0 0 8px 1px rgba(255, 106, 42, .75); }
+
+/* lift a pixel under the pointer; drop into the hole when pressed */
+@media (hover: hover) {
+  .k:hover { --sink: -1px; --fr: 15px; }
+  .k:hover .kbody { box-shadow: 0 1px 0 rgba(40, 26, 12, .55), 0 4px 6px rgba(50, 32, 14, .42), 0 12px 16px -4px rgba(50, 32, 14, .5); }
+}
+.k.down, .k.down:hover { --sink: 6px; --fr: 8px; transition-duration: 60ms; transition-timing-function: ease-out; }
+.k.down .kbody, .k.down:hover .kbody { box-shadow: 0 1px 0 rgba(40, 26, 12, .6), 0 1px 2px rgba(50, 32, 14, .45); transition-duration: 60ms; transition-timing-function: ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .k, .k.down, .k .kbody, .k.down .kbody { transition: none; }
+  .k:hover { --sink: 0px; --fr: 14px; }
+}

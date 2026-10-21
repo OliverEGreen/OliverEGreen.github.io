@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Photo library · Ready</title>
+<meta name="description" content="A photo library on Ready: a tree of a design catalogue's photos under folder tabs, a details panel, and a checkbox tree for choosing what to sync.">
+<meta property="og:title" content="Photo library · Ready">
+<meta property="og:description" content="A tree of a design catalogue's photos under Ready's folder tabs, with details and a checkbox tree for choosing what to sync.">
+<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fun/ready/assets/ready.css">
+</head>
+<body>
+<div class="page">
+  <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
+  <header>
+    <h1>Photo library</h1>
+    <p class="lead">A catalogue's photos as a tree under folder tabs, with the chosen item's details beside it. The arrow keys walk the tree; Choose what to sync opens a tree of checkboxes.</p>
+  </header>
+  <main class="view">
+    <section class="tpanel s2" id="fx" aria-label="Library"></section>
+    <section class="panel col" id="fdetail" aria-live="polite" aria-label="Details"></section>
+  </main>
+  <section class="notes" aria-label="Design notes">
+    <div><h2>Chosen, not hovered</h2><p>The chosen row rises as a light key with an orange dot at its left, as the chosen tab rises in its track. Rows under the pointer only take the band's tone, so the two never look alike.</p></div>
+    <div><h2>Folders open in place</h2><p>A folder's chevron turns, its icon opens and its rows settle in from 4 px above, without the tree redrawing. Faint guides mark the depth; they are the only lines in the panel.</p></div>
+    <div><h2>A dash means some</h2><p>In the sync picker, a folder's box shows a dash when only some of what it holds is ticked. Ticking it takes everything, and ticking again clears it.</p></div>
+  </section>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/fun/ready/assets/ready.js"></script>
+<script>
+'use strict';
+(function () {
+const { $, $$, esc, I, cboxHtml, setCbox, toast, openMenu, tabsHtml, syncTabs, swap } = Ready;
+
+/* ---------- data: the studio's photo library ---------- */
+const N = (id, label, kind, mod, kb, kids) => ({ id, label, kind, mod, kb: kb || 0, kids: kids || null });
+const TREE = [
+  N('mac', 'Studio Mac', 'device', 'Today, 12:47', 0, [
+    N('proj', 'Braun', 'folder', 'Today, 12:47', 0, [
+      N('spr', 'SK 4', 'folder', 'Today, 12:47', 0, [
+        N('assets', 'photos', 'folder', 'Today, 11:02', 0, [
+          N('sprites', 'front', 'folder', 'Today, 11:02', 0, [N('owl', 'SK4-012.jpg', 'file', 'Today, 11:02', 24100), N('owlw', 'SK4-013.jpg', 'file', 'Today, 10:40', 23800), N('tiles', 'SK4-014.jpg', 'file', 'Yesterday, 17:20', 25200)]),
+          N('pal', 'detail', 'folder', 'Mon 19 Oct, 09:12', 0, [N('warm', 'SK4-020.jpg', 'file', 'Mon 19 Oct, 09:12', 18400), N('cool', 'SK4-021.jpg', 'file', 'Mon 19 Oct, 09:10', 19100)])]),
+        N('src', 'notes', 'folder', 'Today, 12:47', 0, [N('main', 'condition.txt', 'file', 'Today, 12:47', 4), N('edit', 'provenance.txt', 'file', 'Today, 12:30', 6),
+          N('io', 'checks', 'folder', 'Yesterday, 18:02', 0, [N('disk', 'march.txt', 'file', 'Yesterday, 18:02', 2), N('tape', 'october.txt', 'file', 'Yesterday, 16:45', 3)])]),
+        N('readme', 'catalogue-card.pdf', 'file', 'Sun 18 Oct, 14:07', 380)]),
+      N('chip', 'T 3', 'folder', 'Today, 11:20', 0, [N('songs', 'photos', 'folder', 'Today, 11:20', 0, [N('theme', 'T3-004.jpg', 'file', 'Today, 11:20', 21600), N('boss', 'T3-005.jpg', 'file', 'Sat 17 Oct, 20:12', 22300)])]),
+      N('tload', 'ET 66', 'folder', 'Yesterday, 18:02', 0, [N('loader', 'ET66-001.jpg', 'file', 'Yesterday, 18:02', 17900)])]),
+    N('docs', 'Vitsœ', 'folder', 'Fri 16 Oct, 16:30', 0, [N('man', '606', 'folder', 'Fri 16 Oct, 16:30', 0, [N('guide', '606-001.jpg', 'file', 'Fri 16 Oct, 16:30', 26400), N('basic', '606-002.jpg', 'file', 'Fri 16 Oct, 16:28', 25800)])])])];
+const SHARED = [N('shared', 'Shared with me', 'folder', 'Mon 19 Oct, 10:02', 0, [N('demo', 'Collectors’ Society', 'folder', 'Mon 19 Oct, 10:02', 0, [N('intro', 'TP1-001.jpg', 'file', 'Mon 19 Oct, 10:02', 22800), N('music', 'TP1-002.jpg', 'file', 'Mon 19 Oct, 09:58', 21900)]), N('fonts', 'Museum loan', 'folder', 'Thu 15 Oct, 18:40', 0, [N('f8', '620-001.jpg', 'file', 'Thu 15 Oct, 18:40', 27300)])])];
+const BYID = {}, PARENT = {};
+const walk = (n, p) => { BYID[n.id] = n; PARENT[n.id] = p; (n.kids || []).forEach((k) => walk(k, n.id)); };
+TREE.forEach((n) => walk(n, null)); SHARED.forEach((n) => walk(n, null));
+const leaves = (n) => (n.kids ? n.kids.reduce((a, k) => a.concat(leaves(k)), []) : [n.id]);
+const fmtKb = (kb) => (kb >= 1000 ? (kb / 1000).toFixed(1) + ' MB' : kb + ' KB');
+const sizeOf = (n) => fmtKb(n.kids ? leaves(n).reduce((a, id) => a + BYID[id].kb, 0) : n.kb);
+const pathOf = (id) => { const out = []; let c = id; while (c) { out.unshift(BYID[c].label); c = PARENT[c]; } return out; };
+function visible(roots, open) { const out = []; const go = (n, d) => { out.push({ n, d }); if (n.kids && open[n.id]) n.kids.forEach((k) => go(k, d + 1)); }; roots.forEach((n) => go(n, 0)); return out; }
+const kindIcon = (n, open) => (n.kind === 'device' ? I.device : n.kind === 'file' ? I.file : open ? I.folderOpen : I.folder);
+
+const F = { tab: 0, open: { mac: true, proj: true, spr: true, assets: true, sprites: true, src: true }, sel: 'edit', focus: 'edit', sopen: { shared: true, demo: true } };
+let D = null;   // the sync picker, while it is open
+
+/* ---------- the tree under folder tabs ---------- */
+function renderFiles() {
+  const el = $('#fx');
+  let body;
+  if (F.tab === 2) {
+    body = `<div class="none" style="background: transparent; padding: 64px 16px"><span class="empty-ico">${I.trash}</span><div class="ptitle">Trash is empty</div><p class="hint">Deleted photos stay here for 30 days before they go for good.</p></div>`;
+  } else {
+    const roots = F.tab === 0 ? TREE : SHARED, open = F.tab === 0 ? F.open : F.sopen;
+    const rows = visible(roots, open);
+    if (!rows.find((r) => r.n.id === F.focus)) F.focus = rows[0].n.id;
+    body = `<div class="thead" aria-hidden="true"><span></span><span class="tm">Modified</span><span class="r">Size</span><span></span></div>
+      <div class="tree" role="tree" aria-label="${F.tab === 0 ? 'Photos' : 'Shared'}">${rows.map(({ n, d }) => treeRowHtml(n, d, open)).join('')}</div>`;
+  }
+  if (!$('.fxbar', el)) {
+    el.innerHTML = tabsHtml('Library', ['Photos', 'Shared', 'Trash'], F.tab, false, 'fx-sheet') + '<div class="tsheet" role="tabpanel" id="fx-sheet" aria-labelledby="library-tab-0"></div>' +
+      `<div class="foot tfoot"><span class="hint">Studio Mac · synced 12 minutes ago</span><button class="k grey" type="button" data-act="openPicker">Choose what to sync…</button></div>`;
+    syncTabs(el);
+  }
+  const sheet = $('.tsheet', el);
+  sheet.setAttribute('aria-labelledby', 'library-tab-' + F.tab);
+  sheet.innerHTML = body;
+}
+function treeRowHtml(n, d, open) {
+  const folder = !!n.kids, isOpen = folder && !!open[n.id], chosen = F.sel === n.id;
+  return `<div class="trow${chosen ? ' chosen' : ''}" role="treeitem" data-tid="${n.id}" aria-level="${d + 1}"${folder ? ` aria-expanded="${isOpen}"` : ''} aria-selected="${chosen}" tabindex="${F.focus === n.id ? 0 : -1}" data-act="pickNode" data-id="${n.id}">
+    <span class="tname" style="padding-left: ${32 + d * 16}px"><span class="tguide" style="width: ${d * 16}px"></span>
+      <span class="tchev${isOpen ? ' open' : ''}"${folder ? ` data-act="twist" data-id="${n.id}"` : ''}>${folder ? I.gchev : ''}</span><span class="tico">${kindIcon(n, isOpen)}</span><span class="tlabel">${esc(n.label)}</span></span>
+    <span class="tmod">${esc(n.mod)}</span><span class="tsize">${sizeOf(n)}</span>
+    <span class="tact"><button class="kb tip-right" type="button" tabindex="-1" aria-haspopup="menu" aria-label="Actions for ${esc(n.label)}" data-tip="More actions" data-act="nodeMenu" data-id="${n.id}">${I.kebab}</button></span></div>`;
+}
+/* the library tree or the picker's tree, with what it needs to open a folder in place */
+function treeCtx(inDialog) {
+  if (inDialog) return { roots: TREE, open: D.open, st: D, scope: '#dialog', row: (n, d) => pickRowHtml(n, d) };
+  const open = F.tab === 0 ? F.open : F.sopen;
+  return { roots: F.tab === 0 ? TREE : SHARED, open, st: F, scope: '#fx', row: (n, d) => treeRowHtml(n, d, open) };
+}
+/* a folder opens in place: its chevron turns, its icon opens and its rows settle in below it; closing takes them away */
+function setNodeOpen(ctx, id, open) {
+  ctx.open[id] = open;
+  const row = $(`${ctx.scope} .trow[data-tid="${id}"]`); if (!row) return;
+  const n = BYID[id], level = +row.getAttribute('aria-level');
+  row.setAttribute('aria-expanded', open);
+  const chev = $('.tchev', row); chev && chev.classList.toggle('open', open);
+  const ico = $('.tico', row); if (ico) ico.innerHTML = kindIcon(n, open);
+  let nx = row.nextElementSibling;
+  while (nx && +nx.getAttribute('aria-level') > level) { const k = nx; nx = nx.nextElementSibling; k.remove(); }
+  if (open && n.kids) {
+    const html = []; const go = (k, d) => { html.push(ctx.row(k, d)); if (k.kids && ctx.open[k.id]) k.kids.forEach((c) => go(c, d + 1)); };
+    n.kids.forEach((k) => go(k, level));
+    const box = document.createElement('div'); box.innerHTML = html.join('');
+    const frag = document.createDocumentFragment(); $$(':scope > .trow', box).forEach((r) => { r.classList.add('reveal'); frag.appendChild(r); });
+    row.after(frag);
+  }
+}
+const setTreeFocus = (scope, id) => $$(`${scope} .trow`).forEach((r) => { r.tabIndex = r.dataset.tid === id ? 0 : -1; });
+function selectNode(id) {
+  F.sel = id; F.focus = id;
+  $$('#fx .trow').forEach((r) => { const on = r.dataset.tid === id; r.classList.toggle('chosen', on); r.setAttribute('aria-selected', on); r.tabIndex = on ? 0 : -1; });
+}
+function renderDetail() {
+  const el = $('#fdetail');
+  if (F.tab === 2) { el.innerHTML = `<h2 class="ptitle">Nothing chosen</h2><p class="hint" style="margin-top: 8px">Pick a photo to see its details and earlier edits.</p>`; return; }
+  const n = BYID[F.sel] || TREE[0];
+  const isFile = n.kind === 'file';
+  const vcount = isFile ? 3 + (n.label.length % 9) : leaves(n).length;
+  el.innerHTML = `<div class="dhead swap"><span class="dico">${kindIcon(n, false)}</span><div style="min-width: 0"><h2 class="ptitle ell">${esc(n.label)}</h2><p class="hint crumbs ell">${esc(pathOf(n.id).slice(0, -1).join(' / ') || 'Top level')}</p></div></div>
+    <div class="facts swap">
+      <div><div class="lbl">Kind</div><div class="fval">${isFile ? (n.label.endsWith('.jpg') ? 'JPG photo' : n.label.split('.').pop().toUpperCase() + ' file') : n.kind === 'device' ? 'Computer' : 'Folder'}</div></div>
+      <div><div class="lbl">Size</div><div class="fval">${sizeOf(n)}</div></div>
+      <div><div class="lbl">Modified</div><div class="fval">${esc(n.mod)}</div></div>
+      <div><div class="lbl">${isFile ? 'Edits' : 'Files'}</div><div class="fval">${vcount}</div></div>
+    </div>
+    <div class="actions"><button class="k grey" type="button" data-act="nodeAct" data-what="Downloading">Download${I.dl}</button><button class="k grey" type="button" data-act="nodeAct" data-what="Opening earlier edits of">Earlier edits</button></div>`;
+}
+
+/* ---------- the checkbox tree, in a dialog ---------- */
+function openPicker() {
+  const checked = {}; ['spr', 'tload'].forEach((id) => leaves(BYID[id]).forEach((l) => { checked[l] = true; }));
+  D = { checked, open: { mac: true, proj: true, spr: true, docs: true }, focus: 'mac' };
+  Ready.openDialog({ id: 'dialog', labelledby: 'dlg-title', onClose: () => { D = null; } });
+  renderPicker();
+  const f = $('#dialog .trow[tabindex="0"]'); f && f.focus();
+}
+function pickState(n) { const ls = leaves(n), on = ls.filter((id) => D.checked[id]).length; return on === 0 ? '' : on === ls.length ? 'on' : 'mixed'; }
+const pickCount = () => { const on = Object.keys(D.checked).filter((k) => D.checked[k]), kb = on.reduce((a, id) => a + BYID[id].kb, 0); return `${on.length} ${on.length === 1 ? 'file' : 'files'} · ${fmtKb(kb)}`; };
+function renderPicker() {
+  const dlg = $('#dialog'); if (!dlg || !D) return;
+  const rows = visible(TREE, D.open);
+  dlg.innerHTML = `<div class="bar stone"><h2 class="ptitle" id="dlg-title" style="font-size: 24px; line-height: 40px">Choose what to sync</h2><button class="k quiet icon tip-below tip-right" type="button" aria-label="Close" data-tip="Close" data-act="closeDialog">${I.x}</button></div>
+    <div class="dbody"><div class="tree" role="tree" aria-label="Choose what to sync" aria-multiselectable="true" style="padding: 4px 0">${rows.map(({ n, d }) => pickRowHtml(n, d)).join('')}</div></div>
+    <div class="foot" style="background: var(--band)"><span class="hint">${pickCount()}</span><div class="tools"><button class="k grey" type="button" data-act="closeDialog">Cancel</button><button class="k dark" type="button" data-act="savePicker">Save selection</button></div></div>`;
+}
+function pickRowHtml(n, d) {
+  const folder = !!n.kids, isOpen = folder && !!D.open[n.id], st = pickState(n);
+  return `<div class="trow cb" role="treeitem" data-tid="${n.id}" aria-level="${d + 1}"${folder ? ` aria-expanded="${isOpen}"` : ''} aria-checked="${st === 'on' ? 'true' : st === 'mixed' ? 'mixed' : 'false'}" tabindex="${D.focus === n.id ? 0 : -1}" data-act="pickCheck" data-id="${n.id}">
+    <span class="tname" style="padding-left: ${32 + d * 16}px"><span class="tguide" style="width: ${d * 16}px"></span><span class="tchev${isOpen ? ' open' : ''}"${folder ? ` data-act="pickTwist" data-id="${n.id}"` : ''}>${folder ? I.gchev : ''}</span>
+    ${cboxHtml(st, 'aria-hidden="true"')}<span class="tico">${kindIcon(n, isOpen)}</span><span class="tlabel">${esc(n.label)}</span></span><span class="tsize">${sizeOf(n)}</span></div>`;
+}
+/* ticking in the picker changes the boxes where they stand, and the count below */
+function patchPicker() {
+  if (!D) return;
+  $$('#dialog .trow[data-tid]').forEach((r) => { const st = pickState(BYID[r.dataset.tid]); r.setAttribute('aria-checked', st === 'on' ? 'true' : st === 'mixed' ? 'mixed' : 'false'); setCbox($('.cbox', r), st); });
+  const h = $('#dialog .foot .hint'); if (h) h.textContent = pickCount();
+}
+
+/* ---------- actions ---------- */
+Ready.on({
+  pickNode(el) { selectNode(el.dataset.id); renderDetail(); el.focus(); },
+  twist(el, e) { e.stopPropagation(); const id = el.dataset.id, ctx = treeCtx(false); setNodeOpen(ctx, id, !ctx.open[id]); F.focus = id; setTreeFocus('#fx', id); const n = $(`#fx .trow[data-tid="${id}"]`); n && n.focus(); },
+  nodeMenu(el, e) {
+    e.stopPropagation();
+    const id = el.dataset.id, n = BYID[id], row = el.closest('.trow');
+    selectNode(id); renderDetail(); row.classList.add('menuopen');
+    openMenu(el, [
+      { label: 'Open', icon: I.openx, run: () => toast(`Opening ${n.label}`) },
+      { label: 'Rename', icon: I.rename, run: () => toast('Renaming is not part of this mockup') },
+      { label: 'Download', icon: I.dl, run: () => toast(`Downloading ${n.label} · ${sizeOf(n)}`) },
+      { label: 'Move to…', icon: I.move, run: () => toast(`Moving ${n.label}`) },
+      { label: 'Earlier edits', icon: I.history, run: () => toast(`Earlier edits of ${n.label}`) },
+      { gap: true },
+      { label: 'Delete', icon: I.trash, danger: true, run: () => toast(`${n.label} moved to Trash`, { label: 'Undo', run: () => toast(`${n.label} put back`) }) },
+    ], { align: 'right', width: 232, onClose: () => { row.classList.remove('menuopen'); if (document.contains(row) && !Ready.menuOpen()) row.focus(); } });
+  },
+  nodeAct(el) { const n = BYID[F.sel]; toast(`${el.dataset.what} ${n.label}`); },
+  openPicker() { openPicker(); },
+  pickCheck(el) {
+    const n = BYID[el.dataset.id], st = pickState(n);
+    leaves(n).forEach((id) => { if (st === 'on') delete D.checked[id]; else D.checked[id] = true; });
+    D.focus = n.id; patchPicker(); setTreeFocus('#dialog', n.id); el.focus();
+  },
+  pickTwist(el, e) { e.stopPropagation(); const id = el.dataset.id, ctx = treeCtx(true); setNodeOpen(ctx, id, !D.open[id]); D.focus = id; setTreeFocus('#dialog', id); const r = $(`#dialog .trow[data-tid="${id}"]`); r && r.focus(); },
+  savePicker() { const n = Object.keys(D.checked).length; Ready.closeDialog(); toast(`Syncing ${n} files from Studio Mac`); },
+});
+document.addEventListener('ready:tab', (e) => {
+  if (e.detail.tabs !== 'Library') return;
+  const i = e.detail.i; F.tab = i;
+  if (i === 1) { F.sel = 'shared'; F.focus = 'shared'; }
+  if (i === 0) { F.sel = 'edit'; F.focus = 'edit'; }
+  renderFiles(); renderDetail(); swap($('#fx .tsheet'));
+});
+/* trees: arrows walk the visible rows; right opens or steps in, left closes or steps out; Enter or Space chooses (or ticks) */
+document.addEventListener('keydown', (e) => {
+  const t = e.target;
+  if (e.defaultPrevented || !t.classList || !t.classList.contains('trow') || !t.isConnected) return;
+  if (e.key === 'ContextMenu' || (e.shiftKey && e.key === 'F10')) { e.preventDefault(); const kb = $('.kb', t); kb && Ready.actions.nodeMenu(kb, e); return; }
+  const inDialog = !!t.closest('#dialog'), ctx = treeCtx(inDialog);
+  const rows = visible(ctx.roots, ctx.open), i = rows.findIndex((r) => r.n.id === t.dataset.tid); if (i < 0) return;
+  const n = rows[i].n; let to = null;
+  if (e.key === 'ArrowDown') to = rows[Math.min(rows.length - 1, i + 1)].n.id;
+  else if (e.key === 'ArrowUp') to = rows[Math.max(0, i - 1)].n.id;
+  else if (e.key === 'Home') to = rows[0].n.id;
+  else if (e.key === 'End') to = rows[rows.length - 1].n.id;
+  else if (e.key === 'ArrowRight') { if (n.kids && !ctx.open[n.id]) { setNodeOpen(ctx, n.id, true); to = n.id; } else if (n.kids) to = n.kids[0].id; else to = n.id; }
+  else if (e.key === 'ArrowLeft') { if (n.kids && ctx.open[n.id]) { setNodeOpen(ctx, n.id, false); to = n.id; } else if (PARENT[n.id]) to = PARENT[n.id]; else to = n.id; }
+  else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); inDialog ? Ready.actions.pickCheck(t) : Ready.actions.pickNode(t); return; }
+  else return;
+  e.preventDefault(); ctx.st.focus = to; setTreeFocus(ctx.scope, to);
+  const r = $(`${ctx.scope} .trow[data-tid="${to}"]`); r && r.focus();
+});
+document.addEventListener('contextmenu', (e) => {
+  const row = e.target.closest('#fx .trow'); if (!row) return;
+  e.preventDefault(); const kb = $('.kb', row); kb && Ready.actions.nodeMenu(kb, e);
+});
+
+renderFiles(); renderDetail();
+})();
+</script>
+</body>
+</html>

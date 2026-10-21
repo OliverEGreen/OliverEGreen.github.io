@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Photo table · Ready</title>
+<meta name="description" content="Ready's raised table holding the 148 photos of a Braun SK 4: sort, filter, group, search, resize the columns and act on the rows.">
+<meta property="og:title" content="Photo table · Ready">
+<meta property="og:description" content="Ready's raised table holding the 148 photos of a Braun SK 4: sort, filter, group, search and resize.">
+<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fun/ready/assets/fonts/ReadyCondensed-Light-101.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fun/ready/assets/ready.css">
+</head>
+<body>
+<div class="page">
+  <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
+  <header>
+    <h1>Photo table</h1>
+    <p class="lead">The 148 photos of a Braun SK 4 in Ready's raised table. Sort, filter and group by column, search, drag the separators, and act on a row from its menu.</p>
+  </header>
+  <main>
+    <section class="panel" aria-labelledby="vt-title"><div class="frame" id="vt"></div></section>
+  </main>
+  <section class="notes" aria-label="Design notes">
+    <div><h2>The only lines</h2><p>Rows are told apart by tone, not rules: the header sits on the band and the rows on the sheet. The only lines are the column separators, which you can drag to resize or double-click to reset.</p></div>
+    <div><h2>Arranged in orange</h2><p>Sorting, filtering and grouping each leave a small orange icon in their column's header, so the table shows how it is arranged. Grouping also appears as a grey pill beside the title, with its own key to stop.</p></div>
+    <div><h2>Matches in orange</h2><p>Search matches are solid orange with ink text, the orange of the caret. When nothing matches, the table says so in plain words and offers to clear the search.</p></div>
+  </section>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/fun/ready/assets/ready.js"></script>
+<script>
+'use strict';
+(function () {
+const { $, $$, esc, I, hl, setCbox, toast, openMenu, dayLabel, savedLabel, NOW } = Ready;
+
+/* ---------- data: the SK 4's photos, newest first ---------- */
+const CAMERAS = ['Studio camera', 'Studio camera', 'Phone', 'Studio camera', 'Phone', 'Studio camera', 'Scanner'];
+const mbFor = (cam, i) => Math.round((cam === 'Phone' ? 11.4 + ((i * 7) % 15) / 10 : cam === 'Scanner' ? 31.2 + ((i * 5) % 20) / 10 : 46.8 + ((i * 3) % 22) / 10) * 10) / 10;
+const VERSIONS = (() => {
+  const out = []; let t = new Date(NOW);
+  for (let i = 0; i < 148; i++) {
+    const n = 148 - i, cam = CAMERAS[i % CAMERAS.length];
+    out.push({ id: 'SK4-' + n, ver: n, t: new Date(t), dev: cam, mb: mbFor(cam, i), status: i === 1 ? 'Checking' : 'Approved' });
+    t = new Date(t.getTime() - (3 + ((i * 7) % 11)) * 36e5 - ((i * 13) % 50) * 6e4);
+  }
+  return out;
+})();
+const DEF = { ver: 112, saved: 152, dev: 124, size: 88, status: 126 };
+const T = { sort: { key: 'saved', dir: 'desc' }, groupBy: null, closed: {}, filters: { dev: {}, status: {} }, q: '', sel: {}, per: 10, page: 1,
+  widths: Object.assign({}, DEF), pinned: { 'SK4-142': true }, deleted: {}, fresh: null, pillShown: null };
+
+const COLS = [
+  { k: 'ver', label: 'Photo', min: 104, kind: 'ver' },
+  { k: 'saved', label: 'Saved', min: 120, kind: 'date', group: 'day' },
+  { k: 'dev', label: 'Camera', min: 112, kind: 'text', filter: true, group: 'dev' },
+  { k: 'size', label: 'Size', min: 88, kind: 'num', num: true },
+  { k: 'status', label: 'Status', min: 120, kind: 'text', filter: true, flex: true },
+];
+const SORTL = { ver: ['A to Z', 'Z to A'], text: ['A to Z', 'Z to A'], num: ['Smallest first', 'Largest first'], date: ['Oldest first', 'Newest first'] };
+const statusOf = (r) => (r.status === 'Uploading' ? 'Uploading' : T.pinned[r.id] ? 'Cover' : r.status);
+const valOf = (r, k) => (k === 'status' ? statusOf(r) : k === 'saved' ? r.t.getTime() : k === 'size' ? r.mb : k === 'ver' ? r.ver : r[k]);
+function tableRows() {
+  const q = T.q.trim().toLowerCase();
+  let rows = VERSIONS.filter((r) => !T.deleted[r.id]);
+  rows = rows.filter((r) => {
+    if (q && ![r.id, r.dev, savedLabel(r.t), statusOf(r)].some((s) => s.toLowerCase().includes(q))) return false;
+    if (T.filters.dev[r.dev] || T.filters.status[statusOf(r)]) return false;
+    return true;
+  });
+  const dir = T.sort.dir === 'asc' ? 1 : -1;
+  rows.sort((a, b) => { const x = valOf(a, T.sort.key), y = valOf(b, T.sort.key); return (x < y ? -1 : x > y ? 1 : 0) * dir || b.t - a.t; });
+  return rows;
+}
+const colsTemplate = () => '48px ' + COLS.map((c) => (c.flex ? `minmax(${T.widths[c.k]}px, 1fr)` : T.widths[c.k] + 'px')).join(' ') + ' 48px';
+
+/* ---------- rendering ---------- */
+function renderTable() {
+  const el = $('#vt');
+  el.style.setProperty('--cols', colsTemplate());
+  el.innerHTML = '<div class="bar stone" id="vt-bar"></div><div class="scroller" id="vt-scroll"></div><div class="foot" id="vt-foot"></div>';
+  renderTableBar(); renderTableBody(); renderTableFoot();
+  $('#vt-scroll').addEventListener('scroll', measureTable, { passive: true });
+}
+function renderTableBar() {
+  const el = $('#vt-bar'); if (!el) return;
+  const n = Object.keys(T.sel).length, fresh = T.groupBy && T.groupBy !== T.pillShown; T.pillShown = T.groupBy;
+  const pill = T.groupBy ? `<span class="gpill${fresh ? ' reveal' : ''}">Grouped by ${T.groupBy === 'day' ? 'day' : 'camera'}<button class="gx tip-below" type="button" aria-label="Stop grouping" data-tip="Stop grouping" data-act="ungroup">${I.xs}</button></span>` : '';
+  el.innerHTML = `<div class="btitle"><h2 id="vt-title">Photos</h2>${pill}</div>` + (n
+    ? `<div class="tools swap"><span class="seltext">${n} selected</span><button class="k quiet" type="button" data-act="clearSel">Clear</button><button class="k dark fold" type="button" aria-label="Download" data-act="bulk" data-what="Downloading"><span class="klab">Download</span>${I.dl}</button><button class="k dark" type="button" data-act="bulk" data-what="Editing the records of">Edit record…</button></div>`
+    : `<div class="tools swap"><label class="field search${T.q ? ' has' : ''}"><span class="sr">Search photos</span><input type="text" id="vt-q" placeholder="Search photos" value="${esc(T.q)}" spellcheck="false" autocomplete="off"><button class="fclear" type="button" aria-label="Clear search" data-tip="Clear search" data-act="clearSearch">${I.x}</button><span class="ico">${I.search}</span></label><button class="k dark fold" type="button" aria-label="Export" data-act="export"><span class="klab">Export</span>${I.dl}</button></div>`);
+}
+function headCell(c) {
+  const sorted = T.sort.key === c.k;
+  const filtered = c.filter && Object.values(T.filters[c.k]).some(Boolean);
+  const grouped = c.group && T.groupBy === c.group;
+  const ind = (grouped ? `<span class="ic">${I.group}</span>` : '') + (filtered ? `<span class="ic">${I.filter}</span>` : '') + (sorted ? `<span class="ic sarrow ${T.sort.dir === 'asc' ? 'asc' : ''}">${I.arrow}</span>` : '');
+  return `<div class="td hc" role="columnheader" aria-sort="${sorted ? (T.sort.dir === 'asc' ? 'ascending' : 'descending') : 'none'}">
+    <button class="hl" type="button" data-act="sort" data-k="${c.k}">${c.label}</button><span class="ind">${ind}</span>
+    <button class="hm tip-below" type="button" aria-haspopup="menu" aria-label="${c.label} options" data-tip="Sort and filter" data-act="colMenu" data-k="${c.k}">${I.chevPlain}</button>
+    ${c.flex ? '' : `<span class="sep" role="separator" aria-orientation="vertical" aria-label="Resize ${c.label}" aria-valuenow="${T.widths[c.k]}" aria-valuemin="${c.min}" aria-valuemax="480" tabindex="0" data-k="${c.k}"><i></i></span>`}</div>`;
+}
+function rowHtml(r) {
+  const on = !!T.sel[r.id], st = statusOf(r), q = T.q;
+  const status = st === 'Uploading' ? `<span class="live"><span class="dot"></span>${hl('Uploading', q)}</span>` : hl(st, q);
+  return `<div class="tr row${T.fresh === r.id ? ' fresh' : ''}" role="row" aria-selected="${on}" style="grid-template-columns: var(--cols)" data-id="${r.id}">
+    <div class="td check" role="gridcell"><button class="cbox ${on ? 'on' : ''}" type="button" role="checkbox" aria-checked="${on}" aria-label="Select ${r.id}" data-act="selRow" data-id="${r.id}">${I.ctick}<i></i></button></div>
+    <div class="td" role="gridcell"><span class="ell">${hl(r.id, q)}</span></div><div class="td" role="gridcell"><span class="ell">${hl(savedLabel(r.t), q)}</span></div><div class="td" role="gridcell"><span class="ell">${hl(r.dev, q)}</span></div>
+    <div class="td num" role="gridcell">${r.mb.toFixed(1)}<span class="unit">MB</span></div><div class="td" role="gridcell"><span class="ell">${status}</span></div>
+    <div class="td act" role="gridcell"><button class="kb tip-right" type="button" aria-haspopup="menu" aria-label="Actions for ${r.id}" data-tip="More actions" data-act="rowMenu" data-id="${r.id}">${I.kebab}</button></div></div>`;
+}
+function groupsOf(pageRows) {
+  const idx = {}, groups = [];
+  pageRows.forEach((r) => { const k = T.groupBy === 'day' ? dayLabel(r.t) : r.dev; if (!idx[k]) { idx[k] = { key: k, rows: [] }; groups.push(idx[k]); } idx[k].rows.push(r); });
+  return groups;
+}
+function renderTableBody() {
+  const el = $('#vt-scroll'); if (!el) return;
+  const rows = tableRows();
+  const pages = Math.max(1, Math.ceil(rows.length / T.per)); if (T.page > pages) T.page = pages;
+  const pageRows = rows.slice((T.page - 1) * T.per, T.page * T.per);
+  const ids = rows.map((r) => r.id), nSel = ids.filter((id) => T.sel[id]).length;
+  const allState = nSel === 0 ? '' : nSel === ids.length ? 'on' : 'mixed';
+  const groups = T.groupBy ? groupsOf(pageRows) : [{ key: null, rows: pageRows }];
+  const anyOpen = groups.some((g) => g.key && !T.closed[g.key]);
+  const head = `<div class="tr th" role="row" style="grid-template-columns: var(--cols)">
+      <div class="td check" role="columnheader"><button class="cbox ${allState}" type="button" role="checkbox" aria-checked="${allState === 'on' ? 'true' : allState === 'mixed' ? 'mixed' : 'false'}" aria-label="Select all" data-act="selAll">${I.ctick}<i></i></button></div>
+      ${COLS.map(headCell).join('')}
+      <div class="td act" role="columnheader">${T.groupBy ? `<button class="hx tip-below tip-right" type="button" aria-label="${anyOpen ? 'Collapse all' : 'Expand all'}" data-tip="${anyOpen ? 'Collapse all' : 'Expand all'}" data-act="toggleGroups">${anyOpen ? I.collapse : I.expand}</button>` : '<span class="sr">Actions</span>'}</div></div>`;
+  let body = '';
+  if (!rows.length) {
+    body = T.q
+      ? `<div class="none"><span class="empty-ico">${I.nosearch}</span><div class="ptitle">Nothing matches “${esc(T.q)}”</div><p class="hint">Try a photo number, a camera or a day.</p><button class="k grey" type="button" data-act="clearQ" style="margin-top: 8px">Clear search</button></div>`
+      : `<div class="none"><span class="empty-ico">${I.empty}</span><div class="ptitle">No photos to show</div><p class="hint">Every photo is filtered out. Change the filters to see them again.</p><button class="k grey" type="button" data-act="clearFilters" style="margin-top: 8px">Show all</button></div>`;
+  } else {
+    groups.forEach((g) => {
+      if (g.key) {
+        const open = !T.closed[g.key], n = g.rows.length;
+        body += `<div class="tr grp${open ? ' open' : ''}" role="row" tabindex="0" aria-expanded="${open}" style="grid-template-columns: var(--cols)" data-act="toggleGroup" data-g="${esc(g.key)}">
+          <div class="td gname" role="gridcell"><span class="gin"><span class="gchev">${I.gchev}</span><span>${esc(g.key)}</span></span><span class="gcount">${n} ${n === 1 ? 'photo' : 'photos'}</span></div></div>`;
+        if (open) body += `<div class="gbody" role="rowgroup">${g.rows.map(rowHtml).join('')}</div>`;
+        return;
+      }
+      body += g.rows.map(rowHtml).join('');
+    });
+  }
+  el.innerHTML = `<div class="grid" role="grid" aria-label="Photos" aria-rowcount="${rows.length}">${head}${body}</div>`;
+  if (!rows.length) el.scrollLeft = 0;   // an empty table shows its message, however far the header had been scrolled sideways
+  T.fresh = null;
+  requestAnimationFrame(measureTable);
+}
+function measureTable() {
+  const el = $('#vt-scroll'); if (!el) return;
+  el.classList.toggle('more', el.scrollLeft < el.scrollWidth - el.clientWidth - 1);
+}
+function renderTableFoot() {
+  const el = $('#vt-foot'); if (!el) return;
+  const total = tableRows().length, pages = Math.max(1, Math.ceil(total / T.per));
+  const a = total ? (T.page - 1) * T.per + 1 : 0, b = Math.min(T.page * T.per, total);
+  el.innerHTML = `<div class="tools"><span class="perpage tools"><span>Items per page:</span><button class="k grey drop" type="button" aria-haspopup="menu" aria-label="Items per page" data-act="perMenu">${T.per}${I.chev}</button></span><span>${a}–${b} of ${total} ${total === 1 ? 'photo' : 'photos'}</span></div>
+    <div class="tools"><span class="pagepick tools"><button class="k grey drop" type="button" aria-haspopup="menu" aria-label="Page" data-act="pageMenu">${T.page}${I.chev}</button><span>of ${pages} ${pages === 1 ? 'page' : 'pages'}</span></span>
+      <button class="k grey icon tip-right" type="button" aria-label="Previous page" data-tip="Previous page" data-act="page" data-d="-1"${T.page <= 1 ? ' disabled' : ''}>${I.left}</button>
+      <button class="k grey icon tip-right" type="button" aria-label="Next page" data-tip="Next page" data-act="page" data-d="1"${T.page >= pages ? ' disabled' : ''}>${I.right}</button></div>`;
+}
+function refreshTable(bar = true) { if (bar) renderTableBar(); renderTableBody(); renderTableFoot(); }
+const groupList = () => { const rows = tableRows(); return groupsOf(rows.slice((T.page - 1) * T.per, T.page * T.per)); };
+/* a group opens in place: its chevron turns and its rows settle in; closing takes them away */
+function setGroupOpen(key, open) {
+  T.closed[key] = !open;
+  const grp = $(`#vt-scroll .grp[data-g="${CSS.escape(key)}"]`); if (!grp) return;
+  grp.classList.toggle('open', open); grp.setAttribute('aria-expanded', open);
+  const next = grp.nextElementSibling, has = next && next.classList.contains('gbody');
+  if (open && !has) { const g = groupList().find((x) => x.key === key); g && grp.insertAdjacentHTML('afterend', `<div class="gbody reveal" role="rowgroup">${g.rows.map(rowHtml).join('')}</div>`); }
+  if (!open && has) next.remove();
+}
+function syncGroupsKey() {
+  const anyOpen = $$('#vt-scroll .grp').some((g) => !T.closed[g.dataset.g]), hx = $('#vt-scroll .hx'); if (!hx) return;
+  const l = anyOpen ? 'Collapse all' : 'Expand all'; hx.setAttribute('aria-label', l); hx.dataset.tip = l; hx.innerHTML = anyOpen ? I.collapse : I.expand;
+  requestAnimationFrame(measureTable);
+}
+/* selection changes the checkboxes where they stand, then swaps the title bar's tools */
+function syncSelection() {
+  $$('#vt-scroll .row[data-id]').forEach((row) => { const on = !!T.sel[row.dataset.id]; row.setAttribute('aria-selected', on); setCbox($('.cbox', row), on ? 'on' : ''); });
+  const ids = tableRows().map((r) => r.id), n = ids.filter((id) => T.sel[id]).length;
+  setCbox($('#vt-scroll .th .cbox'), n === 0 ? '' : n === ids.length ? 'on' : 'mixed');
+  renderTableBar();
+}
+const setWidths = () => { $('#vt').style.setProperty('--cols', colsTemplate()); measureTable(); };
+
+/* ---------- actions ---------- */
+Ready.on({
+  sort(el) { const c = COLS.find((x) => x.k === el.dataset.k); T.sort = { key: c.k, dir: T.sort.key === c.k ? (T.sort.dir === 'asc' ? 'desc' : 'asc') : (c.kind === 'text' ? 'asc' : 'desc') }; refreshTable(false); },
+  colMenu(el) {
+    const c = COLS.find((x) => x.k === el.dataset.k);
+    const build = () => {
+      const items = [
+        { label: SORTL[c.kind][0], icon: I.sortUp, tick: T.sort.key === c.k && T.sort.dir === 'asc', run: () => { T.sort = { key: c.k, dir: 'asc' }; refreshTable(false); } },
+        { label: SORTL[c.kind][1], icon: I.arrow, tick: T.sort.key === c.k && T.sort.dir === 'desc', run: () => { T.sort = { key: c.k, dir: 'desc' }; refreshTable(false); } },
+      ];
+      if (c.filter) {
+        const counts = {}; VERSIONS.filter((r) => !T.deleted[r.id]).forEach((r) => { const v = c.k === 'status' ? statusOf(r) : r[c.k]; counts[v] = (counts[v] || 0) + 1; });
+        items.push({ group: 'Show' });
+        Object.keys(counts).sort().forEach((v) => items.push({ label: v, count: counts[v], check: T.filters[c.k][v] ? '' : 'on', keep: true, run: () => { T.filters[c.k][v] = !T.filters[c.k][v]; T.page = 1; refreshTable(false); } }));
+      }
+      items.push({ gap: true });
+      if (c.group) items.push({ label: `Group by ${c.group === 'day' ? 'day' : 'camera'}`, icon: I.group, tick: T.groupBy === c.group, run: () => { T.groupBy = T.groupBy === c.group ? null : c.group; T.closed = {}; refreshTable(true); } });
+      items.push({ label: 'Reset width', icon: I.width, disabled: c.flex, run: () => { T.widths[c.k] = DEF[c.k]; setWidths(); } });
+      return items;
+    };
+    openMenu(el, build(), { align: 'right', width: 248, refresh: build });
+  },
+  ungroup(el) {
+    const pill = el && el.closest('.gpill'), done = () => { T.groupBy = null; T.closed = {}; refreshTable(true); const h = $('#vt-q'); h && h.focus(); };
+    if (pill) { pill.classList.add('out'); setTimeout(done, 150); } else done();
+  },
+  toggleGroup(el) { const g = el.dataset.g; setGroupOpen(g, !!T.closed[g]); syncGroupsKey(); },
+  toggleGroups() { const groups = $$('#vt-scroll .grp').map((g) => g.dataset.g), anyOpen = groups.some((g) => !T.closed[g]); groups.forEach((g) => setGroupOpen(g, !anyOpen)); syncGroupsKey(); },
+  selRow(el) { const id = el.dataset.id; if (T.sel[id]) delete T.sel[id]; else T.sel[id] = true; syncSelection(); },
+  selAll() { const ids = tableRows().map((r) => r.id), every = ids.length && ids.every((id) => T.sel[id]); T.sel = {}; if (!every) ids.forEach((id) => { T.sel[id] = true; }); syncSelection(); },
+  clearSel() { T.sel = {}; syncSelection(); const q = $('#vt-q'); q && q.focus(); },
+  bulk(el) { const n = Object.keys(T.sel).length; toast(`${el.dataset.what} ${n} ${n === 1 ? 'photo' : 'photos'}`); T.sel = {}; syncSelection(); },
+  export() { toast('Exporting the photo list as CSV'); },
+  clearQ() {
+    T.q = ''; T.page = 1;
+    const q = $('#vt-q'); if (q) { q.value = ''; q.closest('.field').classList.remove('has'); } else renderTableBar();
+    renderTableBody(); renderTableFoot(); const f = $('#vt-q'); f && f.focus();
+  },
+  clearFilters() { T.filters = { dev: {}, status: {} }; refreshTable(false); },
+  rowMenu(el) {
+    const id = el.dataset.id, r = VERSIONS.find((x) => x.id === id), row = el.closest('.row');
+    row && row.classList.add('menuopen');
+    openMenu(el, [
+      { label: 'Edit record…', icon: I.rename, run: () => toast(`Editing the record of ${r.id}`) },
+      { label: 'Download', icon: I.dl, run: () => toast(`Downloading ${r.id} · ${r.mb.toFixed(1)} MB`) },
+      { label: T.pinned[id] ? 'Remove as cover' : 'Make cover', icon: I.pin, run: () => { const was = T.pinned[id]; T.pinned = {}; if (!was) T.pinned[id] = true; renderTableBody(); toast(was ? `${r.id} is no longer the cover` : `${r.id} is now the cover`); } },
+      { gap: true },
+      { label: 'Delete photo', icon: I.trash, danger: true, run: () => { T.deleted[id] = true; delete T.sel[id]; refreshTable(true); toast(`${r.id} deleted`, { label: 'Undo', run: () => { delete T.deleted[id]; T.fresh = id; refreshTable(true); } }); } },
+    ], { align: 'right', width: 232, onClose: () => row && row.classList.remove('menuopen') });
+  },
+  perMenu(el) { openMenu(el, [10, 25, 50].map((n) => ({ label: String(n), tick: T.per === n, run: () => { T.per = n; T.page = 1; refreshTable(false); } })), { width: 120 }); },
+  pageMenu(el) { const pages = Math.max(1, Math.ceil(tableRows().length / T.per)); openMenu(el, Array.from({ length: pages }, (_, i) => ({ label: String(i + 1), tick: T.page === i + 1, run: () => { T.page = i + 1; refreshTable(false); } })), { width: 120 }); },
+  page(el) { T.page += +el.dataset.d; refreshTable(false); const k = $(`#vt-foot [data-act="page"][data-d="${el.dataset.d}"]`); (k && !k.disabled ? k : $('#vt-foot [data-act="page"]:not([disabled])'))?.focus(); },
+});
+
+document.addEventListener('input', (e) => {
+  if (e.target.id !== 'vt-q') return;
+  T.q = e.target.value; T.page = 1; renderTableBody(); renderTableFoot();
+});
+document.addEventListener('contextmenu', (e) => {
+  const row = e.target.closest('#vt .row[data-id]'); if (!row) return;
+  e.preventDefault(); const kb = $('.kb', row); kb && Ready.actions.rowMenu(kb);
+});
+document.addEventListener('keydown', (e) => {
+  const t = e.target; if (!t.classList) return;
+  // group rows open and close with Enter or Space
+  if (t.classList.contains('grp') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); Ready.actions.toggleGroup(t); return; }
+  // a focused separator resizes its column with the arrow keys
+  if (t.classList.contains('sep') && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    e.preventDefault(); const k = t.dataset.k, c = COLS.find((x) => x.k === k);
+    T.widths[k] = Math.max(c.min, Math.min(480, T.widths[k] + (e.key === 'ArrowRight' ? 8 : -8))); t.setAttribute('aria-valuenow', T.widths[k]); setWidths();
+  }
+});
+
+/* column resize: drag a separator; the frame's --cols carries the widths */
+let DRAG = null;
+document.addEventListener('pointerdown', (e) => {
+  const sep = e.target.closest('#vt .sep'); if (!sep) return;
+  e.preventDefault();
+  const k = sep.dataset.k;
+  DRAG = { k, x: e.clientX, w: T.widths[k], sep, min: COLS.find((c) => c.k === k).min };
+  sep.classList.add('drag'); sep.setPointerCapture(e.pointerId);
+  const grid = sep.closest('.grid'); if (grid) { DRAG.guide = document.createElement('i'); DRAG.guide.className = 'guide'; grid.appendChild(DRAG.guide); placeGuide(); }
+});
+function placeGuide() {
+  if (!DRAG || !DRAG.guide) return;
+  const grid = DRAG.guide.parentNode, cell = DRAG.sep.parentNode;
+  DRAG.guide.style.left = (cell.getBoundingClientRect().right - grid.getBoundingClientRect().left) + 'px';
+}
+document.addEventListener('pointermove', (e) => {
+  if (!DRAG) return;
+  const w = Math.max(DRAG.min, Math.min(480, Math.round(DRAG.w + e.clientX - DRAG.x)));
+  if (w !== T.widths[DRAG.k]) { T.widths[DRAG.k] = w; DRAG.sep.setAttribute('aria-valuenow', w); setWidths(); placeGuide(); }
+});
+const endDrag = () => { if (!DRAG) return; DRAG.sep.classList.remove('drag'); DRAG.guide && DRAG.guide.remove(); DRAG = null; };
+document.addEventListener('pointerup', endDrag);
+document.addEventListener('pointercancel', endDrag);
+document.addEventListener('dblclick', (e) => {
+  const sep = e.target.closest('#vt .sep'); if (!sep) return;
+  T.widths[sep.dataset.k] = DEF[sep.dataset.k]; sep.setAttribute('aria-valuenow', DEF[sep.dataset.k]); setWidths();
+});
+window.addEventListener('resize', measureTable);
+
+renderTable();
+})();
+</script>
+</body>
+</html>
