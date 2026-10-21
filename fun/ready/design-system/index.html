@@ -8,7 +8,7 @@ title: Ready UI Design System
         <h1>Ready UI Design System</h1>
     </header>
 
-    <link rel="stylesheet" href="/fun/ready/assets/page.css">
+    <link rel="stylesheet" href="/fun/ready/assets/page.css?v={{ site.time | date: '%s' }}">
     <div class="rd-seg" id="rd-view" role="radiogroup" aria-label="View"><i class="ind" aria-hidden="true"></i><button class="sg on" type="button" role="radio" aria-checked="true" data-view="desktop">Desktop</button><button class="sg" type="button" role="radio" aria-checked="false" tabindex="-1" data-view="mobile">Mobile</button></div>
     <div class="rd-stack rd-shots desktop" id="rd-shots">
     <a class="rd-card" href="/fun/ready/table/"><h2 class="rd-title">Photo table</h2><span class="d-pic"><img src="/fun/ready/assets/shots/table-desktop.webp" width="1088" height="664" alt="Photo table, desktop" loading="lazy" decoding="async"></span><span class="m-pic"><img src="/fun/ready/assets/shots/table-mobile.webp" width="390" height="844" alt="Photo table, mobile" loading="lazy" decoding="async"></span></a>
@@ -31,4 +31,4 @@ title: Ready UI Design System
 <nav class="post-nav">
     <a href="/fun/ready/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg><span>Back to Ready</span></a>
 </nav>
-<script src="/fun/ready/assets/page.js" defer></script>
+<script src="/fun/ready/assets/page.js?v={{ site.time | date: '%s' }}" defer></script>

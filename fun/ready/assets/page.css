@@ -1,9 +1,9 @@
 /* Ready cards inside olliegreen.info: the Ready page and the Ready UI Design System page.
    Every rule is scoped to the cards, so the site's header, footer and type stay as they are. */
-@font-face { font-family: 'Ready'; font-weight: 300; font-display: swap; src: url(fonts/Ready-Light-103.woff2) format('woff2'); }
-@font-face { font-family: 'Ready'; font-weight: 350; font-display: swap; src: url(fonts/Ready-Book-103.woff2) format('woff2'); }
-@font-face { font-family: 'Ready'; font-weight: 400; font-display: swap; src: url(fonts/Ready-Regular-103.woff2) format('woff2'); }
-@font-face { font-family: 'Ready'; font-weight: 500; font-display: swap; src: url(fonts/Ready-Medium-103.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 300; font-display: swap; src: url(fonts/Ready-Light-104.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 350; font-display: swap; src: url(fonts/Ready-Book-104.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 400; font-display: swap; src: url(fonts/Ready-Regular-104.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 500; font-display: swap; src: url(fonts/Ready-Medium-104.woff2) format('woff2'); }
 @font-face { font-family: 'Ready Condensed'; font-weight: 300; font-display: swap; src: url(fonts/ReadyCondensed-Light-102.woff2) format('woff2'); }
 @font-face { font-family: 'Ready Condensed'; font-weight: 350; font-display: swap; src: url(fonts/ReadyCondensed-Book-102.woff2) format('woff2'); }
 @font-face { font-family: 'Ready Condensed'; font-weight: 400; font-display: swap; src: url(fonts/ReadyCondensed-Regular-102.woff2) format('woff2'); }
