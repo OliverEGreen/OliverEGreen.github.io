@@ -24,12 +24,13 @@
   }
 
   function report() {
-    const page = document.querySelector('.page'); if (!page) return;
+    const page = document.querySelector('.page'), body = document.body; if (!page) return;
+    // the full height of everything in the frame, so the frame is always as tall as its component and never scrolls
     const send = () => {
-      const h = Math.ceil(page.getBoundingClientRect().bottom + parseFloat(getComputedStyle(document.body).paddingBottom || 0));
+      const h = Math.ceil(Math.max(body.scrollHeight, page.getBoundingClientRect().bottom + parseFloat(getComputedStyle(body).paddingBottom || 0))) + 2;
       window.parent.postMessage({ readyFrameHeight: h }, location.origin);
     };
-    new ResizeObserver(send).observe(page);
+    const ro = new ResizeObserver(send); ro.observe(page); ro.observe(body);
     if (document.fonts) document.fonts.ready.then(send);
     send();
   }

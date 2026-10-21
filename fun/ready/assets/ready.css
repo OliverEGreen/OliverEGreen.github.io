@@ -602,4 +602,5 @@ body { padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-lef
 /* inside the Ready UI Design System page: no page title or back link, and a little less room around */
 .embed .back, .embed .page > header:first-of-type { display: none; }
 .embed, .embed body { background: transparent; }
+html.embed { overflow: hidden; }   /* the frame takes the component's full height, so it never needs to scroll */
 .embed body { padding: 8px; }
