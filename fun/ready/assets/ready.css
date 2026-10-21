@@ -598,3 +598,7 @@ body { padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-lef
 .credits { max-width: 90ch; }
 .credits a.plain { color: inherit; }
 @media (max-width: 760px) { .notes { grid-template-columns: minmax(0, 1fr); } }
+
+/* inside the Ready UI Design System page: no page title or back link, and a little less room around */
+.embed .back, .embed .page > header:first-of-type { display: none; }
+.embed body { padding: 16px; }

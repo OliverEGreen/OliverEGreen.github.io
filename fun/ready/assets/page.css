@@ -113,3 +113,12 @@ article.post .rd-type a.rd-dl:hover { color: #FDFCFA; background: #26231F; }
 article.post .rd-type a.rd-dl:active { background: #1C1A17; transform: translateY(1px); box-shadow: inset 0 2px 3px rgba(0,0,0,.5), inset 0 -1px 0 rgba(255,253,248,.06); }
 article.post .rd-type a.rd-dl:focus-visible { outline: none; box-shadow: var(--halo), inset 0 1px 0 rgba(255,253,248,.16), 1px 1px 1px rgba(40,30,20,.26); }
 article.post .rd-type a.rd-dl svg { flex: none; }
+
+/* the design system page: each component live in a frame. Desktop gives the cards the room a desktop window has;
+   Mobile shows each one at phone width */
+.rd-live { --wide: min(1120px, calc(100vw - 48px)); }
+.rd-live.desktop .rd-card { width: var(--wide); margin-left: calc((100% - var(--wide)) / 2); }
+.rd-live .rd-frame { background: var(--band); }
+.rd-live iframe { display: block; width: 100%; height: 640px; border: 0; background: var(--band); }
+.rd-live.mobile .rd-frame { display: flex; justify-content: center; padding: 8px 16px 24px; }
+.rd-live.mobile iframe { width: min(100%, 390px); border-radius: 12px; box-shadow: var(--sh-panel); }

@@ -28,3 +28,14 @@
   new ResizeObserver(place).observe(seg);
   if (document.fonts) document.fonts.ready.then(place);
 })();
+
+// Ready UI Design System page: each component runs live in a frame, which grows to the component's height
+(() => {
+  const frames = [...document.querySelectorAll('.rd-live iframe')];
+  if (!frames.length) return;
+  addEventListener('message', (e) => {
+    if (e.origin !== location.origin || !e.data || typeof e.data.readyFrameHeight !== 'number') return;
+    const f = frames.find((x) => x.contentWindow === e.source);
+    if (f) f.style.height = Math.max(120, e.data.readyFrameHeight) + 'px';
+  });
+})();
