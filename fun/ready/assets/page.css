@@ -10,7 +10,7 @@
 @font-face { font-family: 'Ready Condensed'; font-weight: 500; font-display: swap; src: url(fonts/ReadyCondensed-Medium-102.woff2) format('woff2'); }
 
 .rd-stack, .rd-seg {
-  --band: #F2F0EB; --sheet: #FDFCFA; --stone: #E4DED5; --ink: #2E2A26; --ink2: #57514B; --quiet: #6F6962;
+  --band: #F2F0EB; --sheet: #FEFDFB; --stone: #E4DED5; --ink: #2E2A26; --ink2: #57514B; --quiet: #6F6962;
   --sh-panel: 1px 1px 1px rgba(60,45,30,.12), 1px 2px 3px -1px rgba(60,45,30,.16);
   --sh-light: inset 0 1px 0 #FFFEFB, inset 0 -1px 0 rgba(90,70,50,.16), 0 1px 0 rgba(90,70,50,.08), 1px 1px 1px rgba(60,45,30,.18), 1px 3px 4px -2px rgba(60,45,30,.26);
   --halo: 0 0 0 3px rgba(90,70,50,.14);
@@ -106,10 +106,10 @@ article.post .rd-card .rd-sub { padding: 2px 16px 12px; font-size: 15px; color: 
 
 /* a download button on each typeface: a dark Ready key */
 article.post .rd-type a.rd-dl { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 40px; margin-top: 8px; padding: 0 16px; border-radius: 3px;
-  font-family: 'Ready', sans-serif; font-weight: 350; font-size: 16px; line-height: 1; color: #FDFCFA; background: #322E2A; background-image: none; text-decoration: none; white-space: nowrap;
+  font-family: 'Ready', sans-serif; font-weight: 350; font-size: 16px; line-height: 1; color: #FEFDFB; background: #322E2A; background-image: none; text-decoration: none; white-space: nowrap;
   box-shadow: inset 0 1px 0 rgba(255,253,248,.16), inset 0 -1px 0 rgba(0,0,0,.36), 0 1px 0 rgba(0,0,0,.10), 1px 1px 1px rgba(40,30,20,.26), 1px 3px 4px -2px rgba(40,30,20,.34);
   transition: background .15s ease, box-shadow .15s ease, transform .12s ease; }
-article.post .rd-type a.rd-dl:hover { color: #FDFCFA; background: #26231F; }
+article.post .rd-type a.rd-dl:hover { color: #FEFDFB; background: #26231F; }
 article.post .rd-type a.rd-dl:active { background: #1C1A17; transform: translateY(1px); box-shadow: inset 0 2px 3px rgba(0,0,0,.5), inset 0 -1px 0 rgba(255,253,248,.06); }
 article.post .rd-type a.rd-dl:focus-visible { outline: none; box-shadow: var(--halo), inset 0 1px 0 rgba(255,253,248,.16), 1px 1px 1px rgba(40,30,20,.26); }
 article.post .rd-type a.rd-dl svg { flex: none; }

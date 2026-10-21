@@ -1,5 +1,5 @@
 /* Ready — the shared stylesheet for the Fun pieces (olliegreen.info/fun/ready/). Tokens and every component, as the Catalogue web app has them.
-   band #F2F0EB · panels #F9F8F5 · sheets #FDFCFA · stone #E4DED5 · keys grey #E9E4DB / dark #322E2A
+   band #F2F0EB · panels #FCFBF9 · sheets #FEFDFB · stone #E4DED5 · keys grey #E9E4DB / dark #322E2A
    ink #2E2A26 / #3A3530 / #57514B · quiet #6F6962 · notes #6F6962 · placeholders #918A81 · icons #8A837B · orange #FF6A2A (on, chosen, live, today, progress, sort/filter/group) · orange text #D2500F · danger text #A3392A
    labels: sentence case, 15 px Book, #57514B · page titles 40 px · bar titles 24 px · scrollbars float, warm stone
    spacing 4 / 8 / 12 / 16 / 24 · controls and rows 40 · bars 64 (keys 12 in, 12 apart) · corners 4, keys and fields 3
@@ -11,7 +11,7 @@
 @font-face { font-family: "Ready Condensed"; font-weight: 300; src: url(fonts/ReadyCondensed-Light-102.woff2) format("woff2"); font-display: block; }
 
 :root {
-  --band: #F2F0EB; --panel: #F9F8F5; --sheet: #FDFCFA; --stone: #E4DED5; --grey: #E9E4DB; --dark: #3A3530; --key-dark: #322E2A;
+  --band: #F2F0EB; --panel: #FCFBF9; --sheet: #FEFDFB; --stone: #E4DED5; --grey: #E9E4DB; --dark: #3A3530; --key-dark: #322E2A;
   --ink: #2E2A26; --ink2: #57514B; --quiet: #6F6962; --note: #6F6962; --placeholder: #918A81; --icon: #8A837B; --orange: #FF6A2A; --danger: #A3392A;
   --sh-panel: 1px 1px 1px rgba(60,45,30,.12), 1px 2px 3px -1px rgba(60,45,30,.16);
   --sh-grey: inset 0 1px 0 rgba(255,253,248,.78), inset 0 -1px 0 rgba(90,70,50,.16), 0 1px 0 rgba(90,70,50,.08), 1px 1px 1px rgba(60,45,30,.18), 1px 3px 4px -2px rgba(60,45,30,.26);   /* keys come out of the page */
