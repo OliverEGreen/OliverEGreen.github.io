@@ -1,49 +1,20 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Keyboard · Ready</title>
-<meta property="og:title" content="Keyboard · Ready">
-<link rel="preload" href="../assets/fonts/Ready-Book-103.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/keyboard.css">
-<style>
-/* Layout: a beige page with the keyboard in its beige case; the keys themselves are in ../assets/keyboard.css */
-@font-face { font-family: 'Ready'; font-weight: 350; font-display: block; src: url(../assets/fonts/Ready-Book-103.woff2) format('woff2'); }
-@font-face { font-family: 'Ready Condensed'; font-weight: 300; font-display: block; src: url(../assets/fonts/ReadyCondensed-Light-102.woff2) format('woff2'); }
-:root {
-  color-scheme: light;
-  --beige: #E6DCCA; --ink: #2E2A26; --ink-2: #57514B; --note: #6F6962; --orange: #FF6A2A;
-  --fast: 120ms ease;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; background: var(--beige); }
-body { color: var(--ink); font-family: 'Ready', sans-serif; font-weight: 350; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased;
-  padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-::selection { background: var(--orange); color: var(--ink); }
-.page { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
-.back { align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; height: 40px; padding: 0 12px 0 8px; margin-left: -8px; border-radius: 3px; color: var(--ink-2); text-decoration: none; transition: background var(--fast), color var(--fast); }
-.back:hover { background: #DDD2BE; color: var(--ink); }
-.back:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(90,70,50,.14); }
-h1 { margin: 0; font-weight: 350; font-size: 40px; line-height: 1.1; text-wrap: balance; }
+---
+layout: default
+title: Keyboard
+---
+<article class="post project-page">
+    <header>
+        <p class="meta"><span class="cv-year">2026</span></p>
+        <h1>Keyboard</h1>
+    </header>
 
-.stage { padding-top: 8px; }
-</style>
-</head>
-<body>
-<div class="page">
-  <a class="back" href="/fun/ready/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Ready</a>
-  <header>
-    <h1>Keyboard</h1>
-  </header>
+    <link rel="stylesheet" href="/fun/ready/assets/page.css">
+    <link rel="stylesheet" href="/fun/ready/assets/keyboard.css">
+    <div class="rd-kb"><div class="kbwrap" id="kbwrap"></div></div>
+</article>
 
-  <section class="stage" aria-label="Keyboard">
-    <div class="kbwrap" id="kbwrap"></div>
-  </section>
-
-</div>
-
-<script src="../assets/keyboard.js"></script>
-<script>ReadyKeyboard.mount(document.getElementById('kbwrap'));</script>
-</body>
-</html>
+<nav class="post-nav">
+    <a href="/fun/ready/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg><span>Back to Ready</span></a>
+</nav>
+<script src="/fun/ready/assets/keyboard.js" defer></script>
+<script src="/fun/ready/assets/keyboard-page.js" defer></script>

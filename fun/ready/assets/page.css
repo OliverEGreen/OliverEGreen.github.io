@@ -100,3 +100,16 @@ article.post p.rd-credits { margin: 0 0 20px; font-family: var(--sans, sans-seri
 article.post .rd-card .rd-title.has-sub { padding-bottom: 0; }
 article.post .rd-card .rd-sub { padding: 2px 16px 12px; font-size: 15px; color: var(--quiet); }
 .rd-shots .d-pic { display: block; }
+
+/* the keyboard page: the keyboard under the title, its legends in Ready */
+.rd-kb { margin: 8px 0 24px; font-family: 'Ready', sans-serif; font-weight: 350; -webkit-font-smoothing: antialiased; }
+
+/* a download button on each typeface: a dark Ready key */
+article.post .rd-type a.rd-dl { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 40px; margin-top: 8px; padding: 0 16px; border-radius: 3px;
+  font-family: 'Ready', sans-serif; font-weight: 350; font-size: 16px; line-height: 1; color: #FDFCFA; background: #322E2A; background-image: none; text-decoration: none; white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255,253,248,.16), inset 0 -1px 0 rgba(0,0,0,.36), 0 1px 0 rgba(0,0,0,.10), 1px 1px 1px rgba(40,30,20,.26), 1px 3px 4px -2px rgba(40,30,20,.34);
+  transition: background .15s ease, box-shadow .15s ease, transform .12s ease; }
+article.post .rd-type a.rd-dl:hover { color: #FDFCFA; background: #26231F; }
+article.post .rd-type a.rd-dl:active { background: #1C1A17; transform: translateY(1px); box-shadow: inset 0 2px 3px rgba(0,0,0,.5), inset 0 -1px 0 rgba(255,253,248,.06); }
+article.post .rd-type a.rd-dl:focus-visible { outline: none; box-shadow: var(--halo), inset 0 1px 0 rgba(255,253,248,.16), 1px 1px 1px rgba(40,30,20,.26); }
+article.post .rd-type a.rd-dl svg { flex: none; }
