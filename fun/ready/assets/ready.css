@@ -7,8 +7,8 @@
    motion: colour 120 ms · small moves 220 ms with a slight overshoot · indicators 380 ms · reveals 180 ms · progress 300 ms
    tooltips after 2 s, with tails · menus and dialogs are the only lifted surfaces */
 
-@font-face { font-family: "Ready"; font-weight: 350; src: url(fonts/Ready-Book-102.woff2) format("woff2"); font-display: block; }
-@font-face { font-family: "Ready Condensed"; font-weight: 300; src: url(fonts/ReadyCondensed-Light-101.woff2) format("woff2"); font-display: block; }
+@font-face { font-family: "Ready"; font-weight: 350; src: url(fonts/Ready-Book-103.woff2) format("woff2"); font-display: block; }
+@font-face { font-family: "Ready Condensed"; font-weight: 300; src: url(fonts/ReadyCondensed-Light-102.woff2) format("woff2"); font-display: block; }
 
 :root {
   --band: #F2F0EB; --panel: #F9F8F5; --sheet: #FDFCFA; --stone: #E4DED5; --grey: #E9E4DB; --dark: #3A3530; --key-dark: #322E2A;
