@@ -1,0 +1,88 @@
+/* Ready cards inside olliegreen.info: the Ready page and the Ready UI Design System page.
+   Every rule is scoped to the cards, so the site's header, footer and type stay as they are. */
+@font-face { font-family: 'Ready'; font-weight: 300; font-display: swap; src: url(fonts/Ready-Light-102.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 350; font-display: swap; src: url(fonts/Ready-Book-102.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 400; font-display: swap; src: url(fonts/Ready-Regular-102.woff2) format('woff2'); }
+@font-face { font-family: 'Ready'; font-weight: 500; font-display: swap; src: url(fonts/Ready-Medium-102.woff2) format('woff2'); }
+@font-face { font-family: 'Ready Condensed'; font-weight: 300; font-display: swap; src: url(fonts/ReadyCondensed-Light-101.woff2) format('woff2'); }
+@font-face { font-family: 'Ready Condensed'; font-weight: 350; font-display: swap; src: url(fonts/ReadyCondensed-Book-101.woff2) format('woff2'); }
+@font-face { font-family: 'Ready Condensed'; font-weight: 400; font-display: swap; src: url(fonts/ReadyCondensed-Regular-101.woff2) format('woff2'); }
+@font-face { font-family: 'Ready Condensed'; font-weight: 500; font-display: swap; src: url(fonts/ReadyCondensed-Medium-101.woff2) format('woff2'); }
+
+.rd-stack, .rd-seg {
+  --band: #F2F0EB; --sheet: #FDFCFA; --stone: #E4DED5; --ink: #2E2A26; --ink2: #57514B; --quiet: #6F6962;
+  --sh-panel: 1px 1px 1px rgba(60,45,30,.12), 1px 2px 3px -1px rgba(60,45,30,.16);
+  --sh-light: inset 0 1px 0 #FFFEFB, inset 0 -1px 0 rgba(90,70,50,.16), 0 1px 0 rgba(90,70,50,.08), 1px 1px 1px rgba(60,45,30,.18), 1px 3px 4px -2px rgba(60,45,30,.26);
+  --halo: 0 0 0 3px rgba(90,70,50,.14);
+  --fast: 120ms ease; --move: 220ms cubic-bezier(.3, 1.35, .55, 1); --slide: 380ms cubic-bezier(.3, 1.35, .55, 1);
+}
+
+/* the stack: one card per row */
+.rd-stack { display: flex; flex-direction: column; gap: 24px; margin: 0 0 32px; font-family: 'Ready', sans-serif; font-weight: 350; font-size: 16px; line-height: 1.5; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+/* a Ready card: a light sheet on the page, its title at the top */
+article.post .rd-card { display: flex; flex-direction: column; min-width: 0; border-radius: 4px; overflow: hidden; background: var(--sheet); box-shadow: var(--sh-panel);
+  color: var(--ink); text-decoration: none; background-image: none; transition: background var(--fast), box-shadow var(--move), transform var(--move); }
+article.post a.rd-card:hover { color: var(--ink); background-color: #FFFEFC; transform: translateY(-1px);
+  box-shadow: 1px 1px 1px rgba(60,45,30,.12), 1px 4px 8px -3px rgba(60,45,30,.22); }
+article.post a.rd-card:active { transform: none; }
+article.post a.rd-card:focus-visible { outline: none; box-shadow: var(--sh-panel), var(--halo); }
+article.post .rd-card .rd-title { margin: 0; padding: 16px 16px 12px; font-family: 'Ready', sans-serif; font-weight: 350; font-size: 24px; line-height: 1.25; letter-spacing: 0; color: var(--ink); }
+article.post .rd-card img { display: block; width: 100%; max-width: none; height: auto; margin: 0; border: 0; border-radius: 0; background: none; }
+article.post .rd-card p { margin: 0; }
+.rd-label { font-size: 15px; color: var(--ink2); }
+.rd-body { display: flex; flex-direction: column; gap: 16px; padding: 0 16px 16px; }
+
+/* Introduction & Inspiration: the designs Ready looks to */
+.rd-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 8px; }
+article.post .rd-photos figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+article.post .rd-photos img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; background: var(--stone); }
+@media (max-width: 560px) { .rd-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* the typeface: each family in its own weights */
+.rd-type { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 3px; background: var(--band); container-type: inline-size; }
+.rd-type .fam { font-size: clamp(32px, 9cqw, 64px); line-height: 1.05; color: var(--ink); }
+.rd-type .wts { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: clamp(16px, 3.4cqw, 22px); color: var(--ink); }
+.rd-type .set { font-size: clamp(14px, 2.9cqw, 19px); line-height: 1.4; color: var(--ink2); overflow-wrap: anywhere; }
+.rd-type.cond, .rd-type.cond .fam, .rd-type.cond .wts, .rd-type.cond .set { font-family: 'Ready Condensed', sans-serif; }
+.rd-type .w3 { font-weight: 300; } .rd-type .w35 { font-weight: 350; } .rd-type .w4 { font-weight: 400; } .rd-type .w5 { font-weight: 500; }
+
+/* a picture inside a card that opens something of its own */
+article.post .rd-link { display: flex; flex-direction: column; gap: 8px; color: var(--ink2); text-decoration: none; background-image: none; }
+article.post .rd-link:hover { color: var(--ink); background-size: 0 0; }
+article.post .rd-link .rd-pic { display: block; overflow: hidden; border-radius: 3px; box-shadow: var(--sh-panel); transition: box-shadow var(--move), transform var(--move); }
+article.post .rd-link:hover .rd-pic { transform: translateY(-1px); box-shadow: 1px 1px 1px rgba(60,45,30,.12), 1px 4px 8px -3px rgba(60,45,30,.22); }
+article.post .rd-link:focus-visible { outline: none; }
+article.post .rd-link:focus-visible .rd-pic { box-shadow: var(--sh-panel), var(--halo); }
+
+/* Ready UI Design System on the Ready page: the six mockups at a glance */
+.rd-thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+article.post .rd-thumbs img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; border-radius: 3px; box-shadow: var(--sh-panel); background: var(--band); }
+@media (max-width: 560px) { .rd-thumbs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* the design system page: Desktop or Mobile */
+.rd-seg { position: relative; display: inline-flex; gap: 4px; padding: 4px; margin: 0 0 24px; border-radius: 4px; background: var(--stone);
+  box-shadow: inset 0 1px 2px rgba(60,45,30,.2), inset 0 2px 4px -2px rgba(60,45,30,.12), 0 1px 0 rgba(255,253,248,.7); font-family: 'Ready', sans-serif; font-weight: 350; font-size: 16px; }
+.rd-seg .sg { position: relative; z-index: 1; height: 40px; padding: 0 16px; border: 0; border-radius: 3px; background: transparent; color: var(--ink2); font: inherit; cursor: pointer; transition: color var(--fast), background var(--fast); }
+.rd-seg .sg:hover { color: var(--ink); background: rgba(253,252,250,.45); }
+.rd-seg .sg.on, .rd-seg .sg.on:hover { color: #D2500F; background: transparent; }
+.rd-seg .sg:focus-visible { outline: none; box-shadow: var(--halo); }
+.rd-seg .ind { position: absolute; left: 0; top: 4px; height: 40px; width: 0; border-radius: 3px; background: var(--sheet); box-shadow: var(--sh-light); opacity: 0; pointer-events: none;
+  transition: transform var(--slide), width var(--slide); }
+.rd-shots .m-pic { display: none; }
+.rd-shots.mobile .d-pic { display: none; }
+.rd-shots.mobile .m-pic { display: flex; justify-content: center; padding: 8px 16px 24px; background: var(--band); }
+article.post .rd-shots .m-pic img { width: min(100%, 300px); border-radius: 12px; box-shadow: var(--sh-panel); }
+
+/* the photo credits the licences ask for */
+article.post p.rd-credits { margin: 0 0 20px; font-family: var(--sans, sans-serif); font-size: 13px; line-height: 1.5; color: var(--ink-faint, #8A8271); }
+
+@media (prefers-reduced-motion: reduce) {
+  article.post .rd-card, article.post .rd-link .rd-pic, .rd-seg .ind { transition: none; }
+  article.post a.rd-card:hover, article.post .rd-link:hover .rd-pic { transform: none; }
+}
+
+/* card titles with a second line, and the pictures on the design system page */
+article.post .rd-card .rd-title.has-sub { padding-bottom: 0; }
+article.post .rd-card .rd-sub { padding: 2px 16px 12px; font-size: 15px; color: var(--quiet); }
+.rd-shots .d-pic { display: block; }

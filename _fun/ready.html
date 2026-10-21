@@ -5,83 +5,46 @@ start: 2026
 kicker: A Rams-inspired design system to evoke feels of the vintage computer era.
 order: 1
 image: /fun/ready/assets/card.jpg
-layout: none
 ---
-{% raw %}<!doctype html>
-<html lang="en-GB">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ready · Ollie Green</title>
-<meta property="og:title" content="Ready">
-<meta property="og:image" content="https://olliegreen.info/fun/ready/assets/card.jpg">
-<link rel="preload" href="/fun/ready/assets/fonts/Ready-Book-102.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/fun/ready/assets/ready.css">
-<style>
-/* Ready: screenshots of each piece, desktop or mobile; each opens the live piece */
-.page { max-width: 1200px; }
-.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.bar h1 { font-size: 40px; line-height: 1.1; color: var(--ink); }
-.shots { display: grid; gap: 32px 24px; }
-.shots.desktop { grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
-.shots.mobile { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
-@media (max-width: 520px) { .shots.mobile { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; } }
-.shot { display: flex; flex-direction: column; gap: 8px; min-width: 0; color: var(--ink2); font-size: 15px; text-decoration: none; transition: color var(--fast); }
-.shot .pic { display: block; overflow: hidden; border-radius: 4px; background: var(--panel); box-shadow: var(--sh-light); transition: transform var(--move), box-shadow var(--move); }
-.shots.mobile .pic { border-radius: 12px; }
-.shot img { display: block; width: 100%; height: auto; }
-.shots.desktop .m, .shots.mobile .d { display: none; }
-.shot:hover { color: var(--ink); }
-.shot:hover .pic { transform: translateY(-2px); box-shadow: inset 0 1px 0 #FFFEFB, 0 1px 0 rgba(90,70,50,.08), 1px 2px 2px rgba(60,45,30,.16), 2px 8px 16px -6px rgba(60,45,30,.3); }
-.shot:active .pic { transform: translateY(0); }
-.shot:focus-visible { outline: none; }
-.shot:focus-visible .pic { box-shadow: var(--sh-light), var(--halo); }
-@media (prefers-reduced-motion: reduce) { .shot .pic { transition: box-shadow var(--fast); } .shot:hover .pic { transform: none; } }
-</style>
-</head>
-<body>
-<div class="page">
-  <a class="back" href="/fun/"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"></path></svg>Fun</a>
-  <header class="bar">
-    <h1>Ready</h1>
-    <div class="seg slide" id="view" role="radiogroup" aria-label="View"><i class="segind" aria-hidden="true"></i><button class="sg on" type="button" role="radio" aria-checked="true" data-view="desktop">Desktop</button><button class="sg" type="button" role="radio" aria-checked="false" data-view="mobile">Mobile</button></div>
-  </header>
-  <main>
-    <div class="shots desktop" id="shots">
-      <a class="shot" href="/fun/ready/table/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/table-desktop.webp" width="1280" height="800" alt="Photo table, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/table-mobile.webp" width="390" height="844" alt="Photo table, mobile" loading="lazy" decoding="async"></span><span class="nm">Photo table</span></a>
-      <a class="shot" href="/fun/ready/library/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/library-desktop.webp" width="1280" height="800" alt="Photo library, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/library-mobile.webp" width="390" height="844" alt="Photo library, mobile" loading="lazy" decoding="async"></span><span class="nm">Photo library</span></a>
-      <a class="shot" href="/fun/ready/gallery/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/gallery-desktop.webp" width="1280" height="800" alt="Design gallery, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/gallery-mobile.webp" width="390" height="844" alt="Design gallery, mobile" loading="lazy" decoding="async"></span><span class="nm">Design gallery</span></a>
-      <a class="shot" href="/fun/ready/controls/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/controls-desktop.webp" width="1280" height="800" alt="Control panel, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/controls-mobile.webp" width="390" height="844" alt="Control panel, mobile" loading="lazy" decoding="async"></span><span class="nm">Control panel</span></a>
-      <a class="shot" href="/fun/ready/census/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/census-desktop.webp" width="1280" height="800" alt="Collector census, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/census-mobile.webp" width="390" height="844" alt="Collector census, mobile" loading="lazy" decoding="async"></span><span class="nm">Collector census</span></a>
-      <a class="shot" href="/fun/ready/palette/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/palette-desktop.webp" width="1280" height="800" alt="Command palette, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/palette-mobile.webp" width="390" height="844" alt="Command palette, mobile" loading="lazy" decoding="async"></span><span class="nm">Command palette</span></a>
-      <a class="shot" href="/fun/ready/keyboard/"><span class="pic"><img class="d" src="/fun/ready/assets/shots/keyboard-desktop.webp" width="1280" height="800" alt="Keyboard, desktop" loading="lazy" decoding="async"><img class="m" src="/fun/ready/assets/shots/keyboard-mobile.webp" width="390" height="844" alt="Keyboard, mobile" loading="lazy" decoding="async"></span><span class="nm">Keyboard</span></a>
+<link rel="stylesheet" href="/fun/ready/assets/page.css">
+
+<div class="rd-stack">
+  <section class="rd-card" aria-labelledby="rd-intro">
+    <h1 class="rd-title" id="rd-intro">Introduction &amp; Inspiration</h1>
+    <div class="rd-body">
+      <div class="rd-photos">
+        <figure><img src="/fun/ready/assets/photos/sk4.jpg" width="800" height="600" alt="SK 4" loading="lazy" decoding="async"><span class="rd-label">SK 4</span></figure>
+        <figure><img src="/fun/ready/assets/photos/t52.jpg" width="800" height="533" alt="T 52" loading="lazy" decoding="async"><span class="rd-label">T 52</span></figure>
+        <figure><img src="/fun/ready/assets/photos/et66.jpg" width="609" height="900" alt="ET 66" loading="lazy" decoding="async" style="object-position: center 28%"><span class="rd-label">ET 66</span></figure>
+        <figure><img src="/fun/ready/assets/photos/tp1.jpg" width="747" height="900" alt="TP 1" loading="lazy" decoding="async" style="object-position: center 40%"><span class="rd-label">TP 1</span></figure>
+        <figure><img src="/fun/ready/assets/photos/606.jpg" width="800" height="587" alt="606" loading="lazy" decoding="async"><span class="rd-label">606</span></figure>
+        <figure><img src="/fun/ready/assets/photos/t1000.jpg" width="800" height="632" alt="T 1000" loading="lazy" decoding="async"><span class="rd-label">T 1000</span></figure>
+      </div>
     </div>
-  </main>
-  <p class="credits hint">Photos from Wikimedia Commons, cropped and resized: <a class="plain" href="https://commons.wikimedia.org/wiki/File:Braun_SK_4.1.jpg">SK 4</a> by With Associates, <a class="plain" href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license">CC BY-SA 2.0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:DieterRamsTP1Perspective.jpg">TP 1</a> by PeterAjtony, <a class="plain" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:606-Universal-Shelving-System.jpg">606</a> by Vitsoe, <a class="plain" href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY-SA 3.0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:Braun_T_52_radio.jpg">T 52</a> by Kaldari, <a class="plain" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:Braun_T1000_-_Design_Museum,_Kensington_-_London_-_DSC01598.jpg">T 1000</a> by Daderot, <a class="plain" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:1987_Braun_calculator_ET66_by_Dieter_Rams_(13964223413).jpg">ET 66</a> by Pinot Dita, <a class="plain" href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license">CC BY-SA 2.0</a>.</p>
+  </section>
+
+  <section class="rd-card" aria-labelledby="rd-font">
+    <h1 class="rd-title" id="rd-font">Ready custom font and vintage keyboard</h1>
+    <div class="rd-body">
+      <div class="rd-type"><div class="fam w35">Ready</div><div class="wts"><span class="w3">Light</span><span class="w35">Book</span><span class="w4">Regular</span><span class="w5">Medium</span></div><div class="set w35">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 &amp; @ # % ? ! ( ) / + = £</div></div>
+      <div class="rd-type cond"><div class="fam w35">Ready Condensed</div><div class="wts"><span class="w3">Light</span><span class="w35">Book</span><span class="w4">Regular</span><span class="w5">Medium</span></div><div class="set w35">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 &amp; @ # % ? ! ( ) / + = £</div></div>
+      <a class="rd-link" href="/fun/ready/keyboard/"><span class="rd-label">Keyboard</span><span class="rd-pic"><img src="/fun/ready/assets/card.jpg" width="1200" height="630" alt="Keyboard" loading="lazy" decoding="async"></span></a>
+    </div>
+  </section>
+
+  <a class="rd-card" href="/fun/ready/design-system/" aria-labelledby="rd-ui">
+    <h1 class="rd-title" id="rd-ui">Ready UI Design System</h1>
+    <div class="rd-body">
+      <div class="rd-thumbs">
+        <img src="/fun/ready/assets/shots/table-desktop.webp" width="1088" height="664" alt="" loading="lazy" decoding="async">
+        <img src="/fun/ready/assets/shots/library-desktop.webp" width="1088" height="800" alt="" loading="lazy" decoding="async">
+        <img src="/fun/ready/assets/shots/gallery-desktop.webp" width="1088" height="800" alt="" loading="lazy" decoding="async">
+        <img src="/fun/ready/assets/shots/controls-desktop.webp" width="1088" height="800" alt="" loading="lazy" decoding="async">
+        <img src="/fun/ready/assets/shots/census-desktop.webp" width="1088" height="800" alt="" loading="lazy" decoding="async">
+        <img src="/fun/ready/assets/shots/palette-desktop.webp" width="1088" height="800" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </a>
 </div>
-<div class="toasts" id="toasts" aria-live="polite"></div>
-<script src="/fun/ready/assets/ready.js"></script>
-<script>
-(() => {
-  const seg = document.getElementById('view'), shots = document.getElementById('shots'), btns = [...seg.querySelectorAll('.sg')];
-  function show(view, keep) {
-    btns.forEach((b) => { const on = b.dataset.view === view; b.classList.toggle('on', on); b.setAttribute('aria-checked', on); b.tabIndex = on ? 0 : -1; });
-    shots.className = 'shots ' + view;
-    if (window.Ready) Ready.syncTabs(seg);
-    if (keep) try { localStorage.setItem('ready-view', view); } catch (e) { /* private window */ }
-  }
-  seg.addEventListener('click', (e) => { const b = e.target.closest('.sg'); if (b) show(b.dataset.view, true); });
-  seg.addEventListener('keydown', (e) => {
-    if (!/^Arrow(Left|Right|Up|Down)$/.test(e.key)) return;
-    e.preventDefault(); const i = btns.findIndex((b) => b.classList.contains('on')), n = btns[(i + 1) % 2];
-    show(n.dataset.view, true); n.focus();
-  });
-  let saved = null; try { saved = localStorage.getItem('ready-view'); } catch (e) { /* private window */ }
-  show(saved === 'mobile' ? 'mobile' : 'desktop', false);
-  new ResizeObserver(() => window.Ready && Ready.syncTabs(seg)).observe(seg);
-  if (document.fonts) document.fonts.ready.then(() => window.Ready && Ready.syncTabs(seg));
-})();
-</script>
-</body>
-</html>
-{% endraw %}
+
+<p class="rd-credits">Photos from Wikimedia Commons, cropped and resized: <a class="plain" href="https://commons.wikimedia.org/wiki/File:Braun_SK_4.1.jpg">SK 4</a> by With Associates, <a class="plain" href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license">CC BY-SA 2.0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:DieterRamsTP1Perspective.jpg">TP 1</a> by PeterAjtony, <a class="plain" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:606-Universal-Shelving-System.jpg">606</a> by Vitsoe, <a class="plain" href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY-SA 3.0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:Braun_T_52_radio.jpg">T 52</a> by Kaldari, <a class="plain" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:Braun_T1000_-_Design_Museum,_Kensington_-_London_-_DSC01598.jpg">T 1000</a> by Daderot, <a class="plain" href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>; <a class="plain" href="https://commons.wikimedia.org/wiki/File:1987_Braun_calculator_ET66_by_Dieter_Rams_(13964223413).jpg">ET 66</a> by Pinot Dita, <a class="plain" href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license">CC BY-SA 2.0</a>.</p>
