@@ -298,7 +298,7 @@ button.field { cursor: pointer; }
 .th { --rb: var(--band); }
 .td { position: relative; height: 40px; padding: 0 8px; display: flex; align-items: center; white-space: nowrap; min-width: 0; }
 .td.num { justify-content: flex-end; }
-.td.check { justify-content: center; padding: 0; position: sticky; left: 0; z-index: 2; background: var(--rb); }
+.td.check { justify-content: flex-start; padding: 0 0 0 8px; position: sticky; left: 0; z-index: 2; background: var(--rb); }   /* the box lines up with the group chevrons */
 .td.act { position: sticky; right: 0; justify-content: center; padding: 0; background: var(--rb); box-shadow: 4px 0 0 var(--rb); }   /* the shadow seals the hairline to its right */
 .th .td.act, .th .td.check { z-index: 4; }
 .row .td.act:hover, .row .td.act:focus-within { z-index: 6; }   /* a hovered kebab rises above the pinned header cell, so its tooltip is never covered */
