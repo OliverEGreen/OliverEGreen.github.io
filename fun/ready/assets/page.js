@@ -29,13 +29,16 @@
   if (document.fonts) document.fonts.ready.then(place);
 })();
 
-// Ready UI Design System page: each component runs live in a frame, which grows to the component's height
+// Ready UI Design System page: each component runs live in a frame, scaled to the column (--s), as tall as the component
 (() => {
-  const frames = [...document.querySelectorAll('.rd-live iframe')];
-  if (!frames.length) return;
+  const box = document.querySelector('.rd-live'); if (!box) return;
+  const frames = [...box.querySelectorAll('iframe')], heights = new Map();
+  const scale = () => parseFloat(getComputedStyle(box).getPropertyValue('--s')) || 1;
+  const fit = (f) => { const h = heights.get(f); if (!h) return; f.style.height = h + 'px'; f.parentElement.style.height = Math.ceil(h * scale()) + 'px'; };
   addEventListener('message', (e) => {
     if (e.origin !== location.origin || !e.data || typeof e.data.readyFrameHeight !== 'number') return;
-    const f = frames.find((x) => x.contentWindow === e.source);
-    if (f) f.style.height = Math.max(120, e.data.readyFrameHeight) + 'px';
+    const f = frames.find((x) => x.contentWindow === e.source); if (!f) return;
+    heights.set(f, Math.max(120, e.data.readyFrameHeight)); fit(f);
   });
+  addEventListener('resize', () => frames.forEach(fit));
 })();
