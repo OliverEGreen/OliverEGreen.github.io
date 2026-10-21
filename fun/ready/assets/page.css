@@ -122,3 +122,8 @@ article.post .rd-type a.rd-dl svg { flex: none; }
 .rd-live.mobile .rd-frame { width: min(100% + 12px, 390px * var(--s) + 12px); margin: 0 auto; }
 .rd-live iframe { display: block; width: calc(100% / var(--s)); height: 640px; border: 0; background: transparent; color-scheme: normal;
   transform: scale(var(--s)); transform-origin: 0 0; }
+
+/* the design system page is on Ready's band (#F2F0EB), the page colour every Ready panel is drawn for */
+body:has(.rd-live) { background-color: #F2F0EB; }
+.page:has(.rd-live) { background: #F2F0EB; }
+.page:has(.rd-live)::before { display: none; }
