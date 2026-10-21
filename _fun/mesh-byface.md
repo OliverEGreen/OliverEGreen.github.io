@@ -1,6 +1,7 @@
 ---
 title: Mesh.ByFace
 year: 2019
+start: 2019
 kicker: Turning Dynamo into a selfie machine, with the Hackstreet Boys
 order: 2
 image: /assets/images/projects/mesh-byface.jpg

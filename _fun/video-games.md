@@ -1,6 +1,7 @@
 ---
 title: Video Games Design
 year: 2005 – 2008
+start: 2005
 kicker: Flash games sold to American & Canadian gaming companies
 order: 3
 image: /assets/images/projects/flash-games.jpg
