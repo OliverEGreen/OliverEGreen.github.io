@@ -603,4 +603,3 @@ body { padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-lef
 .embed .back, .embed .page > header:first-of-type { display: none; }
 .embed, .embed body { background: transparent; }
 .embed body { padding: 8px; }
-.embed .sum { position: static; }   /* the frame never scrolls, so the control panel's summary sits level with the controls */

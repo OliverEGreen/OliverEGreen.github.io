@@ -52,8 +52,8 @@
 /* radio tiles keep to one 40 px row while they fit */
 .rtile .rl { min-width: 0; }
 
-/* the summary: sticky beside the controls; the words that just changed show in orange for a moment */
-.sum { position: sticky; top: 24px; align-self: start; display: flex; flex-direction: column; }
+/* the summary beside the controls, level with them; the words that just changed show in orange for a moment */
+.sum { align-self: start; display: flex; flex-direction: column; }
 .sumfacts { margin: 24px 0 0; display: flex; flex-direction: column; gap: 8px; }
 .sumfacts > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
 .sumfacts dd { margin: 0; color: var(--ink); text-align: right; }
@@ -63,9 +63,6 @@
 @keyframes said { 0%, 45% { color: #D2500F; } 100% { color: var(--ink); } }
 .savedline { margin-top: 24px; }
 
-@media (max-width: 960px) {
-  .sum { position: static; }
-}
 @media (max-width: 520px) {
   .cp .seg.slide { display: flex; width: 100%; align-self: stretch; }
   .cp .seg.slide .sg { flex: 1 1 0; min-width: 0; padding: 0 8px; }

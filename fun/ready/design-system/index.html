@@ -11,9 +11,9 @@ title: Ready UI Design System
     <link rel="stylesheet" href="/fun/ready/assets/page.css?v={{ site.time | date: '%s' }}">
     <div class="rd-seg" id="rd-view" role="radiogroup" aria-label="View"><i class="ind" aria-hidden="true"></i><button class="sg on" type="button" role="radio" aria-checked="true" data-view="desktop">Desktop</button><button class="sg" type="button" role="radio" aria-checked="false" tabindex="-1" data-view="mobile">Mobile</button></div>
     <div class="rd-stack rd-live desktop" id="rd-shots">
-    <div class="rd-frame"><iframe src="/fun/ready/controls/" title="Control panel"></iframe></div>
-    <div class="rd-frame"><iframe src="/fun/ready/census/" title="Collector census" loading="lazy"></iframe></div>
-    <div class="rd-frame"><iframe src="/fun/ready/table/?state=grouped-day" title="Photo table" loading="lazy"></iframe></div>
+    <div class="rd-frame"><iframe src="/fun/ready/controls/?v={{ site.time | date: '%s' }}" title="Control panel"></iframe></div>
+    <div class="rd-frame"><iframe src="/fun/ready/census/?v={{ site.time | date: '%s' }}" title="Collector census" loading="lazy"></iframe></div>
+    <div class="rd-frame"><iframe src="/fun/ready/table/?state=grouped-day&amp;v={{ site.time | date: '%s' }}" title="Photo table" loading="lazy"></iframe></div>
     </div>
 </article>
 
