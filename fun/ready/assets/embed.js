@@ -17,7 +17,11 @@
       head.click(); await wait(60);
       const row = [...document.querySelectorAll('.mrow')].find((r) => r.textContent.trim().startsWith('Group by day'));
       if (row) { row.click(); await wait(60); }
-      document.querySelectorAll('*').forEach((e) => { if (e.scrollLeft) e.scrollLeft = 0; });
+      // start at the left edge, even if the table scrolls itself towards the grouped column; until the first touch
+      let held = true; const stop = () => { held = false; };
+      ['pointerdown', 'wheel', 'touchstart', 'keydown'].forEach((t) => addEventListener(t, stop, { once: true, passive: true, capture: true }));
+      const t0 = performance.now(), home = () => { if (!held) return; document.querySelectorAll('*').forEach((e) => { if (e.scrollLeft) e.scrollLeft = 0; }); if (performance.now() - t0 < 1500) requestAnimationFrame(home); };
+      home();
     } finally {
       HTMLElement.prototype.focus = focus;
     }

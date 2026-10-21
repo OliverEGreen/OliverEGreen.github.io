@@ -291,7 +291,8 @@ button.field { cursor: pointer; }
 .gx:hover { background: #DDD7CC; color: var(--ink); }
 .gx:active { background: #D2CBBF; }
 .gx:focus-visible { outline: none; box-shadow: var(--halo); }
-.scroller { position: relative; flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; background: linear-gradient(var(--band) 0, var(--band) 40px, var(--sheet) 40px); }
+/* one grid column as wide as the widest row, so every row (group rows too) runs the full width as the table scrolls sideways */
+.scroller { display: grid; align-content: start; position: relative; flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; background: linear-gradient(var(--band) 0, var(--band) 40px, var(--sheet) 40px); }
 .scroller::-webkit-scrollbar { display: none; }
 .grid { position: relative; }
 .tr { display: grid; align-items: center; padding-left: 8px; --rb: var(--sheet); background: var(--rb); }
